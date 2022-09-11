@@ -1,0 +1,44 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">package com.mahe666.springcloud.service.impl;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">import com.mahe666.springcloud.service.MessageProviderService;</p>
+<p style="margin:0px;">import org.springframework.cloud.stream.annotation.EnableBinding;</p>
+<p style="margin:0px;">import org.springframework.cloud.stream.messaging.Source;</p>
+<p style="margin:0px;">import org.springframework.messaging.MessageChannel;</p>
+<p style="margin:0px;">import org.springframework.messaging.support.MessageBuilder;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">import javax.annotation.Resource;</p>
+<p style="margin:0px;">import java.util.UUID;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">//这里不需要@Service注解</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">//定义消息的推送管道</p>
+<p style="margin:0px;">@EnableBinding(Source.class)</p>
+<p style="margin:0px;">public class MessageProviderServiceImpl implements MessageProviderService {</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    @Resource</p>
+<p style="margin:0px;">    private MessageChannel output;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    @Override</p>
+<p style="margin:0px;">    public String sendMessage() {</p>
+<p style="margin:0px;">        String serial = UUID.randomUUID().toString();</p>
+<p style="margin:0px;">        output.send(MessageBuilder.withPayload(serial).build());</p>
+<p style="margin:0px;">        System.out.println(&quot;serial:&quot;+serial);</p>
+<p style="margin:0px;">        return null;</p>
+<p style="margin:0px;">    }</p>
+<p style="margin:0px;">}</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

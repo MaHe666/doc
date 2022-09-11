@@ -1,0 +1,95 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;div</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; color:#00008b;">id=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;box&quot;</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;p&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;router</span><span style="font-family:'Courier';">-link </span><span style="font-family:'Courier'; color:#00008b;">to=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;/home&quot;</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span><span style="font-family:'Courier';">home&lt;/router-link</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;router</span><span style="font-family:'Courier';">-link </span><span style="font-family:'Courier'; color:#00008b;">to=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;/news&quot;</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span><span style="font-family:'Courier';">news&lt;/router-link</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;router</span><span style="font-family:'Courier';">-link </span><span style="font-family:'Courier'; color:#00008b;">to=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;/music&quot;</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span><span style="font-family:'Courier';">music&lt;/router-link</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;router</span><span style="font-family:'Courier';">-link </span><span style="font-family:'Courier'; color:#00008b;">to=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;/login&quot;</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span><span style="font-family:'Courier';">login&lt;/router-link</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;/p&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;router</span><span style="font-family:'Courier';">-view</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span><span style="font-family:'Courier';">&lt;/router-view</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;/div&gt;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;script</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; color:#00008b;">src=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;&lt;/script&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;script</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; color:#00008b;">src=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;https://cdn.jsdelivr.net/npm/vue-router/dist/vue-router.js&quot;</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;&lt;/script&gt;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;script</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; color:#00008b;">type=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;text/javascript&quot;</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    const Home = {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        template: </span><span style="font-family:'Courier'; color:#2e8b57;">'&lt;div&gt;首页&lt;/div&gt;'</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    const News = {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        template: </span><span style="font-family:'Courier'; color:#2e8b57;">'&lt;div&gt;新闻&lt;/div&gt;'</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    const Music = {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        template: </span><span style="font-family:'Courier'; color:#2e8b57;">'&lt;div&gt;音乐&lt;/div&gt;'</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    const Login = {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        template: </span><span style="font-family:'Courier'; color:#2e8b57;">'&lt;div&gt;登录&lt;/div&gt;'</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    const routes = [{</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        path: </span><span style="font-family:'Courier'; color:#2e8b57;">'/'</span><span style="font-family:'Courier';">,</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        component: Home</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }, {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        path: </span><span style="font-family:'Courier'; color:#2e8b57;">'/home'</span><span style="font-family:'Courier';">,</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        component: Home</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }, {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        path: </span><span style="font-family:'Courier'; color:#2e8b57;">'/news'</span><span style="font-family:'Courier';">,</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        component: News</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }, {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        path: </span><span style="font-family:'Courier'; color:#2e8b57;">'/music'</span><span style="font-family:'Courier';">,</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        component: Music</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }, {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        path: </span><span style="font-family:'Courier'; color:#2e8b57;">'/login'</span><span style="font-family:'Courier';">,</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        component: Login</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }]</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    const router = new VueRouter({</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        routes // （缩写）相当于 routes: routes</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    })</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    var vm = new Vue({</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        el: </span><span style="font-family:'Courier'; color:#2e8b57;">'#box'</span><span style="font-family:'Courier';">,</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        data: {},</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        router</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    })</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    // 添加全局路由守卫</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    router.beforeEach((to, from, next) =</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span><span style="font-family:'Courier';"> {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        //创建守卫规则集合(这里表示</span><span style="font-family:'Courier'; color:#2e8b57;">'/news'</span><span style="font-family:'Courier';">与</span><span style="font-family:'Courier'; color:#2e8b57;">'/music'</span><span style="font-family:'Courier';">路径是需要权限验证的)</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        const nextRoute = [</span><span style="font-family:'Courier'; color:#2e8b57;">'/news'</span><span style="font-family:'Courier';">, </span><span style="font-family:'Courier'; color:#2e8b57;">'/music'</span><span style="font-family:'Courier';">];</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        // 使用isLogin来模拟是否登录</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        let isLogin = false;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        // 判断to.path(要跳转的路径)是否是需要权限验证的</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        if (nextRoute.indexOf(to.path) </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span><span style="font-family:'Courier';">= 0) {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            if (!isLogin) {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                router.push({</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                    path: </span><span style="font-family:'Courier'; color:#2e8b57;">'/login'</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                })</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                location.reload(); //必须要有</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        // 已登录状态；当路由到login时，跳转至home</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        if (to.path === </span><span style="font-family:'Courier'; color:#2e8b57;">'/login'</span><span style="font-family:'Courier';">) {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            if (isLogin) {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                router.push({</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                    path: </span><span style="font-family:'Courier'; color:#2e8b57;">'/home'</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                });</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                location.reload();</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        next(); //必须要有</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    });</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;/script&gt;</span></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

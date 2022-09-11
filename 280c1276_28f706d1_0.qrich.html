@@ -1,0 +1,42 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">Eureka集群的好处就是如果某一个服务端出问题了，这个服务端里面的服务会自动链接其他节点</p>
+<p style="margin:0px;">-------------------------------------------------------------------------</p>
+<p style="margin:0px;">1，新建两个Module，都配置为EurekaServer，注意端口问题！</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">2，注意启动类名字</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">2，编辑 C:\Windows\System32\drivers\etc 下的hosts文件</p>
+<p style="margin:0px;">配置示例：</p>
+<p style="margin:0px;">	127.0.0.1    eureka7001.com</p>
+<p style="margin:0px;">	127.0.0.1    eureka7002.com</p>
+<p style="margin:0px;">	127.0.0.1    eureka7003.com</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">3，上面三个需要绑定不同的端口</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">修改三个EurekaServer的配置文件</p>
+<p style="margin:0px;">将EurekaServer的实例名和端口修改为与上面对应的</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">修改连接地址（service-url）</p>
+<p style="margin:0px;"><span style=" font-weight:600;">每个服务端都连接另外两个服务端，地址之间用英文逗号分割（相互注册）</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">修改provider的配置文件</p>
+<p style="margin:0px;">将连接的服务地址（service-url）</p>
+<p style="margin:0px;">修改为三个服务端的地址（全写）</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style=" font-weight:600;">注意！不要修改配置文件中的spring.application.name</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">4，开启三个服务端，在开启客户端</p>
+<p style="margin:0px;">分别进入到三个服务端监控页面进行查看</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

@@ -1,0 +1,74 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;!DOCTYPE</span><span style="font-family:'Courier';"> html</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;html</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; color:#00008b;">lang=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;en&quot;</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;head&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;meta</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; color:#00008b;">charset=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;UTF-8&quot;</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;title&gt;</span><span style="font-family:'Courier';">AxiosAndVueTest</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;/title&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    &lt;!-- 官网提供的 axios 在线地址 --</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;script</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; color:#00008b;">src=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;https://unpkg.com/axios@0.21.1/dist/axios.min.js&quot;</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;&lt;/script&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    &lt;!-- 开发环境版本，包含了有帮助的命令行警告 --</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;script</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; color:#00008b;">src=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js&quot;</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;&lt;/script&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;/head&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;body&gt;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;div</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; color:#00008b;">id=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;app&quot;</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;input</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; color:#00008b;">type=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;button&quot;</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; color:#00008b;">value=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;获取笑话&quot;</span><span style="font-family:'Courier';"> @</span><span style="font-family:'Courier'; color:#00008b;">click=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;getJoke&quot;</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        &lt;h3</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span><span style="font-family:'Courier';">{{joke}}&lt;/h3</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;/div&gt;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;script&gt;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        /*</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        接口1：随机笑话</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        请求地址：https://autumnfish.cn/api/joke/list</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        请求方法：get</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        请求参数：num（笑话条数，数字）</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        响应内容：随机笑话</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        {</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;msg&quot;</span><span style="font-family:'Courier';">:</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;请传递num参数&quot;</span><span style="font-family:'Courier';">}</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">         */</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        var app = new Vue({</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            el:</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;#app&quot;</span><span style="font-family:'Courier';">,</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            data:{</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                joke:</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;很好笑的笑话&quot;</span><span style="font-family:'Courier';">,</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            },</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            methods:{</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                getJoke:function(){</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                    </span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                    //axios回调函数中的this已经改变,无法访问到data中数据</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                    //把this保存起来,回调函数中直接使用保存的this即可</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                    var that = this;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                    axios.get(</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;https://autumnfish.cn/api/joke&quot;</span><span style="font-family:'Courier';">).then(</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                        function(response){</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                            that.joke = response.data;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                            console.log(this.joke);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                        },</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                        function(err){</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                            console.log(err);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                        }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                    )</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        })</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">   </span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;/script&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;/body&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;/html&gt;</span></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

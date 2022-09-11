@@ -1,0 +1,37 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">修改表名</p>
+<p style="margin:0px;">alter table 旧表名 rename as 新表名</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">增加表的字段</p>
+<p style="margin:0px;">alter table 表名 ADD 字段名 列属性()</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">修改表的字段（重命名，修改约束）</p>
+<p style="margin:0px;">	修改约束</p>
+<p style="margin:0px;">	alter table 表名 modify 字段名 列属性()</p>
+<p style="margin:0px;">	字段重命名</p>
+<p style="margin:0px;">	alter table 表名 change 旧字段名 新字段名 列属性()</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">删除表的字段</p>
+<p style="margin:0px;">alter table 表名 drop 字段名	</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">删除表</p>
+<p style="margin:0px;">drop table [if exists] 表名</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">所有的创建和删除尽量加上判断，以免报错</p>
+<p style="margin:0px;">sql关键字大小写不敏感，建议大家写小写</p>
+<p style="margin:0px;">所有符号全部用英文</p>
+<p style="margin:0px;">	</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

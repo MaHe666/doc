@@ -1,0 +1,49 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;web-app xmlns=&quot;http://xmlns.jcp.org/xml/ns/javaee&quot;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">         xsi:schemaLocation=&quot;http://xmlns.jcp.org/xml/ns/javaee</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">				http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd&quot;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">         version=&quot;4.0&quot;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">         metadata-complete=&quot;true&quot;&gt;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">  &lt;servlet&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    &lt;servlet-name&gt;ShowServlet&lt;/servlet-name&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    &lt;servlet-class&gt;com.mahe666.servlet.ShowServlet&lt;/servlet-class&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">  &lt;/servlet&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">  &lt;servlet-mapping&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    &lt;servlet-name&gt;ShowServlet&lt;/servlet-name&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    &lt;!--这个请求经过过滤器--&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    &lt;url-pattern&gt;/servlet/show&lt;/url-pattern&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    &lt;!--这个请求没有经过过滤器--&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    &lt;url-pattern&gt;/show&lt;/url-pattern&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">  &lt;/servlet-mapping&gt;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">	&lt;!--注册过滤器--&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">  &lt;filter&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    &lt;filter-name&gt;CharacterEncodingFilter&lt;/filter-name&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    &lt;filter-class&gt;com.mahe666.filter.CharacterEncodingFilter&lt;/filter-class&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">  &lt;/filter&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">  &lt;filter-mapping&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    &lt;filter-name&gt;CharacterEncodingFilter&lt;/filter-name&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    &lt;!--只要是 /servlet 下的请求，都经过过滤器--&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    &lt;url-pattern&gt;/servlet/*&lt;/url-pattern&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    &lt;!--可以在一个 filter-mapping 标签下写多个 url-pattern--&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;!--    &lt;url-pattern&gt;&lt;/url-pattern&gt;--&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">  &lt;/filter-mapping&gt;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;/web-app&gt;</span></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

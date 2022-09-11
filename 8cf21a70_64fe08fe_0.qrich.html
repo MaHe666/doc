@@ -1,0 +1,58 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">package com.mahe666.springcloud.controller;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">import com.mahe666.springcloud.pojo.Dept;</p>
+<p style="margin:0px;">import org.springframework.beans.factory.annotation.Autowired;</p>
+<p style="margin:0px;">import org.springframework.web.bind.annotation.*;</p>
+<p style="margin:0px;">import org.springframework.web.client.RestTemplate;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">import java.util.List;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">@RestController</p>
+<p style="margin:0px;">@RequestMapping(&quot;/consumer/dept&quot;)</p>
+<p style="margin:0px;">public class DeptConsumerController {</p>
+<p style="margin:0px;">    //消费者，不应该有Service层</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    //使用Ribbon之后，我们这里的地址应该是一个变量，通过服务名来访问</p>
+<p style="margin:0px;">    //private static final String REST_URL_PREFIX = &quot;http://localhost:8001/dept&quot;;</p>
+<p style="margin:0px;">    //这里的名字是配置文件中Spring的服务名，都调用一个名字，已达到负载均衡的效果</p>
+<p style="margin:0px;">    private static final String REST_URL_PREFIX = &quot;http://SPRINGCLOUD-PROVIDER-DEPT/dept&quot;;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    @Autowired</p>
+<p style="margin:0px;">    private RestTemplate restTemplate;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    @PostMapping(&quot;/add&quot;)</p>
+<p style="margin:0px;">    public Boolean add(Dept dept){</p>
+<p style="margin:0px;">        return restTemplate.postForObject(REST_URL_PREFIX+&quot;/add&quot;,dept,Boolean.class);</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    @GetMapping(&quot;/selectById/{id}&quot;)</p>
+<p style="margin:0px;">    public Dept selectById(@PathVariable(&quot;id&quot;) Long id){</p>
+<p style="margin:0px;">        return restTemplate.getForObject(REST_URL_PREFIX+&quot;/selectById/&quot;+id ,Dept.class);</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    @GetMapping(&quot;/selectAll&quot;)</p>
+<p style="margin:0px;">    public List&lt;Dept&gt; selectAll(){</p>
+<p style="margin:0px;">        return restTemplate.getForObject(REST_URL_PREFIX+&quot;/selectAll/&quot; ,List.class);</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    @GetMapping(&quot;/discovery&quot;)</p>
+<p style="margin:0px;">    public Object discovery(){</p>
+<p style="margin:0px;">        return restTemplate.getForObject(REST_URL_PREFIX+&quot;/discovery&quot;,Object.class);</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">}</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

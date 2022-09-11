@@ -1,0 +1,51 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">范式英文 Normal Form</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">第一范式 1NF：</p>
+<p style="margin:0px;">数据表中的每一列(字段)，必须是不可拆分的最小单元，也就是确保每一列的原子性，而不是集合。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style=" font-weight:600;">保留数据的原子性（不可再分）</span></p>
+<p style="margin:0px;">反例：省市区三个信息不能放在一个字段内</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">第二范式 2NF：</p>
+<p style="margin:0px;">满足1NF的基础上，要求：表中的所有列，都必需依赖于主键，而不能有任何一列与主键没有关系（一个表只描述一件事情）。第二范式消除表的无关数据。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style=" font-weight:600;">一张表只描述一个事情</span></p>
+<p style="margin:0px;">主键存在的意义就是唯一地标识表中的某一条记录。如果某一列和该行记录没关系，也就没必要存在。</p>
+<p style="margin:0px;">反例：天气和用户没什么关系，所以用户表里不需要有天气字段</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">第三范式 3NF：</p>
+<p style="margin:0px;">满足2NF的基础上，任何非主属性不依赖于其它非主属性（在2NF基础上消除传递依赖）（也表明不允许数据存在冗余的现象）</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">确保数据表中的每一列数据都和主键直接相关，而不能间接相关</p>
+<p style="margin:0px;"><span style=" font-weight:600;">与主键直接相关</span></p>
+<p style="margin:0px;">例如两张表的关联需要保存的是两张表的主键</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style=" font-weight:600;">阿里mysql规约：</span><br />关联查询的表不得超过三张</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">规范性和性能的问题：</p>
+<p style="margin:0px;">	考虑商业化的需求和目标，（成本和用户体验），数据库的性能更加重要</p>
+<p style="margin:0px;">	在考虑规范和性能的问题的时候，需要适当考虑一下 规范性</p>
+<p style="margin:0px;">	故意给某些表增加一些冗余的字段。（从多表查询变为单表查询）</p>
+<p style="margin:0px;">	故意增加一些计算列（从大数据量降低为小数据量的查询：索引）</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

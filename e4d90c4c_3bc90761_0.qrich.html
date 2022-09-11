@@ -1,0 +1,54 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">创建项目</p>
+<p style="margin:0px;">创建一个名为modules的目录，用于放置JS模块等资源文件</p>
+<p style="margin:0px;">在modules下创建模块文件，如hello.js，用于编写JS模块相关代码</p>
+<p style="margin:0px;">	//暴露一个方法：sayHi</p>
+<p style="margin:0px;">	exports.sayHi = function(){</p>
+<p style="margin:0px;">		document.write(&quot;&lt;div&gt;Hello Webpack&lt;/div&gt;&quot;);</p>
+<p style="margin:0px;">	}</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">在modules下创建一个名为main.js的入口文件，用于打包时设置entry属性</p>
+<p style="margin:0px;">//require 导入一个模块，就可以调用这个模块中的方法了</p>
+<p style="margin:0px;">var hello = require(&quot;./hello&quot;);</p>
+<p style="margin:0px;">hello.sayHi();</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">在项目目录下创建webpack.config.js配置文件，使用webpack命令打包</p>
+<p style="margin:0px;">module.exports = {</p>
+<p style="margin:0px;">	entry:&quot;./modules/main.js&quot;,</p>
+<p style="margin:0px;">	output:{</p>
+<p style="margin:0px;">		filename:&quot;./js/bundle.js&quot;</p>
+<p style="margin:0px;">	}</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">在项目目录下创建HTML页面，如index.html，导入webpack打包后的JS文件</p>
+<p style="margin:0px;">	&lt;!doctype html&gt;</p>
+<p style="margin:0px;">	&lt;html lang=&quot;en&quot;&gt;</p>
+<p style="margin:0px;">		&lt;head&gt;</p>
+<p style="margin:0px;">			&lt;meta charset=&quot;UTF-8&quot;&gt;</p>
+<p style="margin:0px;">			&lt;title&gt;狂神说Java&lt;/title&gt;</p>
+<p style="margin:0px;">		&lt;/head&gt;</p>
+<p style="margin:0px;">		&lt;body&gt;</p>
+<p style="margin:0px;">			&lt;script src=&quot;dist/js/bundle.js&quot;&gt;&lt;/script&gt;</p>
+<p style="margin:0px;">		&lt;/body&gt;</p>
+<p style="margin:0px;">	&lt;/html&gt;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">在IDEA控制台中直接执行webpack；如果失败的话，就使用管理员权限运行即可！</p>
+<p style="margin:0px;">运行HTML看效果</p>
+<p style="margin:0px;">说明</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"># 参数--watch 用于监听变化</p>
+<p style="margin:0px;">webpack --watch</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

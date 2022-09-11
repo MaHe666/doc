@@ -1,0 +1,61 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;"><span style=" font-weight:600;">只配置从库，不用配置主库。</span></p>
+<p style="margin:0px;">使用命令查看当前库的信息</p>
+<p style="margin:0px;">	info replication</p>
+<p style="margin:0px;">主库的role为master	role:master</p>
+<p style="margin:0px;">同时需要设置连接的从库数量		connected_slaves:0</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style=" font-weight:600;">复制3个配置文件，然后修改对应的信息。</span></p>
+<ol style="margin: 0px; -qt-list-indent: 1;">
+<li style="margin:0px;">端口</li>
+<li style="margin:0px;">pid名字</li>
+<li style="margin:0px;">log文件名字。6379.log</li>
+<li style="margin:0px;">dump.rdb名字</li>
+</ol>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">修改完毕之后，分别对应修改后的三个配置文件启动我们的3个Redis服务器，可以通过进程信息查看。</p>
+<p style="margin:0px;">	ps -ef|grep redis</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style=" font-weight:600;">一主二从</span></p>
+<p style="margin:0px;">默认情况下，每台Redis服务器都是主节点；我们一般情况下只用配置从机就好了！</p>
+<p style="margin:0px;">认老大！一主（6379）二从（6380，6381）。从机认主机当老大</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">配置详情见子项</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">如果两个都配置完了，就是有两个从机的信息</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">真实环境的从主配置应该在配置文件中配置，这样的话是永久的，我们这里使用的是命令，只是暂时的！</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style=" font-weight:600;">细节！</span></p>
+<p style="margin:0px;">主机可以写，从机不能写只能读！主机中的所有信息和数据，都会自动被从机保存！</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<ol style="margin: 0px; -qt-list-indent: 1;">
+<li style="margin:0px;">主机断开连接，从机依旧会连接到主机，但是没有写操作，这个时候，如果主机回来了，继续写数据，从机依旧可以直接获取到主机写的信息。（无论命令行还是配置文件配置的主从都是这样）</li>
+<li style="margin:0px;">如果是使用命令行来配置的主从，这个时候从机如果重启了，就会变回主机！但是使用命令行让他再次连接主机，就会立即从主机获取值。（只要变为从机，立马就会从主机中获取值）</li>
+</ol>
+<p style="margin:0px;">（如果是配置文件配置的主从，从机重启后立即会从主机获取值）</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

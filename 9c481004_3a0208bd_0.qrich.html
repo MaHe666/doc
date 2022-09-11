@@ -1,0 +1,33 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">public class Demo03 {</p>
+<p style="margin:0px;">    public static void main(String[] args) {</p>
+<p style="margin:0px;">        char c1 = 'a';</p>
+<p style="margin:0px;">        char c2 = '中';</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">        System.out.println(c1);</p>
+<p style="margin:0px;">        System.out.println(c2);</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">        //所有的字符本质上还是数字</p>
+<p style="margin:0px;">        System.out.println((int)c1);</p>
+<p style="margin:0px;">        System.out.println((int)c2);</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">        //这里涉及到了编码的问题，Unicode编码可以处理任何语言的文字，他占了2个字节</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">        char c3 = '\u0061';</p>
+<p style="margin:0px;">        System.out.println(c3);</p>
+<p style="margin:0px;">    }</p>
+<p style="margin:0px;">}</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

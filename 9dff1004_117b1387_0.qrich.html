@@ -1,0 +1,45 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">import</span><span style="font-family:'Courier';"> pandas </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">as</span><span style="font-family:'Courier';"> pd</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">import</span><span style="font-family:'Courier';"> matplotlib</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">pyplot </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">as</span><span style="font-family:'Courier';"> plt</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">data = pd</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">read_excel(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;./excel/BarChart2.xlsx&quot;</span><span style="font-family:'Courier';">)</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#204a87;">print</span><span style="font-family:'Courier';">(data)</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">data</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">plot</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">bar(x=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'name'</span><span style="font-family:'Courier';">, y=[</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'a'</span><span style="font-family:'Courier';">, </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'b'</span><span style="font-family:'Courier';">], color=[</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'red'</span><span style="font-family:'Courier';">, </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'blue'</span><span style="font-family:'Courier';">])</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">plt</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">title(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;test&quot;</span><span style="font-family:'Courier';">, fontsize=</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">16</span><span style="font-family:'Courier';">, fontweight=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'bold'</span><span style="font-family:'Courier';">)</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">plt</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">xlabel(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'name'</span><span style="font-family:'Courier';">, fontweight=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'bold'</span><span style="font-family:'Courier';">)</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">plt</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">ylabel(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'number'</span><span style="font-family:'Courier';">, fontweight=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'bold'</span><span style="font-family:'Courier';">)</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;"># gca为优化轴</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">ax = plt</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">gca()</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;"># ha为对齐的位置</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">ax</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">set_xticklabels(data[</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'name'</span><span style="font-family:'Courier';">], rotation=</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">45</span><span style="font-family:'Courier';">, ha=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'right'</span><span style="font-family:'Courier';">)</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;"># gcf为优化图像</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">f = plt</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">gcf()</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">#左边留出20%，底部留出42%</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">f</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">subplots_adjust(left=</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">0.2</span><span style="font-family:'Courier';">, bottom=</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">0.42</span><span style="font-family:'Courier';">)</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;"># plt.tight_layout()</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">plt</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">show()</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+
+<footer style="">
+<hr noshade>
+<a href="9dff1004_25990537_0.xlsx" title="9dff1004_25990537_0.xlsx" target=_blank style="padding-left: 1em; background: URL(icon_attachment.gif) no-repeat center left; padding: 0 0 0 16px;">BarChart2.xlsx</a>
+<hr noshade>
+</footer>
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

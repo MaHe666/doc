@@ -1,0 +1,83 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">import com.baomidou.mybatisplus.annotation.TableId;</p>
+<p style="margin:0px;">import com.baomidou.mybatisplus.annotation.TableName;</p>
+<p style="margin:0px;">import com.fasterxml.jackson.annotation.JsonInclude;</p>
+<p style="margin:0px;">import lombok.AllArgsConstructor;</p>
+<p style="margin:0px;">import lombok.Data;</p>
+<p style="margin:0px;">import lombok.NoArgsConstructor;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">import java.io.Serializable;</p>
+<p style="margin:0px;">import java.util.Date;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">/**</p>
+<p style="margin:0px;"> * 菜单表(Menu)实体类</p>
+<p style="margin:0px;"> *</p>
+<p style="margin:0px;"> */</p>
+<p style="margin:0px;">@TableName(value=&quot;menu&quot;)</p>
+<p style="margin:0px;">@Data</p>
+<p style="margin:0px;">@AllArgsConstructor</p>
+<p style="margin:0px;">@NoArgsConstructor</p>
+<p style="margin:0px;">@JsonInclude(JsonInclude.Include.NON_NULL)</p>
+<p style="margin:0px;">public class Menu implements Serializable {</p>
+<p style="margin:0px;">    private static final long serialVersionUID = -54979041104113736L;</p>
+<p style="margin:0px;">    </p>
+<p style="margin:0px;">        @TableId</p>
+<p style="margin:0px;">    private Long id;</p>
+<p style="margin:0px;">    /**</p>
+<p style="margin:0px;">    * 菜单名</p>
+<p style="margin:0px;">    */</p>
+<p style="margin:0px;">    private String menuName;</p>
+<p style="margin:0px;">    /**</p>
+<p style="margin:0px;">    * 路由地址</p>
+<p style="margin:0px;">    */</p>
+<p style="margin:0px;">    private String path;</p>
+<p style="margin:0px;">    /**</p>
+<p style="margin:0px;">    * 组件路径</p>
+<p style="margin:0px;">    */</p>
+<p style="margin:0px;">    private String component;</p>
+<p style="margin:0px;">    /**</p>
+<p style="margin:0px;">    * 菜单状态（0显示 1隐藏）</p>
+<p style="margin:0px;">    */</p>
+<p style="margin:0px;">    private String visible;</p>
+<p style="margin:0px;">    /**</p>
+<p style="margin:0px;">    * 菜单状态（0正常 1停用）</p>
+<p style="margin:0px;">    */</p>
+<p style="margin:0px;">    private String status;</p>
+<p style="margin:0px;">    /**</p>
+<p style="margin:0px;">    * 权限标识</p>
+<p style="margin:0px;">    */</p>
+<p style="margin:0px;">    private String perms;</p>
+<p style="margin:0px;">    /**</p>
+<p style="margin:0px;">    * 菜单图标</p>
+<p style="margin:0px;">    */</p>
+<p style="margin:0px;">    private String icon;</p>
+<p style="margin:0px;">    </p>
+<p style="margin:0px;">    private Long createBy;</p>
+<p style="margin:0px;">    </p>
+<p style="margin:0px;">    private Date createTime;</p>
+<p style="margin:0px;">    </p>
+<p style="margin:0px;">    private Long updateBy;</p>
+<p style="margin:0px;">    </p>
+<p style="margin:0px;">    private Date updateTime;</p>
+<p style="margin:0px;">    /**</p>
+<p style="margin:0px;">    * 是否删除（0未删除 1已删除）</p>
+<p style="margin:0px;">    */</p>
+<p style="margin:0px;">    private Integer delFlag;</p>
+<p style="margin:0px;">    /**</p>
+<p style="margin:0px;">    * 备注</p>
+<p style="margin:0px;">    */</p>
+<p style="margin:0px;">    private String remark;</p>
+<p style="margin:0px;">}</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

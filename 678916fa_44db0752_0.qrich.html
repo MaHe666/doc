@@ -1,0 +1,57 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">package com.mahe666.aop;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">import org.aspectj.lang.ProceedingJoinPoint;</p>
+<p style="margin:0px;">import org.aspectj.lang.Signature;</p>
+<p style="margin:0px;">import org.aspectj.lang.annotation.*;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">//标注这个类是一个切面</p>
+<p style="margin:0px;">@Aspect</p>
+<p style="margin:0px;">public class AnnotationPointCut {</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    //注意导包问题</p>
+<p style="margin:0px;">    @Before(&quot;execution(* com.mahe666.service.impl.*.*(..))&quot;)</p>
+<p style="margin:0px;">    public void before(){</p>
+<p style="margin:0px;">        System.out.println(&quot;======方法执行前======&quot;);</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    @After(&quot;execution(* com.mahe666.service.impl.*.*(..))&quot;)</p>
+<p style="margin:0px;">    public void after(){</p>
+<p style="margin:0px;">        System.out.println(&quot;======方法执行后======&quot;);</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    @AfterReturning(&quot;execution(* com.mahe666.service.impl.*.*(..))&quot;)</p>
+<p style="margin:0px;">    public void afterReturning(){</p>
+<p style="margin:0px;">        System.out.println(&quot;======方法返回值后======&quot;);</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    //在环绕增强中，我们可以给定一个参数，代表我们需要获取处理切入的点</p>
+<p style="margin:0px;">    @Around(&quot;execution(* com.mahe666.service.impl.*.*(..))&quot;)</p>
+<p style="margin:0px;">    //ProceedingJoinPoint 就是连接点：与切入点匹配的执行点</p>
+<p style="margin:0px;">    public void around(ProceedingJoinPoint jp) throws Throwable {</p>
+<p style="margin:0px;">        System.out.println(&quot;环绕前&quot;);</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">        //获得执行的方法名</p>
+<p style="margin:0px;">        Signature signature = jp.getSignature();</p>
+<p style="margin:0px;">        System.out.println(&quot;signature = &quot;+signature);</p>
+<p style="margin:0px;">        //执行方法</p>
+<p style="margin:0px;">        Object proceed = jp.proceed();</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">        System.out.println(&quot;环绕后&quot;);</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">}</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

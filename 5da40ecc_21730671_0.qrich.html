@@ -1,0 +1,84 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">字符型在内存中占2个字节，在Java中使用单引号来表示字符常量</p>
+<p style="margin:0px;">例如 'A' 是一个字符，他与 &quot;A&quot; 是不同的，后者表示含有一个字符的字符串</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">char类型用来表示在Unicode编码表中的字符。Unicode编码被设计用来处理各种语言的文字，它占2个字节，可允许有65536个字符</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">Unicode具有从0到65535之间的编码，他们通常用从 '\u0000' 到 '\uFFFF' 之间的十六进制来表示（前缀u表示Unicode）</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">测试输出 '\u0061' 的结果，为a</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">Java语言中还允许使用转义字符 '\' 来将其后的字符转为其他的含义</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<table border="1" style="margin:0px;" width="1200" cellspacing="0" cellpadding="3">
+<tr>
+<td width="400">
+<p style="margin:0px;">转义符</p></td>
+<td width="400">
+<p style="margin:0px;">含义</p></td>
+<td width="400">
+<p style="margin:0px;">Unicode值</p></td></tr>
+<tr>
+<td>
+<p style="margin:0px;">\b</p></td>
+<td>
+<p style="margin:0px;">退格（backspace）</p></td>
+<td>
+<p style="margin:0px;">\u0008</p></td></tr>
+<tr>
+<td>
+<p style="margin:0px;">\n</p></td>
+<td>
+<p style="margin:0px;">换行</p></td>
+<td>
+<p style="margin:0px;">\u000a</p></td></tr>
+<tr>
+<td>
+<p style="margin:0px;">\r</p></td>
+<td>
+<p style="margin:0px;">回车</p></td>
+<td>
+<p style="margin:0px;">\u000d</p></td></tr>
+<tr>
+<td>
+<p style="margin:0px;">\t</p></td>
+<td>
+<p style="margin:0px;">制表符（tab）</p></td>
+<td>
+<p style="margin:0px;">\u0009</p></td></tr>
+<tr>
+<td>
+<p style="margin:0px;">\&quot;</p></td>
+<td>
+<p style="margin:0px;">双引号</p></td>
+<td>
+<p style="margin:0px;">\u0022</p></td></tr>
+<tr>
+<td>
+<p style="margin:0px;">\'</p></td>
+<td>
+<p style="margin:0px;">单引号</p></td>
+<td>
+<p style="margin:0px;">\u0027</p></td></tr>
+<tr>
+<td>
+<p style="margin:0px;">\\</p></td>
+<td>
+<p style="margin:0px;">反斜杠</p></td>
+<td>
+<p style="margin:0px;">\u005c</p></td></tr></table>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

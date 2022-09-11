@@ -1,0 +1,41 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">1，需要在主启动类上加@EnableScheduling注解，开启定时功能</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">2，在需要定时的service方法上加@Scheduled注解，需要用到cron表达式</p>
+<p style="margin:0px;">教程：<a href="https://www.cnblogs.com/javahr/p/8318728.html"><span style=" text-decoration: underline; color:#0000ff;">https://www.cnblogs.com/javahr/p/8318728.html</span></a></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">package com.mahe666.service;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">import org.springframework.scheduling.annotation.Scheduled;</p>
+<p style="margin:0px;">import org.springframework.stereotype.Service;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">@Service</p>
+<p style="margin:0px;">public class ScheduledService {</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    //@Scheduled注解使用cron表达式</p>
+<p style="margin:0px;">    //秒 分 时 日 月 星期几           </p>
+<p style="margin:0px;">        //应的位置可以写数组，用英文逗号隔开</p>
+<p style="margin:0px;">        //每隔多少时间执行一次使用/分割   比如每五分钟执行一次 0/5</p>
+<p style="margin:0px;">    @Scheduled(cron = &quot;0 * * * * 0-7&quot;)</p>
+<p style="margin:0px;">    //在一个特定的时间执行这个方法</p>
+<p style="margin:0px;">    public void hello(){</p>
+<p style="margin:0px;">        System.out.println(&quot;hello被执行了&quot;);</p>
+<p style="margin:0px;">    }</p>
+<p style="margin:0px;">}</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

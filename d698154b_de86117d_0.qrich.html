@@ -1,0 +1,36 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">    /**</p>
+<p style="margin:0px;">     * 注解方式调用资源</p>
+<p style="margin:0px;">     * @SentinelResource value 资源名称</p>
+<p style="margin:0px;">     * @SentinelResource blockHandler 调用被限流/降级/系统保护时调用的方法</p>
+<p style="margin:0px;">     */</p>
+<p style="margin:0px;">    @RequestMapping(&quot;/helloworld3&quot;)</p>
+<p style="margin:0px;">    //value是流控规则名称，blockHandler是备选方法</p>
+<p style="margin:0px;">    @SentinelResource(value = &quot;HelloWorld3&quot;,blockHandler = &quot;blockHandlerForHelloWorld3&quot;)</p>
+<p style="margin:0px;">    public String helloworld3(){</p>
+<p style="margin:0px;">        return &quot;Hello Sentinel,this is annotation way,@SentinelResource&quot;+System.currentTimeMillis();</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    /**</p>
+<p style="margin:0px;">     * 原方法调用被限流/降级/系统保护时调用</p>
+<p style="margin:0px;">     * @param ex</p>
+<p style="margin:0px;">     * @return</p>
+<p style="margin:0px;">     */</p>
+<p style="margin:0px;">    public String blockHandlerForHelloWorld3(BlockException ex){</p>
+<p style="margin:0px;">        ex.printStackTrace();</p>
+<p style="margin:0px;">        return &quot;系统繁忙，请稍后&quot;;</p>
+<p style="margin:0px;">    }</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

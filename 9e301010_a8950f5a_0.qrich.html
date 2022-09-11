@@ -1,0 +1,38 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">import</span><span style="font-family:'Courier';"> pandas </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">as</span><span style="font-family:'Courier';"> pd</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">import</span><span style="font-family:'Courier';"> matplotlib</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">pyplot </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">as</span><span style="font-family:'Courier';"> plt</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">data = pd</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">read_excel(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;./excel/BarChart3.xlsx&quot;</span><span style="font-family:'Courier';">)</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#204a87;">print</span><span style="font-family:'Courier';">(data)</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">#可以根据总量进行排序</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">data[</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'Total'</span><span style="font-family:'Courier';">] = data[</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'a'</span><span style="font-family:'Courier';">]+data[</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'b'</span><span style="font-family:'Courier';">]+data[</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'c'</span><span style="font-family:'Courier';">]</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#204a87;">print</span><span style="font-family:'Courier';">(data)</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">#stacked为数据堆叠</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">#垂直</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">data</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">plot</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">bar(x=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'name'</span><span style="font-family:'Courier';">, y=[</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'a'</span><span style="font-family:'Courier';">, </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'b'</span><span style="font-family:'Courier';">, </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'c'</span><span style="font-family:'Courier';">], stacked=</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">True</span><span style="font-family:'Courier';">)</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">#水平</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">data</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">plot</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">barh(x=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'name'</span><span style="font-family:'Courier';">, y=[</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'a'</span><span style="font-family:'Courier';">, </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'b'</span><span style="font-family:'Courier';">, </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'c'</span><span style="font-family:'Courier';">], stacked=</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">True</span><span style="font-family:'Courier';">)</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">plt</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">show()</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+
+<footer style="">
+<hr noshade>
+<a href="9e301010_259f0538_0.xlsx" title="9e301010_259f0538_0.xlsx" target=_blank style="padding-left: 1em; background: URL(icon_attachment.gif) no-repeat center left; padding: 0 0 0 16px;">BarChart3.xlsx</a>
+<hr noshade>
+</footer>
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

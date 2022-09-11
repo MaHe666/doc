@@ -1,0 +1,85 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;"><span style="font-family:'Courier';">    @Test</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">//查询name不为空的，并且邮箱不为空的参数，年龄大于等于十二岁的</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">void</span><span style="font-family:'Courier';"> test1(){</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        QueryWrapper&lt;User&gt; wrapper = </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">new</span><span style="font-family:'Courier';"> QueryWrapper&lt;&gt;();</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">//wrapper可以链式赋值</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        wrapper</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">//不为空</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                .isNotNull(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;name&quot;</span><span style="font-family:'Courier';">)</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                .isNotNull(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;email&quot;</span><span style="font-family:'Courier';">)</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">//大于等于</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                .ge(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;age&quot;</span><span style="font-family:'Courier';">,</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">12</span><span style="font-family:'Courier';">);</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        userMapper</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">selectList(wrapper).forEach(System</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">out::println);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    @Test</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">//查询名字等于mahe666的</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">void</span><span style="font-family:'Courier';"> test2(){</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        QueryWrapper&lt;User&gt; wrapper = </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">new</span><span style="font-family:'Courier';"> QueryWrapper&lt;&gt;();</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        wrapper</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                .eq(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;name&quot;</span><span style="font-family:'Courier';">,</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;mahe666&quot;</span><span style="font-family:'Courier';">);</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        userMapper</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">selectList(wrapper).forEach(System</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">out::println);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    @Test</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">//查询年龄在20-30岁之间的用户数量</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">void</span><span style="font-family:'Courier';"> test3(){</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        QueryWrapper&lt;User&gt; wrapper = </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">new</span><span style="font-family:'Courier';"> QueryWrapper&lt;&gt;();</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        wrapper</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                .between(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;age&quot;</span><span style="font-family:'Courier';">,</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">20</span><span style="font-family:'Courier';">,</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">30</span><span style="font-family:'Courier';">);</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        System</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">out</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">println(userMapper</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">selectCount(wrapper));</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    @Test</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">//模糊查询，名字里面不包含</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">void</span><span style="font-family:'Courier';"> test4(){</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        QueryWrapper&lt;User&gt; wrapper = </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">new</span><span style="font-family:'Courier';"> QueryWrapper&lt;&gt;();</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        wrapper</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">//不包含的</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                .notLike(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;name&quot;</span><span style="font-family:'Courier';">,</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;z&quot;</span><span style="font-family:'Courier';">)</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">//likeRight和likeLeft的区别就在于百分号的位置</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                .likeRight(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;name&quot;</span><span style="font-family:'Courier';">,</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;m&quot;</span><span style="font-family:'Courier';">);</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        List&lt;Map&lt;String, Object&gt;&gt; maps = userMapper</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">selectMaps(wrapper);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        maps</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">forEach(System</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">out::println);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    @Test</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">//内嵌查询</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">void</span><span style="font-family:'Courier';"> test5(){</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        QueryWrapper&lt;User&gt; wrapper = </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">new</span><span style="font-family:'Courier';"> QueryWrapper&lt;&gt;();</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">//id 在子查询中查出来</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        wrapper</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">inSql(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;id&quot;</span><span style="font-family:'Courier';">,</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;select id from user where id &lt; 3&quot;</span><span style="font-family:'Courier';">);</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        List&lt;Object&gt; objects = userMapper</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">selectObjs(wrapper);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        objects</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">forEach(System</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">out::println);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    @Test</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">//排序</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">void</span><span style="font-family:'Courier';"> test6(){</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        QueryWrapper&lt;User&gt; wrapper = </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">new</span><span style="font-family:'Courier';"> QueryWrapper&lt;&gt;();</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">//通过id进行排序</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        wrapper</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                .orderByDesc(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;id&quot;</span><span style="font-family:'Courier';">);</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        List&lt;User&gt; userList = userMapper</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">selectList(wrapper);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        userList</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">forEach(System</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">out::println);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

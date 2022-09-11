@@ -1,0 +1,60 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;"><span style=" font-weight:600;">String (字符串类型)</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">给一个键值对的值追加值，和其他的append用法差不多。返回值是追加后的字符串长度</p>
+<p style="margin:0px;">	append 键 追加的值</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">查看一个值的长度</p>
+<p style="margin:0px;">	strlen 键</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">自增1</p>
+<p style="margin:0px;">	incr 键</p>
+<p style="margin:0px;">自减1</p>
+<p style="margin:0px;">	decr 键</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">#设置自增或自减步长</p>
+<p style="margin:0px;">	incrby 键 步长</p>
+<p style="margin:0px;">	decrby 键 步长</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">截取字符串，字符串第一位下标为0。查看全部字符串的话，开始下标为0，结束下标为-1就好</p>
+<p style="margin:0px;">	getrange 键 开始位置下标 结束位置下标</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">替换字符串</p>
+<p style="margin:0px;">	setrange 键 开始位置 替换的值</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">设置值同时设置过期时间</p>
+<p style="margin:0px;">	setex 键 期限 值</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">如果不存在就设置值（在分布式锁中十分常用！）</p>
+<p style="margin:0px;">	setnx 键 值</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">批量设置值</p>
+<p style="margin:0px;">	mset 键1 值1 键2 值2</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">批量获取值</p>
+<p style="margin:0px;">	mget 键1 键2 键3</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">批量如果不存在就设置值（在分布式锁中十分常用！），注意！这里是原子性的操作，如果在批量设置时有一个键已存在，本次设置的都会失败</p>
+<p style="margin:0px;">	setnx 键1 值1 键2 值2</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">先获取再赋值，获取时获取的是之前的，然后进行设置。第二次使用时，获取的就是第一次设置的，然后替换掉获取到的</p>
+<p style="margin:0px;">	getset 键 值</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

@@ -1,0 +1,45 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">package com.mahe666.springcloud.controller;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">import org.springframework.beans.factory.annotation.Value;</p>
+<p style="margin:0px;">import org.springframework.web.bind.annotation.RequestMapping;</p>
+<p style="margin:0px;">import org.springframework.web.bind.annotation.RestController;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">@RestController</p>
+<p style="margin:0px;">public class ConfigClientController {</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    //获取项目名</p>
+<p style="margin:0px;">    @Value(&quot;${spring.application.name}&quot;)</p>
+<p style="margin:0px;">    private String applicationName;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    //获取Eureka服务</p>
+<p style="margin:0px;">    @Value(&quot;${eureka.client.service-url.defaultZone}&quot;)</p>
+<p style="margin:0px;">    private String eurekaServer;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    //获取端口号</p>
+<p style="margin:0px;">    @Value(&quot;${server.port}&quot;)</p>
+<p style="margin:0px;">    private String port;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    @RequestMapping(&quot;/getConfig&quot;)</p>
+<p style="margin:0px;">    public String getConfig(){</p>
+<p style="margin:0px;">        return &quot;applicationName:&quot;+applicationName+&quot;====&quot;</p>
+<p style="margin:0px;">                +&quot;eurekaServer:&quot;+eurekaServer+&quot;====&quot;</p>
+<p style="margin:0px;">                +&quot;port:&quot;+port;</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">}</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

@@ -1,0 +1,41 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">#配置根rooter</p>
+<p style="margin:0px;">#设置日志级别为DEBUG，输出到console和file，这个名字是自定义的，下面的console和file的名字取决于这里</p>
+<p style="margin:0px;">log4j.rootLogger = DEBUG,console,file</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">#控制台输出的相关设置</p>
+<p style="margin:0px;">log4j.appender.console = org.apache.log4j.ConsoleAppender</p>
+<p style="margin:0px;">log4j.appender.console.Target = System.out</p>
+<p style="margin:0px;">log4j.appender.console.Threshold = DEBUG</p>
+<p style="margin:0px;">log4j.appender.console.layout = org.apache.log4j.PatternLayout</p>
+<p style="margin:0px;">log4j.appender.console.layout.ConversionPattern = [%p][%c]-%m%n</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">#文件输出的相关设置</p>
+<p style="margin:0px;">log4j.appender.file = org.apache.log4j.RollingFileAppender</p>
+<p style="margin:0px;">log4j.appender.file.File = ./log/log4j.log</p>
+<p style="margin:0px;">log4j.appender.file.maxFileSize = 10MB</p>
+<p style="margin:0px;">log4j.appender.file.Threshold = DEBUG</p>
+<p style="margin:0px;">log4j.appender.file.layout = org.apache.log4j.PatternLayout</p>
+<p style="margin:0px;">log4j.appender.file.layout.ConversionPattern = [%p][%d{yy-MM-dd}][%c]%m%n</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">#日志输出级别</p>
+<p style="margin:0px;">#以下五个才会输出</p>
+<p style="margin:0px;">log4j.logger.org.mybatis = DEBUG</p>
+<p style="margin:0px;">log4j.logger.java.sql = DEBUG</p>
+<p style="margin:0px;">log4j.logger.java.sql.Statement = DEBUG</p>
+<p style="margin:0px;">log4j.logger.java.sql.ResultSet = DEBUG</p>
+<p style="margin:0px;">log4j.logger.java.sql.PrepareStatement = DEBUG</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

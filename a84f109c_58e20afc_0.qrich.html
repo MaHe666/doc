@@ -1,0 +1,30 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">Python同样支持运算符重载，我们可以对类的专有方法进行重载</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">class Vector:</p>
+<p style="margin:0px;">   def __init__(self, a, b):</p>
+<p style="margin:0px;">      <span style=" font-weight:600; color:#204a87;">self</span><span style=" font-weight:600; color:#4682b4;">.</span>a = a</p>
+<p style="margin:0px;">      <span style=" font-weight:600; color:#204a87;">self</span><span style=" font-weight:600; color:#4682b4;">.</span>b = b</p>
+<p style="margin:0px;"> </p>
+<p style="margin:0px;">   def __str__(self):</p>
+<p style="margin:0px;">      return 'Vector (%d, %d)' % (self.a, self.b)</p>
+<p style="margin:0px;">   </p>
+<p style="margin:0px;">   def __add__(self,other):</p>
+<p style="margin:0px;">      return Vector(self.a + other.a, self.b + other.b)</p>
+<p style="margin:0px;"> </p>
+<p style="margin:0px;">v1 = Vector(<span style=" font-weight:600; color:#4682b4;">2</span>,<span style=" font-weight:600; color:#4682b4;">10</span>)</p>
+<p style="margin:0px;">v2 = Vector(<span style=" font-weight:600; color:#4682b4;">5</span>,-<span style=" font-weight:600; color:#4682b4;">2</span>)</p>
+<p style="margin:0px;"><span style=" font-weight:600; color:#204a87;">print</span> (v1 + v2)</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

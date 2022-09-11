@@ -1,0 +1,36 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">// 1. key是字符串</p>
+<p style="margin:0px;">let myMap = new Map();</p>
+<p style="margin:0px;">let keyString = &quot;string&quot;; </p>
+<p style="margin:0px;"> </p>
+<p style="margin:0px;">myMap.set(keyString, &quot;和键'string'关联的值&quot;);</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">// keyString === 'string'</p>
+<p style="margin:0px;">myMap.get(keyString);    // &quot;和键'string'关联的值&quot;</p>
+<p style="margin:0px;">myMap.get(&quot;string&quot;);   // &quot;和键'string'关联的值&quot;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">// 2.key是对象</p>
+<p style="margin:0px;">let myMap = new Map();</p>
+<p style="margin:0px;">let keyObj = {}, </p>
+<p style="margin:0px;"> </p>
+<p style="margin:0px;">myMap.set(keyObj, &quot;和键 keyObj 关联的值&quot;);</p>
+<p style="margin:0px;">myMap.get(keyObj); // &quot;和键 keyObj 关联的值&quot;</p>
+<p style="margin:0px;">myMap.get({}); // undefined, 因为 keyObj !== {}</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">// 3. key也可以是函数或者NaN                         </p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

@@ -1,0 +1,49 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">package com.mahe666.filter;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">import lombok.extern.slf4j.Slf4j;</p>
+<p style="margin:0px;">import org.springframework.core.annotation.Order;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">import javax.servlet.*;</p>
+<p style="margin:0px;">import javax.servlet.annotation.WebFilter;</p>
+<p style="margin:0px;">import javax.servlet.http.HttpServletResponse;</p>
+<p style="margin:0px;">import java.io.IOException;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">@Slf4j</p>
+<p style="margin:0px;">@Order(1)</p>
+<p style="margin:0px;">@WebFilter(filterName = &quot;CORSFilter&quot;,urlPatterns = {&quot;/*&quot;})</p>
+<p style="margin:0px;">public class CORSFilter implements Filter {</p>
+<p style="margin:0px;">    @Override</p>
+<p style="margin:0px;">    public void init(FilterConfig filterConfig) throws ServletException {</p>
+<p style="margin:0px;">        log.info(&quot;初始化 CORSFilter&quot;);</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    @Override</p>
+<p style="margin:0px;">    public void destroy() {</p>
+<p style="margin:0px;">        log.info(&quot;销毁 CORSFilter&quot;);</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    @Override</p>
+<p style="margin:0px;">    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {</p>
+<p style="margin:0px;">        HttpServletResponse resp = (HttpServletResponse) response;</p>
+<p style="margin:0px;">        resp.setHeader(&quot;Access-Control-Allow-Origin&quot;, &quot;*&quot;); //  这里最好明确的写允许的域名</p>
+<p style="margin:0px;">        resp.setHeader(&quot;Access-Control-Allow-Methods&quot;, &quot;POST, GET, OPTIONS, DELETE, PUT&quot;);</p>
+<p style="margin:0px;">        resp.setHeader(&quot;Access-Control-Max-Age&quot;, &quot;3600&quot;);</p>
+<p style="margin:0px;">        resp.setHeader(&quot;Access-Control-Allow-Headers&quot;, &quot;Content-Type,Access-Token,Authorization,ybg&quot;);</p>
+<p style="margin:0px;">        chain.doFilter(request, response);</p>
+<p style="margin:0px;">    }</p>
+<p style="margin:0px;">}</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

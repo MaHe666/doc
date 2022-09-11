@@ -1,0 +1,37 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;"><span style=" font-weight:600;">导出</span></p>
+<p style="margin:0px;">直接拷贝物理文件</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">在可视化工具中手动导出</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">使用命令行导出(cmd等)  mysqldump 命令行使用</p>
+<p style="margin:0px;">mysqldump -h主机名 -u用户名 -p密码 数据库 表名 &gt;物理磁盘位置/文件名</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style=" font-weight:600;">注意：</span></p>
+<p style="margin:0px;">	文件名不要忘记加.sql后缀</p>
+<p style="margin:0px;">	不加表名则视为导出数据库</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style=" font-weight:600;">导入</span></p>
+<p style="margin:0px;">-- 登录的情况下</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">选中数据库</p>
+<p style="margin:0px;">use 数据库名;</p>
+<p style="margin:0px;">选择源文件</p>
+<p style="margin:0px;">source 物理磁盘位置/文件名</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">-- 未登录的情况下</p>
+<p style="margin:0px;">mysql -u用户名 -p密码 库&lt; 源文件</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

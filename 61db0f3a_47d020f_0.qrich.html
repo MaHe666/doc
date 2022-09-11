@@ -1,0 +1,26 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">栈的特点：</p>
+<p style="margin:0px;">	1，栈描述的是<span style=" font-weight:600;">方法执行的内存模型</span>。每个方法被调用的时候都会创建一个栈帧（存储局部变量、操作数、方法出口等）</p>
+<p style="margin:0px;">	2，JVM为每个线程创建一个栈，用于存放该线程执行方法的信息（实际参数、局部变量等）</p>
+<p style="margin:0px;">	3，栈属于线程私有，不能实现线程间共享</p>
+<p style="margin:0px;">	4，栈的存储特性是“先进后出，后进先出”</p>
+<p style="margin:0px;">	5，栈是由系统自动分配，速度快！栈是一个连续的内存空间<br /></p>
+<p style="margin:0px;">线程是一个新的名词，后续我们会知道什么是线程。我们启动一个程序的时候会包含很多的线程</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">注意！方法的执行的相关调用都在栈里面。每调用一次方法都会创建一个栈帧在栈里面（方法里面的局部变量、操作数、方法出口等都会存放在栈帧里面，这里我们只需要记住方法中的局部变量都在栈帧里面就好）。假设我们现在的这个方法为A，它调用了一个新的方法B（A方法没有结束），那么就会在栈里面创建一个B方法被调用时（单次被调用）的栈帧，然后当B方法执行完，B方法的栈帧就会关闭，然后才是A方法（后进先出）。而当这个线程都执行完后，整个栈空间也都会关闭。</p>
+<p style="margin:0px;">栈是连续的空间，并没有像堆一样胡乱的摆放</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

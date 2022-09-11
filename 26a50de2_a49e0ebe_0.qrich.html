@@ -1,0 +1,42 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">import</span><span style="font-family:'Courier';"> pandas </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">as</span><span style="font-family:'Courier';"> pd</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;"># pandas序列中，data、name和index是非常重要的</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">''</span><span style="font-family:'Courier';">'</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">pandas序列的值和字典的键值对差不多</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">d={</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'x'</span><span style="font-family:'Courier';">:</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">100</span><span style="font-family:'Courier';">,</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'y'</span><span style="font-family:'Courier';">:</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">200</span><span style="font-family:'Courier';">,</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'c'</span><span style="font-family:'Courier';">:</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">300</span><span style="font-family:'Courier';">}</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">s1 = pd</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">Series(d)</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#204a87;">print</span><span style="font-family:'Courier';">(s1)</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">''</span><span style="font-family:'Courier';">'</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">s1 = pd</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">Series([</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">1</span><span style="font-family:'Courier';">, </span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">2</span><span style="font-family:'Courier';">, </span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">3</span><span style="font-family:'Courier';">], index=[</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">1</span><span style="font-family:'Courier';">, </span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">2</span><span style="font-family:'Courier';">, </span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">3</span><span style="font-family:'Courier';">], name=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'A'</span><span style="font-family:'Courier';">)</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">s2 = pd</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">Series([</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">10</span><span style="font-family:'Courier';">, </span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">20</span><span style="font-family:'Courier';">, </span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">30</span><span style="font-family:'Courier';">], index=[</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">1</span><span style="font-family:'Courier';">, </span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">2</span><span style="font-family:'Courier';">, </span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">3</span><span style="font-family:'Courier';">], name=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'B'</span><span style="font-family:'Courier';">)</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">s3 = pd</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">Series([</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">100</span><span style="font-family:'Courier';">, </span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">200</span><span style="font-family:'Courier';">, </span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">300</span><span style="font-family:'Courier';">], index=[</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">1</span><span style="font-family:'Courier';">, </span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">2</span><span style="font-family:'Courier';">, </span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">3</span><span style="font-family:'Courier';">], name=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'C'</span><span style="font-family:'Courier';">)</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;"># 注意加入的方式！！！</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;"># 键值对方式是以序列的index作为行号</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;"># 列表方式是以序列的index作为列号</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">df1 = pd</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">DataFrame({s1</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">name: s1, s2</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">name: s2, s3</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">name: s3})</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#204a87;">print</span><span style="font-family:'Courier';">(df1)</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">df2 = pd</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">DataFrame([s1, s2, s3])</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#204a87;">print</span><span style="font-family:'Courier';">(df2)</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

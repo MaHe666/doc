@@ -1,0 +1,66 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;!DOCTYPE</span><span style="font-family:'Courier';"> html</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;html</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; color:#00008b;">lang=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;en&quot;</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;head&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;meta</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; color:#00008b;">charset=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;UTF-8&quot;</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;title&gt;</span><span style="font-family:'Courier';">slot插槽</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;/title&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;script</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; color:#00008b;">src=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js&quot;</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;&lt;/script&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;/head&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;body&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">	&lt;!--在Vue.js中我们使用&lt;slot&gt;元素作为承载分发内容的出口，作者称其为插槽，可以应用在组合组件的场景中；--&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">	&lt;!--为了更方便的渲染服务器端传过来的数据--</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;div</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; color:#00008b;">id=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;app&quot;</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;todo&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;todo</span><span style="font-family:'Courier';">-title </span><span style="font-family:'Courier'; color:#00008b;">slot=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;todo-title&quot;</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; color:#00008b;">:title=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;title&quot;</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span><span style="font-family:'Courier';">&lt;/todo-title</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;todo</span><span style="font-family:'Courier';">-items </span><span style="font-family:'Courier'; color:#00008b;">slot=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;todo-items&quot;</span><span style="font-family:'Courier';"> v-</span><span style="font-family:'Courier'; color:#00008b;">for=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;item in items&quot;</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; color:#00008b;">:item=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;item&quot;</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span><span style="font-family:'Courier';">&lt;/todo-items</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;/todo&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;/div&gt;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;script&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">		//定义一个名为todo-title的待办标题组件 和 todo-items的待办内容组件        </span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">		Vue.component(</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;todo-title&quot;</span><span style="font-family:'Courier';">,{</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            props:[</span><span style="font-family:'Courier'; color:#2e8b57;">'title'</span><span style="font-family:'Courier';">],</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            template:</span><span style="font-family:'Courier'; color:#2e8b57;">'&lt;h1&gt;{{title}}&lt;/h1&gt;'</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        });</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        Vue.component(</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;todo-items&quot;</span><span style="font-family:'Courier';">,{</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            props:[</span><span style="font-family:'Courier'; color:#2e8b57;">'item'</span><span style="font-family:'Courier';">],</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            template:</span><span style="font-family:'Courier'; color:#2e8b57;">'&lt;li&gt;{{item}}&lt;/li&gt;'</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        })</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">		//第一步 定义一个待办事项的组件</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">		//第二步 我们需要让，代办事项的标题和值实现动态绑定，怎么做呢？我们可以留一个插槽！</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        Vue.component(</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;todo&quot;</span><span style="font-family:'Courier';">,{</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            template:   </span><span style="font-family:'Courier'; color:#2e8b57;">'&lt;div&gt;'</span><span style="font-family:'Courier';">+</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">								//将代码留出一个插槽，即slot</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                            </span><span style="font-family:'Courier'; color:#2e8b57;">'&lt;slot name=&quot;todo-title&quot;&gt;&lt;/slot&gt;'</span><span style="font-family:'Courier';">+</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                            </span><span style="font-family:'Courier'; color:#2e8b57;">'&lt;ul&gt;'</span><span style="font-family:'Courier';">+</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                                </span><span style="font-family:'Courier'; color:#2e8b57;">'&lt;slot name=&quot;todo-items&quot;&gt;&lt;/slot&gt;'</span><span style="font-family:'Courier';">+</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                            </span><span style="font-family:'Courier'; color:#2e8b57;">'&lt;/ul&gt;'</span><span style="font-family:'Courier';">+</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                        </span><span style="font-family:'Courier'; color:#2e8b57;">'&lt;/div&gt;'</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        });</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        var app = new Vue({</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            el:</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;#app&quot;</span><span style="font-family:'Courier';">,</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            data:{</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                title:</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;我爱的&quot;</span><span style="font-family:'Courier';">,</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                items:[</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;我爱java&quot;</span><span style="font-family:'Courier';">,</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;我爱vue&quot;</span><span style="font-family:'Courier';">,</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;我爱slot&quot;</span><span style="font-family:'Courier';">]</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        })</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;/script&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;/body&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;/html&gt;</span></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

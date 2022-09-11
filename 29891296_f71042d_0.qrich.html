@@ -1,0 +1,50 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">1，在官网下载好源文件的tar.gz压缩包后</p>
+<p style="margin:0px;">需要用Windows PowerShell进行解压</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">2，进到压缩包的目录，执行解压命令</p>
+<p style="margin:0px;">tar -zxvf 带后缀的文件名</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">3，进到解压好的文件的bin目录</p>
+<p style="margin:0px;">使用管理员模式的cmd运行 zkServer.cmd</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">4，<span style=" font-weight:600;">初次运行会报错闪退</span></p>
+<p style="margin:0px;">编辑一下bin目录下的 zkServer.cmd，在endlocal指令上面加一句pause</p>
+<p style="margin:0px;">这样他就不会在报错时闪退了</p>
+<p style="margin:0px;">进入到zookeeper文件夹下的conf文件夹</p>
+<p style="margin:0px;">将zoo_sample.cfg文件复制一份，重命名为zoo.cfg</p>
+<p style="margin:0px;">这个文件就是zookeeper的配置文件</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">如果还有报错信息且报错信息为<span style=" font-weight:600;">错误: 找不到或无法加载主类 org.apache.zookeeper.server.quorum.QuorumPeerMain</span></p>
+<p style="margin:0px;">需要下载对应版本的bin压缩文件，将该包下的lib目录拷贝到我们需要的zookeeper源文件夹中</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">5，<span style=" font-weight:600;">注意事项！</span></p>
+<p style="margin:0px;">配置文件的下面两个项需要注意</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">#临时数据存储的目录（可写相对路径）</p>
+<p style="margin:0px;">dataDir=../tmp/zookeeper</p>
+<p style="margin:0px;">#zookeeper的端口号</p>
+<p style="margin:0px;">clientPort=2181   </p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

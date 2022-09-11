@@ -1,0 +1,32 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">@Configuration</p>
+<p style="margin:0px;">public class ConfigBean {</p>
+<p style="margin:0px;">    //@Configuration -- spring  applicationContext.xml</p>
+<p style="margin:0px;">    /**</p>
+<p style="margin:0px;">     * IRule:</p>
+<p style="margin:0px;">     * RoundRobinRule 轮询策略</p>
+<p style="margin:0px;">     * RandomRule 随机策略</p>
+<p style="margin:0px;">     * AvailabilityFilteringRule ： 会先过滤掉，跳闸，访问故障的服务~，对剩下的进行轮询~</p>
+<p style="margin:0px;">     * RetryRule ： 会先按照轮询获取服务~，如果服务获取失败，则会在指定的时间内进行，重试</p>
+<p style="margin:0px;">     */</p>
+<p style="margin:0px;">    @Bean</p>
+<p style="margin:0px;">    public IRule myRule() {</p>
+<p style="margin:0px;">        return new RandomRule();//使用随机策略</p>
+<p style="margin:0px;">        //return new RoundRobinRule();//使用轮询策略</p>
+<p style="margin:0px;">        //return new AvailabilityFilteringRule();</p>
+<p style="margin:0px;">        //return new RetryRule();</p>
+<p style="margin:0px;">    }</p>
+<p style="margin:0px;">}</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

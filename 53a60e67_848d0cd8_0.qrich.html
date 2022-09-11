@@ -1,0 +1,67 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">Geospatial</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">这个功能可以推算地理位置的信息：两地之间的人，方圆几里的人</p>
+<p style="margin:0px;">朋友定位，附近的人，打车距离计算！</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">相关文章</p>
+<p style="margin:0px;"><a href="https://www.redis.net.cn/order/3685.html"><span style=" text-decoration: underline; color:#0000ff;">https://www.redis.net.cn/order/3685.html</span></a></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">有效的经度从-180度到180度。</p>
+<p style="margin:0px;">有效的纬度从-85.05112878度到85.05112878度。</p>
+<p style="margin:0px;">当坐标位置超出上述指定范围时，该命令将会返回一个错误。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">常用的方式是父名称是国家，子名称是城市</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">添加地理位置</p>
+<p style="margin:0px;">	geoadd 父名称 经度 纬度 子名称</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">获取地理位置</p>
+<p style="margin:0px;">	geopos 父名称 子名称</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">查看两地之间的距离，单位：m表示为米，km表示为千米，mi表示为英里，ft表示为英尺</p>
+<p style="margin:0px;">	geodist 父名称 子名称1 子名称2 单位</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">以给定的经纬度为中心，找出某一半径内的元素</p>
+<p style="margin:0px;">	georadius 父名称(搜索范围) 经度 纬度 半径长度 单位</p>
+<p style="margin:0px;">	输出的时候同时输出两地距离</p>
+<p style="margin:0px;">		georadius 父名称(搜索范围) 经度 纬度 半径长度 单位 withdist</p>
+<p style="margin:0px;">	输出的时候同时输出查询结果的经纬度</p>
+<p style="margin:0px;">		georadius 父名称(搜索范围) 经度 纬度 半径长度 单位 withcoord</p>
+<p style="margin:0px;">	输出上面两个语句时限制输出个数</p>
+<p style="margin:0px;">		在语句后面加 count 数量</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">以已存在的元素为中心，找出某一半径内的元素</p>
+<p style="margin:0px;">	georadiusbymember 父名称(搜索范围) 元素名 半径长度 单位</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">返回一个或多个位置元素的geohash表示，将二维的经纬度转换为一维的字符串，如果两个字符串越接近，那么则距离越近</p>
+<p style="margin:0px;">	geohash 父名称 子名称1 子名称2</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">----------------------------------------------------------------------------------</p>
+<p style="margin:0px;">Geospatial的底层原理其实就是ZSet</p>
+<p style="margin:0px;">可以看到上面没有删除地理位置的命令，所以想要删除掉地理位置信息，需要用到zrem命令</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

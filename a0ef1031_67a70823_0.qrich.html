@@ -1,0 +1,44 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;%@ page contentType=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;text/html;charset=UTF-8&quot;</span><span style="font-family:'Courier';"> language=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;java&quot;</span><span style="font-family:'Courier';"> %&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;%@ taglib prefix=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;c&quot;</span><span style="font-family:'Courier';"> uri=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;http://java.sun.com/jsp/jstl/core&quot;</span><span style="font-family:'Courier';"> %&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;html&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;head&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    &lt;title&gt;Title&lt;/title&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;/head&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;body&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;%--c:set的作用为设置一个变量，变量名为score，值为85--%&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;c:set var=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;score&quot;</span><span style="font-family:'Courier';"> value=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;85&quot;</span><span style="font-family:'Courier';">/&gt;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;%--c:choose就是java中的switch--%&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;c:choose&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    &lt;%--c:when就是switch中的case--%&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    &lt;c:when test=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;${score &gt;= 90}&quot;</span><span style="font-family:'Courier';">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        &lt;c:out value=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;你的成绩为优秀&quot;</span><span style="font-family:'Courier';">/&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    &lt;/c:when&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    &lt;c:when test=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;${score &gt;= 80}&quot;</span><span style="font-family:'Courier';">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        &lt;c:out value=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;你的成绩为良好&quot;</span><span style="font-family:'Courier';">/&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    &lt;/c:when&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    &lt;c:when test=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;${score &gt;= 60}&quot;</span><span style="font-family:'Courier';">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        &lt;c:out value=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;你的成绩为一般&quot;</span><span style="font-family:'Courier';">/&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    &lt;/c:when&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    &lt;c:when test=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;${score &lt;= 60}&quot;</span><span style="font-family:'Courier';">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        &lt;c:out value=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;你的成绩为不及格&quot;</span><span style="font-family:'Courier';">/&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    &lt;/c:when&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;/c:choose&gt;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;/body&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;/html&gt;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

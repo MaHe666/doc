@@ -1,0 +1,34 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">死锁的情况之一：</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">假设两个线程分别持有一把锁，然后这两个线程去尝试获取对方的那个锁（就像两个小孩互相抢东西）</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">这个时候就会产生死锁</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">死锁产生的四个必要条件</p>
+<ol style="margin: 0px; -qt-list-indent: 1;">
+<li style="margin:0px;">互斥：在一段时间内某资源仅为一进程所占用</li>
+<li style="margin:0px;">请求与保持：当进程因请求资源而阻塞时，对已获得的资源保持不放</li>
+<li style="margin:0px;">不可剥夺：进程已获得的资源在未使用完之前，不能剥夺，只能在使用完时由自己释放</li>
+<li style="margin:0px;">循环等待：在发生死锁时，必然存在一个进程—资源的环形链</li>
+</ol>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">如果需要避免死锁：银行家算法</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

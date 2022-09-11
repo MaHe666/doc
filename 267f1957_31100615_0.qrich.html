@@ -1,0 +1,54 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">server:</p>
+<p style="margin:0px;">  port: 8801</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">spring:</p>
+<p style="margin:0px;">  application:</p>
+<p style="margin:0px;">    name: cloud-stream-provider</p>
+<p style="margin:0px;">  cloud:</p>
+<p style="margin:0px;">    stream:</p>
+<p style="margin:0px;">      binders: # 在此处配置要绑定的rabbitmq的服务信息；</p>
+<p style="margin:0px;">        defaultRabbit: # 表示定义的名称，用于于binding整合</p>
+<p style="margin:0px;">          type: rabbit # 消息组件类型</p>
+<p style="margin:0px;">          environment: # 设置rabbitmq的相关的环境配置</p>
+<p style="margin:0px;">            spring:</p>
+<p style="margin:0px;">              rabbitmq:</p>
+<p style="margin:0px;">                host: localhost</p>
+<p style="margin:0px;">                port: 5672</p>
+<p style="margin:0px;">                username: guest</p>
+<p style="margin:0px;">                password: guest</p>
+<p style="margin:0px;">      bindings: # 服务的整合处理</p>
+<p style="margin:0px;">        output: # 这个名字是一个通道的名称</p>
+<p style="margin:0px;">          destination: studyExchange # 表示要使用的Exchange名称定义</p>
+<p style="margin:0px;">          content-type: application/json # 设置消息类型，本次为json，文本则设置“text/plain”</p>
+<p style="margin:0px;">          binder: defaultRabbit # 设置要绑定的消息服务的具体设置</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">eureka:</p>
+<p style="margin:0px;">  client: # 客户端进行Eureka注册的配置</p>
+<p style="margin:0px;">    service-url:</p>
+<p style="margin:0px;">      defaultZone: http://eureka7011.com:7011/eureka,http://eureka7012.com:7012/eureka,http://eureka7013.com:7013/eureka</p>
+<p style="margin:0px;">  instance:</p>
+<p style="margin:0px;">    lease-renewal-interval-in-seconds: 2 # 设置心跳的时间间隔（默认是30秒）</p>
+<p style="margin:0px;">    lease-expiration-duration-in-seconds: 5 # 如果现在超过了5秒的间隔（默认是90秒）</p>
+<p style="margin:0px;">    instance-id: send-8801.com  # 在信息列表时显示主机名称</p>
+<p style="margin:0px;">    prefer-ip-address: true     # 访问的路径变为IP地址</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

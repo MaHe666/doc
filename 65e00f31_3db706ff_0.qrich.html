@@ -1,0 +1,107 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">package com.yxrj.hdwlwrj.system.mqtt;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">import org.springframework.boot.context.properties.ConfigurationProperties;</p>
+<p style="margin:0px;">import org.springframework.context.annotation.Bean;</p>
+<p style="margin:0px;">import org.springframework.context.annotation.Configuration;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">import javax.annotation.Resource;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">@Configuration</p>
+<p style="margin:0px;">@ConfigurationProperties(MqttConfiguration.PREFIX)</p>
+<p style="margin:0px;">public class MqttConfiguration {</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    @Resource</p>
+<p style="margin:0px;">    private MqttPushClient mqttPushClient;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    public static final String PREFIX=&quot;mqtt&quot;;</p>
+<p style="margin:0px;">    private String host;</p>
+<p style="margin:0px;">    private String clientid;</p>
+<p style="margin:0px;">    private String username;</p>
+<p style="margin:0px;">    private String password;</p>
+<p style="margin:0px;">    private String topic;</p>
+<p style="margin:0px;">    private int timeout;</p>
+<p style="margin:0px;">    private int keepalive;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    @Bean</p>
+<p style="margin:0px;">    public MqttPushClient getMqttPushClient() {</p>
+<p style="margin:0px;">        mqttPushClient.connect(host, clientid, username, password, timeout, keepalive);</p>
+<p style="margin:0px;">        // 以/#结尾表示订阅所有以test开头的主题</p>
+<p style="margin:0px;">//        mqttPushClient.subscribe(&quot;test/#&quot;, 0);</p>
+<p style="margin:0px;">        String mqtt_topic[] = topic.split(&quot;,&quot;);</p>
+<p style="margin:0px;">        for (int i = 0; i &lt; mqtt_topic.length; i++) {</p>
+<p style="margin:0px;">            mqttPushClient.subscribe(mqtt_topic[i],0);</p>
+<p style="margin:0px;">        }</p>
+<p style="margin:0px;">        return mqttPushClient;</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    public String getHost() {</p>
+<p style="margin:0px;">        return host;</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    public void setHost(String host) {</p>
+<p style="margin:0px;">        this.host = host;</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    public String getClientid() {</p>
+<p style="margin:0px;">        return clientid;</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    public void setClientid(String clientid) {</p>
+<p style="margin:0px;">        this.clientid = clientid;</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    public String getUsername() {</p>
+<p style="margin:0px;">        return username;</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    public void setUsername(String username) {</p>
+<p style="margin:0px;">        this.username = username;</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    public String getPassword() {</p>
+<p style="margin:0px;">        return password;</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    public void setPassword(String password) {</p>
+<p style="margin:0px;">        this.password = password;</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    public String getTopic() {</p>
+<p style="margin:0px;">        return topic;</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    public void setTopic(String topic) {</p>
+<p style="margin:0px;">        this.topic = topic;</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    public int getTimeout() {</p>
+<p style="margin:0px;">        return timeout;</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    public void setTimeout(int timeout) {</p>
+<p style="margin:0px;">        this.timeout = timeout;</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    public int getKeepalive() {</p>
+<p style="margin:0px;">        return keepalive;</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    public void setKeepalive(int keepalive) {</p>
+<p style="margin:0px;">        this.keepalive = keepalive;</p>
+<p style="margin:0px;">    }</p>
+<p style="margin:0px;">}</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

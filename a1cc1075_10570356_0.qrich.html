@@ -1,0 +1,42 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;%@ page </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">import</span><span style="font-family:'Courier';">=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;java.util.ArrayList&quot;</span><span style="font-family:'Courier';"> %&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;%@ page contentType=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;text/html;charset=UTF-8&quot;</span><span style="font-family:'Courier';"> language=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;java&quot;</span><span style="font-family:'Courier';"> %&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;%@ taglib prefix=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;c&quot;</span><span style="font-family:'Courier';"> uri=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;http://java.sun.com/jsp/jstl/core&quot;</span><span style="font-family:'Courier';"> %&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;html&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;head&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    &lt;title&gt;Title&lt;/title&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;/head&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;body&gt;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;%</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    ArrayList&lt;String&gt; people = </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">new</span><span style="font-family:'Courier';"> ArrayList&lt;&gt;();</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    people</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">add(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;张三&quot;</span><span style="font-family:'Courier';">);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    people</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">add(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;李四&quot;</span><span style="font-family:'Courier';">);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    people</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">add(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;王五&quot;</span><span style="font-family:'Courier';">);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    people</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">add(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;赵六&quot;</span><span style="font-family:'Courier';">);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    people</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">add(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;田七&quot;</span><span style="font-family:'Courier';">);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    request</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">setAttribute(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;list&quot;</span><span style="font-family:'Courier';">,people);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">%&gt;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;%-- var是将循环到的每一个变量都命名为他的值，items是循环的列表 --%&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;%-- begin是开始遍历的下标，end是结束遍历的下标，step是步长，相当于在fori循环里面把i++变成i+=x --%&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;c:forEach var=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;people&quot;</span><span style="font-family:'Courier';"> items=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;${list}&quot;</span><span style="font-family:'Courier';">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    &lt;c:out value=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;${people}&quot;</span><span style="font-family:'Courier';">/&gt;&lt;br&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;/c:forEach&gt;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;/body&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;/html&gt;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

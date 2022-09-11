@@ -1,0 +1,49 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;"><span style=" font-size:13pt;">数据定义语言DDL用来创建数据库中的各种对象-----表、视图、索引、同义词、聚簇等如：</span><span style=" font-size:13pt; text-decoration: underline;">CREATE TABLE / VIEW / INDEX / SYN / CLUSTER</span><span style=" font-size:13pt;">| 表 视图 索引 同义词 簇。DDL操作是隐性提交的！不能rollback</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">所有的语句都使用分号结尾</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">连接数据库</p>
+<p style="margin:0px;">mysql -uroot -p		#除外，结尾不能带空格</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">修改密码</p>
+<p style="margin:0px;">update mysql.user set authentication_string=password('密码') where user='root' Host='localhost';</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">刷新权限</p>
+<p style="margin:0px;">flush privileges;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">查看所有数据库</p>
+<p style="margin:0px;">show databases;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">切换数据库</p>
+<p style="margin:0px;">use 数据库名;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">查看所有的表</p>
+<p style="margin:0px;">show tables;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">查看表的信息</p>
+<p style="margin:0px;">describe 表名；</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">创建数据库</p>
+<p style="margin:0px;">create database 数据库名；</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">退出连接</p>
+<p style="margin:0px;">exit;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

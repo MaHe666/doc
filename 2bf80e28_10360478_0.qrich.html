@@ -1,0 +1,48 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">class 类名(父类):</p>
+<p style="margin:0px;">	statement 1</p>
+<p style="margin:0px;">	statement 2</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style=" font-style:italic; color:#778899;">#类定义</span></p>
+<p style="margin:0px;">class people:</p>
+<p style="margin:0px;">    <span style=" font-style:italic; color:#778899;">#定义基本属性</span></p>
+<p style="margin:0px;">    name = <span style=" font-weight:600; color:#2e8b57;">''</span></p>
+<p style="margin:0px;">    age = <span style=" font-weight:600; color:#4682b4;">0</span></p>
+<p style="margin:0px;">    <span style=" font-style:italic; color:#778899;">#定义私有属性,私有属性在类外部无法直接进行访问</span></p>
+<p style="margin:0px;">    __weight = <span style=" font-weight:600; color:#4682b4;">0</span></p>
+<p style="margin:0px;">    <span style=" font-style:italic; color:#778899;">#定义构造方法</span></p>
+<p style="margin:0px;">    def __init__(self,n,a,w):</p>
+<p style="margin:0px;">        <span style=" font-weight:600; color:#204a87;">self</span><span style=" font-weight:600; color:#4682b4;">.</span>name = n</p>
+<p style="margin:0px;">        <span style=" font-weight:600; color:#204a87;">self</span><span style=" font-weight:600; color:#4682b4;">.</span>age = a</p>
+<p style="margin:0px;">        <span style=" font-weight:600; color:#204a87;">self</span><span style=" font-weight:600; color:#4682b4;">.</span>__weight = w</p>
+<p style="margin:0px;">    def speak(self):</p>
+<p style="margin:0px;">        <span style=" font-weight:600; color:#204a87;">print</span>(<span style=" font-weight:600; color:#2e8b57;">&quot;%s 说: 我 %d 岁。&quot;</span> %(<span style=" font-weight:600; color:#204a87;">self</span><span style=" font-weight:600; color:#4682b4;">.</span>name,<span style=" font-weight:600; color:#204a87;">self</span><span style=" font-weight:600; color:#4682b4;">.</span>age))</p>
+<p style="margin:0px;"> </p>
+<p style="margin:0px;"><span style=" font-style:italic; color:#778899;">#单继承示例</span></p>
+<p style="margin:0px;">class student(people):</p>
+<p style="margin:0px;">    grade = <span style=" font-weight:600; color:#2e8b57;">''</span></p>
+<p style="margin:0px;">    def __init__(self,n,a,w,g):</p>
+<p style="margin:0px;">        <span style=" font-style:italic; color:#778899;">#调用父类的构函</span></p>
+<p style="margin:0px;">        people<span style=" font-weight:600; color:#4682b4;">.</span>__init__(<span style=" font-weight:600; color:#204a87;">self</span>,n,a,w)</p>
+<p style="margin:0px;">        <span style=" font-weight:600; color:#204a87;">self</span><span style=" font-weight:600; color:#4682b4;">.</span>grade = g</p>
+<p style="margin:0px;">    <span style=" font-style:italic; color:#778899;">#覆写父类的方法</span></p>
+<p style="margin:0px;">    def speak(self):</p>
+<p style="margin:0px;">        <span style=" font-weight:600; color:#204a87;">print</span>(<span style=" font-weight:600; color:#2e8b57;">&quot;%s 说: 我 %d 岁了，我在读 %d 年级&quot;</span>%(<span style=" font-weight:600; color:#204a87;">self</span><span style=" font-weight:600; color:#4682b4;">.</span>name,<span style=" font-weight:600; color:#204a87;">self</span><span style=" font-weight:600; color:#4682b4;">.</span>age,<span style=" font-weight:600; color:#204a87;">self</span><span style=" font-weight:600; color:#4682b4;">.</span>grade))</p>
+<p style="margin:0px;"> </p>
+<p style="margin:0px;">s = student(<span style=" font-weight:600; color:#2e8b57;">'ken'</span>,<span style=" font-weight:600; color:#4682b4;">10</span>,<span style=" font-weight:600; color:#4682b4;">60</span>,<span style=" font-weight:600; color:#4682b4;">3</span>)</p>
+<p style="margin:0px;">s<span style=" font-weight:600; color:#4682b4;">.</span>speak()</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

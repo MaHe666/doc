@@ -1,0 +1,44 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">package com.mahe666.springcloud.service;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">import com.mahe666.springcloud.pojo.Dept;</p>
+<p style="margin:0px;">import org.springframework.cloud.openfeign.FeignClient;</p>
+<p style="margin:0px;">import org.springframework.stereotype.Component;</p>
+<p style="margin:0px;">import org.springframework.web.bind.annotation.GetMapping;</p>
+<p style="margin:0px;">import org.springframework.web.bind.annotation.PathVariable;</p>
+<p style="margin:0px;">import org.springframework.web.bind.annotation.PostMapping;</p>
+<p style="margin:0px;">import org.springframework.web.bind.annotation.RequestMapping;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">import java.util.List;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">//服务名</p>
+<p style="margin:0px;">@Component</p>
+<p style="margin:0px;">@FeignClient(value = &quot;SPRINGCLOUD-PROVIDER-DEPT&quot;)</p>
+<p style="margin:0px;">@RequestMapping(&quot;/dept&quot;)</p>
+<p style="margin:0px;">public interface DeptClientService {</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    @PostMapping(&quot;/add&quot;)</p>
+<p style="margin:0px;">    public boolean addDept(Dept dept);</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    @GetMapping(&quot;/selectById/{id}&quot;)</p>
+<p style="margin:0px;">    public Dept selectById(@PathVariable(&quot;id&quot;) Long id);</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    @GetMapping(&quot;/selectAll&quot;)</p>
+<p style="margin:0px;">    public List&lt;Dept&gt; selectAll();</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">}</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

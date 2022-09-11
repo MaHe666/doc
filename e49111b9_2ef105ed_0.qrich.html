@@ -1,0 +1,89 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">package com.mahe666.config;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">import org.springframework.context.annotation.Bean;</p>
+<p style="margin:0px;">import org.springframework.context.annotation.Configuration;</p>
+<p style="margin:0px;">import org.springframework.core.env.Environment;</p>
+<p style="margin:0px;">import org.springframework.core.env.Profiles;</p>
+<p style="margin:0px;">import springfox.documentation.builders.PathSelectors;</p>
+<p style="margin:0px;">import springfox.documentation.builders.RequestHandlerSelectors;</p>
+<p style="margin:0px;">import springfox.documentation.service.ApiInfo;</p>
+<p style="margin:0px;">import springfox.documentation.service.Contact;</p>
+<p style="margin:0px;">import springfox.documentation.spi.DocumentationType;</p>
+<p style="margin:0px;">import springfox.documentation.spring.web.plugins.Docket;</p>
+<p style="margin:0px;">import springfox.documentation.swagger2.annotations.EnableSwagger2;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">import java.util.ArrayList;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">@Configuration</p>
+<p style="margin:0px;">//开启Swagger2</p>
+<p style="margin:0px;">@EnableSwagger2</p>
+<p style="margin:0px;">public class MySwaggerConfig {</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    //配置Swagger2的Docket的Bean示例</p>
+<p style="margin:0px;">    @Bean</p>
+<p style="margin:0px;">    public Docket docket(Environment environment){</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style=" font-weight:600;">        //设置需要显示Swagger的环境</span></p>
+<p style="margin:0px;"><span style=" font-weight:600;">        Profiles of = Profiles.of(&quot;test&quot;);</span></p>
+<p style="margin:0px;"><span style=" font-weight:600;">        //判断当前是否处于该环境</span></p>
+<p style="margin:0px;"><span style=" font-weight:600;">        boolean b = environment.acceptsProfiles(of);</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">        return new Docket(DocumentationType.SWAGGER_2)</p>
+<p style="margin:0px;">                .apiInfo(apiInfo())</p>
+<p style="margin:0px;">                <span style=" font-weight:600;">//是否启用swagger，如果值为false，则不能访问</span></p>
+<p style="margin:0px;"><span style=" font-weight:600;">                //通过 enable() 接收此参数判断是否要显示</span></p>
+<p style="margin:0px;"><span style=" font-weight:600;">                .enable(b)</span></p>
+<p style="margin:0px;">                .select()</p>
+<p style="margin:0px;">                    //RequestHandlerSelectors：配置要扫描接口的方式</p>
+<p style="margin:0px;">                    /*</p>
+<p style="margin:0px;">                               basePackage()，指定需要swagger扫描的包</p>
+<p style="margin:0px;">                               any()，扫描全部</p>
+<p style="margin:0px;">                               none()，都不扫描</p>
+<p style="margin:0px;">                               withClassAnnotation()，扫描类上的注解</p>
+<p style="margin:0px;">                               withMethodAnnotation()，扫描方法上的注解</p>
+<p style="margin:0px;">                            */</p>
+<p style="margin:0px;">                    .apis(RequestHandlerSelectors.basePackage(&quot;com.mahe666.controller&quot;))</p>
+<p style="margin:0px;">                    //PathSelectors：通过路径过滤</p>
+<p style="margin:0px;">                    /*</p>
+<p style="margin:0px;">                           any()，扫描全部</p>
+<p style="margin:0px;">                           none()，都不扫描</p>
+<p style="margin:0px;">                           regex()，通过正则表达式扫描</p>
+<p style="margin:0px;">                           ant()，扫描路径下的</p>
+<p style="margin:0px;">                        */</p>
+<p style="margin:0px;">                    .paths(PathSelectors.ant(&quot;/User/**&quot;))</p>
+<p style="margin:0px;">                    //build工厂模式</p>
+<p style="margin:0px;">                    .build();</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    //配置Swagger信息</p>
+<p style="margin:0px;">    private ApiInfo apiInfo(){</p>
+<p style="margin:0px;">        //覆盖掉默认的接口文档信息</p>
+<p style="margin:0px;">        return new ApiInfo(</p>
+<p style="margin:0px;">                &quot;mahe666 的接口文档&quot;,</p>
+<p style="margin:0px;">                &quot;作者好帅啊&quot;,</p>
+<p style="margin:0px;">                &quot;v1.0&quot;,</p>
+<p style="margin:0px;">                //Terms of Service</p>
+<p style="margin:0px;">                &quot;urn:tos&quot;,</p>
+<p style="margin:0px;">                new Contact(&quot;mahe666&quot;,&quot;&quot;,&quot;m13234666930@163.com&quot;),</p>
+<p style="margin:0px;">                &quot;Apache 2.0&quot;,</p>
+<p style="margin:0px;">                &quot;http://www.apache.org/licenses/LICENSE-2.0&quot;,</p>
+<p style="margin:0px;">                new ArrayList()</p>
+<p style="margin:0px;">        );</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">}</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

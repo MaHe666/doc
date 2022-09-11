@@ -1,0 +1,30 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">update更改的属性之间需要用 ',' 连接，如果需要过滤多余的逗号，就使用set标签</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">&lt;update id=&quot;updateAuthorIfNecessary&quot;&gt;</p>
+<p style="margin:0px;">  update Author</p>
+<p style="margin:0px;">    &lt;set&gt;</p>
+<p style="margin:0px;">      &lt;if test=&quot;username != null&quot;&gt;username=#{username},&lt;/if&gt;</p>
+<p style="margin:0px;">      &lt;if test=&quot;password != null&quot;&gt;password=#{password},&lt;/if&gt;</p>
+<p style="margin:0px;">      &lt;if test=&quot;email != null&quot;&gt;email=#{email},&lt;/if&gt;</p>
+<p style="margin:0px;">      &lt;if test=&quot;bio != null&quot;&gt;bio=#{bio}&lt;/if&gt;</p>
+<p style="margin:0px;">    &lt;/set&gt;</p>
+<p style="margin:0px;">  where id=#{id}</p>
+<p style="margin:0px;">&lt;/update&gt;</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

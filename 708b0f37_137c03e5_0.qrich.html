@@ -1,0 +1,52 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">定义store的时候，在与state平级的位置定义</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">const store = new Vuex.store({</p>
+<p style="margin:0px;">	state:{</p>
+<p style="margin:0px;">		count:0</p>
+<p style="margin:0px;">	},</p>
+<p style="margin:0px;">	mutations:{</p>
+<p style="margin:0px;">		//事件处理函数</p>
+<p style="margin:0px;">		add(state){</p>
+<p style="margin:0px;">			//变更状态</p>
+<p style="margin:0px;">			state.count++</p>
+<p style="margin:0px;">		}</p>
+<p style="margin:0px;">	}</p>
+<p style="margin:0px;">})</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">-----------------------------------------------------</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">第一种方式，在组件中调用mutations函数</p>
+<p style="margin:0px;">this.$store.commit('函数名')</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">第二种方式，按需导入 mapMutations 函数</p>
+<p style="margin:0px;">通过刚才导入的 mapMutations 函数，将需要的 mutations 函数，映射为当前组件的methods方法</p>
+<p style="margin:0px;">import { mapMutations } from 'vuex'</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">methods:{</p>
+<p style="margin:0px;">	...mapMutations(['add','addN'])</p>
+<p style="margin:0px;">	add(){</p>
+<p style="margin:0px;">		this.add();</p>
+<p style="margin:0px;">		this.addN(3);</p>
+<p style="margin:0px;">	}</p>
+<p style="margin:0px;">}</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style=" font-weight:600;">注意！</span></p>
+<p style="margin:0px;">mutations中的方法不能是异步的</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

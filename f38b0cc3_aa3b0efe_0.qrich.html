@@ -1,0 +1,71 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">迭代器</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">it = iter(list)    # 创建迭代器对象</p>
+<p style="margin:0px;">print(next(it))   # 输出迭代器的下一个元素</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style=" font-size:large; font-weight:696; color:#333333; background-color:#ffffff;">StopIteration</span></p>
+<p style="margin:0px;">StopIteration 异常用于标识迭代的完成，防止出现无限循环的情况，在 __next__() 方法中我们可以设置在完成指定循环次数后触发 StopIteration 异常来结束迭代。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">例：</p>
+<p style="margin:0px;">class MyNumbers:</p>
+<p style="margin:0px;">  def __iter__(self):</p>
+<p style="margin:0px;">    self.a = 1</p>
+<p style="margin:0px;">    return self</p>
+<p style="margin:0px;"> </p>
+<p style="margin:0px;">  def __next__(self):</p>
+<p style="margin:0px;">    if self.a &lt;= 20:</p>
+<p style="margin:0px;">      x = self.a</p>
+<p style="margin:0px;">      self.a += 1</p>
+<p style="margin:0px;">      return x</p>
+<p style="margin:0px;">    else:</p>
+<p style="margin:0px;">      raise StopIteration</p>
+<p style="margin:0px;"> </p>
+<p style="margin:0px;">myclass = MyNumbers()</p>
+<p style="margin:0px;">myiter = iter(myclass)</p>
+<p style="margin:0px;"> </p>
+<p style="margin:0px;">for x in myiter:</p>
+<p style="margin:0px;">  print(x)</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">生成器</p>
+<p style="margin:0px;">在 Python 中，使用了 yield 的函数被称为生成器（generator）。</p>
+<p style="margin:0px;">跟普通函数不同的是，生成器是一个返回迭代器的函数，只能用于迭代操作，更简单点理解生成器就是一个迭代器。</p>
+<p style="margin:0px;">在调用生成器运行的过程中，每次遇到 yield 时函数会暂停并保存当前所有的运行信息，返回 yield 的值, 并在下一次执行 next() 方法时从当前位置继续运行。</p>
+<p style="margin:0px;">调用一个生成器函数，返回的是一个迭代器对象。</p>
+<p style="margin:0px;">以下实例使用 yield 实现斐波那契数列：</p>
+<p style="margin:0px;"> </p>
+<p style="margin:0px;">import sys</p>
+<p style="margin:0px;"> </p>
+<p style="margin:0px;">def fibonacci(n): # 生成器函数 - 斐波那契</p>
+<p style="margin:0px;">    a, b, counter = 0, 1, 0</p>
+<p style="margin:0px;">    while True:</p>
+<p style="margin:0px;">        if (counter &gt; n): </p>
+<p style="margin:0px;">            return</p>
+<p style="margin:0px;">        yield a</p>
+<p style="margin:0px;">        a, b = b, a + b</p>
+<p style="margin:0px;">        counter += 1</p>
+<p style="margin:0px;">f = fibonacci(10) # f 是一个迭代器，由生成器返回生成</p>
+<p style="margin:0px;"> </p>
+<p style="margin:0px;">while True:</p>
+<p style="margin:0px;">    try:</p>
+<p style="margin:0px;">        print (next(f), end=&quot; &quot;)</p>
+<p style="margin:0px;">    except StopIteration:</p>
+<p style="margin:0px;">        sys.exit()</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

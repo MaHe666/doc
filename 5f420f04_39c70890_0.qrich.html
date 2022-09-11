@@ -1,0 +1,38 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">首先做一个简单的Controller接口</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">返回一个字符串Hello,SpringSecurity</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">测试通过后整合SpringSecurity</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">在pom.xml文件中添加SpringSecurity的maven依赖</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">添加后再访问接口，发现需要登录</p>
+<p style="margin:0px;">用户名为user，密码会在项目启动时输出在控制台</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">登录后就可访问刚刚开发的接口，</p>
+<p style="margin:0px;">想要退出，需要访问logout接口</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style=" font-weight:600;">这就是SpringSecurity的强大之处，只需要引入一个依赖，所有的接口就都会被保护起来</span></p>
+<p style="margin:0px;">思考：</p>
+<p style="margin:0px;">- 为什么引入 Spring Security 之后没有任何配置所有请求就要认证呢?</p>
+<p style="margin:0px;">- 在项目中明明没有登录界面，登录界面怎么来的呢？</p>
+<p style="margin:0px;">- 为什么使用 user 和 控制台密码 能登陆，登录时验证数据源存在哪里呢？</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

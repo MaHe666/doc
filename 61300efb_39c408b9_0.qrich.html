@@ -1,0 +1,55 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;"><span style=" font-weight:600;">注释</span></p>
+<p style="margin:0px;">&lt;%-- jsp注释 --%&gt;</p>
+<p style="margin:0px;">jsp的注释不会在客户端的调试中显示，但是Html的注释会显示！</p>
+<p style="margin:0px;">因为jsp的代码会全部放到java文件中，所以在<span style=" font-weight:600;">脚本片段中的注释要使用//</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-weight:600;"><br /></p>
+<p style="margin:0px;"><span style=" font-weight:600;">变量或者表达式</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;%= </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">new</span><span style="font-family:'Courier';"> java</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">util</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">Date() %&gt;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style=" font-weight:600;">java脚本片段</span></p>
+<p style="margin:0px;">第一种用法</p>
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;%</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">	</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">int</span><span style="font-family:'Courier';"> sum = </span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">0</span><span style="font-family:'Courier';">;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">	</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">for</span><span style="font-family:'Courier';">(</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">int</span><span style="font-family:'Courier';"> i = </span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">1</span><span style="font-family:'Courier';">; i &lt;= </span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">100</span><span style="font-family:'Courier';">; i++){</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">		sum += i;	</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">	}</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">	out</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">println(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;&lt;h1&gt;sum=&quot;</span><span style="font-family:'Courier';">+sum+</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;&lt;/h1&gt;&quot;</span><span style="font-family:'Courier';">);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">%&gt;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">第二种用法</p>
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;% </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">int</span><span style="font-family:'Courier';"> x = </span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">10</span><span style="font-family:'Courier';">; %&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;p&gt;马赫好帅&lt;/p&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;% out</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">write(x); %&gt;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">第三种用法</p>
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;% </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">for</span><span style="font-family:'Courier';"> (</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">int</span><span style="font-family:'Courier';"> i = </span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">0</span><span style="font-family:'Courier';">; i &lt; </span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">5</span><span style="font-family:'Courier';">; i++) { %&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;p&gt;HelloWorld &lt;%=i%&gt; &lt;/p&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;% } %&gt;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style=" font-weight:600;">声明</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;%!</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">static</span><span style="font-family:'Courier';">{</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">//静态代码块</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        System</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">out</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">println(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;Loading Servlet...&quot;</span><span style="font-family:'Courier';">);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">void</span><span style="font-family:'Courier';"> mahe666(){</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        System</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">out</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">println(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;进入方法mahe666&quot;</span><span style="font-family:'Courier';">);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">%&gt;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">声明里面的代码会被编译到java类中，而其他的则会被编译到 _jspService 方法中</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

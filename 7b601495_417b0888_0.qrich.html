@@ -1,0 +1,33 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">直接在实体类的属性上使用就可以（set方法也可以）</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">使用了Autowired注解之后，可以不写set方法</p>
+<p style="margin:0px;">前提是这个自动装配的属性在IOC容器中存在，且符合名字（byName的注解实现）</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">如果显示的定义了@Autowired( required = false )</p>
+<p style="margin:0px;">说明这个属性可以为null</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">如果自动装配的环境比较复杂，自动装配无法只凭借@Autowired完成的时候</p>
+<p style="margin:0px;">我们可以通过 @Qualifier注解 指定想要装配bean的id</p>
+<p style="margin:0px;">@Autowired</p>
+<p style="margin:0px;">@Qualifier(value = &quot;dog222&quot;)</p>
+<p style="margin:0px;">private Dog dog;</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

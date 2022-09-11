@@ -1,0 +1,33 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">server:</p>
+<p style="margin:0px;">  port: 8008</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">spring:</p>
+<p style="margin:0px;">  application:</p>
+<p style="margin:0px;">    name: cloud-eureka-client-colony-Hystrix-circuitbreaker-provider-service</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">eureka:</p>
+<p style="margin:0px;">  client:</p>
+<p style="margin:0px;">    #表示是否将自己注册进EurekaServer，默认为true</p>
+<p style="margin:0px;">    register-with-eureka: true</p>
+<p style="margin:0px;">    #是否从EurekaServer检索自己已有的注册信息，默认为true。单节点无所谓，如果是集群，那么必须设置为true才能配合Ribbon使用负载均衡</p>
+<p style="margin:0px;">    fetch-registry: true</p>
+<p style="margin:0px;">    service-url:</p>
+<p style="margin:0px;">      defaultZone: http://eureka7011.com:7011/eureka,http://eureka7012.com:7012/eureka,http://eureka7013.com:7013/eureka</p>
+<p style="margin:0px;">  instance:</p>
+<p style="margin:0px;">    instance-id: payment-hystrix-circuitbreaker-8008</p>
+<p style="margin:0px;">    prefer-ip-address: true</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

@@ -1,0 +1,35 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">package com.mahe666.springcloud.service;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">import com.mahe666.springcloud.entity.CommonResult;</p>
+<p style="margin:0px;">import com.mahe666.springcloud.entity.Payment;</p>
+<p style="margin:0px;">import org.springframework.cloud.openfeign.FeignClient;</p>
+<p style="margin:0px;">import org.springframework.stereotype.Service;</p>
+<p style="margin:0px;">import org.springframework.web.bind.annotation.*;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">@Service</p>
+<p style="margin:0px;">@FeignClient(value = &quot;CLOUD-EUREKA-CLIENT-PAYMENT-SERVICE&quot;)</p>
+<p style="margin:0px;">@RequestMapping(&quot;/payment&quot;)</p>
+<p style="margin:0px;">public interface PaymentService {</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    @PostMapping(&quot;/create&quot;)</p>
+<p style="margin:0px;">    public CommonResult create(@RequestBody Payment payment);</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    @GetMapping(&quot;/get/{id}&quot;)</p>
+<p style="margin:0px;">    public CommonResult getPaymentById(@PathVariable(&quot;id&quot;) Long id);</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">}</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

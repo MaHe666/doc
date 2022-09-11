@@ -1,0 +1,41 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">[users]</p>
+<p style="margin:0px;"># user 'root' with password 'secret' and the 'admin' role</p>
+<p style="margin:0px;">root = secret, admin</p>
+<p style="margin:0px;"># user 'guest' with the password 'guest' and the 'guest' role</p>
+<p style="margin:0px;">guest = guest, guest</p>
+<p style="margin:0px;"># user 'presidentskroob' with password '12345' (&quot;That's the same combination on</p>
+<p style="margin:0px;"># my luggage!!!&quot; ;)), and role 'president'</p>
+<p style="margin:0px;">presidentskroob = 12345, president</p>
+<p style="margin:0px;"># user 'darkhelmet' with password 'ludicrousspeed' and roles 'darklord' and 'schwartz'</p>
+<p style="margin:0px;">darkhelmet = ludicrousspeed, darklord, schwartz</p>
+<p style="margin:0px;"># user 'lonestarr' with password 'vespa' and roles 'goodguy' and 'schwartz'</p>
+<p style="margin:0px;">lonestarr = vespa, goodguy, schwartz</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"># -----------------------------------------------------------------------------</p>
+<p style="margin:0px;"># Roles with assigned permissions</p>
+<p style="margin:0px;"># </p>
+<p style="margin:0px;"># Each line conforms to the format defined in the</p>
+<p style="margin:0px;"># org.apache.shiro.realm.text.TextConfigurationRealm#setRoleDefinitions JavaDoc</p>
+<p style="margin:0px;"># -----------------------------------------------------------------------------</p>
+<p style="margin:0px;">[roles]</p>
+<p style="margin:0px;"># 'admin' role has all permissions, indicated by the wildcard '*'</p>
+<p style="margin:0px;">admin = *</p>
+<p style="margin:0px;"># The 'schwartz' role can do anything (*) with any lightsaber:</p>
+<p style="margin:0px;">schwartz = lightsaber:*</p>
+<p style="margin:0px;"># The 'goodguy' role is allowed to 'drive' (action) the winnebago (type) with</p>
+<p style="margin:0px;"># license plate 'eagle5' (instance specific id)</p>
+<p style="margin:0px;">goodguy = winnebago:drive:eagle5</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

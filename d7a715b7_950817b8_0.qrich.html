@@ -1,0 +1,37 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">    @RequestMapping(&quot;/helloworld&quot;)</p>
+<p style="margin:0px;">    public String helloworld(){</p>
+<p style="margin:0px;">        //使用限流规则</p>
+<p style="margin:0px;">        try(Entry entry = SphU.entry(&quot;HelloWorld&quot;)){</p>
+<p style="margin:0px;">            return &quot;Hello,Sentinel!\t&quot;+System.currentTimeMillis();</p>
+<p style="margin:0px;">        }catch (Exception e){</p>
+<p style="margin:0px;">            e.printStackTrace();</p>
+<p style="margin:0px;">            //降级处理</p>
+<p style="margin:0px;">            return &quot;系统繁忙，请稍后&quot;;</p>
+<p style="margin:0px;">        }</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">sentinel-helloworld里面使用的就是这种方式</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">SphU 包含了try-catch风格的API，用这种方式，当资源发生了限流之后会抛出BlockException，这个时候可以捕捉异常，进行限流之后的逻辑处理。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">特别地，若enty的时候传入了热点参数，那么 exit的时候也一定要带上对应的参数 (exit(count, args)），否则可能会有统计错误。这个时候不能使用try-with-resources的方式。另外通过Tracer.trace ex)来统计异常信息时，由于tyrithvresurces语法中.catch调用顺序的问题，会导致无法正确的计异常数，因此统计异常信息时也不能在try withresources的catch 块中调用Tracer.trace(ex).</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

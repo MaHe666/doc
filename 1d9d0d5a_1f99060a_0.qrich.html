@@ -1,0 +1,36 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">DELIMITER $$		--写函数之前必须写，标志</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">CREATE FUNCTION 函数名()</p>
+<p style="margin:0px;">RETURNS INT</p>
+<p style="margin:0px;">BEGIN</p>
+<p style="margin:0px;">	--函数体</p>
+<p style="margin:0px;">	DECLARE num INT DEFAULT 1000000;</p>
+<p style="margin:0px;">	DECLARE i INT DEFAULT 0;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">	WHILE i&lt;num DO</p>
+<p style="margin:0px;">		--语句</p>
+<p style="margin:0px;">		INSERT INTO 表名(`字段名1`,`字段名2`...)VALUES ('值1','值2'...);</p>
+<p style="margin:0px;">		SET i = i+1;</p>
+<p style="margin:0px;">	END WHILE;</p>
+<p style="margin:0px;">	RETURN i;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">END;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">select 函数名();	--调用函数</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

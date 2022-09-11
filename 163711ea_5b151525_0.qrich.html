@@ -1,0 +1,36 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">箭头函数体中的 this 对象，是定义函数时的对象，而不是使用函数时的对象。在函数定义的时候就已经决定了</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">function fn3(){</p>
+<p style="margin:0px;">            setTimeout(()=&gt;{</p>
+<p style="margin:0px;">                // 定义时，this 绑定的是 fn3 中的 this 对象</p>
+<p style="margin:0px;">                // console.log(this.a);</p>
+<p style="margin:0px;">            },0)</p>
+<p style="margin:0px;">            console.log(a);</p>
+<p style="margin:0px;">            console.log(this.a)</p>
+<p style="margin:0px;">        }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">        var a = 10;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">        // fn3 的 this 对象为 {a: 10}，因为它指向全局: window.a</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">        fn3.call({a: 18});  // 改变this指向，此时 a = 18</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

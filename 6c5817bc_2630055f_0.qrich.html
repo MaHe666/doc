@@ -1,0 +1,41 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">#系统级别的配置</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">spring:</p>
+<p style="margin:0px;">  cloud:</p>
+<p style="margin:0px;">    config:</p>
+<p style="margin:0px;">      #从哪里获取服务端</p>
+<p style="margin:0px;">      uri: http://localhost:3344</p>
+<p style="margin:0px;">      #需要从git读取哪些东西，只需要文件名，不需要文件后缀</p>
+<p style="margin:0px;">      name: config-client</p>
+<p style="margin:0px;">      #从哪个配置环境拿</p>
+<p style="margin:0px;">      profile: dev</p>
+<p style="margin:0px;">      #从git的哪个分支拿</p>
+<p style="margin:0px;">      label: master</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">  #rabbitmq相关配置</p>
+<p style="margin:0px;">  rabbitmq:</p>
+<p style="margin:0px;">    host: localhost</p>
+<p style="margin:0px;">    port: 5672</p>
+<p style="margin:0px;">    username: guest</p>
+<p style="margin:0px;">    password: guest</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">##rabbitmq相关配置,暴露bus刷新配置的端点</p>
+<p style="margin:0px;">management:</p>
+<p style="margin:0px;">  endpoints: #暴露bus刷新配置的端点</p>
+<p style="margin:0px;">    web:</p>
+<p style="margin:0px;">      exposure:</p>
+<p style="margin:0px;">        include: 'bus-refresh'</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

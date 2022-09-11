@@ -1,0 +1,35 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">class Demo {</p>
+<p style="margin:0px;">    constructor(a, b) {</p>
+<p style="margin:0px;">        this.a = a;</p>
+<p style="margin:0px;">        this.b = b;</p>
+<p style="margin:0px;">        console.log('Demo');</p>
+<p style="margin:0px;">    }</p>
+<p style="margin:0px;">    sum() {</p>
+<p style="margin:0px;">        return this.a + this.b;</p>
+<p style="margin:0px;">    }</p>
+<p style="margin:0px;">}</p>
+<p style="margin:0px;">let demo1 = new Demo(2, 1);</p>
+<p style="margin:0px;">let demo2 = new Demo(3, 1);</p>
+<p style="margin:0px;">// 两者原型链是相等的</p>
+<p style="margin:0px;">console.log(demo1._proto_ == demo2._proto_); // true</p>
+<p style="margin:0px;"> </p>
+<p style="margin:0px;">demo1._proto_.sub = function() {</p>
+<p style="margin:0px;">    return this.a - this.b;</p>
+<p style="margin:0px;">}</p>
+<p style="margin:0px;">console.log(demo1.sub()); // 1</p>
+<p style="margin:0px;">console.log(demo2.sub()); // 2</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

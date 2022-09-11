@@ -1,0 +1,65 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">List（列表类型）</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style=" font-weight:600;">在Redis里面，我们可以把List玩成栈、队列、阻塞队列</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">所有的List命令都是以l（L的小写）开头的</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">向列表头部添加一个或多个值（左插入）</p>
+<p style="margin:0px;">	lpush 列表名 值</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">查询全部列表，列表第一位下标为0。查看列表全部值的话，开始下标为0，结束下标为-1就好</p>
+<p style="margin:0px;">	lrange 列表名 开始下标 结束下标</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">向列表尾部添加一个或多个值（右插入）</p>
+<p style="margin:0px;">	rpush 列表名 值</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">去掉列表最左边的值（头部）</p>
+<p style="margin:0px;">	lpop 列表名</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">去掉列表最右边的值（尾部）</p>
+<p style="margin:0px;">	rpop 列表名</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">从左侧按照下标查看列表中的单个元素</p>
+<p style="margin:0px;">	lindex 列表名 下标</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">查看列表的长度</p>
+<p style="margin:0px;">	llen 列表名</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">移除列表中的数据，注意！列表中可能会有多个相同元素，所以可以指定删除数量</p>
+<p style="margin:0px;">	lrem 列表名 删除数量 元素值</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">按照指定的长度截取列表，然后替换掉被截取的列表</p>
+<p style="margin:0px;">	ltrim 列表名 开始下标 结束下标</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">移出列表最后一个元素，然后将该元素添加到其他列表中</p>
+<p style="margin:0px;">	rpoplpush 列表名 目标列表名</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">替换列表中指定下标的元素</p>
+<p style="margin:0px;">	lset 列表名 下标 新元素</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">向列表中的一个元素前面后面新增一个元素</p>
+<p style="margin:0px;">	linsert 列表名 before/after 元素 要添加的元素</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">------------------------------------------------------------</p>
+<p style="margin:0px;">List其实是一个链表</p>
+<p style="margin:0px;">在两边插入或改动值，效率最高！如果链表过长，在操作中间元素的时候，效率偏低</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

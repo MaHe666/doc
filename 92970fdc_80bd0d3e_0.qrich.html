@@ -1,0 +1,41 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;"># 配置从机之前的信息</p>
+<p style="margin:0px;">127.0.0.1:6379&gt; info replication</p>
+<p style="margin:0px;"># Replication</p>
+<p style="margin:0px;">role:master</p>
+<p style="margin:0px;">connected_slaves:0</p>
+<p style="margin:0px;">master_replid:2f5f0dbe824198d52ee1da8228368c158fc86cab</p>
+<p style="margin:0px;">master_replid2:0000000000000000000000000000000000000000</p>
+<p style="margin:0px;">master_repl_offset:0</p>
+<p style="margin:0px;">second_repl_offset:-1</p>
+<p style="margin:0px;">repl_backlog_active:0</p>
+<p style="margin:0px;">repl_backlog_size:1048576</p>
+<p style="margin:0px;">repl_backlog_first_byte_offset:0</p>
+<p style="margin:0px;">repl_backlog_histlen:0</p>
+<p style="margin:0px;"># 配置从机之后的信息</p>
+<p style="margin:0px;">127.0.0.1:6379&gt; info replication</p>
+<p style="margin:0px;"># Replication</p>
+<p style="margin:0px;">role:master</p>
+<p style="margin:0px;">connected_slaves:1 # 多了从机的配置信息</p>
+<p style="margin:0px;">slave0:ip=127.0.0.1,port=6380,state=online,offset=56,lag=1</p>
+<p style="margin:0px;">master_replid:e700a386c850303c045de2c5223947da75490c74</p>
+<p style="margin:0px;">master_replid2:0000000000000000000000000000000000000000</p>
+<p style="margin:0px;">master_repl_offset:56</p>
+<p style="margin:0px;">second_repl_offset:-1</p>
+<p style="margin:0px;">repl_backlog_active:1</p>
+<p style="margin:0px;">repl_backlog_size:1048576</p>
+<p style="margin:0px;">repl_backlog_first_byte_offset:1</p>
+<p style="margin:0px;">repl_backlog_histlen:56</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

@@ -1,0 +1,25 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">//获取静态初始化参数</p>
+<p style="margin:0px;">servlet</p>
+<p style="margin:0px;">        ServletContext context = this.getServletContext();</p>
+<p style="margin:0px;">        String param = context.getInitParameter(&quot;param&quot;);</p>
+<p style="margin:0px;">        resp.getWriter().println(param);</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">web.xml</p>
+<p style="margin:0px;">    &lt;context-param&gt;</p>
+<p style="margin:0px;">        &lt;param-name&gt;param&lt;/param-name&gt;</p>
+<p style="margin:0px;">        &lt;param-value&gt;value&lt;/param-value&gt;</p>
+<p style="margin:0px;">    &lt;/context-param&gt;</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

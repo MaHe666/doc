@@ -1,0 +1,29 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</p>
+<p style="margin:0px;">&lt;!DOCTYPE mapper</p>
+<p style="margin:0px;">        PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;</p>
+<p style="margin:0px;">        &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;</p>
+<p style="margin:0px;">&lt;mapper namespace=&quot;com.mahe666.mapper.UserMapper&quot;&gt;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    &lt;!--在当前Mapper.xml中使用二级缓存--&gt;</p>
+<p style="margin:0px;">    &lt;cache/&gt;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    &lt;!--可以手动的关闭或开启语句的缓存--&gt;</p>
+<p style="margin:0px;">    &lt;select id=&quot;getUserList&quot; resultType=&quot;user&quot; useCache=&quot;true&quot;&gt;</p>
+<p style="margin:0px;">        select * from `user`</p>
+<p style="margin:0px;">    &lt;/select&gt;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">&lt;/mapper&gt;</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

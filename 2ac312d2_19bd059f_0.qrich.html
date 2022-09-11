@@ -1,0 +1,54 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</p>
+<p style="margin:0px;">&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;</p>
+<p style="margin:0px;">       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</p>
+<p style="margin:0px;">       xmlns:context=&quot;http://www.springframework.org/schema/context&quot;</p>
+<p style="margin:0px;">       xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot;</p>
+<p style="margin:0px;">       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans</p>
+<p style="margin:0px;">        https://www.springframework.org/schema/beans/spring-beans.xsd</p>
+<p style="margin:0px;">        http://www.springframework.org/schema/context</p>
+<p style="margin:0px;">        https://www.springframework.org/schema/context/spring-context.xsd</p>
+<p style="margin:0px;">        http://www.springframework.org/schema/mvc</p>
+<p style="margin:0px;">        https://www.springframework.org/schema/mvc/spring-mvc.xsd</p>
+<p style="margin:0px;">&quot;&gt;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    &lt;context:component-scan base-package=&quot;com.mahe666.controller&quot;/&gt;</p>
+<p style="margin:0px;">    &lt;mvc:default-servlet-handler /&gt;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    &lt;!--jackson的配置--&gt;</p>
+<p style="margin:0px;">    &lt;mvc:annotation-driven&gt;</p>
+<p style="margin:0px;">        &lt;mvc:message-converters register-defaults=&quot;true&quot;&gt;</p>
+<p style="margin:0px;">            &lt;bean class=&quot;org.springframework.http.converter.StringHttpMessageConverter&quot;&gt;</p>
+<p style="margin:0px;">                &lt;constructor-arg value=&quot;UTF-8&quot;/&gt;</p>
+<p style="margin:0px;">            &lt;/bean&gt;</p>
+<p style="margin:0px;">            &lt;bean class=&quot;org.springframework.http.converter.json.MappingJackson2HttpMessageConverter&quot;&gt;</p>
+<p style="margin:0px;">                &lt;property name=&quot;objectMapper&quot;&gt;</p>
+<p style="margin:0px;">                    &lt;bean class=&quot;org.springframework.http.converter.json.Jackson2ObjectMapperFactoryBean&quot;&gt;</p>
+<p style="margin:0px;">                        &lt;property name=&quot;failOnEmptyBeans&quot; value=&quot;false&quot;/&gt;</p>
+<p style="margin:0px;">                    &lt;/bean&gt;</p>
+<p style="margin:0px;">                &lt;/property&gt;</p>
+<p style="margin:0px;">            &lt;/bean&gt;</p>
+<p style="margin:0px;">        &lt;/mvc:message-converters&gt;</p>
+<p style="margin:0px;">    &lt;/mvc:annotation-driven&gt;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    &lt;bean class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot; id=&quot;InternalResourceViewResolver&quot;&gt;</p>
+<p style="margin:0px;">        &lt;property name=&quot;prefix&quot; value=&quot;/WEB-INF/jsp/&quot;/&gt;</p>
+<p style="margin:0px;">        &lt;property name=&quot;suffix&quot; value=&quot;.jsp&quot;/&gt;</p>
+<p style="margin:0px;">    &lt;/bean&gt;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">&lt;/beans&gt;</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

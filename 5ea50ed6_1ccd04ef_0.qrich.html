@@ -1,0 +1,30 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">动态SQL就是能够根据不同的条件生成不同的SQL</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">测试用SQL脚本</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">create table `blog`(</p>
+<p style="margin:0px;">       `id` varchar(50) not null comment '博客id' primary key,</p>
+<p style="margin:0px;">       `title` varchar(100) not null comment '博客标题',</p>
+<p style="margin:0px;">       `author` varchar(30) not null comment '作者',</p>
+<p style="margin:0px;">       `create_time` datetime not null comment '创建时间',</p>
+<p style="margin:0px;">       `views` int(30) not null comment '浏览量'</p>
+<p style="margin:0px;">)engine=innodb default charset=utf8</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">INSERT INTO `blog` VALUES ('0faedf50-06f5-4e09-817d-fc240551a151','我爱MySQL','马赫666','2021-11-07 17:25:54',0),('4f0acab7-525e-451e-aa86-cfa75df1efc5','我爱Vue','马赫666','2021-11-07 17:25:54',0),('96bed57d-816b-419d-a6f2-a467bb4df42d','我爱Python','马赫666','2021-11-07 17:25:54',0),('fbde2826-9ca1-45c9-8379-98a3690b2bf6','我爱Java','马赫666','2021-11-07 17:25:53',0);</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

@@ -1,0 +1,25 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">SELECT </p>
+<p style="margin:0px;">	DISTINCT m.`perms`</p>
+<p style="margin:0px;">FROM</p>
+<p style="margin:0px;">	user_role ur</p>
+<p style="margin:0px;">	LEFT JOIN `role` r ON ur.`role_id` = r.`id`</p>
+<p style="margin:0px;">	LEFT JOIN `role_menu` rm ON ur.`role_id` = rm.`role_id`</p>
+<p style="margin:0px;">	LEFT JOIN `menu` m ON m.`id` = rm.`menu_id`</p>
+<p style="margin:0px;">WHERE</p>
+<p style="margin:0px;">	user_id = #{userid}</p>
+<p style="margin:0px;">	AND r.`status` = 0</p>
+<p style="margin:0px;">	AND m.`status` = 0</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

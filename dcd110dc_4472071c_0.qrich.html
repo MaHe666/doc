@@ -1,0 +1,46 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</p>
+<p style="margin:0px;">&lt;!DOCTYPE configuration</p>
+<p style="margin:0px;">        PUBLIC &quot;-//mybatis.org//DTD Config 3.0//EN&quot;</p>
+<p style="margin:0px;">        &quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;&gt;</p>
+<p style="margin:0px;">&lt;configuration&gt;</p>
+<p style="margin:0px;">   &lt;!--引入外部配置文件--&gt;</p>
+<p style="margin:0px;">    &lt;!--注意，xml文件中可以规定标签的顺序！  不要乱写--&gt;</p>
+<p style="margin:0px;">    &lt;properties resource=&quot;db.properties&quot;/&gt;</p>
+<p style="margin:0px;">    &lt;!--</p>
+<p style="margin:0px;">        子标签的作用是补充resource文件中的属性，例如在db.properties中不写username和password，</p>
+<p style="margin:0px;">        就可以在这里加上property子标签</p>
+<p style="margin:0px;">        &lt;property name=&quot;username&quot; value=&quot;root&quot;/&gt;</p>
+<p style="margin:0px;">    --&gt;</p>
+<p style="margin:0px;">    &lt;!--可以不写子标签，如果不需要写出properties标签的子标签，直接自闭合就好--&gt;</p>
+<p style="margin:0px;">    &lt;!--如果property和文件中重名，则外部配置文件的优先级最高！！！--&gt;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    &lt;environments default=&quot;development&quot;&gt;</p>
+<p style="margin:0px;">        &lt;environment id=&quot;development&quot;&gt;</p>
+<p style="margin:0px;">            &lt;transactionManager type=&quot;JDBC&quot;/&gt;</p>
+<p style="margin:0px;">            &lt;dataSource type=&quot;POOLED&quot;&gt;</p>
+<p style="margin:0px;">                &lt;property name=&quot;driver&quot; value=&quot;${driver}&quot;/&gt;</p>
+<p style="margin:0px;">                &lt;property name=&quot;url&quot; value=&quot;${url}&quot;/&gt;</p>
+<p style="margin:0px;">                &lt;property name=&quot;username&quot; value=&quot;${username}&quot;/&gt;</p>
+<p style="margin:0px;">                &lt;property name=&quot;password&quot; value=&quot;${password}&quot;/&gt;</p>
+<p style="margin:0px;">            &lt;/dataSource&gt;</p>
+<p style="margin:0px;">        &lt;/environment&gt;</p>
+<p style="margin:0px;">    &lt;/environments&gt;</p>
+<p style="margin:0px;">    &lt;mappers&gt;</p>
+<p style="margin:0px;">        &lt;mapper resource=&quot;com/mahe666/mapper/UserMapper.xml&quot;/&gt;</p>
+<p style="margin:0px;">    &lt;/mappers&gt;</p>
+<p style="margin:0px;">&lt;/configuration&gt;</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

@@ -1,0 +1,132 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">package com.yxrj.hdwlwrj.system.mqtt;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">import lombok.extern.slf4j.Slf4j;</p>
+<p style="margin:0px;">import org.eclipse.paho.client.mqttv3.*;</p>
+<p style="margin:0px;">import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;</p>
+<p style="margin:0px;">import org.springframework.stereotype.Component;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">import javax.annotation.Resource;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">@Slf4j</p>
+<p style="margin:0px;">@Component</p>
+<p style="margin:0px;">public class MqttPushClient {</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    @Resource</p>
+<p style="margin:0px;">    private PushCallback pushCallback;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    private static MqttClient client;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    public  static MqttClient getClient(){</p>
+<p style="margin:0px;">        return  client;</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    public static void setClient(MqttClient client){</p>
+<p style="margin:0px;">        MqttPushClient.client=client;</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    /**</p>
+<p style="margin:0px;">     * 客户端连接</p>
+<p style="margin:0px;">     *</p>
+<p style="margin:0px;">     * @param host      ip+端口</p>
+<p style="margin:0px;">     * @param clientID  客户端Id</p>
+<p style="margin:0px;">     * @param username  用户名</p>
+<p style="margin:0px;">     * @param password  密码</p>
+<p style="margin:0px;">     * @param timeout   超时时间</p>
+<p style="margin:0px;">     * @param keeplive 保留数</p>
+<p style="margin:0px;">     */</p>
+<p style="margin:0px;">    public void connect(String host,String clientID,String username,String password,int timeout,int keeplive){</p>
+<p style="margin:0px;">        MqttClient client;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">        try {</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">            client=new MqttClient(host,clientID,new MemoryPersistence());</p>
+<p style="margin:0px;">            MqttConnectOptions options=new MqttConnectOptions();</p>
+<p style="margin:0px;">            options.setCleanSession(true);</p>
+<p style="margin:0px;">            options.setUserName(username);</p>
+<p style="margin:0px;">            options.setPassword(password.toCharArray());</p>
+<p style="margin:0px;">            options.setConnectionTimeout(timeout);</p>
+<p style="margin:0px;">            options.setKeepAliveInterval(keeplive);</p>
+<p style="margin:0px;">            MqttPushClient.setClient(client);</p>
+<p style="margin:0px;">            try {</p>
+<p style="margin:0px;">                client.setCallback(pushCallback);</p>
+<p style="margin:0px;">                client.connect(options);</p>
+<p style="margin:0px;">            }catch (Exception e){</p>
+<p style="margin:0px;">                e.printStackTrace();</p>
+<p style="margin:0px;">            }</p>
+<p style="margin:0px;">        }catch (Exception e){</p>
+<p style="margin:0px;">            e.printStackTrace();</p>
+<p style="margin:0px;">        }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    /**</p>
+<p style="margin:0px;">     * 发布，默认qos为0，非持久化</p>
+<p style="margin:0px;">     * @param topic</p>
+<p style="margin:0px;">     * @param pushMessage</p>
+<p style="margin:0px;">     */</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    public void publish(String topic,String pushMessage){</p>
+<p style="margin:0px;">        publish(0,false,topic,pushMessage);</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    /**</p>
+<p style="margin:0px;">     * 发布</p>
+<p style="margin:0px;">     *</p>
+<p style="margin:0px;">     * @param qos         连接方式</p>
+<p style="margin:0px;">     * @param retained    是否保留</p>
+<p style="margin:0px;">     * @param topic       主题</p>
+<p style="margin:0px;">     * @param pushMessage 消息体</p>
+<p style="margin:0px;">     */</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    public void publish(int qos,boolean retained,String topic,String pushMessage){</p>
+<p style="margin:0px;">        MqttMessage message=new MqttMessage();</p>
+<p style="margin:0px;">        message.setQos(qos);</p>
+<p style="margin:0px;">        message.setRetained(retained);</p>
+<p style="margin:0px;">        message.setPayload(pushMessage.getBytes());</p>
+<p style="margin:0px;">        MqttTopic mqttTopic=MqttPushClient.getClient().getTopic(topic);</p>
+<p style="margin:0px;">        if(null== mqttTopic){</p>
+<p style="margin:0px;">            log.error(&quot;topic not exist&quot;);</p>
+<p style="margin:0px;">        }</p>
+<p style="margin:0px;">        MqttDeliveryToken token;</p>
+<p style="margin:0px;">        try {</p>
+<p style="margin:0px;">            token=mqttTopic.publish(message);</p>
+<p style="margin:0px;">            token.waitForCompletion();</p>
+<p style="margin:0px;">        }catch (MqttPersistenceException e){</p>
+<p style="margin:0px;">            e.printStackTrace();</p>
+<p style="margin:0px;">        }catch (MqttException e){</p>
+<p style="margin:0px;">            e.printStackTrace();</p>
+<p style="margin:0px;">        }</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    /**</p>
+<p style="margin:0px;">     * 订阅某个主题，qos默认为0</p>
+<p style="margin:0px;">     * @param topic</p>
+<p style="margin:0px;">     */</p>
+<p style="margin:0px;">    public void subscribe(String topic){</p>
+<p style="margin:0px;">        log.error(&quot;开始订阅主题&quot; + topic);</p>
+<p style="margin:0px;">        subscribe(topic,0);</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    public void subscribe(String topic,int qos){</p>
+<p style="margin:0px;">        try {</p>
+<p style="margin:0px;">            MqttPushClient.getClient().subscribe(topic,qos);</p>
+<p style="margin:0px;">        }catch (MqttException e){</p>
+<p style="margin:0px;">            e.printStackTrace();</p>
+<p style="margin:0px;">        }</p>
+<p style="margin:0px;">    }</p>
+<p style="margin:0px;">}</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

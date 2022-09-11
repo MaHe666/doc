@@ -1,0 +1,48 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">    @Resource</p>
+<p style="margin:0px;">    private AsyncService asyncService;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    @RequestMapping(&quot;helloworld4&quot;)</p>
+<p style="margin:0px;">    public void helloworld4(){</p>
+<p style="margin:0px;">        AsyncEntry asyncEntry = null;</p>
+<p style="margin:0px;">        try {</p>
+<p style="margin:0px;">            asyncEntry = SphU.asyncEntry(&quot;HelloWorld4&quot;);</p>
+<p style="margin:0px;">            asyncService.asyncMethod();</p>
+<p style="margin:0px;">        } catch (BlockException e){</p>
+<p style="margin:0px;">            System.out.println(&quot;系统繁忙，请稍后！&quot;);</p>
+<p style="margin:0px;">        }finally {</p>
+<p style="margin:0px;">            if (asyncEntry != null){</p>
+<p style="margin:0px;">                asyncEntry.exit();</p>
+<p style="margin:0px;">            }</p>
+<p style="margin:0px;">        }</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">--------------------------------------------------------</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    @Async</p>
+<p style="margin:0px;">    public void asyncMethod(){</p>
+<p style="margin:0px;">        System.out.println(&quot;async start...&quot;);</p>
+<p style="margin:0px;">        try{</p>
+<p style="margin:0px;">            Thread.sleep(4000);</p>
+<p style="margin:0px;">        }catch (InterruptedException e){</p>
+<p style="margin:0px;">            e.printStackTrace();</p>
+<p style="margin:0px;">        }</p>
+<p style="margin:0px;">        System.out.println(&quot;async end...&quot;);</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">------------------------------------------------------</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

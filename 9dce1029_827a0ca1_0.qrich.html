@@ -1,0 +1,27 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">使用Druid数据源需要在配置文件中配置，和连接数据库的配置同级</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">spring.datasource.type: com.alibaba.druid.pool.DruidDataSource</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">其他配置：</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">	#配置监控统计拦截的filters，stat:监控统计、Log4j:日志记录、wall:防御sqL注入</p>
+<p style="margin:0px;">	#如果允许时报错java.Lang.CLassNotFoundException: org.apache.Log4j.Priority</p>
+<p style="margin:0px;">	#则导入Log4j依赖即可，Maven 地址: https: //mvnrepository.com/artifact/Log4j/Log4j</p>
+<p style="margin:0px;">	filters: stat,wall,log4j</p>
+<p style="margin:0px;">	maxPoolPreparedStatementPerConnectionsize: 20</p>
+<p style="margin:0px;">	useGlobalDataSourcestat: true</p>
+<p style="margin:0px;">	connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

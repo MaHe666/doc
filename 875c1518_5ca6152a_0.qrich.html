@@ -1,0 +1,43 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">项目里 application.yml 添加注册信息配置</p>
+<p style="margin:0px;">seata:</p>
+<p style="margin:0px;">	registry:</p>
+<p style="margin:0px;">		type: nacos</p>
+<p style="margin:0px;">		nacos:</p>
+<p style="margin:0px;">			application: seata-server</p>
+<p style="margin:0px;">			server-addr: 127.0.0.1:8848</p>
+<p style="margin:0px;">			group : &quot;SEATA_GROUP&quot;</p>
+<p style="margin:0px;">			namespace: &quot;&quot;</p>
+<p style="margin:0px;">			username: &quot;nacos&quot;</p>
+<p style="margin:0px;">			password: &quot;nacos&quot;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">seata-server端配置注册中心</p>
+<p style="margin:0px;">在 registry.conf 中加入对应配置中心</p>
+<p style="margin:0px;">registry {</p>
+<p style="margin:0px;">	type = &quot;nacos&quot;</p>
+<p style="margin:0px;">	nacos {</p>
+<p style="margin:0px;">		application = &quot;seata-server&quot;</p>
+<p style="margin:0px;">		serverAddr = &quot;127.0.0.1:8848&quot;</p>
+<p style="margin:0px;">		group = &quot;SEATA_GROUP&quot;</p>
+<p style="margin:0px;">		namespace = &quot;&quot;</p>
+<p style="margin:0px;">		cluster = &quot;default&quot;</p>
+<p style="margin:0px;">		username = &quot;&quot;</p>
+<p style="margin:0px;">		password = &quot;&quot;</p>
+<p style="margin:0px;">	}</p>
+<p style="margin:0px;">}</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

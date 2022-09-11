@@ -1,0 +1,27 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">子类重写父类方法(override)</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">class Parent:        # 定义父类</p>
+<p style="margin:0px;">   def myMethod(self):</p>
+<p style="margin:0px;">      <span style=" font-weight:600; color:#204a87;">print</span> (<span style=" font-weight:600; color:#2e8b57;">'调用父类方法'</span>)</p>
+<p style="margin:0px;"> </p>
+<p style="margin:0px;">class Child(Parent): # 定义子类</p>
+<p style="margin:0px;">   def myMethod(self):</p>
+<p style="margin:0px;">      <span style=" font-weight:600; color:#204a87;">print</span> (<span style=" font-weight:600; color:#2e8b57;">'调用子类方法'</span>)</p>
+<p style="margin:0px;"> </p>
+<p style="margin:0px;">c = Child()          <span style=" font-style:italic; color:#778899;"># 子类实例</span></p>
+<p style="margin:0px;">c<span style=" font-weight:600; color:#4682b4;">.</span>myMethod()         <span style=" font-style:italic; color:#778899;"># 子类调用重写方法</span></p>
+<p style="margin:0px;"><span style=" font-weight:600; color:#204a87;">super</span>(Child,c).myMethod() <span style=" font-style:italic; color:#778899;">#用子类对象调用父类已被覆盖的方法</span></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

@@ -1,0 +1,85 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">需要配置监控模块和被监控的服务模块</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">监控模块------------------------------------------------------------------------</p>
+<p style="margin:0px;">需要具有的Maven依赖</p>
+<p style="margin:0px;">	&lt;!--Hystrix--&gt;</p>
+<p style="margin:0px;">        &lt;dependency&gt;</p>
+<p style="margin:0px;">            &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</p>
+<p style="margin:0px;">            &lt;artifactId&gt;spring-cloud-starter-hystrix&lt;/artifactId&gt;</p>
+<p style="margin:0px;">            &lt;version&gt;1.4.6.RELEASE&lt;/version&gt;</p>
+<p style="margin:0px;">        &lt;/dependency&gt;</p>
+<p style="margin:0px;">        &lt;!--Hystrix-Dashboard--&gt;</p>
+<p style="margin:0px;">        &lt;dependency&gt;</p>
+<p style="margin:0px;">            &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</p>
+<p style="margin:0px;">            &lt;artifactId&gt;spring-cloud-starter-hystrix-dashboard&lt;/artifactId&gt;</p>
+<p style="margin:0px;">            &lt;version&gt;1.4.6.RELEASE&lt;/version&gt;</p>
+<p style="margin:0px;">        &lt;/dependency&gt;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">在相同的包名下新建启动类</p>
+<p style="margin:0px;">package com.mahe666.springcloud;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">import org.springframework.boot.SpringApplication;</p>
+<p style="margin:0px;">import org.springframework.boot.autoconfigure.SpringBootApplication;</p>
+<p style="margin:0px;">import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">@SpringBootApplication</p>
+<p style="margin:0px;">//开启DashBoard   监控信息，需要服务端有actuator依赖和相关配置！</p>
+<p style="margin:0px;">@EnableHystrixDashboard</p>
+<p style="margin:0px;">public class DeptConsumerDashBoard_9001 {</p>
+<p style="margin:0px;">    public static void main(String[] args) {</p>
+<p style="margin:0px;">        SpringApplication.run(DeptConsumerDashBoard_9001.class,args);</p>
+<p style="margin:0px;">    }</p>
+<p style="margin:0px;">}</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">被监控的服务模块----------------------------------------------------------</p>
+<p style="margin:0px;">需要具有的Maven依赖</p>
+<p style="margin:0px;">	&lt;!--actuator 完善Eureka中服务的监控信息详情--&gt;</p>
+<p style="margin:0px;">        &lt;dependency&gt;</p>
+<p style="margin:0px;">            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</p>
+<p style="margin:0px;">            &lt;artifactId&gt;spring-boot-starter-actuator&lt;/artifactId&gt;</p>
+<p style="margin:0px;">        &lt;/dependency&gt;</p>
+<p style="margin:0px;">        &lt;!--Hystrix--&gt;</p>
+<p style="margin:0px;">        &lt;dependency&gt;</p>
+<p style="margin:0px;">            &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</p>
+<p style="margin:0px;">            &lt;artifactId&gt;spring-cloud-starter-hystrix&lt;/artifactId&gt;</p>
+<p style="margin:0px;">            &lt;version&gt;1.4.6.RELEASE&lt;/version&gt;</p>
+<p style="margin:0px;">        &lt;/dependency&gt;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">在主启动类上添加对熔断的支持</p>
+<p style="margin:0px;">@EnableCircuitBreaker</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">在启动类里面，main方法外面添加Servlet（死代码）</p>
+<p style="margin:0px;">    @Bean</p>
+<p style="margin:0px;">    public ServletRegistrationBean hystrixMetricsStreamServlet(){</p>
+<p style="margin:0px;">        ServletRegistrationBean servletRegistrationBean = new ServletRegistrationBean(new HystrixMetricsStreamServlet());</p>
+<p style="margin:0px;">        servletRegistrationBean.addUrlMappings(&quot;/actuator/hystrix.stream&quot;);</p>
+<p style="margin:0px;">        return servletRegistrationBean;</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">给需要监控的Controller层加上@HystrixCommand注解</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

@@ -1,0 +1,71 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">  步骤：</p>
+<ol style="margin: 0px; -qt-list-indent: 1;">
+<li style="margin:0px;">加载驱动</li>
+<p style="margin:0px; -qt-block-indent:1;">        /*</p>
+<p style="margin:0px; -qt-block-indent:1;">         * 常规加载驱动语法</p>
+<p style="margin:0px; -qt-block-indent:1;">         * DriverManager.registerDriver(new com.mysql.jdbc.Driver());</p>
+<p style="margin:0px; -qt-block-indent:1;">         *</p>
+<p style="margin:0px; -qt-block-indent:1;">         * 固定写法，这个写法与 注解和反射 知识有关</p>
+<p style="margin:0px; -qt-block-indent:1;">         */</p>
+<p style="margin:0px; -qt-block-indent:1;">        Class.forName(&quot;com.mysql.jdbc.Driver&quot;);</p>
+<p style="-qt-paragraph-type:empty; margin:0px; -qt-block-indent:1;"><br /></p>
+<li style="margin:0px;">用户信息和url</li>
+<p style="margin:0px; -qt-block-indent:1;">	 /*</p>
+<p style="margin:0px; -qt-block-indent:1;">        * useUnicode=true           使用中文编码</p>
+<p style="margin:0px; -qt-block-indent:1;">        * characterEncoding=utf8    字符集使用UTF-8</p>
+<p style="margin:0px; -qt-block-indent:1;">        * useSSL=true               使用安全的链接</p>
+<p style="margin:0px; -qt-block-indent:1;">	* serverTimezone=UTC		8版本的mysql需要加上这个属性</p>
+<p style="margin:0px; -qt-block-indent:1;">        * */</p>
+<p style="margin:0px; -qt-block-indent:1;">        String url = &quot;jdbc:mysql://localhost:3306/test?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false&quot;;</p>
+<p style="margin:0px; -qt-block-indent:1;">	jdbc:mysql://主机名:端口号/数据库名?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false</p>
+<p style="-qt-paragraph-type:empty; margin:0px; -qt-block-indent:1;"><br /></p>
+<p style="margin:0px; -qt-block-indent:1;">	mysql 8.0以上版本参数有变动！！！</p>
+<p style="-qt-paragraph-type:empty; margin:0px; -qt-block-indent:1;"><br /></p>
+<li style="margin:0px;">连接数据库，返回一个数据库对象 Connection</li>
+<p style="margin:0px; -qt-block-indent:1;">	Connection connection = DriverManager.getConnection(url, username, password);</p>
+<p style="-qt-paragraph-type:empty; margin:0px; -qt-block-indent:1;"><br /></p>
+<p style="margin:0px; -qt-block-indent:1;"><span style=" font-weight:600;">数据库对象可以操作数据库级别的东西，例如事务的提交和回滚等</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; -qt-block-indent:1; font-weight:600;"><br /></p>
+<li style="margin:0px;">获得执行SQL的对象 Statement	<span style=" font-weight:600;">不安全！！！</span></li>
+<p style="margin:0px; -qt-block-indent:1;">	 ResultSet resultSet = statement.executeQuery(sql);        //查询操作，返回结果集 ResultSet</p>
+<p style="margin:0px; -qt-block-indent:1;">	 int rows = statement.executeUpdate();			//插入，更新，删除都可以用这个，返回一个受影响的行数</p>
+<p style="margin:0px; -qt-block-indent:1;">	 statement.execute(sql);					//可以操作任何语句</p>
+<p style="margin:0px; -qt-block-indent:1;">	 int[] rowsArray = statement.executeBatch(sql1,sql2);	//同时操作多个语句</p>
+<p style="-qt-paragraph-type:empty; margin:0px; -qt-block-indent:1;"><br /></p>
+<li style="margin:0px;">获得返回的结果集 Resultset</li>
+<p style="margin:0px; -qt-block-indent:1;">        resultSet.getObject();      //在不知道字段类型的情况下使用，如果知道，则使用指定类型</p>
+<p style="margin:0px; -qt-block-indent:1;">        resultSet.getString();      //varchar</p>
+<p style="margin:0px; -qt-block-indent:1;">        resultSet.getInt();         //int</p>
+<p style="margin:0px; -qt-block-indent:1;">        resultSet.getFloat();       //float</p>
+<p style="margin:0px; -qt-block-indent:1;">        resultSet.getDouble();      //double</p>
+<p style="margin:0px; -qt-block-indent:1;">	 ...</p>
+<p style="-qt-paragraph-type:empty; margin:0px; -qt-block-indent:1;"><br /></p>
+<p style="margin:0px; -qt-block-indent:1;"> 遍历，指针</p>
+<p style="margin:0px; -qt-block-indent:1;">	 resultSet.next()		//向后走</p>
+<p style="margin:0px; -qt-block-indent:1;">	 resultSet.previous()		//向前走</p>
+<p style="margin:0px; -qt-block-indent:1;">	 resultSet.absolute()		//移动到指定行</p>
+<p style="-qt-paragraph-type:empty; margin:0px; -qt-block-indent:1;"><br /></p>
+<li style="margin:0px;">释放连接</li>
+</ol>
+<p style="margin:0px;">	     resultSet.close();</p>
+<p style="margin:0px;">	     statement.close();</p>
+<p style="margin:0px;">	     connection.close();</p>
+<p style="margin:0px;">	先开后关原则。占内存，一定要关掉</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

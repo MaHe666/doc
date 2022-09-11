@@ -1,0 +1,128 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">package test;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">import org.apache.poi.hssf.usermodel.HSSFCell;</p>
+<p style="margin:0px;">import org.apache.poi.hssf.usermodel.HSSFDateUtil;</p>
+<p style="margin:0px;">import org.apache.poi.hssf.usermodel.HSSFFormulaEvaluator;</p>
+<p style="margin:0px;">import org.apache.poi.hssf.usermodel.HSSFWorkbook;</p>
+<p style="margin:0px;">import org.apache.poi.ss.usermodel.*;</p>
+<p style="margin:0px;">import org.apache.poi.xssf.usermodel.XSSFFormulaEvaluator;</p>
+<p style="margin:0px;">import org.apache.poi.xssf.usermodel.XSSFWorkbook;</p>
+<p style="margin:0px;">import org.joda.time.DateTime;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">import java.io.FileInputStream;</p>
+<p style="margin:0px;">import java.io.IOException;</p>
+<p style="margin:0px;">import java.util.ArrayList;</p>
+<p style="margin:0px;">import java.util.Date;</p>
+<p style="margin:0px;">import java.util.List;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style=" font-style:italic; color:#778899;">/**</span></p>
+<p style="margin:0px;"><span style=" font-style:italic; color:#778899;"> * @author ：mahe666</span></p>
+<p style="margin:0px;"><span style=" font-style:italic; color:#778899;"> * @description：POI读取Excel工具类</span></p>
+<p style="margin:0px;"><span style=" font-style:italic; color:#778899;"> * @date ：Created in 2021/9/5 10:56</span></p>
+<p style="margin:0px;"><span style=" font-style:italic; color:#778899;"> */</span></p>
+<p style="margin:0px;">public class POIReadUtil {</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    <span style=" font-style:italic; color:#778899;">/**</span></p>
+<p style="margin:0px;"><span style=" font-style:italic; color:#778899;">     * 功能描述：</span></p>
+<p style="margin:0px;"><span style=" font-style:italic; color:#778899;">     *  第一个参数是读取路径和读取文件的字符串的组合</span></p>
+<p style="margin:0px;"><span style=" font-style:italic; color:#778899;">     *  第二个参数是工作表的表名（Excel表格下面的选择器）</span></p>
+<p style="margin:0px;"><span style=" font-style:italic; color:#778899;">     *  第三个参数是从第几行开始，按照excel表格的行数写</span></p>
+<p style="margin:0px;"><span style=" font-style:italic; color:#778899;">     *</span></p>
+<p style="margin:0px;"><span style=" font-style:italic; color:#778899;">     * @param:pathAndFilename,sheetName,rowStartNum</span></p>
+<p style="margin:0px;"><span style=" font-style:italic; color:#778899;">     * @return:List&lt;List&lt;String&gt;&gt;</span></p>
+<p style="margin:0px;"><span style=" font-style:italic; color:#778899;">     */</span></p>
+<p style="margin:0px;">    public static List&lt;List&lt;String&gt;&gt; getExcelInfo(String pathAndFilename, String sheetName, Integer rowStartNum) throws IOException {</p>
+<p style="margin:0px;">        Workbook workbook;</p>
+<p style="margin:0px;">        FormulaEvaluator formulaEvaluator;</p>
+<p style="margin:0px;">        <span style=" font-style:italic; color:#778899;">//输入流</span></p>
+<p style="margin:0px;">        FileInputStream fileInputStream = new FileInputStream(pathAndFilename);</p>
+<p style="margin:0px;">        if (pathAndFilename.contains(&quot;.xlsx&quot;)) {</p>
+<p style="margin:0px;">            <span style=" font-style:italic; color:#778899;">//拿到xlsx工作簿</span></p>
+<p style="margin:0px;">            workbook = new XSSFWorkbook(fileInputStream);</p>
+<p style="margin:0px;">            formulaEvaluator = new XSSFFormulaEvaluator((XSSFWorkbook) workbook);</p>
+<p style="margin:0px;">        } else if (pathAndFilename.contains(&quot;.xls&quot;)) {</p>
+<p style="margin:0px;">            <span style=" font-style:italic; color:#778899;">//拿到xls工作簿</span></p>
+<p style="margin:0px;">            workbook = new HSSFWorkbook(fileInputStream);</p>
+<p style="margin:0px;">            formulaEvaluator = new HSSFFormulaEvaluator((HSSFWorkbook) workbook);</p>
+<p style="margin:0px;">        } else {</p>
+<p style="margin:0px;">            System<span style=" font-weight:600; color:#4682b4;">.</span>out<span style=" font-weight:600; color:#4682b4;">.</span>println(<span style=" font-weight:600; color:#2e8b57;">&quot;该文件不是Excel表格,请重试&quot;</span>);</p>
+<p style="margin:0px;">            return null;</p>
+<p style="margin:0px;">        }</p>
+<p style="margin:0px;">        <span style=" font-style:italic; color:#778899;">//拿到工作表</span></p>
+<p style="margin:0px;">        Sheet sheet = workbook<span style=" font-weight:600; color:#4682b4;">.</span>getSheet(sheetName);</p>
+<p style="margin:0px;">        rowStartNum -= <span style=" font-weight:600; color:#4682b4;">1</span>;</p>
+<p style="margin:0px;">        <span style=" font-style:italic; color:#778899;">//获取总行数</span></p>
+<p style="margin:0px;">        int rowCount = sheet.getPhysicalNumberOfRows();</p>
+<p style="margin:0px;">        <span style=" font-style:italic; color:#778899;">//读取每一行</span></p>
+<p style="margin:0px;">        List&lt;List&lt;String&gt;&gt; totalList = new ArrayList&lt;&gt;();</p>
+<p style="margin:0px;">        for (int rowNum = rowStartNum; rowNum &lt; rowCount; rowNum++) {</p>
+<p style="margin:0px;">            Row row = sheet<span style=" font-weight:600; color:#4682b4;">.</span>getRow(rowNum);</p>
+<p style="margin:0px;">            if (row != null) {</p>
+<p style="margin:0px;">                List&lt;String&gt; dataList = new ArrayList&lt;&gt;();</p>
+<p style="margin:0px;">                <span style=" font-style:italic; color:#778899;">//获取单元格个数</span></p>
+<p style="margin:0px;">                int cellCount = row.getPhysicalNumberOfCells();</p>
+<p style="margin:0px;">                for (int cellNum = 0; cellNum &lt; cellCount; cellNum++) {</p>
+<p style="margin:0px;">                    <span style=" font-style:italic; color:#778899;">//获取单元格</span></p>
+<p style="margin:0px;">                    Cell cell = row<span style=" font-weight:600; color:#4682b4;">.</span>getCell(cellNum);</p>
+<p style="margin:0px;">                    if (cell != null) {</p>
+<p style="margin:0px;">                        <span style=" font-style:italic; color:#778899;">//获取单元格格式类型</span></p>
+<p style="margin:0px;">                        int cellType = cell.getCellType();</p>
+<p style="margin:0px;">                        <span style=" font-style:italic; color:#778899;">//初始化一个变量</span></p>
+<p style="margin:0px;">                        String cellValue = <span style=" font-weight:600; color:#2e8b57;">&quot;&quot;</span>;</p>
+<p style="margin:0px;">                        <span style=" font-style:italic; color:#778899;">//匹配单元格的数据类型</span></p>
+<p style="margin:0px;">                        switch (cellType) {</p>
+<p style="margin:0px;">                            case HSSFCell.CELL_TYPE_NUMERIC:    //如果是数字类型（日期 或 普通数字）</p>
+<p style="margin:0px;">                                if (HSSFDateUtil.isCellDateFormatted(cell)) {    //判断是否是一个日期</p>
+<p style="margin:0px;">                                    Date date = cell<span style=" font-weight:600; color:#4682b4;">.</span>getDateCellValue();</p>
+<p style="margin:0px;">                                    cellValue = new DateTime(date).toString(&quot;yyyy-MM-dd HH:mm:ss&quot;);</p>
+<p style="margin:0px;">                                } else {     //如果是数字，防止数字过长</p>
+<p style="margin:0px;">                                    cell<span style=" font-weight:600; color:#4682b4;">.</span>setCellType(HSSFCell<span style=" font-weight:600; color:#4682b4;">.</span>CELL_TYPE_STRING);</p>
+<p style="margin:0px;">                                    cellValue = cell<span style=" font-weight:600; color:#4682b4;">.</span>toString();</p>
+<p style="margin:0px;">                                }</p>
+<p style="margin:0px;">                                break;</p>
+<p style="margin:0px;">                            case HSSFCell.CELL_TYPE_STRING:     //如果是字符串类型</p>
+<p style="margin:0px;">                                cellValue = cell<span style=" font-weight:600; color:#4682b4;">.</span>getStringCellValue();</p>
+<p style="margin:0px;">                                break;</p>
+<p style="margin:0px;">                            case HSSFCell.CELL_TYPE_FORMULA:</p>
+<p style="margin:0px;">                                String formula = cell<span style=" font-weight:600; color:#4682b4;">.</span>getCellFormula();     <span style=" font-style:italic; color:#778899;">//获取公式</span></p>
+<p style="margin:0px;">                                CellValue evaluate = formulaEvaluator<span style=" font-weight:600; color:#4682b4;">.</span>evaluate(cell);</p>
+<p style="margin:0px;">                                String value = evaluate<span style=" font-weight:600; color:#4682b4;">.</span>formatAsString();   <span style=" font-style:italic; color:#778899;">//通过公式计算出的结果</span></p>
+<p style="margin:0px;">                                <span style=" font-style:italic; color:#778899;">/*</span></p>
+<p style="margin:0px;"><span style=" font-style:italic; color:#778899;">                                在这里需要选择需要的值（公式或者计算的值）</span></p>
+<p style="margin:0px;"><span style=" font-style:italic; color:#778899;">                                 */</span></p>
+<p style="margin:0px;">                                cellValue = value;</p>
+<p style="margin:0px;">                                break;</p>
+<p style="margin:0px;">                            case HSSFCell.CELL_TYPE_BLANK:      //如果是空</p>
+<p style="margin:0px;">                                break;</p>
+<p style="margin:0px;">                            case HSSFCell.CELL_TYPE_BOOLEAN:    //如果是布尔类型</p>
+<p style="margin:0px;">                                cellValue = String<span style=" font-weight:600; color:#4682b4;">.</span>valueOf(cell<span style=" font-weight:600; color:#4682b4;">.</span>getBooleanCellValue());</p>
+<p style="margin:0px;">                                break;</p>
+<p style="margin:0px;">                            case HSSFCell.CELL_TYPE_ERROR:      //如果数据类型错误</p>
+<p style="margin:0px;">                                System<span style=" font-weight:600; color:#4682b4;">.</span>out<span style=" font-weight:600; color:#4682b4;">.</span>println(<span style=" font-weight:600; color:#2e8b57;">&quot;数据类型错误&quot;</span>);</p>
+<p style="margin:0px;">                                break;</p>
+<p style="margin:0px;">                            default:</p>
+<p style="margin:0px;">                                System<span style=" font-weight:600; color:#4682b4;">.</span>out<span style=" font-weight:600; color:#4682b4;">.</span>println(<span style=" font-weight:600; color:#2e8b57;">&quot;匹配单元格的数据类型时，出现意料之外的错误&quot;</span>);</p>
+<p style="margin:0px;">                        }</p>
+<p style="margin:0px;">                        dataList<span style=" font-weight:600; color:#4682b4;">.</span>add(cellValue);</p>
+<p style="margin:0px;">                    }</p>
+<p style="margin:0px;">                }</p>
+<p style="margin:0px;">                totalList<span style=" font-weight:600; color:#4682b4;">.</span>add(dataList);</p>
+<p style="margin:0px;">            }</p>
+<p style="margin:0px;">        }</p>
+<p style="margin:0px;">        return totalList;</p>
+<p style="margin:0px;">    }</p>
+<p style="margin:0px;">}</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

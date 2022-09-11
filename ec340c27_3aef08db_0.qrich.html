@@ -1,0 +1,30 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">在主目录下建立 &quot;.gitignore&quot; 文件，此文件有如下规则</p>
+<p style="margin:0px;">被忽略的文件，就不会被上传了</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">1.忽略文件中的空行或以井号(#)开始的行将会被忽略。<br />2.可以使用Linux通配符。例如:星号(*)代表任意多个字符，问号(?)代表一个字符，方括号([abc])代表可选字符范围，大括号({string1,string2,…})代表可选的字符串等。</p>
+<p style="margin:0px;">3.如果名称的最前面有一个感叹号(!)，表示例外规则，将不被忽略。</p>
+<p style="margin:0px;">4.如果名称的最前面是一个路径分隔符(/)，表示要忽略的文件在此目录下，而子目录中的文件不忽略。</p>
+<p style="margin:0px;">5.如果名称的最后面是一个路径分隔符（/)，表示要忽略的是此目录下该名称的子目录，而非文件（默认文件或目录都忽略）。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">#为注释</p>
+<p style="margin:0px;">*.txt		#忽略所有.txt结尾的文件</p>
+<p style="margin:0px;">!lib.txt	# lib.txt 文件例外</p>
+<p style="margin:0px;">/temp		#仅忽略项目根目录下的 TODO 文件，不包括其他目录 temp</p>
+<p style="margin:0px;">build/		#忽略 build/ 目录下的所有文件</p>
+<p style="margin:0px;">doc/*.txt	#会忽略 doc/note.txt 但不包括dov/server/arch.txt</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

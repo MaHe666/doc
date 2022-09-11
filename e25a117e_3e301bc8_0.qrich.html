@@ -1,0 +1,46 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</p>
+<p style="margin:0px;">&lt;!DOCTYPE mapper</p>
+<p style="margin:0px;">        PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;</p>
+<p style="margin:0px;">        &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">&lt;mapper namespace=&quot;com.mahe666.mapper.StudentMapper&quot;&gt;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    &lt;!--按照结果，嵌套处理--&gt;</p>
+<p style="margin:0px;">    &lt;select id=&quot;getStudent2&quot; resultMap=&quot;StudentAndTeacherMap2&quot;&gt;</p>
+<p style="margin:0px;">        select</p>
+<p style="margin:0px;">            s.id sid,</p>
+<p style="margin:0px;">            s.name studentName,</p>
+<p style="margin:0px;">            t.name teacherName</p>
+<p style="margin:0px;">        from</p>
+<p style="margin:0px;">            student s,teacher t</p>
+<p style="margin:0px;">        where</p>
+<p style="margin:0px;">            s.tid = t.id</p>
+<p style="margin:0px;">    &lt;/select&gt;</p>
+<p style="margin:0px;">    &lt;resultMap id=&quot;StudentAndTeacherMap2&quot; type=&quot;student&quot;&gt;</p>
+<p style="margin:0px;">        &lt;!-- 给列名起别名之后，我们需要写别名 --&gt;</p>
+<p style="margin:0px;">        &lt;result property=&quot;id&quot; column=&quot;sid&quot;/&gt;</p>
+<p style="margin:0px;">        &lt;result property=&quot;name&quot; column=&quot;studentName&quot;/&gt;</p>
+<p style="margin:0px;">        </p>
+<p style="margin:0px;">        &lt;association property=&quot;teacher&quot; javaType=&quot;teacher&quot;&gt;</p>
+<p style="margin:0px;">            &lt;result property=&quot;name&quot; column=&quot;teacherName&quot;/&gt;</p>
+<p style="margin:0px;">        &lt;/association&gt;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    &lt;/resultMap&gt;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">&lt;/mapper&gt;</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

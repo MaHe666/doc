@@ -1,0 +1,61 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">捕获异常</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">try:</p>
+<p style="margin:0px;">	正常执行代码</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">一个except语句可以处理多个异常，这些异常通常被放在()内成为一个元组</p>
+<p style="margin:0px;">except (异常1,异常2,...,异常n):			</p>
+<p style="margin:0px;">	发生异常时执行的代码</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">也可以拆开写</p>
+<p style="margin:0px;">except 异常1:</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">except 异常2:</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">最后一个异常可以忽略异常名，作为通配符使用</p>
+<p style="margin:0px;">except:</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">如果没有发生任何异常，则触发else语句</p>
+<p style="margin:0px;">使用 else 子句比把所有的语句都放在 try 子句里面要好，这样可以避免一些意想不到，而 except 又无法捕获的异常。</p>
+<p style="margin:0px;">异常处理并不仅仅处理那些直接发生在 try 子句中的异常，而且还能处理子句中调用的函数（甚至间接调用的函数）里抛出的异常</p>
+<p style="margin:0px;">else:</p>
+<p style="margin:0px;">	没有异常时执行的代码</p>
+<p style="margin:0px;">finally:</p>
+<p style="margin:0px;">	不管有没异常都会执行</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">抛出异常</p>
+<p style="margin:0px;">使用raise触发异常，raise 唯一的一个参数指定了要被抛出的异常。它必须是一个异常的实例或者是异常的类（也就是Exception的子类）</p>
+<p style="margin:0px;">raise 异常类型('异常内容')</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">如果你只想知道这是否抛出了一个异常，并不想去处理它，那么一个简单的 raise 语句就可以再次把它抛出</p>
+<p style="margin:0px;">&gt;&gt;&gt; <span style=" font-weight:600; color:#8b008b;">try</span>:</p>
+<p style="margin:0px;">        <span style=" font-weight:600; color:#8b008b;">raise</span> NameError(<span style=" font-weight:600; color:#2e8b57;">'HiThere'</span>)</p>
+<p style="margin:0px;">    <span style=" font-weight:600; color:#8b008b;">except</span> NameError:</p>
+<p style="margin:0px;">        <span style=" font-weight:600; color:#204a87;">print</span>(<span style=" font-weight:600; color:#2e8b57;">'An exception flew by!'</span>)</p>
+<p style="margin:0px;">        <span style=" font-weight:600; color:#8b008b;">raise</span></p>
+<p style="margin:0px;">   </p>
+<p style="margin:0px;">An exception flew by!</p>
+<p style="margin:0px;">Traceback (most recent call last):</p>
+<p style="margin:0px;">  File <span style=" font-weight:600; color:#2e8b57;">&quot;&lt;stdin&gt;&quot;</span>, line <span style=" font-weight:600; color:#4682b4;">2</span>, <span style=" font-weight:600; color:#8b008b;">in</span> ?</p>
+<p style="margin:0px;">NameError: HiThere</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

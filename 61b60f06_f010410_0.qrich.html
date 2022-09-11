@@ -1,0 +1,36 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<ul style="margin: 0px; -qt-list-indent: 1;">
+<li style="margin:0px;">代码层面没有问题</li>
+<li style="margin:0px;">服务器内部工作</li>
+</ul>
+<p style="margin:0px; -qt-block-indent:1;">tomcat中有一个work目录</p>
+<p style="margin:0px; -qt-block-indent:1;"><span style=" font-weight:600;">IDEA中的代码使用Tomcat的会在IDEA的Tomcat工作空间生成一个work目录</span></p>
+<p style="margin:0px; -qt-block-indent:1;">我的idea tomcat的工作空间</p>
+<p style="margin:0px;">	C:\Users\ASUS\AppData\Local\JetBrains\IntelliJIdea2020.2\tomcat\Unnamed_javaweb-test\work\Catalina\localhost\cs\org\apache\jsp</p>
+<p style="margin:0px;">        <span style=" font-weight:600;">发现页面转变成了java程序</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-weight:600;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style=" font-weight:600;">浏览器向服务器发送请求，不管访问什么资源，其实都是在访问Servlet</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">JSP最终也会被转换成一个Java类</p>
+<p style="margin:0px;">	这个java类继承了<span style=" font-weight:600;">HttpJspBase</span>类，而HttpJspBase类又继承了HttpServlet类</p>
+<p style="margin:0px;"><span style=" font-weight:600;">JSP本质上就是一个Servlet</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

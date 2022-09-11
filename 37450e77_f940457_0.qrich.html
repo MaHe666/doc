@@ -1,0 +1,26 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">以上就是vue中组件生命周期钩子函数执行的各个过程以及执行的时机，但是这些钩子函数到底该怎么用呢？针对前言中提出的需求我们又该怎么解决呢？在这里，给大家举个例子：</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">例如有一个表格组件：</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<ol style="margin: 0px; -qt-list-indent: 1;">
+<li style="margin:0px;">我们想在表格加载之前显示个loading图，那么我们可以在组件实例创建之前的钩子函数beforeCreate里面将loading图显示。</li>
+<li style="margin:0px;">当组件实例加载出来，我们可以在created钩子函数里让这个loading图消失。</li>
+<li style="margin:0px;">当表格被加载好之后我们想让它马上去拉取后台数据，那么我们可以在组件DOM挂载之前的钩子函数beforeMount里面去发送请求。</li>
+<li style="margin:0px;">从后台拉取的数据要绑定在DOM中，那么就必须要在组件DOM挂载完毕的钩子函数mounted里面去做。</li>
+<li style="margin:0px;">表格中的数据在更新前和更新后，我们都需要做一个处理，那么这些工作就可以放在beforeUpdate和updated中去做。</li>
+<li style="margin:0px;">当应用程序结束后，或组件实例准备销毁时，有一些善后处理的工作（比如释放资源）就可以放在beforeDestroy和destroyed中去做。</li>
+</ol>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

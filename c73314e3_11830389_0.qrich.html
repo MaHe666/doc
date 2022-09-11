@@ -1,0 +1,85 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</p>
+<p style="margin:0px;">&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;</p>
+<p style="margin:0px;">       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</p>
+<p style="margin:0px;">       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans</p>
+<p style="margin:0px;">        https://www.springframework.org/schema/beans/spring-beans.xsd&quot;&gt;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    &lt;bean id=&quot;student&quot; class=&quot;com.mahe666.pojo.Student&quot;&gt;</p>
+<p style="margin:0px;">        &lt;!--第一种，普通值注入，value--&gt;</p>
+<p style="margin:0px;">        &lt;property name=&quot;name&quot; value=&quot;mahe666&quot;/&gt;</p>
+<p style="margin:0px;">        &lt;!--第二种，bean注入，ref--&gt;</p>
+<p style="margin:0px;">        &lt;property name=&quot;address&quot; ref=&quot;address&quot;/&gt;</p>
+<p style="margin:0px;">        &lt;!--第三种，数组注入--&gt;</p>
+<p style="margin:0px;">        &lt;property name=&quot;books&quot;&gt;</p>
+<p style="margin:0px;">            &lt;array&gt;</p>
+<p style="margin:0px;">                &lt;value&gt;Java&lt;/value&gt;</p>
+<p style="margin:0px;">                &lt;value&gt;Python&lt;/value&gt;</p>
+<p style="margin:0px;">                &lt;value&gt;Linux&lt;/value&gt;</p>
+<p style="margin:0px;">&lt;!--                &lt;ref bean=&quot;str&quot;/&gt;--&gt;</p>
+<p style="margin:0px;">            &lt;/array&gt;</p>
+<p style="margin:0px;">        &lt;/property&gt;</p>
+<p style="margin:0px;">        &lt;!--第四种，List集合注入--&gt;</p>
+<p style="margin:0px;">        &lt;property name=&quot;hobbies&quot;&gt;</p>
+<p style="margin:0px;">            &lt;list&gt;</p>
+<p style="margin:0px;">                &lt;value&gt;听歌&lt;/value&gt;</p>
+<p style="margin:0px;">                &lt;value&gt;敲代码&lt;/value&gt;</p>
+<p style="margin:0px;">                &lt;value&gt;看电影&lt;/value&gt;</p>
+<p style="margin:0px;">&lt;!--                &lt;ref bean=&quot;str&quot;/&gt;--&gt;</p>
+<p style="margin:0px;">            &lt;/list&gt;</p>
+<p style="margin:0px;">        &lt;/property&gt;</p>
+<p style="margin:0px;">        &lt;!--第五种，Map集合注入--&gt;</p>
+<p style="margin:0px;">        &lt;property name=&quot;card&quot;&gt;</p>
+<p style="margin:0px;">            &lt;map&gt;</p>
+<p style="margin:0px;">                &lt;entry key=&quot;身份证&quot; value=&quot;123123&quot;/&gt;</p>
+<p style="margin:0px;">                &lt;entry key=&quot;银行卡&quot; value=&quot;456456&quot;/&gt;</p>
+<p style="margin:0px;">            &lt;/map&gt;</p>
+<p style="margin:0px;">        &lt;/property&gt;</p>
+<p style="margin:0px;">        &lt;!--第六种，Set集合注入--&gt;</p>
+<p style="margin:0px;">        &lt;property name=&quot;games&quot;&gt;</p>
+<p style="margin:0px;">            &lt;set&gt;</p>
+<p style="margin:0px;">                &lt;value&gt;LOL&lt;/value&gt;</p>
+<p style="margin:0px;">                &lt;value&gt;COC&lt;/value&gt;</p>
+<p style="margin:0px;">                &lt;value&gt;BOB&lt;/value&gt;</p>
+<p style="margin:0px;">            &lt;/set&gt;</p>
+<p style="margin:0px;">        &lt;/property&gt;</p>
+<p style="margin:0px;">        &lt;!--第七种，NULL注入--&gt;</p>
+<p style="margin:0px;">        &lt;!--设置空字符串的话，value为&quot;&quot;就好--&gt;</p>
+<p style="margin:0px;">        &lt;property name=&quot;wife&quot;&gt;</p>
+<p style="margin:0px;">            &lt;null/&gt;</p>
+<p style="margin:0px;">        &lt;/property&gt;</p>
+<p style="margin:0px;">        &lt;!--第八种，配置类注入--&gt;</p>
+<p style="margin:0px;">        &lt;property name=&quot;info&quot;&gt;</p>
+<p style="margin:0px;">            &lt;props&gt;</p>
+<p style="margin:0px;">                &lt;prop key=&quot;学号&quot;&gt;2019100698&lt;/prop&gt;</p>
+<p style="margin:0px;">                &lt;prop key=&quot;性别&quot;&gt;男&lt;/prop&gt;</p>
+<p style="margin:0px;">                &lt;prop key=&quot;姓名&quot;&gt;小明&lt;/prop&gt;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">                &lt;prop key=&quot;driver&quot;&gt;mysql驱动&lt;/prop&gt;</p>
+<p style="margin:0px;">                &lt;prop key=&quot;url&quot;&gt;mysql地址&lt;/prop&gt;</p>
+<p style="margin:0px;">                &lt;prop key=&quot;username&quot;&gt;root&lt;/prop&gt;</p>
+<p style="margin:0px;">                &lt;prop key=&quot;password&quot;&gt;&lt;/prop&gt;</p>
+<p style="margin:0px;">            &lt;/props&gt;</p>
+<p style="margin:0px;">        &lt;/property&gt;</p>
+<p style="margin:0px;">    &lt;/bean&gt;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    &lt;!--引入Address--&gt;</p>
+<p style="margin:0px;">    &lt;bean id=&quot;address&quot; class=&quot;com.mahe666.pojo.Address&quot;&gt;</p>
+<p style="margin:0px;">        &lt;property name=&quot;address&quot; value=&quot;哈尔滨&quot;/&gt;</p>
+<p style="margin:0px;">    &lt;/bean&gt;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">&lt;/beans&gt;</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

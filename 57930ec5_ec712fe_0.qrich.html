@@ -1,0 +1,46 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">可视化操作软件可以直接用户权限</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">sql命令</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">-- 创建用户，用户名不用加引号</p>
+<p style="margin:0px;">CREATE USER 用户名 IDENTIFIED BY '密码'</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">-- 修改密码</p>
+<p style="margin:0px;">-- 当前用户</p>
+<p style="margin:0px;">SET PASSWORD = PASSWORD('新密码')</p>
+<p style="margin:0px;">-- 指定用户</p>
+<p style="margin:0px;">SET PASSWORD FOR 用户名 = PASSWORD('新密码')</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">-- 重命名</p>
+<p style="margin:0px;">RENAME USER 用户名 TO 新用户名</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">-- 用户授权全部的权限  ALL PRIVILEGES  库.表</p>
+<p style="margin:0px;">-- ALL PRIVILEGES除了给别人授权，其他都能干</p>
+<p style="margin:0px;">GRANT ALL PRIVILEGES ON *.* TO 用户名</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">-- 查询权限</p>
+<p style="margin:0px;">-- 指定用户</p>
+<p style="margin:0px;">SHOW GRANTS FOR 用户名</p>
+<p style="margin:0px;">SHOW GRANTS FOR root@localhost</p>
+<p style="margin:0px;">-- root权限</p>
+<p style="margin:0px;">GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' WITH GRANT OPTION</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">-- 撤销权限 REVOKE</p>
+<p style="margin:0px;">REVOKE ALL PRIVILEGES ON *.* FROM 用户</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">-- 删除用户</p>
+<p style="margin:0px;">DROP USER 用户名</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

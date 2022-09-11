@@ -1,0 +1,22 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">原子引用就是带版本号的原子性操作（就像乐观锁那样）</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">ABA问题就是：</p>
+<p style="margin:0px;">	假设现在有A、B两条线程。B线程执行的速度快</p>
+<p style="margin:0px;">	A在操作的时候，B在捣乱。他把A想操作的变量进行了修改，修改后又改回到原来的值</p>
+<p style="margin:0px;">	但是B不知道，B看到是该变量和它的期待值相等，就进行了修改</p>
+<p style="margin:0px;">	但是这个这个变量（内存值）在这段时间已经被修改过了</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

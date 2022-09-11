@@ -1,0 +1,66 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">带小数的数据在Java中被称为浮点型，浮点型可分为float类型和double类型</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<table border="1" style="margin:0px;" width="1200" cellspacing="0" cellpadding="3">
+<tr>
+<td width="400">
+<p style="margin:0px;">类型</p></td>
+<td width="400">
+<p style="margin:0px;">占用储存空间（byte）</p></td>
+<td width="400">
+<p style="margin:0px;">表述范围</p></td></tr>
+<tr>
+<td>
+<p style="margin:0px;">float</p></td>
+<td>
+<p style="margin:0px;">4</p></td>
+<td>
+<p style="margin:0px;">-3.403E38 ~ 3.403E38</p></td></tr>
+<tr>
+<td>
+<p style="margin:0px;">double</p></td>
+<td>
+<p style="margin:0px;">8</p></td>
+<td>
+<p style="margin:0px;">-1.798E308 ~ 1.798E308</p></td></tr></table>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">Java 浮点型常量有两种表示形式</p>
+<p style="margin:0px;">十进制形式：3.14，314.0，0.314</p>
+<p style="margin:0px;">科学计数法形式：314e2，314E2，314E-2</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">十进制形式很好理解，我们来看一下科学计数法形式</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">314E2，就相当于是314 * 10<span style=" vertical-align:super;">2</span></p>
+<p style="margin:0px;">314E-2，就相当于是314 / 10<span style=" vertical-align:super;">2</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; vertical-align:super;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px; vertical-align:super;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">然而，float也好，double也好。它们被称作浮点数，最重要的一个特征就是不精确</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">float类型又被称作单精度浮点数，位数可以精确到7位有效数字，在很多情况下，float类型的精度很难满足需求。而double表示这种类型的数值精度约为float的两倍，又被称作双精度类型，绝大部分应用程序都采用double类型。浮点型常量默认类型也是double</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">float类型的数值有一个后缀f或F，没有后缀的默认为double类型的浮点数。也可以在double数值后添加d或D，以明确其类型</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">可以进行测试，如果写一个语句：float a = 3.14;</p>
+<p style="margin:0px;">那么不出意外的会报错，需要注意的是，这里不是long和int之间的长度错误。而是因为默认的double类型是8个字节，而float是4个字节</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">浮点型float，double的数据不适合在不容许舍入误差的金融计算领域。如果需要进行不产生舍入误差的精确计算，需要使用BigDecimal类</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

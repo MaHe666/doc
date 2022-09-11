@@ -1,0 +1,49 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">为了降低开发的复杂度， 以后端为出发点， 比如：Struts、Spring MVC等框架的使用， 就是后端的MVC时代；</p>
+<p style="margin:0px;">以SpringMVC流程为例：</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<ul style="margin: 0px; -qt-list-indent: 1;">
+<li style="margin:0px;">发起请求到前端控制器(Dispatcher Servlet)</li>
+<li style="margin:0px;">前端控制器请求HandlerMapping查找Handler，可以根据xml配置、注解进行查找</li>
+<li style="margin:0px;">处理器映射器HandlerMapping向前端控制器返回Handler</li>
+<li style="margin:0px;">前端控制器调用处理器适配器去执行Handler</li>
+<li style="margin:0px;">处理器适配器去执行Handler</li>
+<li style="margin:0px;">Handler执行完成给适配器返回ModelAndView</li>
+<li style="margin:0px;">处理器适配器向前端控制器返回ModelAndView，ModelAndView是SpringMvc框架的一个底层对象，包括Model和View</li>
+<li style="margin:0px;">前端控制器请求视图解析器去进行视图解析，根据逻辑视图名解析成真正的视图(JSP)</li>
+<li style="margin:0px;">视图解析器向前端控制器返回View</li>
+<li style="margin:0px;">前端控制器进行视图渲染，视图渲染将模型数据(在ModelAndView对象中)填充到request域</li>
+<li style="margin:0px;">前端控制器向用户响应结果</li>
+<p style="-qt-paragraph-type:empty; margin:0px; -qt-block-indent:1;"><br /></p>
+<li style="margin:0px;">优点</li>
+<p style="margin:0px; -qt-block-indent:1;">	MVC是一个非常好的协作模式， 能够有效降低代码的耦合度从架构上能够让开发者明白代码应该写在哪里。为了让View更纯粹， 还可以使用Thyme leaf、Frree marker等模板引擎， 使模板里无法写入Java代码， 让前后端分工更加清晰。</p>
+<p style="-qt-paragraph-type:empty; margin:0px; -qt-block-indent:1;"><br /></p>
+<li style="margin:0px;">缺点</li>
+<ul type="circle" style="margin: 0px; -qt-list-indent: 1;">
+<li style="margin:0px; -qt-block-indent:1;">前端开发重度依赖开发环境，开发效率低，这种架构下，前后端协作有两种模式：</li>
+<li style="margin:0px; -qt-block-indent:1;">第一种是前端写DEMO， 写好后， 让后端去套模板。好处是DEMO可以本地开发， 很高效。不足是还需要后端套模板，有可能套错，套完后还需要前端确定，来回沟通调整的成本比较大；</li>
+</ul>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<li style="margin:0px;">另一种协作模式是前端负责浏览器端的所有开发和服务器端的View层模板开发。好处是UI相关的代码都是前端去写就好，后端不用太关注，不足就是前端开发重度绑定后端环境，环境成为影响前端开发效率的重要因素。</li>
+<p style="-qt-paragraph-type:empty; margin:0px; -qt-block-indent:1;"><br /></p>
+<li style="margin:0px;">前后端职责纠缠不清：模板引擎功能强大，依旧可以通过拿到的上下文变量来实现各种业务逻辑。这样，只要前端弱势一点，往往就会被后端要求在模板层写出不少业务代码，还有一个很大的灰色地带是Controller， 页面路由等功能本应该是前端最关注的， 但却是由后端来实现。Controller本身与Model往往也会纠缠不清，看了让人咬牙的业务代码经常会出现在Controller层。这些问题不能全归结于程序员的素养， 否则JSP就够了。</li>
+<p style="-qt-paragraph-type:empty; margin:0px; -qt-block-indent:1;"><br /></p>
+<li style="margin:0px;">对前端发挥的局限性：性能优化如果只在前端做空间非常有限，于是我们经常需要后端合作，但由于后端框架限制，我们很难使用[Comet】、【Big Pipe】等技术方案来优化性能。</li>
+<p style="-qt-paragraph-type:empty; margin:0px; -qt-block-indent:1;"><br /></p>
+<li style="margin:0px;">注：在这期间(2005年以前) ， 包括早期的JSP、PHP可以称之为Web 1.0时代。在这里想说一句， 如果你是一名Java初学者， 请你不要再把一些陈旧的技术当回事了， 比如JSP， 因为时代在变、技术在变、什么都在变(引用扎克伯格的一句话：唯一不变的是变化本身)；当我们去给大学做实训时，有些同学会认为我们没有讲什么干货，其实不然，只能说是你认知里的干货对于市场来说早就过时了而已</li>
+</ul>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

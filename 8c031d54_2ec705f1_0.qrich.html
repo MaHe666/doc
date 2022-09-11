@@ -1,0 +1,46 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">package com.mahe666.springcloud.service.impl;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">import com.mahe666.springcloud.mapper.DeptMapper;</p>
+<p style="margin:0px;">import com.mahe666.springcloud.pojo.Dept;</p>
+<p style="margin:0px;">import com.mahe666.springcloud.service.DeptService;</p>
+<p style="margin:0px;">import org.springframework.beans.factory.annotation.Autowired;</p>
+<p style="margin:0px;">import org.springframework.stereotype.Service;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">import java.util.List;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">@Service</p>
+<p style="margin:0px;">public class DeptServiceImpl implements DeptService {</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    @Autowired</p>
+<p style="margin:0px;">    private DeptMapper deptMapper;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    @Override</p>
+<p style="margin:0px;">    public boolean addDept(Dept dept) {</p>
+<p style="margin:0px;">        return deptMapper.addDept(dept);</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    @Override</p>
+<p style="margin:0px;">    public Dept selectById(Long id) {</p>
+<p style="margin:0px;">        return deptMapper.selectById(id);</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    @Override</p>
+<p style="margin:0px;">    public List&lt;Dept&gt; selectAll() {</p>
+<p style="margin:0px;">        return deptMapper.selectAll();</p>
+<p style="margin:0px;">    }</p>
+<p style="margin:0px;">}</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

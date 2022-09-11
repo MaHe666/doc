@@ -1,0 +1,54 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</p>
+<p style="margin:0px;">&lt;!DOCTYPE mapper</p>
+<p style="margin:0px;">        PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;</p>
+<p style="margin:0px;">        &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">&lt;mapper namespace=&quot;com.mahe666.mapper.StudentMapper&quot;&gt;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    &lt;!--</p>
+<p style="margin:0px;">        思路</p>
+<p style="margin:0px;">        1，查询所有的学生</p>
+<p style="margin:0px;">        2，根据查询出来的学生的tid，寻找对应的老师</p>
+<p style="margin:0px;">            因为resultType查不出来想要的teacher</p>
+<p style="margin:0px;">            所以给这个返回的东西做点手脚，给它变为resultMap</p>
+<p style="margin:0px;">    --&gt;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    &lt;select id=&quot;getStudent&quot; resultMap=&quot;StudentAndTeacherMap&quot;&gt;</p>
+<p style="margin:0px;">        select * from student</p>
+<p style="margin:0px;">    &lt;/select&gt;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    &lt;resultMap id=&quot;StudentAndTeacherMap&quot; type=&quot;student&quot;&gt;</p>
+<p style="margin:0px;">        &lt;result property=&quot;id&quot; column=&quot;id&quot;/&gt;</p>
+<p style="margin:0px;">        &lt;result property=&quot;name&quot; column=&quot;name&quot;/&gt;</p>
+<p style="margin:0px;">        &lt;!--复杂的属性我们需要单独处理--&gt;</p>
+<p style="margin:0px;">        &lt;!--</p>
+<p style="margin:0px;">            如果是个对象，我们需要使用association</p>
+<p style="margin:0px;">            如果是个集合，我们需要使用collection</p>
+<p style="margin:0px;">            &lt;association property=&quot;&quot;/&gt;</p>
+<p style="margin:0px;">            &lt;collection property=&quot;&quot;/&gt;</p>
+<p style="margin:0px;">        --&gt;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">        &lt;!--property是返回类型的属性，javaType是对应的实体类--&gt;</p>
+<p style="margin:0px;">        &lt;association property=&quot;teacher&quot; column=&quot;tid&quot; javaType=&quot;teacher&quot; select=&quot;getTeacherByTid&quot;/&gt;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    &lt;/resultMap&gt;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    &lt;select id=&quot;getTeacherByTid&quot; resultType=&quot;teacher&quot;&gt;</p>
+<p style="margin:0px;">        select * from teacher where id = #{tid}</p>
+<p style="margin:0px;">    &lt;/select&gt;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">&lt;/mapper&gt;</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

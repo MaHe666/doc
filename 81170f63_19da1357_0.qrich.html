@@ -1,0 +1,58 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">package com.mahe666;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">import com.alibaba.fastjson.JSONObject;</p>
+<p style="margin:0px;">import redis.clients.jedis.Jedis;</p>
+<p style="margin:0px;">import redis.clients.jedis.Transaction;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">public class TestTX {</p>
+<p style="margin:0px;">    public static void main(String[] args) {</p>
+<p style="margin:0px;">        Jedis jedis = new Jedis(&quot;192.168.236.129&quot;,6379);</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">        //为了方便测试，加了删库</p>
+<p style="margin:0px;">        jedis.flushDB();</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">        JSONObject jsonObject = new JSONObject();</p>
+<p style="margin:0px;">        jsonObject.put(&quot;hello&quot;,&quot;hello,world&quot;);</p>
+<p style="margin:0px;">        jsonObject.put(&quot;username&quot;,&quot;mahe666&quot;);</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">        String res = jsonObject.toString();</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">        //开启事务</p>
+<p style="margin:0px;">        Transaction multi = jedis.multi();</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">        try{</p>
+<p style="margin:0px;">            multi.set(&quot;user1&quot;,res);</p>
+<p style="margin:0px;">            multi.set(&quot;user2&quot;,res);</p>
+<p style="margin:0px;">            int i = 1/0;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">            //执行事务</p>
+<p style="margin:0px;">            multi.exec();</p>
+<p style="margin:0px;">        }catch (Exception e){</p>
+<p style="margin:0px;">            System.out.println(&quot;出异常了&quot;);</p>
+<p style="margin:0px;">            //放弃事务</p>
+<p style="margin:0px;">            multi.discard();</p>
+<p style="margin:0px;">            e.printStackTrace();</p>
+<p style="margin:0px;">        }finally {</p>
+<p style="margin:0px;">            System.out.println(jedis.get(&quot;user1&quot;));</p>
+<p style="margin:0px;">            System.out.println(jedis.get(&quot;user2&quot;));</p>
+<p style="margin:0px;">            //关闭连接</p>
+<p style="margin:0px;">            jedis.close();</p>
+<p style="margin:0px;">        }</p>
+<p style="margin:0px;">        </p>
+<p style="margin:0px;">    }</p>
+<p style="margin:0px;">}</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

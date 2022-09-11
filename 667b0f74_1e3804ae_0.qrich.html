@@ -1,0 +1,78 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">package com.yxrj.hdwlwrj.system.mqtt;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">import com.alibaba.fastjson.JSONObject;</p>
+<p style="margin:0px;">import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;</p>
+<p style="margin:0px;">import org.eclipse.paho.client.mqttv3.MqttCallback;</p>
+<p style="margin:0px;">import org.eclipse.paho.client.mqttv3.MqttClient;</p>
+<p style="margin:0px;">import org.eclipse.paho.client.mqttv3.MqttMessage;</p>
+<p style="margin:0px;">import org.springframework.stereotype.Component;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">import javax.annotation.Resource;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">/**</p>
+<p style="margin:0px;"> * @Classname PushCallback</p>
+<p style="margin:0px;"> * @Description 消费监听类</p>
+<p style="margin:0px;"> */</p>
+<p style="margin:0px;">@Component</p>
+<p style="margin:0px;">public class PushCallback implements MqttCallback {</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    @Resource</p>
+<p style="margin:0px;">    private MqttConfiguration mqttConfiguration;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    private static MqttClient client;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    //硬件属性</p>
+<p style="margin:0px;">    private static String _topic;</p>
+<p style="margin:0px;">    private static String _qos;</p>
+<p style="margin:0px;">    private static String _msg;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    @Override</p>
+<p style="margin:0px;">    public void connectionLost(Throwable throwable) {</p>
+<p style="margin:0px;">        if (client == null || !client.isConnected()) {</p>
+<p style="margin:0px;">            System.out.println(&quot;连接断开，正在重连....&quot;);</p>
+<p style="margin:0px;">            mqttConfiguration.getMqttPushClient();</p>
+<p style="margin:0px;">        }</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    @Override</p>
+<p style="margin:0px;">    public void messageArrived(String topic, MqttMessage mqttMessage) throws Exception {</p>
+<p style="margin:0px;">        System.out.println(&quot;----------------------------------------&quot;);</p>
+<p style="margin:0px;">        System.out.println(&quot;接收消息主题 : &quot; + topic);</p>
+<p style="margin:0px;">        System.out.println(&quot;接收消息Qos : &quot; + mqttMessage.getQos());</p>
+<p style="margin:0px;">        System.out.println(&quot;接收消息内容 : &quot; + new String(mqttMessage.getPayload()));</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">        _topic = topic;</p>
+<p style="margin:0px;">        _qos = mqttMessage.getQos()+&quot;&quot;;</p>
+<p style="margin:0px;">        _msg = new String(mqttMessage.getPayload());</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    @Override</p>
+<p style="margin:0px;">    public void deliveryComplete(IMqttDeliveryToken token) {</p>
+<p style="margin:0px;">        System.out.println(&quot;deliveryComplete---------&quot; + token.isComplete());</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    //别的Controller层会调用这个方法来  获取  接收到的硬件数据</p>
+<p style="margin:0px;">    public String receive() {</p>
+<p style="margin:0px;">        JSONObject jsonObject = new JSONObject();</p>
+<p style="margin:0px;">        jsonObject.put(&quot;topic&quot;, _topic);</p>
+<p style="margin:0px;">        jsonObject.put(&quot;qos&quot;, _qos);</p>
+<p style="margin:0px;">        jsonObject.put(&quot;msg&quot;, _msg);</p>
+<p style="margin:0px;">        return jsonObject.toString();</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">}</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

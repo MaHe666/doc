@@ -1,0 +1,63 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">    public ThreadPoolExecutor(int corePoolSize,</p>
+<p style="margin:0px;">                              int maximumPoolSize,</p>
+<p style="margin:0px;">                              long keepAliveTime,</p>
+<p style="margin:0px;">                              TimeUnit unit,</p>
+<p style="margin:0px;">                              BlockingQueue&lt;Runnable&gt; workQueue,</p>
+<p style="margin:0px;">                              ThreadFactory threadFactory,</p>
+<p style="margin:0px;">                              RejectedExecutionHandler handler) {</p>
+<p style="margin:0px;">        if (corePoolSize &lt; 0 ||</p>
+<p style="margin:0px;">            maximumPoolSize &lt;= 0 ||</p>
+<p style="margin:0px;">            maximumPoolSize &lt; corePoolSize ||</p>
+<p style="margin:0px;">            keepAliveTime &lt; 0)</p>
+<p style="margin:0px;">            throw new IllegalArgumentException();</p>
+<p style="margin:0px;">        if (workQueue == null || threadFactory == null || handler == null)</p>
+<p style="margin:0px;">            throw new NullPointerException();</p>
+<p style="margin:0px;">        this.acc = System.getSecurityManager() == null ?</p>
+<p style="margin:0px;">                null :</p>
+<p style="margin:0px;">                AccessController.getContext();</p>
+<p style="margin:0px;">        this.corePoolSize = corePoolSize;</p>
+<p style="margin:0px;">        this.maximumPoolSize = maximumPoolSize;</p>
+<p style="margin:0px;">        this.workQueue = workQueue;</p>
+<p style="margin:0px;">        this.keepAliveTime = unit.toNanos(keepAliveTime);</p>
+<p style="margin:0px;">        this.threadFactory = threadFactory;</p>
+<p style="margin:0px;">        this.handler = handler;</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">----------------------------------------------------------------</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">corePoolSize 核心线程池大小</p>
+<p style="margin:0px;">maximumPoolSize 最大线程池大小</p>
+<p style="margin:0px;">keepAliveTime 无人调用，超时后释放</p>
+<p style="margin:0px;">unit 超时单位</p>
+<p style="margin:0px;">workQueue 阻塞队列</p>
+<p style="margin:0px;">threadFactory 线程工厂，创建线程的，一般不用动</p>
+<p style="margin:0px;">handler 拒绝策略</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">----------------------------------------------------------------</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">拿银行办理业务流程来举例子：</p>
+<p style="margin:0px;">正常来说银行的柜台不会全部开启，只开启部分。</p>
+<p style="margin:0px;">而来办理业务的人也不会在柜台区排队，而是在候客区等候</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">假设某一天来办理业务的人特别多，候客区溢出了，银行就会让那些关闭的窗口开启，来接待客人</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">以往开启的窗口就是corePoolSize，而平时关闭、在关键时刻才开启窗口就是maximumPoolSize，候客区就是阻塞队列</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">假设全部窗口都开启的时候，候客区仍然无法满足那些人等待，则会使用采取措施。而这里采取的策略就是handler拒绝策略</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">如果候客区的客人都接待完毕，而且规定时间内也没有客人来办理，临时开启的窗口也会关闭。这个时间就是keepAliveTime，无人调用，超时后释放</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

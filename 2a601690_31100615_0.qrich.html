@@ -1,0 +1,31 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">person:</p>
+<p style="margin:0px;">  name: mahe666${random.uuid}</p>
+<p style="margin:0px;">#  这里也可以使用占位符和表达式</p>
+<p style="margin:0px;">  age: ${random.int}</p>
+<p style="margin:0px;">  happy: true</p>
+<p style="margin:0px;">  birth: 2019/12/12</p>
+<p style="margin:0px;">  maps: {k1: v1,k2: v2}</p>
+<p style="margin:0px;">  list:</p>
+<p style="margin:0px;">    - code</p>
+<p style="margin:0px;">    - music</p>
+<p style="margin:0px;">    - girl</p>
+<p style="margin:0px;">  dog:</p>
+<p style="margin:0px;">#    如果dog有giaogiao属性，就选择dog里面giaogiao的值</p>
+<p style="margin:0px;">#    如果没有，就选择冒号后面的值</p>
+<p style="margin:0px;">#    括号外面的值是拼接字符串</p>
+<p style="margin:0px;">    name: ${dog.giaogiao:hello}_旺财</p>
+<p style="margin:0px;">    age: 3</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

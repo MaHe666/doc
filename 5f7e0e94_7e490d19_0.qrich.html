@@ -1,0 +1,30 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">maven由于他的约定大于配置，我们之后可能会遇到我们写的配置文件，无法导出或无法生效的问题</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">解决方案：</p>
+<p style="margin:0px;"><a href="https://www.cnblogs.com/pixy/p/4798089.html"><span style=" text-decoration: underline; color:#0000ff;">https://www.cnblogs.com/pixy/p/4798089.html</span></a></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    &lt;resources&gt;</p>
+<p style="margin:0px;">        &lt;resource&gt;</p>
+<p style="margin:0px;">            &lt;directory&gt;src/main/java&lt;/directory&gt;</p>
+<p style="margin:0px;">            &lt;includes&gt;</p>
+<p style="margin:0px;">                &lt;include&gt;**/*.properties&lt;/include&gt;</p>
+<p style="margin:0px;">                &lt;include&gt;**/*.xml&lt;/include&gt;</p>
+<p style="margin:0px;">            &lt;/includes&gt;</p>
+<p style="margin:0px;">            &lt;filtering&gt;false&lt;/filtering&gt;</p>
+<p style="margin:0px;">        &lt;/resource&gt;</p>
+<p style="margin:0px;">    &lt;/resources&gt;</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

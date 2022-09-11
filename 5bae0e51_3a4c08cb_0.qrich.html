@@ -1,0 +1,69 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">我们知道，数字在计算机里面使用二进制来表示的</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<table border="1" style="margin:0px;" width="1200" cellspacing="0" cellpadding="3">
+<tr>
+<td width="600">
+<p style="margin:0px;">~</p></td>
+<td width="600">
+<p style="margin:0px;">取反</p></td></tr>
+<tr>
+<td>
+<p style="margin:0px;">&amp;</p></td>
+<td>
+<p style="margin:0px;">按位与</p></td></tr>
+<tr>
+<td>
+<p style="margin:0px;">|</p></td>
+<td>
+<p style="margin:0px;">按位或</p></td></tr>
+<tr>
+<td>
+<p style="margin:0px;">^</p></td>
+<td>
+<p style="margin:0px;">按位异或</p></td></tr>
+<tr>
+<td>
+<p style="margin:0px;">&lt;&lt;</p></td>
+<td>
+<p style="margin:0px;">左移运算符，左移1位相当于乘2</p></td></tr>
+<tr>
+<td>
+<p style="margin:0px;">&gt;&gt;</p></td>
+<td>
+<p style="margin:0px;">右移运算符，右移1位相当于除以2取商</p></td></tr></table>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">假设说现在有3和4两个操作数，他们的二进制表示分别是0011和0100</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">可以想象0为false，1为true，0和1进行逻辑操作，然后选择一个保留</p>
+<p style="margin:0px;">然而实际情况下1和0代表的也是true和false</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">使用 按位与&amp; 来操作这两个数的结果就是0000</p>
+<p style="margin:0px;">使用 按位或|   来操作这两个数的结果就是0111</p>
+<p style="margin:0px;">使用 按位异或^ 来操作这两个数的结果就是0111，对位的数不同就是1</p>
+<p style="margin:0px;">取反就非常简单，0变成1，1变成0</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">一些搞C语言的人喜欢问一些问题，比如说3乘2怎样效率最快</p>
+<p style="margin:0px;">非常简单，就是3&lt;&lt;1，让3左移一位</p>
+<p style="margin:0px;">3乘4的话就是3&lt;&lt;2,</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">3/2的话就是3&gt;&gt;1，让3右移1位</p>
+<p style="margin:0px;">3/4的话就是3&gt;&gt;2，让3右移2位</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

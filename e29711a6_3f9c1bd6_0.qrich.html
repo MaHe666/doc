@@ -1,0 +1,38 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</p>
+<p style="margin:0px;">&lt;!DOCTYPE mapper</p>
+<p style="margin:0px;">        PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;</p>
+<p style="margin:0px;">        &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">&lt;mapper namespace=&quot;com.mahe666.mapper.TeacherMapper&quot;&gt;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    &lt;!--子查询的方式--&gt;</p>
+<p style="margin:0px;">    &lt;select id=&quot;getTeacher2&quot; resultMap=&quot;teacherAndStudentMap2&quot;&gt;</p>
+<p style="margin:0px;">        select * from teacher</p>
+<p style="margin:0px;">    &lt;/select&gt;</p>
+<p style="margin:0px;">    &lt;resultMap id=&quot;teacherAndStudentMap2&quot; type=&quot;teacher&quot;&gt;</p>
+<p style="margin:0px;">        &lt;result property=&quot;id&quot; column=&quot;id&quot;/&gt;</p>
+<p style="margin:0px;">        &lt;result property=&quot;name&quot; column=&quot;name&quot;/&gt;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">        &lt;collection property=&quot;studentList&quot; column=&quot;id&quot; javaType=&quot;ArrayList&quot; ofType=&quot;student&quot; select=&quot;getStudentByTid&quot;/&gt;</p>
+<p style="margin:0px;">    &lt;/resultMap&gt;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    &lt;select id=&quot;getStudentByTid&quot; resultType=&quot;student&quot;&gt;</p>
+<p style="margin:0px;">        select * from student where tid =#{id}</p>
+<p style="margin:0px;">    &lt;/select&gt;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">&lt;/mapper&gt;</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

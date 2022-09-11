@@ -1,0 +1,43 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">1，去github上下载</p>
+<p style="margin:0px;">master分支上的dubbo-admin</p>
+<p style="margin:0px;"><a href="https://github.com/apache/dubbo-admin.git"><span style=" text-decoration: underline; color:#0000ff;">https://github.com/apache/dubbo-admin.git</span></a></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">2，使用idea打开dubbo-admin文件夹（压缩包需要解压）</p>
+<p style="margin:0px;">下载maven配置的jar包</p>
+<p style="margin:0px;">编辑dubbo-admin-server模块下的application.properties配置文件</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"># 这里对注册中心相关地址进行相关配置，将端口号修改为Zookeeper的2181</p>
+<p style="margin:0px;">admin.registry.address=zookeeper://127.0.0.1:2181</p>
+<p style="margin:0px;">admin.config-center=zookeeper://127.0.0.1:2181</p>
+<p style="margin:0px;">admin.metadata-report.address=zookeeper://127.0.0.1:2181</p>
+<p style="margin:0px;"># 在配置文件末尾修改一下启动端口号，防止冲突</p>
+<p style="margin:0px;"><span style=" font-weight:600;">server.port=7001</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">3，打开idea中的maven面板，点击dubbo-admin-server模块，然后点击Lifecycle里面的package进行打包</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">4，然后回到项目目录，点击dubbo-admin-ui，右键选择Open in Terminal</p>
+<p style="margin:0px;">输入npm i	让vue下载依赖</p>
+<p style="margin:0px;">点开vue.config.js，更改proxy节点下target链接的端口，改为7001，和dubbo-admin-server暴露的端口一样</p>
+<p style="margin:0px;">下载完依赖后，输入npm run dev运行</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">5，启动zookeeper和后端服务，点击控制台输出的端口进到页面，默认的账号和密码都是root</p>
+<p style="margin:0px;">//可以在idea中运行后端服务，也可以在cmd中输入 <span style=" font-weight:600;">java -jar 带后缀的文件名</span> 运行服务</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

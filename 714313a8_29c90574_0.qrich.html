@@ -1,0 +1,53 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</p>
+<p style="margin:0px;">&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;</p>
+<p style="margin:0px;">       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</p>
+<p style="margin:0px;">       xmlns:context=&quot;http://www.springframework.org/schema/context&quot;</p>
+<p style="margin:0px;">       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans</p>
+<p style="margin:0px;">        https://www.springframework.org/schema/beans/spring-beans.xsd</p>
+<p style="margin:0px;">        http://www.springframework.org/schema/context</p>
+<p style="margin:0px;">        https://www.springframework.org/schema/context/spring-context.xsd</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">&quot;&gt;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    &lt;!--专门导入数据库配置的标签--&gt;</p>
+<p style="margin:0px;">    &lt;context:property-placeholder location=&quot;classpath:database.properties&quot;/&gt;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    &lt;!--数据库连接--&gt;</p>
+<p style="margin:0px;">    &lt;bean id=&quot;dataSource&quot; class=&quot;org.springframework.jdbc.datasource.DriverManagerDataSource&quot;&gt;</p>
+<p style="margin:0px;">        &lt;property name=&quot;driverClassName&quot; value=&quot;${jdbc.driver}&quot;/&gt;</p>
+<p style="margin:0px;">        &lt;property name=&quot;url&quot; value=&quot;${jdbc.url}&quot;/&gt;</p>
+<p style="margin:0px;">        &lt;property name=&quot;username&quot; value=&quot;${jdbc.username}&quot;/&gt;</p>
+<p style="margin:0px;">        &lt;property name=&quot;password&quot; value=&quot;${jdbc.password}&quot;/&gt;</p>
+<p style="margin:0px;">    &lt;/bean&gt;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    &lt;!--SqlSessionFactory--&gt;</p>
+<p style="margin:0px;">    &lt;bean id=&quot;sqlSessionFactory&quot; class=&quot;org.mybatis.spring.SqlSessionFactoryBean&quot;&gt;</p>
+<p style="margin:0px;">        &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot;/&gt;</p>
+<p style="margin:0px;">        &lt;property name=&quot;configLocation&quot; value=&quot;classpath:mybatis-config.xml&quot;/&gt;</p>
+<p style="margin:0px;">    &lt;/bean&gt;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    &lt;!--配置Dao接口扫描，动态实现Dao接口注入到Spring容器中，省掉了给Dao层的实现类，实现类的话需要加上@Repository注解--&gt;</p>
+<p style="margin:0px;">    &lt;bean class=&quot;org.mybatis.spring.mapper.MapperScannerConfigurer&quot;&gt;</p>
+<p style="margin:0px;">        &lt;!--注入sqlSessionFactory--&gt;</p>
+<p style="margin:0px;">        &lt;property name=&quot;sqlSessionFactoryBeanName&quot; value=&quot;sqlSessionFactory&quot;/&gt;</p>
+<p style="margin:0px;">        &lt;!--要扫描的包--&gt;</p>
+<p style="margin:0px;">        &lt;property name=&quot;basePackage&quot; value=&quot;com.mahe666.dao&quot;/&gt;</p>
+<p style="margin:0px;">    &lt;/bean&gt;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">&lt;/beans&gt;</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

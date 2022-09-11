@@ -1,0 +1,50 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;"><span style=" font-style:italic; color:#778899;">//JavaScript中所有的键都是字符串，值是任意对象</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style=" font-style:italic; color:#778899;">//键值对描述属性    xxxx:xxxx,</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style=" font-weight:600; color:#8b008b;">var</span> person = {</p>
+<p style="margin:0px;">	name:<span style=" font-weight:600; color:#2e8b57;">&quot;马赫&quot;</span>,</p>
+<p style="margin:0px;">	age:<span style=" font-weight:600; color:#2e8b57;">&quot;21&quot;</span>,</p>
+<p style="margin:0px;">	hobby:[<span style=" font-weight:600; color:#2e8b57;">'java'</span>,<span style=" font-weight:600; color:#2e8b57;">'web'</span>,<span style=" font-weight:600; color:#2e8b57;">'python'</span>]</p>
+<p style="margin:0px;">}</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style=" font-style:italic; color:#778899;">//对象的赋值</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">person<span style=" font-weight:600; color:#4682b4;">.</span>name = <span style=" font-weight:600; color:#2e8b57;">&quot;马赫666&quot;</span>;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style=" font-style:italic; color:#778899;">//对象属性的删除</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style=" font-weight:600; color:#8b008b;">delete</span> person<span style=" font-weight:600; color:#4682b4;">.</span>name;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style=" font-style:italic; color:#778899;">//动态添加</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">person<span style=" font-weight:600; color:#4682b4;">.</span>mahe666 = <span style=" font-weight:600; color:#2e8b57;">&quot;mahe666&quot;</span>;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style=" font-style:italic; color:#778899;">//判断属性是否在对象中</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style=" font-weight:600; color:#2e8b57;">'属性名'</span> <span style=" font-weight:600; color:#8b008b;">in</span> 对象名</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style=" font-style:italic; color:#778899;">//判断一个属性是否是这个对象自身拥有的hasOwnProperty()</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">person<span style=" font-weight:600; color:#4682b4;">.</span>hasOwnProperty(<span style=" font-weight:600; color:#2e8b57;">'toSring'</span>);</p>
+<p style="margin:0px;">false</p>
+<p style="margin:0px;">person<span style=" font-weight:600; color:#4682b4;">.</span>hasOwnProperty(<span style=" font-weight:600; color:#2e8b57;">'age'</span>);</p>
+<p style="margin:0px;">true</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

@@ -1,0 +1,65 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">    public static ExecutorService newSingleThreadExecutor() {</p>
+<p style="margin:0px;">        return new FinalizableDelegatedExecutorService</p>
+<p style="margin:0px;">            (new ThreadPoolExecutor(1, 1,</p>
+<p style="margin:0px;">                                    0L, TimeUnit.MILLISECONDS,</p>
+<p style="margin:0px;">                                    new LinkedBlockingQueue&lt;Runnable&gt;()));</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    public static ExecutorService newFixedThreadPool(int nThreads) {</p>
+<p style="margin:0px;">        return new ThreadPoolExecutor(nThreads, nThreads,</p>
+<p style="margin:0px;">                                      0L, TimeUnit.MILLISECONDS,</p>
+<p style="margin:0px;">                                      new LinkedBlockingQueue&lt;Runnable&gt;());</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    public static ExecutorService newCachedThreadPool() {</p>
+<p style="margin:0px;">        return new ThreadPoolExecutor(0, Integer.MAX_VALUE,</p>
+<p style="margin:0px;">                                      60L, TimeUnit.SECONDS,</p>
+<p style="margin:0px;">                                      new SynchronousQueue&lt;Runnable&gt;());</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">以上是通过Executor创建线程池的三大方法</p>
+<p style="margin:0px;">不难发现，这三个方法都是通过ThreadPoolExecutor进行创建的。所以开启线程池的本质也是调用ThreadPoolExecutor</p>
+<p style="margin:0px;">查看ThreadPoolExecutor，发现他又调用了一个this，点开this就能发现ThreadPoolExecutor本体了</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    public ThreadPoolExecutor(int corePoolSize,</p>
+<p style="margin:0px;">                              int maximumPoolSize,</p>
+<p style="margin:0px;">                              long keepAliveTime,</p>
+<p style="margin:0px;">                              TimeUnit unit,</p>
+<p style="margin:0px;">                              BlockingQueue&lt;Runnable&gt; workQueue,</p>
+<p style="margin:0px;">                              ThreadFactory threadFactory,</p>
+<p style="margin:0px;">                              RejectedExecutionHandler handler) {</p>
+<p style="margin:0px;">        if (corePoolSize &lt; 0 ||</p>
+<p style="margin:0px;">            maximumPoolSize &lt;= 0 ||</p>
+<p style="margin:0px;">            maximumPoolSize &lt; corePoolSize ||</p>
+<p style="margin:0px;">            keepAliveTime &lt; 0)</p>
+<p style="margin:0px;">            throw new IllegalArgumentException();</p>
+<p style="margin:0px;">        if (workQueue == null || threadFactory == null || handler == null)</p>
+<p style="margin:0px;">            throw new NullPointerException();</p>
+<p style="margin:0px;">        this.acc = System.getSecurityManager() == null ?</p>
+<p style="margin:0px;">                null :</p>
+<p style="margin:0px;">                AccessController.getContext();</p>
+<p style="margin:0px;">        this.corePoolSize = corePoolSize;</p>
+<p style="margin:0px;">        this.maximumPoolSize = maximumPoolSize;</p>
+<p style="margin:0px;">        this.workQueue = workQueue;</p>
+<p style="margin:0px;">        this.keepAliveTime = unit.toNanos(keepAliveTime);</p>
+<p style="margin:0px;">        this.threadFactory = threadFactory;</p>
+<p style="margin:0px;">        this.handler = handler;</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">上面的构造函数中有七个参数，这就是线程池的七大参数了</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

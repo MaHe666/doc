@@ -1,0 +1,48 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</p>
+<p style="margin:0px;">&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;</p>
+<p style="margin:0px;">       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</p>
+<p style="margin:0px;">       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans</p>
+<p style="margin:0px;">        https://www.springframework.org/schema/beans/spring-beans.xsd&quot;&gt;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    &lt;!--</p>
+<p style="margin:0px;">        DataSource    使用Spring的数据源替换Mybatis的</p>
+<p style="margin:0px;">        使用Spring提供的JDBC</p>
+<p style="margin:0px;">    --&gt;</p>
+<p style="margin:0px;">    &lt;!-- org.springframework.jdbc.datasource.DriverManagerDataSource --&gt;</p>
+<p style="margin:0px;">    &lt;bean id=&quot;dataSource&quot; class=&quot;org.springframework.jdbc.datasource.DriverManagerDataSource&quot;&gt;</p>
+<p style="margin:0px;">        &lt;property name=&quot;driverClassName&quot; value=&quot;com.mysql.jdbc.Driver&quot;/&gt;</p>
+<p style="margin:0px;">        &lt;property name=&quot;url&quot; value=&quot;jdbc:mysql://localhost:3306/mybatis_test?useSSL=false&amp;amp;useUnicode=true&amp;amp;characterEncoding=UTF-8&quot;/&gt;</p>
+<p style="margin:0px;">        &lt;property name=&quot;username&quot; value=&quot;root&quot;/&gt;</p>
+<p style="margin:0px;">        &lt;property name=&quot;password&quot; value=&quot;&quot;/&gt;</p>
+<p style="margin:0px;">    &lt;/bean&gt;</p>
+<p style="margin:0px;">    </p>
+<p style="margin:0px;">    &lt;!--需要SqlSessionFactory对象--&gt;</p>
+<p style="margin:0px;">    &lt;bean id=&quot;sqlSessionFactory&quot; class=&quot;org.mybatis.spring.SqlSessionFactoryBean&quot;&gt;</p>
+<p style="margin:0px;">        &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot;/&gt;</p>
+<p style="margin:0px;">        &lt;!--绑定Mybatis配置文件--&gt;</p>
+<p style="margin:0px;">        &lt;property name=&quot;configLocation&quot; value=&quot;classpath:mybatis-config.xml&quot;/&gt;</p>
+<p style="margin:0px;">        &lt;!--mapper 映射文件注册--&gt;</p>
+<p style="margin:0px;">        &lt;property name=&quot;mapperLocations&quot; value=&quot;classpath:com/mahe666/mapper/*.xml&quot;/&gt;</p>
+<p style="margin:0px;">    &lt;/bean&gt;</p>
+<p style="margin:0px;">    </p>
+<p style="margin:0px;">    &lt;!--需要SqlSession--&gt;&lt;!--第二种方式不需要这个--&gt;</p>
+<p style="margin:0px;">    &lt;bean id=&quot;sqlSession&quot; class=&quot;org.mybatis.spring.SqlSessionTemplate&quot;&gt;</p>
+<p style="margin:0px;">        &lt;!--只能使用构造器注入sqlSessionFactory，因为它没有set方法--&gt;</p>
+<p style="margin:0px;">        &lt;constructor-arg index=&quot;0&quot; ref=&quot;sqlSessionFactory&quot;/&gt;</p>
+<p style="margin:0px;">    &lt;/bean&gt;</p>
+<p style="margin:0px;">    </p>
+<p style="margin:0px;">&lt;/beans&gt;</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

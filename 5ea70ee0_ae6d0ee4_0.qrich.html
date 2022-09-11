@@ -1,0 +1,32 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">若已知具体的类，通过类的class的属性获取，该方法最为安全可靠，程序性能最高</p>
+<p style="margin:0px;">	Class class = Person.class;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">已知某个类的实例，调用该实例的getClass()方法获取Class对象</p>
+<p style="margin:0px;">	Class class = person.getClass();	</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">已知一个类的全类名，且该类在类的类路径下，可通过Class类的静态方法forName()获取，可能抛出ClassNotFoundException</p>
+<p style="margin:0px;">	Class class = Class.forName(&quot;demo1.Person&quot;);</p>
+<p style="margin:0px;">  例如：JDBC的 Class.forName(&quot;com.mysql.jdbc.Driver&quot;);</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">内置基本数据类型可以直接用类名.TYPE</p>
+<p style="margin:0px;">	Class class = Integer.TYPE</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">还可以利用ClassLoader等</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">获取父类类型</p>
+<p style="margin:0px;">	Class class = person.getSuperclass();</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

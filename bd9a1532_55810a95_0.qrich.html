@@ -1,0 +1,51 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">复制粘贴三个nacos server</p>
+<p style="margin:0px;">他们的端口分别为8849,8850,8851</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">1，配置数据库（集群共用），要求版本为5.7以上</p>
+<p style="margin:0px;">在conf目录下有一个nacos-mysql.sql</p>
+<p style="margin:0px;">选中数据库，运行sql文件，配置集群，需要用到数据库</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">2，修改nacos配置文件 nacos/conf/application.properties </p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">#使用外置的mysql数据源，要求版本为5.7以上</p>
+<p style="margin:0px;">spring.datasource.platform=mysql</p>
+<p style="margin:0px;">### Count Of DB</p>
+<p style="margin:0px;">db.num=1</p>
+<p style="margin:0px;">### Connect URL of DB</p>
+<p style="margin:0px;">db.url.0=jdbc:mysql://127.0.0.1:3306/nacos_colony_test?characterEncoding=utf8&amp;connectTimeout=1000&amp;socketTimeout=3000&amp;autoReconnect=true&amp;useUnicode=true&amp;useSSL=false&amp;serverTimezone=UTC</p>
+<p style="margin:0px;">db.user.0=数据库账号</p>
+<p style="margin:0px;">db.password.0=数据库密码</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style=" font-weight:600;">不要忘记修改端口</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">3，修改nacos集群配置文件 cluster.conf.example</p>
+<p style="margin:0px;">去掉 .example 改为 cluster.conf</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">添加节点配置（所有nacos的ip）</p>
+<p style="margin:0px;"><span style=" font-weight:600;">注意！不要使用127.0.0.1，要使用本机ip</span></p>
+<p style="margin:0px;">192.168.236.1:8849</p>
+<p style="margin:0px;">192.168.236.1:8850</p>
+<p style="margin:0px;">192.168.236.1:8851</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">4，修改内存大小</p>
+<p style="margin:0px;">如果担心电脑的内存不足，可以修改对应启动文件里面的集群模式下的配置</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

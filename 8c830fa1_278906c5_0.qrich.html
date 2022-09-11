@@ -1,0 +1,42 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">    @Select(&quot;select * from `user` where id = #{id}&quot;)</p>
+<p style="margin:0px;">    User getUserById(@Param(&quot;id&quot;) Integer id);</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">在mapper文件中不写@Param，需要在xml中标明parameterType（也可以不用写，mybatis自动识别）</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">若在mapper文件中写上@Param，则在xml中可以不用写</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">通常在mapper中标明，在传入多个参数的时候具有扩展性，因为parameterType只允许传入一种类型</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">只有一个参数的时候可以不写@Param(&quot;&quot;)注解</p>
+<p style="margin:0px;">例：</p>
+<p style="margin:0px;">@Select(&quot;select * from `user` where id = #{id}&quot;)</p>
+<p style="margin:0px;">User getUserByParam( Integer id);</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style=" text-decoration: line-through;">但是当方法存在多个参数的时候，所有的</span><span style=" font-weight:600; text-decoration: line-through;">基本类型</span><span style=" text-decoration: line-through;">的参数都必须在前面写上注解，这是规范</span></p>
+<p style="margin:0px;"><span style=" text-decoration: line-through;">Map和其他引用对象（比如实体类对象）写注解的话传不进去</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">此外，@Param(&quot;&quot;) 括号里面的值可以和形参名不一致，相当于取别名</p>
+<p style="margin:0px;">例：</p>
+<p style="margin:0px;">@Select(&quot;select * from `user` where id = #{cid}&quot;)</p>
+<p style="margin:0px;">User getUserByParam(@Param(&quot;cid&quot;) Integer id);</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><a href="https://blog.csdn.net/Sunshineoe/article/details/114697944"><span style=" text-decoration: underline; color:#0000ff;">https://blog.csdn.net/Sunshineoe/article/details/114697944</span></a></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

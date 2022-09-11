@@ -1,0 +1,64 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">package com.mahe666;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">import org.junit.jupiter.api.Test;</p>
+<p style="margin:0px;">import org.springframework.boot.test.context.SpringBootTest;</p>
+<p style="margin:0px;">import org.springframework.mail.SimpleMailMessage;</p>
+<p style="margin:0px;">import org.springframework.mail.javamail.JavaMailSenderImpl;</p>
+<p style="margin:0px;">import org.springframework.mail.javamail.MimeMessageHelper;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">import javax.annotation.Resource;</p>
+<p style="margin:0px;">import javax.mail.MessagingException;</p>
+<p style="margin:0px;">import javax.mail.internet.MimeMessage;</p>
+<p style="margin:0px;">import java.io.File;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">@SpringBootTest</p>
+<p style="margin:0px;">class TesttasksApplicationTests {</p>
+<p style="margin:0px;">    @Resource</p>
+<p style="margin:0px;">    private JavaMailSenderImpl mailSender;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    @Test</p>
+<p style="margin:0px;">    void easyMail(){</p>
+<p style="margin:0px;">        SimpleMailMessage simpleMailMessage = new SimpleMailMessage();</p>
+<p style="margin:0px;">        //主题</p>
+<p style="margin:0px;">        simpleMailMessage.setSubject(&quot;mahe666&quot;);</p>
+<p style="margin:0px;">        //文本</p>
+<p style="margin:0px;">        simpleMailMessage.setText(&quot;马赫好帅啊&quot;);</p>
+<p style="margin:0px;">        //目标邮箱</p>
+<p style="margin:0px;">        simpleMailMessage.setTo(&quot;&quot;);</p>
+<p style="margin:0px;">        //发送的邮箱</p>
+<p style="margin:0px;">        simpleMailMessage.setFrom(&quot;&quot;);</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">        mailSender.send(simpleMailMessage);</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    @Test</p>
+<p style="margin:0px;">    void complexMail() throws MessagingException {</p>
+<p style="margin:0px;">        MimeMessage mimeMessage = mailSender.createMimeMessage();</p>
+<p style="margin:0px;">        //组装</p>
+<p style="margin:0px;">        MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage,true,&quot;utf-8&quot;);</p>
+<p style="margin:0px;">        mimeMessageHelper.setSubject(&quot;mahe666&quot;);</p>
+<p style="margin:0px;">        //正文，true为支持解析html标签</p>
+<p style="margin:0px;">        mimeMessageHelper.setText(&quot;&lt;h1&gt;马赫好帅啊&lt;/h1&gt;&quot;,true);</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">        //附件</p>
+<p style="margin:0px;">        mimeMessageHelper.addAttachment(&quot;文件名.后缀&quot;,new File(&quot;路径&quot;));</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">        mailSender.send(mimeMessage);</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">}</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

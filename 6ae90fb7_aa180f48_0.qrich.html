@@ -1,0 +1,40 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">f=<span style=" font-weight:600; color:#204a87;">open</span>(<span style=" font-weight:600; color:#2e8b57;">&quot;文件路径&quot;</span>,<span style=" font-weight:600; color:#2e8b57;">&quot;r&quot;</span>)</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style=" font-weight:600; color:#204a87;">str</span>=f<span style=" font-weight:600; color:#4682b4;">.</span>read()	</p>
+<p style="margin:0px;"><span style=" font-weight:600; color:#2e8b57;">''</span>'</p>
+<p style="margin:0px;">为了读取一个文件的内容，调用 f<span style=" font-weight:600; color:#4682b4;">.</span>read(size), 这将读取一定数目的数据, 然后作为字符串或字节对象返回。</p>
+<p style="margin:0px;">size 是一个可选的数字类型的参数。 当 size 被忽略了或者为负, 那么该文件的所有内容都将被读取并且返回。</p>
+<p style="margin:0px;"><span style=" font-weight:600; color:#2e8b57;">''</span>'</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style=" font-weight:600; color:#8b008b;">for</span> line <span style=" font-weight:600; color:#8b008b;">in</span> f:</p>
+<p style="margin:0px;">    <span style=" font-weight:600; color:#204a87;">print</span>(line, end=<span style=" font-weight:600; color:#2e8b57;">''</span>)</p>
+<p style="margin:0px;"><span style=" font-weight:600; color:#2e8b57;">''</span>'</p>
+<p style="margin:0px;">迭代读取每一行</p>
+<p style="margin:0px;"><span style=" font-weight:600; color:#2e8b57;">''</span>'</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">num=f<span style=" font-weight:600; color:#4682b4;">.</span>write(<span style=" font-weight:600; color:#2e8b57;">&quot;Hello World&quot;</span>)</p>
+<p style="margin:0px;"><span style=" font-weight:600; color:#2e8b57;">''</span>'</p>
+<p style="margin:0px;">f<span style=" font-weight:600; color:#4682b4;">.</span>write(string) 将 string 写入到文件中, 然后返回写入的字符数</p>
+<p style="margin:0px;"><span style=" font-weight:600; color:#2e8b57;">''</span>'</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style=" font-weight:600; color:#204a87;">print</span>(f<span style=" font-weight:600; color:#4682b4;">.</span>tell())</p>
+<p style="margin:0px;"><span style=" font-weight:600; color:#2e8b57;">''</span>'</p>
+<p style="margin:0px;">f<span style=" font-weight:600; color:#4682b4;">.</span>tell()</p>
+<p style="margin:0px;">返回文件对象当前所处的位置，他是从文件开头算起的字节数</p>
+<p style="margin:0px;"><span style=" font-weight:600; color:#2e8b57;">''</span>'</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">f<span style=" font-weight:600; color:#4682b4;">.</span>close()	<span style=" font-style:italic; color:#778899;">#关闭打开的文件</span></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

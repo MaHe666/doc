@@ -8,15 +8,14 @@ p, li { white-space: pre-wrap; }
 </style>
 </head>
 <body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
-<p style="margin:0px;"><span style="font-family:'Courier';">官网</span></p>
-<p style="margin:0px;"><a href="https://www.java.com/zh-CN/"><span style=" text-decoration: underline; color:#0000ff;">https://www.java.com/zh-CN/</span></a></p>
-<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;">集合的stream()方法返回的是串行流，而parallelStream()返回的是并行流</p>
 <p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="margin:0px;">java全栈知识体系</p>
-<p style="margin:0px;"><a href="https://www.pdai.tech/"><span style=" text-decoration: underline; color:#0000ff;">https://www.pdai.tech/</span></a></p>
+<p style="margin:0px;">建议在批量处理数据的时候使用</p>
+<p style="margin:0px;"><span style="font-family:'Courier';">list名</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">parallelStream().parallel().forEach(l -&gt; {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">	....</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">})</span></p>
 <p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">而不要使用for循环</p>
 <p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
 <p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
 

@@ -3,7 +3,6 @@ var xItemIDs={"3": "9cc7101b_a4160e19_0.qrich.html"
 	, "2": "61300eda_91e10c3b_0.qrich.html"
 	, "1": "51dc0e6a_68700b83_0.qrich.html"
 	, "0": "60190ec7_56860a9a_0.qrich.html"
-	, "7": "e34711a0_a1810e17_0.qrich.html"
 	, "6": "15da0c96_c7e42f06_0.qrich.html"
 	, "4": "44c30e08_bc110ed8_0.qrich.html"};
 

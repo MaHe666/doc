@@ -1,0 +1,73 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<table border="1" style="margin:0px;" width="1200" cellspacing="0" cellpadding="3">
+<tr>
+<td width="300">
+<p style="margin:0px;">forName() </p></td>
+<td width="900">
+<p style="margin:0px;">(1)获取Class对象的一个引用，但引用的类还没有加载(该类的第一个对象没有生成)就加载了这个类。 (2)为了产生Class引用，forName()立即就进行了初始化。 </p></td></tr>
+<tr>
+<td>
+<p style="margin:0px;">Object.getClass() </p></td>
+<td>
+<p style="margin:0px;">获取Class对象的一个引用，返回表示该对象的实际类型的Class引用。 </p></td></tr>
+<tr>
+<td>
+<p style="margin:0px;">getName()  </p></td>
+<td>
+<p style="margin:0px;">取全限定的类名(包括包名)，即类的完整名字。</p></td></tr>
+<tr>
+<td>
+<p style="margin:0px;">getSimpleName() </p></td>
+<td>
+<p style="margin:0px;">获取类名(不包括包名) </p></td></tr>
+<tr>
+<td>
+<p style="margin:0px;">getCanonicalName() </p></td>
+<td>
+<p style="margin:0px;">获取全限定的类名(包括包名) </p></td></tr>
+<tr>
+<td>
+<p style="margin:0px;">isInterface() </p></td>
+<td>
+<p style="margin:0px;">判断Class对象是否是表示一个接口 </p></td></tr>
+<tr>
+<td>
+<p style="margin:0px;">getInterfaces() </p></td>
+<td>
+<p style="margin:0px;">返回Class对象数组，表示Class对象所引用的类所实现的所有接口。 </p></td></tr>
+<tr>
+<td>
+<p style="margin:0px;">getSupercalss() </p></td>
+<td>
+<p style="margin:0px;">返回Class对象，表示Class对象所引用的类所继承的直接基类。应用该方法可在运行时发现一个对象完整的继承结构。 </p></td></tr>
+<tr>
+<td>
+<p style="margin:0px;">newInstance() </p></td>
+<td>
+<p style="margin:0px;">返回一个Oject对象，是实现“虚拟构造器”的一种途径。使用该方法创建的类，必须带有无参的构造器。 </p></td></tr>
+<tr>
+<td>
+<p style="margin:0px;">getFields() </p></td>
+<td>
+<p style="margin:0px;">获得某个类的所有的公共（public）的字段，包括继承自父类的所有公共字段。 类似的还有getMethods和getConstructors。 </p></td></tr>
+<tr>
+<td>
+<p style="margin:0px;">getDeclaredFields()</p></td>
+<td>
+<p style="margin:0px;"> 获得某个类的自己声明的字段，即包括public、private和proteced，默认但是不包括父类声明的任何字段。类似的还有getDeclaredMethods和getDeclaredConstructors。</p></td></tr></table>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

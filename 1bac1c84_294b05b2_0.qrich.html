@@ -8,68 +8,68 @@ p, li { white-space: pre-wrap; }
 </style>
 </head>
 <body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
-<p style="margin:0px;">package com.mahe666.springcloud.controller;</p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="margin:0px;">import com.mahe666.springcloud.pojo.Dept;</p>
-<p style="margin:0px;">import com.mahe666.springcloud.service.DeptService;</p>
-<p style="margin:0px;">import org.springframework.beans.factory.annotation.Autowired;</p>
-<p style="margin:0px;">import org.springframework.cloud.client.ServiceInstance;</p>
-<p style="margin:0px;">import org.springframework.cloud.client.discovery.DiscoveryClient;</p>
-<p style="margin:0px;">import org.springframework.web.bind.annotation.*;</p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="margin:0px;">import java.util.List;</p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="margin:0px;">//提供Restful服务</p>
-<p style="margin:0px;">@RestController</p>
-<p style="margin:0px;">@RequestMapping(&quot;/dept&quot;)</p>
-<p style="margin:0px;">public class DeptController {</p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="margin:0px;">    @Autowired</p>
-<p style="margin:0px;">    private DeptService deptService;</p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="margin:0px;">    //得到当前微服务的一些信息</p>
-<p style="margin:0px;">    @Autowired</p>
-<p style="margin:0px;">    private DiscoveryClient discoveryClient;</p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="margin:0px;">    @PostMapping(&quot;/add&quot;)</p>
-<p style="margin:0px;">    public boolean addDept(Dept dept){</p>
-<p style="margin:0px;">        return deptService.addDept(dept);</p>
-<p style="margin:0px;">    }</p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="margin:0px;">    @GetMapping(&quot;/selectById/{id}&quot;)</p>
-<p style="margin:0px;">    public Dept selectById(@PathVariable(&quot;id&quot;) Long id){</p>
-<p style="margin:0px;">        return deptService.selectById(id);</p>
-<p style="margin:0px;">    }</p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="margin:0px;">    @GetMapping(&quot;/selectAll&quot;)</p>
-<p style="margin:0px;">    public List&lt;Dept&gt; selectAll(){</p>
-<p style="margin:0px;">        return deptService.selectAll();</p>
-<p style="margin:0px;">    }</p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="margin:0px;">    @GetMapping(&quot;/discovery&quot;)</p>
-<p style="margin:0px;">    public Object discovery(){</p>
-<p style="margin:0px;">        //获得微服务列表清单</p>
-<p style="margin:0px;">        List&lt;String&gt; list = discoveryClient.getServices();</p>
-<p style="margin:0px;">        System.out.println(&quot;client.getServices()==&gt;&quot;+list);</p>
-<p style="margin:0px;">        //得到一个具体的微服务！</p>
-<p style="margin:0px;">        List&lt;ServiceInstance&gt; serviceInstanceList =</p>
-<p style="margin:0px;">                discoveryClient.getInstances(&quot;springcloud-provider-dept&quot;);</p>
-<p style="margin:0px;">        for (ServiceInstance serviceInstance : serviceInstanceList) {</p>
-<p style="margin:0px;">            System.out.println(</p>
-<p style="margin:0px;">                    serviceInstance.getServiceId()+&quot;\t&quot;+</p>
-<p style="margin:0px;">                            serviceInstance.getHost()+&quot;\t&quot;+</p>
-<p style="margin:0px;">                            serviceInstance.getPort()+&quot;\t&quot;+</p>
-<p style="margin:0px;">                            serviceInstance.getUri()</p>
-<p style="margin:0px;">            );</p>
-<p style="margin:0px;">        }</p>
-<p style="margin:0px;">        return this.discoveryClient;</p>
-<p style="margin:0px;">    }</p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="margin:0px;">}</p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">package</span><span style="font-family:'Courier';"> com</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">mahe666</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">springcloud</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">controller;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">import</span><span style="font-family:'Courier';"> com</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">mahe666</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">springcloud</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">pojo</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">Dept;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">import</span><span style="font-family:'Courier';"> com</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">mahe666</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">springcloud</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">service</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">DeptService;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">import</span><span style="font-family:'Courier';"> org</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">springframework</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">beans</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">factory</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">annotation</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">Autowired;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">import</span><span style="font-family:'Courier';"> org</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">springframework</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">cloud</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">client</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">ServiceInstance;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">import</span><span style="font-family:'Courier';"> org</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">springframework</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">cloud</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">client</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">discovery</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">DiscoveryClient;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">import</span><span style="font-family:'Courier';"> org</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">springframework</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">web</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">bind</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">annotation.*;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">import</span><span style="font-family:'Courier';"> java</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">util</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">List;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">//提供Restful服务</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">@RestController</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">@RequestMapping(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;/dept&quot;</span><span style="font-family:'Courier';">)</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">class</span><span style="font-family:'Courier';"> DeptController {</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    @Autowired</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">private</span><span style="font-family:'Courier';"> DeptService deptService;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">//得到当前微服务的一些信息</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    @Autowired</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">private</span><span style="font-family:'Courier';"> DiscoveryClient discoveryClient;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    @PostMapping(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;/add&quot;</span><span style="font-family:'Courier';">)</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">boolean</span><span style="font-family:'Courier';"> addDept(Dept dept){</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">return</span><span style="font-family:'Courier';"> deptService</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">addDept(dept);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    @GetMapping(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;/selectById/{id}&quot;</span><span style="font-family:'Courier';">)</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> Dept selectById(@PathVariable(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;id&quot;</span><span style="font-family:'Courier';">) Long id){</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">return</span><span style="font-family:'Courier';"> deptService</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">selectById(id);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    @GetMapping(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;/selectAll&quot;</span><span style="font-family:'Courier';">)</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> List&lt;Dept&gt; selectAll(){</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">return</span><span style="font-family:'Courier';"> deptService</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">selectAll();</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    @GetMapping(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;/discovery&quot;</span><span style="font-family:'Courier';">)</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> Object discovery(){</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">//获得微服务列表清单</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        List&lt;String&gt; list = discoveryClient</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">getServices();</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        System</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">out</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">println(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;client.getServices()==&gt;&quot;</span><span style="font-family:'Courier';">+list);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">//得到一个具体的微服务！</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        List&lt;ServiceInstance&gt; serviceInstanceList =</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                discoveryClient</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">getInstances(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;springcloud-provider-dept&quot;</span><span style="font-family:'Courier';">);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">for</span><span style="font-family:'Courier';"> (ServiceInstance serviceInstance : serviceInstanceList) {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            System</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">out</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">println(</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                    serviceInstance</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">getServiceId()+</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;\t&quot;</span><span style="font-family:'Courier';">+</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                            serviceInstance</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">getHost()+</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;\t&quot;</span><span style="font-family:'Courier';">+</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                            serviceInstance</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">getPort()+</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;\t&quot;</span><span style="font-family:'Courier';">+</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                            serviceInstance</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">getUri()</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            );</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">return</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">this</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">discoveryClient;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">}</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
 
 <script type="text/javascript" language="javascript" src="jquery.js"></script>
 <script type="text/javascript" language="javascript" src="itemlink.js"></script></body>

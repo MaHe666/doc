@@ -1,0 +1,26 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">主要目的是为了解耦</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">业务逻辑粘连了C层和M层，应该从C层和M层解耦出来，成为了独立的Service层</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">在实际的业务中，Controller和Dao层都是很少改变的，而当业务需求变了，我们的逻辑也要发生对应的变动</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">如果我们在Controller层里面写业务代码，就会导致代码变得膨胀复杂</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">--------------------------------------------------------------</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">在Service层我们处理业务的时候，我们也要注意Service本身的解耦，比如一个大的业务是在拼积木</p>
+<p style="margin:0px;">那么我们就需要把拼积木的各个部分拆分开来组成单独的方法，比如组成胳膊的积木提出来，组成腿的积木也提出来。最后一起组装那些拼好的部分</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

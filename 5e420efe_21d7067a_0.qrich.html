@@ -10,6 +10,10 @@ p, li { white-space: pre-wrap; }
 <body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
 <p style="margin:0px;">带小数的数据在Java中被称为浮点型，浮点型可分为float类型和double类型</p>
 <p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">float：float 数据类型是单精度 32 位 IEEE 754 浮点数。 它的取值范围超出了本次讨论的范围，但在 Java 语言规范的浮点类型、格式和值部分中进行了指定。 对于 byte 和 short 的建议，如果您需要在大型浮点数数组中节省内存，请使用 float（而不是 double）。 这种数据类型不应该用于精确值，例如货币。 为此，您需要改用 java.math.BigDecimal 类。 数字和字符串涵盖了 BigDecimal 和 Java 平台提供的其他有用的类。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">double：double 数据类型是双精度 64 位 IEEE 754 浮点数。 它的取值范围超出了本次讨论的范围，但在 Java 语言规范的浮点类型、格式和值部分中进行了指定。 对于十进制值，此数据类型通常是默认选择。 如上所述，这种数据类型不应该用于精确值，例如货币。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
 <p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
 <table border="1" style="margin:0px;" width="1200" cellspacing="0" cellpadding="3">
 <tr>
@@ -36,8 +40,6 @@ p, li { white-space: pre-wrap; }
 <p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
 <p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
 <p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
 <p style="margin:0px;">Java 浮点型常量有两种表示形式</p>
 <p style="margin:0px;">十进制形式：3.14，314.0，0.314</p>
 <p style="margin:0px;">科学计数法形式：314e2，314E2，314E-2</p>
@@ -60,6 +62,13 @@ p, li { white-space: pre-wrap; }
 <p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
 <p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
 <p style="margin:0px;">浮点型float，double的数据不适合在不容许舍入误差的金融计算领域。如果需要进行不产生舍入误差的精确计算，需要使用BigDecimal类</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
 
 <script type="text/javascript" language="javascript" src="jquery.js"></script>
 <script type="text/javascript" language="javascript" src="itemlink.js"></script></body>

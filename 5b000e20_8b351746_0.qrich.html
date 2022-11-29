@@ -1,0 +1,50 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">创建数组的一种方式是使用new关键字。</p>
+<p style="margin:0px;">anArray = new int[10];</p>
+<p style="margin:0px;">以上语句的意思是：为10个整数元素分配足够内存的数组，并将该数组分配给anArray变量</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">如果缺少这个过程，则编译器就会报错，提示该变量可能没有被初始化</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">还有更快捷的方式去创建和初始化数组:</p>
+<p style="margin:0px;">int[] anArray = {100,200,300,400,500,600,700,800,900}</p>
+<p style="margin:0px;">这里，数组的长度由大括号之间提供的值的数量决定，并用逗号分隔。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">还可以通过使用两组或多组括号（如String[][]名称）来声明数组（也称为多维数组或二维数组）。因此，每个元素必须由相应数量的索引值访问。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">class</span><span style="font-family:'Courier';"> MultiDimArrayDemo {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">static</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">void</span><span style="font-family:'Courier';"> main(String[] args) {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        String[][] names = {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            {</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;Mr. &quot;</span><span style="font-family:'Courier';">, </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;Mrs. &quot;</span><span style="font-family:'Courier';">, </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;Ms. &quot;</span><span style="font-family:'Courier';">},</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            {</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;Smith&quot;</span><span style="font-family:'Courier';">, </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;Jones&quot;</span><span style="font-family:'Courier';">}</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        };</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">// Mr. Smith</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        System</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">out</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">println(names[</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">0</span><span style="font-family:'Courier';">][</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">0</span><span style="font-family:'Courier';">] + names[</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">1</span><span style="font-family:'Courier';">][</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">0</span><span style="font-family:'Courier';">]);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">// Ms. Jones</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        System</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">out</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">println(names[</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">0</span><span style="font-family:'Courier';">][</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">2</span><span style="font-family:'Courier';">] + names[</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">1</span><span style="font-family:'Courier';">][</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">1</span><span style="font-family:'Courier';">]);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">}</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">在Java编程语言中，多维数组是其组件本身就是数组的数组。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

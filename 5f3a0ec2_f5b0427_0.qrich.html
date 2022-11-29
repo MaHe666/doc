@@ -14,7 +14,11 @@ p, li { white-space: pre-wrap; }
 <p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
 <p style="margin:0px;">-----------------------------------------------------------------</p>
 <p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="margin:0px;">封装的目的在于，不让外界（类的外部）访问到类的具体实现</p>
+<p style="margin:0px;">封装的好处：</p>
+<p style="margin:0px;">1，模块化：一个对象的源代码可以独立于其他对象的源代码来编写和维护。一旦创建，一个对象就可以很容易地在系统内部传递。</p>
+<p style="margin:0px;">2，信息隐藏：通过仅与对象的方法交互，其内部实现的细节对外界保持隐藏状态。</p>
+<p style="margin:0px;">3，代码重用：如果一个对象已经存在（可能是由另一个软件开发人员编写的），您可以在您的程序中使用该对象。这允许专家实施/测试/调试复杂的、特定于任务的对象，然后您可以相信这些对象可以在您自己的代码中运行。</p>
+<p style="margin:0px;">4，可插入性和调试容易：如果某个特定对象被证明是有问题的，您可以简单地将它从您的应用程序中删除并插入一个不同的对象作为它的替代品。这类似于解决现实世界中的机械问题。如果螺栓断裂，您可以更换它，而不是整台机器。</p>
 
 <script type="text/javascript" language="javascript" src="jquery.js"></script>
 <script type="text/javascript" language="javascript" src="itemlink.js"></script></body>

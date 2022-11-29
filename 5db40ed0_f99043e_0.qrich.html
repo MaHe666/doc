@@ -57,6 +57,13 @@ p, li { white-space: pre-wrap; }
 <p style="margin:0px;">-2<span style=" vertical-align:super;">63</span> ~ 2<span style=" vertical-align:super;">63</span>-1</p></td></tr></table>
 <p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
 <p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">byte：byte 数据类型是一个 8 位有符号二进制补码整数。 它的最小值为 -128，最大值为 127（含）。 字节数据类型可用于在大型数组中节省内存，其中内存节省实际上很重要。 它们也可以用来代替 int ，它们的限制有助于阐明您的代码； 变量的范围是有限的这一事实可以作为一种文档形式。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">short：short 数据类型是一个 16 位有符号二进制补码整数。 它的最小值为-32,768，最大值为32,767（含）。 与 byte 一样，适用相同的准则：在内存节省实际很重要的情况下，您可以使用 short 来节省大型数组中的内存。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">int：默认情况下，int数据类型是一个32位有符号二进制补码整数，最小值为-231，最大值为231-1。 在 Java SE 8 及之后的版本中，可以使用 int 数据类型来表示一个无符号的 32 位整数，最小值为 0，最大值为 232-1。 使用 Integer 类将 int 数据类型用作无符号整数。 有关详细信息，请参阅数字类部分。  Integer 类中添加了 compareUnsigned、divideUnsigned 等静态方法，以支持无符号整数的算术运算。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">long：long 数据类型是一个 64 位二进制补码整数。  signed long 的最小值为 -263，最大值为 263-1。 在 Java SE 8 及之后的版本中，可以使用 long 数据类型来表示无符号的 64 位 long，其最小值为 0，最大值为 264-1。 当您需要的值范围比 int 提供的范围更宽时，请使用此数据类型。  Long 类还包含 compareUnsigned、divideUnsigned 等方法来支持 unsigned long 的算术运算。</p>
 <p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
 <p style="margin:0px;"><span style=" font-weight:600;">注意：在声明long类型的变量时需要在值后面加一个l或L，建议加L，以免混淆</span></p>
 <p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>

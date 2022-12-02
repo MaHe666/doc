@@ -1,0 +1,39 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">Java编程语言支持重载方法，Java可以区分具有不同方法签名的方法。这意味着，如果一个类中的方法具有不同的参数列表，则它们可以具有相同的名称（在标题为“接口和继承”的课程中将讨论这一点）。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">假设您有一个类，它可以使用书法来绘制各种类型的数据（字符串、整数等），并且包含用于绘制每种数据类型的方法。为每个方法使用一个新名称是很麻烦的，例如drawString、drawInteger、drawFloat等。在Java编程语言中，可以对所有绘图方法使用相同的名称，但向每个方法传递不同的参数列表。因此，数据绘图类可能会声明四个名为draw的方法，每个方法都有一个不同的参数列表。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">例如：</p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">class</span><span style="font-family:'Courier';"> DataArtist {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    ...</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">void</span><span style="font-family:'Courier';"> draw(String s) {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        ...</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">void</span><span style="font-family:'Courier';"> draw(</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">int</span><span style="font-family:'Courier';"> i) {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        ...</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">void</span><span style="font-family:'Courier';"> draw(</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">double</span><span style="font-family:'Courier';"> f) {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        ...</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">void</span><span style="font-family:'Courier';"> draw(</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">int</span><span style="font-family:'Courier';"> i, </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">double</span><span style="font-family:'Courier';"> f) {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        ...</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">}</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">编译器在区分方法时不考虑返回类型，因此即使两个方法具有不同的返回类型，也不能声明具有相同签名的两个方法。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">应谨慎使用重载方法，因为它们会使代码可读性降低。</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

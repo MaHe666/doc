@@ -8,11 +8,20 @@ p, li { white-space: pre-wrap; }
 </style>
 </head>
 <body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
-<p style="margin:0px;">多态存在的意义主要体现在通用性方面，无论子类有多少，通用的逻辑都不变</p>
-<p style="margin:0px;">只需要处理基类就好，详情见代码示例</p>
+<p style="margin:0px;">import java.lang.annotation.*;</p>
 <p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="margin:0px;">我们把导出类当做是基类来处理，这个过程称为向上转型（自动转型）</p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">/**</p>
+<p style="margin:0px;"> * 不需要登陆验证 注解</p>
+<p style="margin:0px;"> *</p>
+<p style="margin:0px;"> * @className: NoLoginVerify</p>
+<p style="margin:0px;"> * @author: GuoShunFa</p>
+<p style="margin:0px;"> * @date: 2022/11/27</p>
+<p style="margin:0px;"> **/</p>
+<p style="margin:0px;">@Target({ElementType.METHOD, ElementType.TYPE})</p>
+<p style="margin:0px;">@Retention(RetentionPolicy.RUNTIME)</p>
+<p style="margin:0px;">@Documented</p>
+<p style="margin:0px;">public @interface NoLoginVerify {</p>
+<p style="margin:0px;">}</p>
 <p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
 
 <script type="text/javascript" language="javascript" src="jquery.js"></script>

@@ -1,0 +1,29 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">当您向方法或构造函数声明参数时，请为该参数提供名称。此名称在方法体中用于引用传入的参数。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">参数的名称在其范围内必须是唯一的。它不能与同一方法或构造函数的另一个参数的名称相同，也不能是该方法或构造函数中的局部变量的名称。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">参数可以与类的某个字段具有相同的名称。如果是这种情况，则该参数被称为隐藏字段。隐藏字段会使代码难以阅读，通常只在设置特定字段的构造函数和方法中使用。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">例如，考虑以下Circle类及其setOrigin方法：</p>
+<p style="margin:0px;">public class Circle {</p>
+<p style="margin:0px;">    private int x, y, radius;</p>
+<p style="margin:0px;">    public void setOrigin(int x, int y) {</p>
+<p style="margin:0px;">        ...</p>
+<p style="margin:0px;">    }</p>
+<p style="margin:0px;">}</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">Circle类有三个字段：x、y和半径。setOrigin方法有两个参数，每个参数的名称与其中一个字段的名称相同。每个方法参数都会隐藏共享其名称的字段。因此，在方法体中使用简单名称x或y是指参数，而不是字段。要访问该字段，必须使用限定名称。这将在本课稍后的“使用this关键字”部分中讨论</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

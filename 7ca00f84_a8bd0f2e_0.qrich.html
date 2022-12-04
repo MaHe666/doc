@@ -1,0 +1,36 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">还可以使用对象引用来调用对象的方法。使用中间的点运算符（.）将方法的简单名称附加到对象引用。此外，还可以在括号内提供该方法的任何参数。如果该方法不需要任何参数，请使用空括号。</p>
+<p style="margin:0px;">	objectReference.methodName(argumentList);</p>
+<p style="margin:0px;">	或者</p>
+<p style="margin:0px;">	objectReference.methodName();</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">Rectangle类有两个方法：getArea（）用于计算矩形的面积，move（）用于更改矩形的原点。下面是调用这两个方法的CreateObjectDemo代码：</p>
+<p style="margin:0px;">	System.out.println(&quot;Area of rectOne: &quot; + rectOne.getArea());</p>
+<p style="margin:0px;">	...</p>
+<p style="margin:0px;">	rectTwo.move(40, 72);</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">第一条语句调用rectOne的getArea（）方法并显示结果。第二行移动rectTwo，因为move（）方法为对象的原点指定了新值。x和原点y。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">与实例字段一样，objectReference必须是对对象的引用。可以使用变量名，但也可以使用返回对象引用的任何表达式。new运算符返回一个对象引用，因此您可以使用从new返回的值来调用新对象的方法：</p>
+<p style="margin:0px;">	new Rectangle(100, 50).getArea()</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">表达式new Rectangle（100，50）返回一个引用Rectangle对象的对象引用。如图所示，可以使用点符号调用新矩形的getArea（）方法来计算新矩形的面积。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">一些方法，如getArea（），返回一个值。对于返回值的方法，可以在表达式中使用方法调用。您可以将返回值分配给变量，使用它进行决策或控制循环。此代码将getArea（）返回的值分配给变量areaOfRectangle：</p>
+<p style="margin:0px;">	int areaOfRectangle = new Rectangle(100, 50).getArea();</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">记住，在特定对象上调用方法与向该对象发送消息相同。在本例中，调用getArea（）的对象是构造函数返回的矩形。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

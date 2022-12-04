@@ -1,0 +1,29 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">之前，您了解到要声明变量，需要编写：</p>
+<p style="margin:0px;"><span style=" font-style:italic;">type name;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">这会通知编译器，您将使用name来引用类型为type的数据。对于原始变量，此声明还为变量保留了适当的内存量。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">您也可以在自己的行上声明引用变量。例如：</p>
+<p style="margin:0px;"><span style=" font-style:italic;">Point originOne;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">如果像这样声明originOne，那么在实际创建并分配对象之前，其值将是不确定的。简单地声明引用变量不会创建对象。为此，您需要使用新运算符，如下一节所述。在代码中使用对象之前，必须将其分配给originOne。否则，将出现编译器错误。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">当前未引用任何对象的处于此状态的变量可以如下所示（变量名originOne，加上指向任何对象的引用）</p>
+<p style="margin:0px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHoAAAAnCAIAAABPK8uaAAAAA3NCSVQICAjb4U/gAAAACXBIWXMAABJ0AAASdAHeZh94AAAFYklEQVRoge2ZTUv7ShTGJ5eL2IWm2IWu0vgFNK5tbbIUFeO2CI0rQQXrSt21G3VnlroyBVHcRXwBV06lH2CCH8BGEQSrJuK9ogi5i7kNMS/T9E+tUvtbTU/OnJk+nT49aSjLskCbZvHXd2/gd9GWu6m05W4qbbmbSlvupvL3d2/ga3l4eHh/f/+WpWOxWEdHhyvYynKfnZ19fHwMDg5SFGUH7bF3YI8Jl0JOfHp6ent7+11y393dRSKRzs5Ol0C+mtYbJOe8vLz4bqnt3bUJcydo55CT23J/oi5lg6YQirSymZCxLMtpvpjr6+uTkxPTNPHLiYmJgYGBkBV8C7r4FXKHEULX9bm5uVKp5Ayur68zDLO9vT0yMkKoY8fxuSas1TYTAAC4vLxMJpMurTHX19ejo6O7u7vOoNepnQZiWVaQn/wguXVdLxaLmqZ99UIuLXRdHx8ftw3El9nZ2aOjI0AUmqCyTSPlJnyJBEEoFotBV03TFASB5/lcLidJUn9//xeJ7ivHxsYGWWvM7OysYRg1y5JFb6R3QwiDLsmyzLJs0FVRFFmWPT8/xy8LhQLP8+VymabpBm7Pi2VZNzc3+/v7YZJN0zw+Pp6ennY6tX3Caro2pr7Tnc/nBUGYmZmxj0M+n9c0TRAE4JBb07SpqSlBEA4PD/P5PAAAIYSPRj6fLxaL9lWcXC6Xd3Z27FUymYwoioqi+Objdz4zM+PaCZmg7s3Xr4O4uLhwTXedZasKaR8hyWazkiRBCGVZ5jjOrotNAI8tyzIMIxqNyrIMIeQ4Dgd5nocQ2vkQQqymYRiKokiS5FrLDnrzLctiWRbXlyRJFMWgDSuKcnBwcF+lUqlUKpWHKo+Pj4+Pj8vLy+HlTiaTLy8v/1T518HrZ3Rdf35+9m4prJmYpqkoytPTEwAglUpBCA8PDycnJwEAiqLE43E7U1VVURQXFxfx2OshOD+VSimKghAql8veHJZly+Wyb75hGHb9VCo1NDRkmibBdqz6u2MyBDMBtfwkrJkghPBRxXAchxDCY6fWAACnfK5LvkFnKd/lXPkIIVmWqSoIIe90X3z9pLu7O8xcjP2hBpmJb8RJWLmdxw181tSbGfQL7gvHcRBClwWrqur8dF31sXdhEEKpVCr8cuCz7mNjY+EnJpNJ3yJkiZ2ElTsej7MsWygUAACapkEIRVH0zcS/criTW1paClNZkiSe53VdB9WfQcMwMpmMbz7P87Is4/rFYjGbzdZcIkgLy7IYhhkeHq5ZAQBA03Q6nSao7LJp3yJ1dCaqqiqKQlGUKIqqquJvFs/zdgIe0zQty7Ioik4X4zguGo268u3g5uamKIo8z1MUhb80dpPjzY/H44qi4Pq5XE6W5fBvwVeFtbW1MHNXV1fxbn1VDrkBKnxqSHRdhxDis6nrOs/zV1dXjV0iJIVCIRKJ4CYVBD86oChqb29vYWGBUCqdTm9tbYGABw5OcPD+/r6np6erq8t1tfF/UUWj0Ww2ixCKRqOqquZyuYYvURdBnYkznk6nGYaZn5+/ublxTadpemVlZW5uzp4Oqppafrc25OPbeLlpmkYIqaqKe+rBwcGGL/FnBLWAOJ5IJDRNOz09LZVKl5eXFEUxDJNIJMbGxmwPcbZ99baA/+c03Ex+DthMsPsTnCT8AHg0DZK4UqnEYjGvmfygfwSbgLNfrmsQ1GiT+xAvv0Xuur7EXsW9Y9+7m5rqt77cvjeT5AEh+MctIKb15bapy0BAgJkAv88vvKW0+LPK29tbwmONr6Ovr6+3t9cbb2W58Z9fr6+vzV+apulIJOKNt3Ij+AP5Rd79E2jL3VTacjeVttxN5T/zZESn7dZlPAAAAABJRU5ErkJggg==" /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

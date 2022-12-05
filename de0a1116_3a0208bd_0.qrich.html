@@ -1,0 +1,75 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">public class DataStructure {</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    // Create an array</p>
+<p style="margin:0px;">    private final static int SIZE = 15;</p>
+<p style="margin:0px;">    private int[] arrayOfInts = new int[SIZE];</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    public DataStructure() {</p>
+<p style="margin:0px;">        // fill the array with ascending integer values</p>
+<p style="margin:0px;">        for (int i = 0; i &lt; SIZE; i++) {</p>
+<p style="margin:0px;">            arrayOfInts[i] = i;</p>
+<p style="margin:0px;">        }</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    public void printEven() {</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">        // Print out values of even indices of the array</p>
+<p style="margin:0px;">        DataStructureIterator iterator = this.new EvenIterator();</p>
+<p style="margin:0px;">        while (iterator.hasNext()) {</p>
+<p style="margin:0px;">            System.out.print(iterator.next() + &quot; &quot;);</p>
+<p style="margin:0px;">        }</p>
+<p style="margin:0px;">        System.out.println();</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    interface DataStructureIterator extends java.util.Iterator&lt;Integer&gt; { }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    // Inner class implements the DataStructureIterator interface,</p>
+<p style="margin:0px;">    // which extends the Iterator&lt;Integer&gt; interface</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    private class EvenIterator implements DataStructureIterator {</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">        // Start stepping through the array from the beginning</p>
+<p style="margin:0px;">        private int nextIndex = 0;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">        @Override</p>
+<p style="margin:0px;">        public boolean hasNext() {</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">            // Check if the current element is the last in the array</p>
+<p style="margin:0px;">            return (nextIndex &lt;= SIZE - 1);</p>
+<p style="margin:0px;">        }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">        @Override</p>
+<p style="margin:0px;">        public Integer next() {</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">            // Record a value of an even index of the array</p>
+<p style="margin:0px;">            Integer retValue = Integer.valueOf(arrayOfInts[nextIndex]);</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">            // Get the next even element</p>
+<p style="margin:0px;">            nextIndex += 2;</p>
+<p style="margin:0px;">            return retValue;</p>
+<p style="margin:0px;">        }</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    public static void main(String[] args) {</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">        // Fill the array with integer values and print out only</p>
+<p style="margin:0px;">        // values of even indices</p>
+<p style="margin:0px;">        DataStructure ds = new DataStructure();</p>
+<p style="margin:0px;">        ds.printEven();</p>
+<p style="margin:0px;">    }</p>
+<p style="margin:0px;">}</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

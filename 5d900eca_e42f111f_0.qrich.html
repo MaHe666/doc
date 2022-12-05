@@ -1,0 +1,39 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">例如，Point类是这样编写的</p>
+<p style="margin:0px;">public class Point {</p>
+<p style="margin:0px;">    public int x = 0;</p>
+<p style="margin:0px;">    public int y = 0;</p>
+<p style="margin:0px;">        </p>
+<p style="margin:0px;">    //constructor</p>
+<p style="margin:0px;">    public Point(int a, int b) {</p>
+<p style="margin:0px;">        x = a;</p>
+<p style="margin:0px;">        y = b;</p>
+<p style="margin:0px;">    }</p>
+<p style="margin:0px;">}</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">但它可能是这样写的</p>
+<p style="margin:0px;">public class Point {</p>
+<p style="margin:0px;">    public int x = 0;</p>
+<p style="margin:0px;">    public int y = 0;</p>
+<p style="margin:0px;">        </p>
+<p style="margin:0px;">    //constructor</p>
+<p style="margin:0px;">    public Point(int x, int y) {</p>
+<p style="margin:0px;">        this.x = x;</p>
+<p style="margin:0px;">        this.y = y;</p>
+<p style="margin:0px;">    }</p>
+<p style="margin:0px;">}</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">构造函数的每个参数都会隐藏对象的一个字段 —— 构造函数内的x是构造函数第一个参数的本地副本。要引用Point字段x，构造函数必须使用this.x。</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

@@ -1,0 +1,24 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">静态修饰符与final修饰符一起也用于定义常量。最后一个修饰符表示此字段的值不能更改。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">例如，以下变量声明定义了一个名为PI的常数，其值是PI（圆的周长与其直径之比）的近似值：</p>
+<p style="margin:0px;">	static final double PI = 3.141592653589793;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">无法重新分配以这种方式定义的常量，如果程序尝试这样做，则会出现编译时错误。按照惯例，常量值的名称用大写字母拼写。如果名称由多个单词组成，则单词之间用下划线（_）分隔。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">如果基元类型或字符串被定义为常量，并且该值在编译时是已知的，则编译器会用其值替换代码中各处的常量名称。这称为编译时间常数。如果外部世界中常量的值发生变化（例如，如果法律规定pi实际上应该是3.975），则需要重新编译使用该常量的任何类以获得当前值。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

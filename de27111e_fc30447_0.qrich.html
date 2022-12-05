@@ -1,0 +1,23 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<ul style="margin: 0px; -qt-list-indent: 1;">
+<li style="margin:0px;">DataStructure外部类，它包括一个构造函数，用于创建DataStructure的实例，该实例包含一个填充有连续整数值（0、1、2、3等）的数组，以及一个打印具有偶数索引值的数组元素的方法。</li>
+<li style="margin:0px;">EvenIterator内部类，它实现了DataStructureTerator接口，该接口扩展了Iterator＜Integer＞接口。迭代器用于遍历数据结构，通常具有测试最后一个元素、检索当前元素并移动到下一个元素的方法。</li>
+<li style="margin:0px;">实例化DataStructure对象（ds）的主方法，然后调用printEven方法来打印数组arrayOfInts中具有偶数索引值的元素。</li>
+</ul>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">请注意，EvenIterator类直接引用DataStructure对象的arrayOfInts实例变量。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">您可以使用内部类来实现助手类，例如本示例中所示的助手类。要处理用户界面事件，您必须知道如何使用内部类，因为事件处理机制大量使用它们。</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

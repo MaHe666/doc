@@ -1,0 +1,21 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">强烈不建议序列化内部类，包括本地类和匿名类。当Java编译器编译某些构造（如内部类）时，它会创建合成构造；这些是源代码中没有相应构造的类、方法、字段和其他构造。合成构造使Java编译器能够在不改变JVM的情况下实现新的Java语言特性。然而，合成构造在不同的Java编译器实现中可能有所不同，这意味着.class文件在不同的实现中也可能有所不同。因此，如果序列化内部类，然后使用不同的JRE实现反序列化，则可能会出现兼容性问题。有关编译内部类时生成的合成构造的更多信息，请参阅获取方法参数名称一节中的隐式和合成参数一节。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">原文地址：<a href="https://docs.oracle.com/javase/tutorial/java/javaOO/nested.html#Serialization"><span style=" text-decoration: underline; color:#0000ff;">https://docs.oracle.com/javase/tutorial/java/javaOO/nested.html#Serialization</span></a></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

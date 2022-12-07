@@ -1,0 +1,41 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">对于方法参数，Java编译器使用两个其他语言特性确定目标类型：重载解析和类型参数推断</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">考虑以下两个函数接口（java.lang.Runnable 和 java.util.concurrent.Callable&lt;V&gt;）：</p>
+<p style="margin:0px;">public interface Runnable {</p>
+<p style="margin:0px;">    void run();</p>
+<p style="margin:0px;">}</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">public interface Callable&lt;V&gt; {</p>
+<p style="margin:0px;">    V call();</p>
+<p style="margin:0px;">}</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">方法Runnable。run不返回值，而Callable＜V＞。而call方法会。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">假设您已按如下方式重载方法调用：</p>
+<p style="margin:0px;">void invoke(Runnable r) {</p>
+<p style="margin:0px;">    r.run();</p>
+<p style="margin:0px;">}</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">&lt;T&gt; T invoke(Callable&lt;T&gt; c) {</p>
+<p style="margin:0px;">    return c.call();</p>
+<p style="margin:0px;">}</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">以下语句将调用哪个方法？</p>
+<p style="margin:0px;">String s = invoke(() -&gt; &quot;done&quot;);</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">方法调用（Callable&lt;T&gt;）将被调用，因为该方法返回一个值；方法invoke（Runnable）没有。在这种情况下，lambda表达式（）-&gt;“done”的类型是Callable&lt;T&gt;。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

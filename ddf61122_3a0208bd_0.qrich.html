@@ -1,0 +1,70 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">虽然本地类是类声明，但匿名类是表达式，这意味着您可以在另一个表达式中定义类。以下示例HelloWorldAnonymousClasses在本地变量frenchGreeting和spanishGreeting的初始化语句中使用匿名类，但在变量englishGreeting初始化时使用本地类</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">class</span><span style="font-family:'Courier';"> HelloWorldAnonymousClasses {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">  </span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">interface</span><span style="font-family:'Courier';"> HelloWorld {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">void</span><span style="font-family:'Courier';"> greet();</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">void</span><span style="font-family:'Courier';"> greetSomeone(String someone);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">  </span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">void</span><span style="font-family:'Courier';"> sayHello() {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">class</span><span style="font-family:'Courier';"> EnglishGreeting </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">implements</span><span style="font-family:'Courier';"> HelloWorld {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            String name = </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;world&quot;</span><span style="font-family:'Courier';">;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">void</span><span style="font-family:'Courier';"> greet() {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                greetSomeone(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;world&quot;</span><span style="font-family:'Courier';">);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">void</span><span style="font-family:'Courier';"> greetSomeone(String someone) {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                name = someone;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                System</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">out</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">println(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;Hello &quot;</span><span style="font-family:'Courier';"> + name);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">      </span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        HelloWorld englishGreeting = </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">new</span><span style="font-family:'Courier';"> EnglishGreeting();</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        HelloWorld frenchGreeting = </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">new</span><span style="font-family:'Courier';"> HelloWorld() {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            String name = </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;tout le monde&quot;</span><span style="font-family:'Courier';">;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">void</span><span style="font-family:'Courier';"> greet() {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                greetSomeone(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;tout le monde&quot;</span><span style="font-family:'Courier';">);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">void</span><span style="font-family:'Courier';"> greetSomeone(String someone) {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                name = someone;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                System</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">out</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">println(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;Salut &quot;</span><span style="font-family:'Courier';"> + name);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        };</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        HelloWorld spanishGreeting = </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">new</span><span style="font-family:'Courier';"> HelloWorld() {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            String name = </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;mundo&quot;</span><span style="font-family:'Courier';">;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">void</span><span style="font-family:'Courier';"> greet() {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                greetSomeone(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;mundo&quot;</span><span style="font-family:'Courier';">);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">void</span><span style="font-family:'Courier';"> greetSomeone(String someone) {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                name = someone;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                System</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">out</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">println(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;Hola, &quot;</span><span style="font-family:'Courier';"> + name);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        };</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        englishGreeting</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">greet();</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        frenchGreeting</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">greetSomeone(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;Fred&quot;</span><span style="font-family:'Courier';">);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        spanishGreeting</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">greet();</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">static</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">void</span><span style="font-family:'Courier';"> main(String... args) {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        HelloWorldAnonymousClasses myApp =</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">new</span><span style="font-family:'Courier';"> HelloWorldAnonymousClasses();</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        myApp</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">sayHello();</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }            </span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">}</span></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

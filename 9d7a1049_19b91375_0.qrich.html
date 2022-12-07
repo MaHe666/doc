@@ -1,0 +1,92 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">假设您正在创建一个社交网络应用程序。您希望创建一个功能，使管理员能够对满足特定条件的程序用户执行任何类型的操作，例如发送消息。下表详细描述了该用例</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<table border="1" style="margin:0px;" width="1200" cellspacing="0" cellpadding="3">
+<tr>
+<td width="250">
+<p style="margin:0px;"><span style=" font-weight:600;">信息栏</span></p></td>
+<td width="1000">
+<p style="margin:0px;"><span style=" font-weight:600;">描述</span></p></td></tr>
+<tr>
+<td>
+<p style="margin:0px;">名字</p></td>
+<td>
+<p style="margin:0px;">对所选成员执行操作</p></td></tr>
+<tr>
+<td>
+<p style="margin:0px;">主要角色</p></td>
+<td>
+<p style="margin:0px;">管理员</p></td></tr>
+<tr>
+<td>
+<p style="margin:0px;">前置条件</p></td>
+<td>
+<p style="margin:0px;">管理员已登录系统</p></td></tr>
+<tr>
+<td>
+<p style="margin:0px;">后置条件</p></td>
+<td>
+<p style="margin:0px;">仅对符合指定条件的成员执行操作</p></td></tr>
+<tr>
+<td>
+<p style="margin:0px;">主要成功场景</p></td>
+<td>
+<ol style="margin: 0px; -qt-list-indent: 1;">
+<li style="" style="margin:0px;">管理员指定要对其执行特定操作的成员的标准。</li>
+<li style="margin:0px;">管理员指定要对这些选定成员执行的操作。</li>
+<li style="margin:0px;">管理员选择提交按钮。</li>
+<li style="margin:0px;">系统将查找符合指定条件的所有成员。</li>
+<li style="margin:0px;">系统对所有匹配的成员执行指定的操作。</li>
+</ol></td></tr>
+<tr>
+<td>
+<p style="margin:0px;">扩展</p></td>
+<td>
+<p style="margin:0px;">管理员可以选择在指定要执行的操作或选择“提交”按钮之前预览符合指定条件的成员</p></td></tr>
+<tr>
+<td>
+<p style="margin:0px;">出现频率（操作频率）</p></td>
+<td>
+<p style="margin:0px;">一天多次</p></td></tr></table>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">假设此社交网络应用程序的成员由以下Person类表示：</p>
+<p style="margin:0px;">public class Person {</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    public enum Sex {</p>
+<p style="margin:0px;">        MALE, FEMALE</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    String name;</p>
+<p style="margin:0px;">    LocalDate birthday;</p>
+<p style="margin:0px;">    Sex gender;</p>
+<p style="margin:0px;">    String emailAddress;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    public int getAge() {</p>
+<p style="margin:0px;">        // ...</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    public void printPerson() {</p>
+<p style="margin:0px;">        // ...</p>
+<p style="margin:0px;">    }</p>
+<p style="margin:0px;">}</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">假设社交网络应用程序的成员存储在List&lt;Person&gt;实例中。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">本节从这个用例的简单方法开始。它使用本地和匿名类改进了这种方法，然后使用lambda表达式以高效简洁的方法结束。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

@@ -1,0 +1,24 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">CheckPerson接口是一个功能接口。函数接口是只包含一个抽象方法的任何接口。（函数接口可能包含一个或多个默认方法或静态方法。）由于函数接口仅包含一个抽象方法，因此在实现该方法时可以省略该方法的名称。为此，不使用匿名类表达式，而是使用lambda表达式，该表达式在以下方法调用中突出显示：</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">printPersons(</p>
+<p style="margin:0px;">    roster,</p>
+<p style="margin:0px;">    (Person p) -&gt; p.getGender() == Person.Sex.MALE</p>
+<p style="margin:0px;">        &amp;&amp; p.getAge() &gt;= 18</p>
+<p style="margin:0px;">        &amp;&amp; p.getAge() &lt;= 25</p>
+<p style="margin:0px;">);</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">您可以使用这个标准功能接口代替CheckPerson接口，这进一步减少了所需的代码量。</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

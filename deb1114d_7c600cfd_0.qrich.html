@@ -1,0 +1,42 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">如前所述，匿名类是一个表达式。匿名类表达式的语法类似于构造函数的调用，只是代码块中包含一个类定义。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">考虑frenchGreeting对象的实例化</p>
+<p style="margin:0px;">        HelloWorld frenchGreeting = new HelloWorld() {</p>
+<p style="margin:0px;">            String name = &quot;tout le monde&quot;;</p>
+<p style="margin:0px;">            public void greet() {</p>
+<p style="margin:0px;">                greetSomeone(&quot;tout le monde&quot;);</p>
+<p style="margin:0px;">            }</p>
+<p style="margin:0px;">            public void greetSomeone(String someone) {</p>
+<p style="margin:0px;">                name = someone;</p>
+<p style="margin:0px;">                System.out.println(&quot;Salut &quot; + name);</p>
+<p style="margin:0px;">            }</p>
+<p style="margin:0px;">        };</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">匿名类表达式由以下内容组成</p>
+<ul style="margin: 0px; -qt-list-indent: 1;">
+<li style="margin:0px;">new关键字</li>
+<li style="margin:0px;">要实现的接口或要扩展的类的名称。在本例中，匿名类实现接口HelloWorld。</li>
+<li style="margin:0px;">包含构造函数参数的括号，就像普通的类实例创建表达式一样。注意：当您实现一个接口时，没有构造函数，所以您使用一对空括号，如本例所示。</li>
+<li style="margin:0px;">一个主体，它是一个类声明主体。更具体地说，在正文中，允许方法声明，但不允许语句。</li>
+</ul>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">因为匿名类定义是表达式，所以它必须是语句的一部分。在本例中，匿名类表达式是实例化frenchGreeting对象的语句的一部分。（这解释了为什么右大括号后面有分号。）</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

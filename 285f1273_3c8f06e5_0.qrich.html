@@ -8,7 +8,12 @@ p, li { white-space: pre-wrap; }
 </style>
 </head>
 <body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
-<p style="margin:0px;"><a href="http://guoshunfa.com/"><span style=" text-decoration: underline; color:#0000ff;">http://guoshunfa.com/</span></a></p>
+<p style="margin:0px;">public class ExampleComparator implements Comparator&lt;Example&gt; {</p>
+<p style="margin:0px;">    @Override</p>
+<p style="margin:0px;">    public int compare(Example o1, Example o2) {</p>
+<p style="margin:0px;">        return o1.getNum() - o2.getNum();</p>
+<p style="margin:0px;">    }</p>
+<p style="margin:0px;">}</p>
 
 <script type="text/javascript" language="javascript" src="jquery.js"></script>
 <script type="text/javascript" language="javascript" src="itemlink.js"></script></body>

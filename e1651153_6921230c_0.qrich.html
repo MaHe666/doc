@@ -1,0 +1,28 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">下面调用printPersons方法的一个参数是一个匿名类，用于过滤符合美国选择性服务资格的成员：年龄在18岁至25岁之间的男性：</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">printPersons(</p>
+<p style="margin:0px;">    roster,</p>
+<p style="margin:0px;">    new CheckPerson() {</p>
+<p style="margin:0px;">        public boolean test(Person p) {</p>
+<p style="margin:0px;">            return p.getGender() == Person.Sex.MALE</p>
+<p style="margin:0px;">                &amp;&amp; p.getAge() &gt;= 18</p>
+<p style="margin:0px;">                &amp;&amp; p.getAge() &lt;= 25;</p>
+<p style="margin:0px;">        }</p>
+<p style="margin:0px;">    }</p>
+<p style="margin:0px;">);</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">这种方法减少了所需的代码量，因为您不必为要执行的每个搜索创建新类。然而，考虑到CheckPerson接口仅包含一个方法，匿名类的语法非常庞大。在这种情况下，可以使用lambda表达式而不是匿名类，如下一节所述。</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

@@ -1,0 +1,91 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">Java编程语言枚举类型比其他语言中的枚举类型强大得多。枚举声明定义了一个类（称为枚举类型）。枚举类主体可以包括方法和其他字段。编译器在创建枚举时自动添加一些特殊方法。例如，它们有一个静态值方法，该方法返回一个数组，该数组按声明顺序包含枚举的所有值。此方法通常与for each构造结合使用，以迭代枚举类型的值。例如，下面的Planet类示例中的这段代码会遍历太阳系中的所有行星。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">for (Planet p : Planet.values()) {</p>
+<p style="margin:0px;">    System.out.printf(&quot;Your weight on %s is %f%n&quot;,</p>
+<p style="margin:0px;">                      p, p.surfaceWeight(mass));</p>
+<p style="margin:0px;">}</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">所有枚举都隐式继承java.lang.Enum。因为类只能继承一个父类，所以Java语言不支持状态的多重继承，因此枚举不能继承任何其他内容。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">在下面的示例中，Planet是一个枚举类型，表示太阳系中的行星。它们具有恒定的质量和半径特性。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">每个枚举常量都用质量和半径参数的值声明。创建常量时，这些值将传递给构造函数。Java要求先定义常量，然后再定义任何字段或方法。此外，当存在字段和方法时，枚举常量列表必须以分号结尾。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style=" font-weight:600;">枚举类型的构造函数必须是包私有或私有访问。它会自动创建在枚举体开头定义的常量。不能自己调用枚举构造函数。</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">除了它的属性和构造器外，Planet还有一些方法可以让您检索每个行星上物体的表面重力和重量。这里有一个示例程序，它可以计算你在地球上的重量（以任何单位），并计算和打印你在所有行星上的重量</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">public enum Planet {</p>
+<p style="margin:0px;">    MERCURY (3.303e+23, 2.4397e6),</p>
+<p style="margin:0px;">    VENUS   (4.869e+24, 6.0518e6),</p>
+<p style="margin:0px;">    EARTH   (5.976e+24, 6.37814e6),</p>
+<p style="margin:0px;">    MARS    (6.421e+23, 3.3972e6),</p>
+<p style="margin:0px;">    JUPITER (1.9e+27,   7.1492e7),</p>
+<p style="margin:0px;">    SATURN  (5.688e+26, 6.0268e7),</p>
+<p style="margin:0px;">    URANUS  (8.686e+25, 2.5559e7),</p>
+<p style="margin:0px;">    NEPTUNE (1.024e+26, 2.4746e7);</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    private final double mass;   // in kilograms</p>
+<p style="margin:0px;">    private final double radius; // in meters</p>
+<p style="margin:0px;">    Planet(double mass, double radius) {</p>
+<p style="margin:0px;">        this.mass = mass;</p>
+<p style="margin:0px;">        this.radius = radius;</p>
+<p style="margin:0px;">    }</p>
+<p style="margin:0px;">    private double mass() { return mass; }</p>
+<p style="margin:0px;">    private double radius() { return radius; }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    // universal gravitational constant  (m3 kg-1 s-2)</p>
+<p style="margin:0px;">    public static final double G = 6.67300E-11;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    double surfaceGravity() {</p>
+<p style="margin:0px;">        return G * mass / (radius * radius);</p>
+<p style="margin:0px;">    }</p>
+<p style="margin:0px;">    double surfaceWeight(double otherMass) {</p>
+<p style="margin:0px;">        return otherMass * surfaceGravity();</p>
+<p style="margin:0px;">    }</p>
+<p style="margin:0px;">    public static void main(String[] args) {</p>
+<p style="margin:0px;">        if (args.length != 1) {</p>
+<p style="margin:0px;">            System.err.println(&quot;Usage: java Planet &lt;earth_weight&gt;&quot;);</p>
+<p style="margin:0px;">            System.exit(-1);</p>
+<p style="margin:0px;">        }</p>
+<p style="margin:0px;">        double earthWeight = Double.parseDouble(args[0]);</p>
+<p style="margin:0px;">        double mass = earthWeight/EARTH.surfaceGravity();</p>
+<p style="margin:0px;">        for (Planet p : Planet.values())</p>
+<p style="margin:0px;">           System.out.printf(&quot;Your weight on %s is %f%n&quot;,</p>
+<p style="margin:0px;">                             p, p.surfaceWeight(mass));</p>
+<p style="margin:0px;">    }</p>
+<p style="margin:0px;">}</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">如果在运行时给一个程序参数，那么这个程序就会根据那个参数进行计算</p>
+<p style="margin:0px;">如果输入的值为175，那么程序执行后，控制台会打印：</p>
+<p style="margin:0px;">Your weight on MERCURY is 66.107583</p>
+<p style="margin:0px;">Your weight on VENUS is 158.374842</p>
+<p style="margin:0px;">Your weight on EARTH is 175.000000</p>
+<p style="margin:0px;">Your weight on MARS is 66.279007</p>
+<p style="margin:0px;">Your weight on JUPITER is 442.847567</p>
+<p style="margin:0px;">Your weight on SATURN is 186.552719</p>
+<p style="margin:0px;">Your weight on URANUS is 158.397260</p>
+<p style="margin:0px;">Your weight on NEPTUNE is 199.207413</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

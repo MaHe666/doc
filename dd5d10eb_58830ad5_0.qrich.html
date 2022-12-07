@@ -1,0 +1,46 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">访问封闭作用域的局部变量，以及声明和访问匿名类的成员</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">与本地类一样，匿名类可以捕获变量；它们对封闭范围的局部变量具有相同的访问权限：</p>
+<ul style="margin: 0px; -qt-list-indent: 1;">
+<li style="margin:0px;">匿名类可以访问其封闭类的成员。</li>
+<li style="margin:0px;">匿名类不能访问其封闭范围中未声明为final或有效final的局部变量。</li>
+<li style="margin:0px;">与嵌套类一样，匿名类中的类型（例如变量）声明隐藏了封闭范围中具有相同名称的任何其他声明。有关详细信息，请参见<a href="nyf://entry?itemid=7&amp;itemtext=%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%97%AE%E9%A2%98"><span style=" text-decoration: underline; color:#0000ff;">作用域问题</span></a></li>
+</ul>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">匿名类对其成员也具有与本地类相同的限制：</p>
+<ul style="margin: 0px; -qt-list-indent: 1;">
+<li style="margin:0px;">不能在匿名类中声明静态初始化器或成员接口。</li>
+<li style="margin:0px;">匿名类可以有静态成员，前提是它们是常量变量。</li>
+</ul>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">请注意，您可以在匿名类中声明以下内容：</p>
+<ul style="margin: 0px; -qt-list-indent: 1;">
+<li style="margin:0px;">字段</li>
+<li style="margin:0px;">额外的方法（即使它们没有实现任何父类型的方法）</li>
+<li style="margin:0px;">实例化初始化器</li>
+<li style="margin:0px;">局部类</li>
+</ul>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">但是，不能在匿名类中声明构造函数。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

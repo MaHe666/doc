@@ -1,0 +1,27 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">一种简单的方法是创建几种方法；每个方法都搜索与一个特征（如性别或年龄）匹配的成员。以下方法打印早于指定年龄的成员：</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">public static void printPersonsOlderThan(List&lt;Person&gt; roster, int age) {</p>
+<p style="margin:0px;">    for (Person p : roster) {</p>
+<p style="margin:0px;">        if (p.getAge() &gt;= age) {</p>
+<p style="margin:0px;">            p.printPerson();</p>
+<p style="margin:0px;">        }</p>
+<p style="margin:0px;">    }</p>
+<p style="margin:0px;">}</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">这种方法可能会使您的应用程序变得脆弱，这是因为引入了更新（例如新的数据类型）而导致应用程序无法工作的可能性。</p>
+<p style="margin:0px;">假设您升级应用程序并更改Person类的结构，使其包含不同的成员变量；也许该类使用不同的数据类型或算法记录和测量年龄。为了适应这种变化，您必须重写大量API。此外，这种方法具有不必要的限制性；</p>
+<p style="margin:0px;">例如，如果你想打印小于某个年龄的会员，该怎么办？</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

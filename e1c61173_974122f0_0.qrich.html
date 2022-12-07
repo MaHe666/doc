@@ -1,0 +1,80 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">重新考虑CheckPerson界面：</p>
+<p style="margin:0px;">interface CheckPerson {</p>
+<p style="margin:0px;">    boolean test(Person p);</p>
+<p style="margin:0px;">}</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">这是一个非常简单的界面。它是一个函数接口，因为它只包含一个抽象方法。此方法接受一个参数并返回一个布尔值。该方法非常简单，可能不值得在应用程序中定义它。因此，JDK定义了几个标准函数接口，您可以在java.util.function包中找到这些接口。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">例如，您可以使用Predicate＜T＞接口代替CheckPerson。此接口包含boolean test(T t)：</p>
+<p style="margin:0px;">interface Predicate&lt;T&gt; {</p>
+<p style="margin:0px;">    boolean test(T t);</p>
+<p style="margin:0px;">}</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">Predicate＜T＞接口是通用接口的一个示例。泛型类型（如泛型接口）在尖括号（&lt;&gt;）内指定一个或多个类型参数。此接口仅包含一个类型参数T。当您使用实际类型参数声明或实例化泛型类型时，您将拥有一个参数化类型。例如，参数化类型Predicate＜Person＞如下：</p>
+<p style="margin:0px;">interface Predicate&lt;Person&gt; {</p>
+<p style="margin:0px;">    boolean test(Person t);</p>
+<p style="margin:0px;">}</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">此参数化类型包含与CheckPerson具有相同返回类型和参数的方法CheckPerson.boolean test(Person p）。因此，可以使用Predicate＜T＞代替CheckPerson，如下方法所示</p>
+<p style="margin:0px;">public static void printPersonsWithPredicate(</p>
+<p style="margin:0px;">    List&lt;Person&gt; roster, Predicate&lt;Person&gt; tester) {</p>
+<p style="margin:0px;">    for (Person p : roster) {</p>
+<p style="margin:0px;">        if (tester.test(p)) {</p>
+<p style="margin:0px;">            p.printPerson();</p>
+<p style="margin:0px;">        }</p>
+<p style="margin:0px;">    }</p>
+<p style="margin:0px;">}</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">因此，以下方法调用与方法3中调用printPersons时相同：在本地类中指定搜索条件代码以获取符合选择性服务条件的成员</p>
+<p style="margin:0px;">printPersonsWithPredicate(</p>
+<p style="margin:0px;">    roster,</p>
+<p style="margin:0px;">    p -&gt; p.getGender() == Person.Sex.MALE</p>
+<p style="margin:0px;">        &amp;&amp; p.getAge() &gt;= 18</p>
+<p style="margin:0px;">        &amp;&amp; p.getAge() &lt;= 25</p>
+<p style="margin:0px;">);</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">这不是此方法中使用lambda表达式的唯一可能位置。以下方法建议使用lambda表达式的其他方法</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

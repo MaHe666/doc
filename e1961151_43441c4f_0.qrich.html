@@ -1,0 +1,26 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">以下方法比printPersonsOlderTha更通用；它打印指定年龄范围内的成员</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">public static void printPersonsWithinAgeRange(</p>
+<p style="margin:0px;">    List&lt;Person&gt; roster, int low, int high) {</p>
+<p style="margin:0px;">    for (Person p : roster) {</p>
+<p style="margin:0px;">        if (low &lt;= p.getAge() &amp;&amp; p.getAge() &lt; high) {</p>
+<p style="margin:0px;">            p.printPerson();</p>
+<p style="margin:0px;">        }</p>
+<p style="margin:0px;">    }</p>
+<p style="margin:0px;">}</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">如果您想打印特定性别的成员，或指定性别和年龄范围的组合，该怎么办？如果您决定更改Person类并添加其他属性，如关系状态或地理位置，该怎么办？尽管此方法比printPersonsOldThan更通用，但尝试为每个可能的搜索查询创建单独的方法仍然会导致代码脆弱。相反，您可以将指定要在不同类中搜索的条件的代码分开。</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

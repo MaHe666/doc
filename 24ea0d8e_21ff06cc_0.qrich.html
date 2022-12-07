@@ -1,0 +1,71 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">枚举类型是一种特殊的数据类型，它允许变量是一组预定义的常量。变量必须等于为其预定义的值之一。常见的示例包括指南针方向（北、南、东和西的值）和一周中的几天。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">由于它们是常量，枚举类型字段的名称都是大写字母。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">在Java编程语言中，通过使用enum关键字定义枚举类型。例如，您可以将星期枚举类型指定为：</p>
+<p style="margin:0px;">public enum Day {</p>
+<p style="margin:0px;">    SUNDAY, MONDAY, TUESDAY, WEDNESDAY,</p>
+<p style="margin:0px;">    THURSDAY, FRIDAY, SATURDAY </p>
+<p style="margin:0px;">}</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">您应该在任何时候使用枚举类型来表示一组固定的常量。这包括自然枚举类型，例如太阳系中的行星，以及在编译时知道所有可能值的数据集，例如菜单上的选项、命令行标志等。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">下面是一些代码，向您展示如何使用上面定义的Day枚举</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">public class EnumTest {</p>
+<p style="margin:0px;">    Day day;</p>
+<p style="margin:0px;">    </p>
+<p style="margin:0px;">    public EnumTest(Day day) {</p>
+<p style="margin:0px;">        this.day = day;</p>
+<p style="margin:0px;">    }</p>
+<p style="margin:0px;">    </p>
+<p style="margin:0px;">    public void tellItLikeItIs() {</p>
+<p style="margin:0px;">        switch (day) {</p>
+<p style="margin:0px;">            case MONDAY:</p>
+<p style="margin:0px;">                System.out.println(&quot;Mondays are bad.&quot;);</p>
+<p style="margin:0px;">                break;</p>
+<p style="margin:0px;">                    </p>
+<p style="margin:0px;">            case FRIDAY:</p>
+<p style="margin:0px;">                System.out.println(&quot;Fridays are better.&quot;);</p>
+<p style="margin:0px;">                break;</p>
+<p style="margin:0px;">                         </p>
+<p style="margin:0px;">            case SATURDAY: case SUNDAY:</p>
+<p style="margin:0px;">                System.out.println(&quot;Weekends are best.&quot;);</p>
+<p style="margin:0px;">                break;</p>
+<p style="margin:0px;">                        </p>
+<p style="margin:0px;">            default:</p>
+<p style="margin:0px;">                System.out.println(&quot;Midweek days are so-so.&quot;);</p>
+<p style="margin:0px;">                break;</p>
+<p style="margin:0px;">        }</p>
+<p style="margin:0px;">    }</p>
+<p style="margin:0px;">    </p>
+<p style="margin:0px;">    public static void main(String[] args) {</p>
+<p style="margin:0px;">        EnumTest firstDay = new EnumTest(Day.MONDAY);</p>
+<p style="margin:0px;">        firstDay.tellItLikeItIs();</p>
+<p style="margin:0px;">        EnumTest thirdDay = new EnumTest(Day.WEDNESDAY);</p>
+<p style="margin:0px;">        thirdDay.tellItLikeItIs();</p>
+<p style="margin:0px;">        EnumTest fifthDay = new EnumTest(Day.FRIDAY);</p>
+<p style="margin:0px;">        fifthDay.tellItLikeItIs();</p>
+<p style="margin:0px;">        EnumTest sixthDay = new EnumTest(Day.SATURDAY);</p>
+<p style="margin:0px;">        sixthDay.tellItLikeItIs();</p>
+<p style="margin:0px;">        EnumTest seventhDay = new EnumTest(Day.SUNDAY);</p>
+<p style="margin:0px;">        seventhDay.tellItLikeItIs();</p>
+<p style="margin:0px;">    }</p>
+<p style="margin:0px;">}</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

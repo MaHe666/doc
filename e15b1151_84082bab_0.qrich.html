@@ -1,0 +1,58 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">以下示例使用聚合操作打印集合roster中 符合选择性 的服务资格的成员的电子邮件地址</p>
+<p style="margin:0px;">roster</p>
+<p style="margin:0px;">    .stream()</p>
+<p style="margin:0px;">    .filter(</p>
+<p style="margin:0px;">        p -&gt; p.getGender() == Person.Sex.MALE</p>
+<p style="margin:0px;">            &amp;&amp; p.getAge() &gt;= 18</p>
+<p style="margin:0px;">            &amp;&amp; p.getAge() &lt;= 25)</p>
+<p style="margin:0px;">    .map(p -&gt; p.getEmailAddress())</p>
+<p style="margin:0px;">    .forEach(email -&gt; System.out.println(email));</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">下表将processElement方法执行的每个操作与相应的聚合操作进行映射</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<table border="1" style="margin:0px;" width="1200" cellspacing="0" cellpadding="3">
+<tr>
+<td width="600">
+<p style="margin:0px;">processElements<span style=" font-weight:600;">操作</span></p></td>
+<td width="600">
+<p style="margin:0px;"><span style=" font-weight:600;">聚合操作</span></p></td></tr>
+<tr>
+<td>
+<p style="margin:0px;">获取对象源</p></td>
+<td>
+<p style="margin:0px;">Stream&lt;E&gt; stream()</p></td></tr>
+<tr>
+<td>
+<p style="margin:0px;">筛选与测试器对象匹配的对象</p></td>
+<td>
+<p style="margin:0px;">Stream&lt;T&gt; filter(Predicate&lt;? super T&gt; predicate)</p></td></tr>
+<tr>
+<td>
+<p style="margin:0px;">将对象映射到Function对象指定的另一个值</p></td>
+<td>
+<p style="margin:0px;">&lt;R&gt; Stream&lt;R&gt; map(Function&lt;? super T,? extends R&gt; mapper)</p></td></tr>
+<tr>
+<td>
+<p style="margin:0px;">执行Consumer对象指定的操作</p></td>
+<td>
+<p style="margin:0px;">void forEach(Consumer&lt;? super T&gt; action)</p></td></tr></table>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">操作filter、map和forEach是聚合操作。聚合操作处理来自流的元素，而不是直接来自集合（这就是本例中调用的第一个方法是流的原因）。流是一系列元素。与集合不同，它不是存储元素的数据结构。相反，流通过管道从源（例如集合）承载值。管道是一系列流操作，在本例中，它是filter-map-forEach。此外，聚合操作通常接受lambda表达式作为参数，使您能够自定义它们的行为方式。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

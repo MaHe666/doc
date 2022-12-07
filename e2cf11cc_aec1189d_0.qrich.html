@@ -1,0 +1,62 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">重新考虑方法processPersonsWithFunction。以下是它的通用版本，它接受包含任何数据类型元素的集合作为参数：</p>
+<p style="margin:0px;">public static &lt;X, Y&gt; void processElements(</p>
+<p style="margin:0px;">    Iterable&lt;X&gt; source,</p>
+<p style="margin:0px;">    Predicate&lt;X&gt; tester,</p>
+<p style="margin:0px;">    Function &lt;X, Y&gt; mapper,</p>
+<p style="margin:0px;">    Consumer&lt;Y&gt; block) {</p>
+<p style="margin:0px;">    for (X p : source) {</p>
+<p style="margin:0px;">        if (tester.test(p)) {</p>
+<p style="margin:0px;">            Y data = mapper.apply(p);</p>
+<p style="margin:0px;">            block.accept(data);</p>
+<p style="margin:0px;">        }</p>
+<p style="margin:0px;">    }</p>
+<p style="margin:0px;">}</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">要打印符合选择性服务资格的成员的电子邮件地址，请按如下方式调用processElements方法</p>
+<p style="margin:0px;">processElements(</p>
+<p style="margin:0px;">    roster,</p>
+<p style="margin:0px;">    p -&gt; p.getGender() == Person.Sex.MALE</p>
+<p style="margin:0px;">        &amp;&amp; p.getAge() &gt;= 18</p>
+<p style="margin:0px;">        &amp;&amp; p.getAge() &lt;= 25,</p>
+<p style="margin:0px;">    p -&gt; p.getEmailAddress(),</p>
+<p style="margin:0px;">    email -&gt; System.out.println(email)</p>
+<p style="margin:0px;">);</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">此方法调用执行以下操作：</p>
+<ol style="margin: 0px; -qt-list-indent: 1;">
+<li style="margin:0px;">从集合source获取对象源。在本例中，它从集合roster中获取Person对象的源。注意，集合roster是List类型的集合，也是Iterable类型的对象。</li>
+<li style="margin:0px;">过滤和对象测试器匹配的对象。在本例中，Predicate对象是一个lambda表达式，它指定哪些成员有资格获得选择性服务</li>
+<li style="margin:0px;">将每个过滤对象映射到Function对象mapper指定的值。在本例中，Function对象是一个lambda表达式，它返回成员的电子邮件地址</li>
+<li style="margin:0px;">对Consumer对象块指定的每个映射对象执行操作。在本例中，Consumer对象是一个lambda表达式，它打印一个字符串，该字符串是Function对象返回的电子邮件地址</li>
+</ol>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">您可以用聚合操作替换这些操作中的每一个</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

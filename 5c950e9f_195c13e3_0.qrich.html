@@ -1,0 +1,40 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">注解可以应用于声明：类、字段、方法和其他程序元素的声明。在声明中使用时，按照惯例，每个注解通常出现在自己的行上</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">从JavaSE8版本开始，注解也可以应用于类型的使用。以下是一些示例</p>
+<ul style="margin: 0px; -qt-list-indent: 1;">
+<li style="margin:0px;">类实例创建表达式</li>
+<p style="margin:0px; -qt-block-indent:1;">	new @Interned MyObject();</p>
+<li style="margin:0px;">类型转换</li>
+<p style="margin:0px; -qt-block-indent:1;">	myString = (@NonNull String) str;</p>
+<li style="margin:0px;">implements子句</li>
+<p style="margin:0px; -qt-block-indent:1;">	class UnmodifiableList&lt;T&gt; implements @Readonly List&lt;@Readonly T&gt; { ... }</p>
+<li style="margin:0px;">抛出异常声明</li>
+</ul>
+<p style="margin:0px; -qt-block-indent:1;">	void monitorTemperature() throws @Critical TemperatureException { ... }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">这种形式的注解称为类型注解</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

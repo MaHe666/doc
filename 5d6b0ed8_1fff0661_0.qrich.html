@@ -7,10 +7,35 @@
 p, li { white-space: pre-wrap; }
 </style>
 </head>
-<body style="font-family:'Courier'; font-size:11pt; font-weight:400; font-style:normal;">
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;"><span style="font-family:'Courier';">适用于其他注解的注解</span></p>
+<p style="margin:0px;">应用于其他注解的注解称为元注解。 java.lang.annotation 中定义了几种元注解类型。</p>
 <p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="-qt-paragraph-type:empty; margin:0px; font-weight:600;"><br /></p>
-<p style="-qt-paragraph-type:empty; margin:0px; font-weight:600;"><br /></p>
+<p style="margin:0px;">@Retention 注解指定标记的注释如何存储</p>
+<ul style="margin: 0px; -qt-list-indent: 1;">
+<li style="margin:0px;">RetentionPolicy.SOURCE 被标记的注解只在源码级别保留，被编译器忽略</li>
+<li style="margin:0px;">RetentionPolicy.CLASS 标记的注解在编译时被编译器保留，但被Java虚拟机（JVM）忽略</li>
+<li style="margin:0px;">RetentionPolicy.RUNTIME 标记的注解由JVM保留，以便运行时环境使用</li>
+</ul>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">@Documented 指示无论何时使用指定的注释，都应使用 Javadoc 工具记录这些元素</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">@Target 注解标记另一个注解来限制该注解可以应用到什么样的 Java 元素上。 目标注释指定以下元素类型之一作为其值</p>
+<ul style="margin: 0px; -qt-list-indent: 1;">
+<li style="margin:0px;">ElementType.ANNOTATION_TYPE 可以应用于注释类型。</li>
+<li style="margin:0px;">ElementType.CONSTRUCTOR 可以应用于构造函数。</li>
+<li style="margin:0px;">ElementType.FIELD 可以应用于字段或属性。</li>
+<li style="margin:0px;">ElementType.LOCAL_VARIABLE 可以应用于局部变量。</li>
+<li style="margin:0px;">ElementType.METHOD 可以应用于方法级注释。</li>
+<li style="margin:0px;">ElementType.PACKAGE 可以应用于包声明。</li>
+<li style="margin:0px;">ElementType.PARAMETER 可以应用于方法的参数。</li>
+<li style="margin:0px;">ElementType.TYPE 可以应用于类的任何元素。</li>
+</ul>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">@Inherited 注解表示注解类型可以从父类继承。（默认情况下这不是true的）当用户查询注释类型并且该类没有此类型的注释时，将查询该类的超类以获取注释类型。 此注释仅适用于类声明</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">@Repeatable 注解在JavaSE8中引入，表示标记的注解可以多次应用于同一声明或类型使用。 </p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
 
 <script type="text/javascript" language="javascript" src="jquery.js"></script>
 <script type="text/javascript" language="javascript" src="itemlink.js"></script></body>

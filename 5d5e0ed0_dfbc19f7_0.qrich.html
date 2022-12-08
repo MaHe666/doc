@@ -1,0 +1,59 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">Java SE API中预定义了一组注释类型。一些注释类型由Java编译器使用，一些应用于其他注释</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">java.lang包下预定义注释类型是@Deprecated、@Override和@SuppressWarnings。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">@Deprecated 注解表示标记的元素已不推荐使用，不应再使用。每当程序使用带有@Deprecated注释的方法、类或字段时，编译器都会生成警告。当元素被弃用时，还应使用Javadoc@deprecated标记，如以下示例所示。</p>
+<p style="margin:0px;">在Javadoc注释和注释中使用@符号并非巧合：它们在概念上是相关的。此外，请注意，Javadoc标记以小写d开头，注释以大写d开头</p>
+<p style="margin:0px;">   // Javadoc comment follows</p>
+<p style="margin:0px;">    /**</p>
+<p style="margin:0px;">     * @deprecated</p>
+<p style="margin:0px;">     * explanation of why it was deprecated</p>
+<p style="margin:0px;">     */</p>
+<p style="margin:0px;">    @Deprecated</p>
+<p style="margin:0px;">    static void deprecatedMethod() { }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">@Override 注解通知编译器该元素将覆盖在超类中声明的元素。</p>
+<p style="margin:0px;">   // mark method as a superclass method</p>
+<p style="margin:0px;">   // that has been overridden</p>
+<p style="margin:0px;">   @Override </p>
+<p style="margin:0px;">   int overriddenMethod() { }</p>
+<p style="margin:0px;">虽然重写方法时不需要使用此注释，但它有助于防止错误。如果标记为@Override的方法未能正确覆盖其超类之一中的方法，编译器将生成错误。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">@SuppressWarnings(&quot;deprecation&quot;) 注解告诉编译器抑制否则将生成的特定警告。在以下示例中，使用了不推荐使用的方法，编译器通常会生成警告。但是，在这种情况下，注释会导致警告被抑制</p>
+<p style="margin:0px;">   // use a deprecated method and tell </p>
+<p style="margin:0px;">   // compiler not to generate a warning</p>
+<p style="margin:0px;">   @SuppressWarnings(&quot;deprecation&quot;)</p>
+<p style="margin:0px;">    void useDeprecatedMethod() {</p>
+<p style="margin:0px;">        // deprecation warning</p>
+<p style="margin:0px;">        // - suppressed</p>
+<p style="margin:0px;">        objectOne.deprecatedMethod();</p>
+<p style="margin:0px;">    }</p>
+<p style="margin:0px;">每个编译器警告都属于一个类别。Java语言规范列出了两个类别：弃用和未选中。当泛型出现之前与编写的遗留代码交互时，可能会出现未经检查的警告。要抑制多个类别的警告，请使用以下语法：</p>
+<p style="margin:0px;">	@SuppressWarnings({&quot;unchecked&quot;, &quot;deprecation&quot;})</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">@SafeVarargs 注解在应用于方法或构造函数时，断言代码不会对其可变参数执行可能不安全的操作。 </p>
+<p style="margin:0px;">使用此注释类型时，与可变参数使用相关的未经检查的警告将被抑制</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">@FunctionalInterface 注解在 Java SE 8 中引入，表示类型声明旨在成为一个功能接口，如 Java 语言规范所定义的那样。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

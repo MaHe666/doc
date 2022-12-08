@@ -1,0 +1,29 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">包含批注类型必须具有数组类型的值元素。数组类型的组件类型必须是可重复的注释类型。包含注释类型的Schedules的声明如下</p>
+<p style="margin:0px;">public @interface Schedules {</p>
+<p style="margin:0px;">    Schedule[] value();</p>
+<p style="margin:0px;">}</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">检索注解</p>
+<p style="margin:0px;">在反射API中，有几种方法可以用来检索注释。返回单一注释的方法，如AnnotatedElement.getAnnotation(Class&lt;T&gt;)，其行为是不变的，因为它们只在有一个所请求类型的注释时才返回单一注释。如果有一个以上的请求类型的注释，你可以通过首先获得它们的容器注释来获得它们。通过这种方式，遗留的代码继续工作。在Java SE 8中引入了其他方法，通过容器注释扫描，一次返回多个注释，如AnnotatedElement.getAnnotationsByType(Class&lt;T&gt;)。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">设计考量</p>
+<p style="margin:0px;">设计注释类型时，必须考虑该类型注释的基数。现在可以零次、一次或多次使用注释，如果注释的类型标记为@Repeatable。还可以通过使用@Target元注释来限制可以使用注释类型的位置。例如，您可以创建只能用于方法和字段的可重复注释类型。仔细设计注释类型非常重要，以确保使用注释的程序员发现它尽可能灵活和强大。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

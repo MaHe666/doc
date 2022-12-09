@@ -1,0 +1,56 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">看一下如下接口</p>
+<p style="margin:0px;">public interface DoIt {</p>
+<p style="margin:0px;">   void doSomething(int i, double x);</p>
+<p style="margin:0px;">   int doSomethingElse(String s);</p>
+<p style="margin:0px;">}</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">假设稍后要向DoIt添加第三个方法，这样接口现在就变成</p>
+<p style="margin:0px;">public interface DoIt {</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">   void doSomething(int i, double x);</p>
+<p style="margin:0px;">   int doSomethingElse(String s);</p>
+<p style="margin:0px;">   boolean didItWork(int i, double x, String s);</p>
+<p style="margin:0px;">   </p>
+<p style="margin:0px;">}</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">如果进行此更改，则所有实现旧DoIt接口的类都将中断，因为它们不再实现旧接口。依赖这个接口的程序员会大声抗议。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">尝试预测接口的所有用途，并从一开始就完全指定它。如果要向接口添加其他方法，可以有几个选项。您可以创建一个继承DoIt的DoItPlus接口</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">public interface DoItPlus extends DoIt {</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">   boolean didItWork(int i, double x, String s);</p>
+<p style="margin:0px;">   </p>
+<p style="margin:0px;">}</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">现在代码的用户可以选择继续使用旧界面或升级到新界面</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">或者，可以将新方法定义为默认方法。以下示例定义了名为didItWork的默认方法</p>
+<p style="margin:0px;">public interface DoIt {</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">   void doSomething(int i, double x);</p>
+<p style="margin:0px;">   int doSomethingElse(String s);</p>
+<p style="margin:0px;">   default boolean didItWork(int i, double x, String s) {</p>
+<p style="margin:0px;">       // Method body </p>
+<p style="margin:0px;">   }</p>
+<p style="margin:0px;">   </p>
+<p style="margin:0px;">}</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">注意，必须为默认方法提供实现。您还可以为现有接口定义新的静态方法。具有实现通过新的默认或静态方法增强的接口的类的用户不必修改或重新编译它们以适应其他方法</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"> </p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

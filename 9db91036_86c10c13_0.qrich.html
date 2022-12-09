@@ -1,0 +1,75 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">下面是在之前写过的Rectangle类，重新写一下该类以实现Relatable接口</p>
+<p style="margin:0px;">详情见：<a href="nyf://entry?itemid=10&amp;itemtext=%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1"><span style=" text-decoration: underline; color:#0000ff;">创建对象</span></a></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">public class RectanglePlus </p>
+<p style="margin:0px;">    implements Relatable {</p>
+<p style="margin:0px;">    public int width = 0;</p>
+<p style="margin:0px;">    public int height = 0;</p>
+<p style="margin:0px;">    public Point origin;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    // four constructors</p>
+<p style="margin:0px;">    public RectanglePlus() {</p>
+<p style="margin:0px;">        origin = new Point(0, 0);</p>
+<p style="margin:0px;">    }</p>
+<p style="margin:0px;">    public RectanglePlus(Point p) {</p>
+<p style="margin:0px;">        origin = p;</p>
+<p style="margin:0px;">    }</p>
+<p style="margin:0px;">    public RectanglePlus(int w, int h) {</p>
+<p style="margin:0px;">        origin = new Point(0, 0);</p>
+<p style="margin:0px;">        width = w;</p>
+<p style="margin:0px;">        height = h;</p>
+<p style="margin:0px;">    }</p>
+<p style="margin:0px;">    public RectanglePlus(Point p, int w, int h) {</p>
+<p style="margin:0px;">        origin = p;</p>
+<p style="margin:0px;">        width = w;</p>
+<p style="margin:0px;">        height = h;</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    // a method for moving the rectangle</p>
+<p style="margin:0px;">    public void move(int x, int y) {</p>
+<p style="margin:0px;">        origin.x = x;</p>
+<p style="margin:0px;">        origin.y = y;</p>
+<p style="margin:0px;">    }</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    // a method for computing</p>
+<p style="margin:0px;">    // the area of the rectangle</p>
+<p style="margin:0px;">    public int getArea() {</p>
+<p style="margin:0px;">        return width * height;</p>
+<p style="margin:0px;">    }</p>
+<p style="margin:0px;">    </p>
+<p style="margin:0px;">    // a method required to implement</p>
+<p style="margin:0px;">    // the Relatable interface</p>
+<p style="margin:0px;">    public int isLargerThan(Relatable other) {</p>
+<p style="margin:0px;">        <span style=" font-weight:600;">RectanglePlus otherRect </span></p>
+<p style="margin:0px;"><span style=" font-weight:600;">            = (RectanglePlus)other;</span></p>
+<p style="margin:0px;">        if (this.getArea() &lt; otherRect.getArea())</p>
+<p style="margin:0px;">            return -1;</p>
+<p style="margin:0px;">        else if (this.getArea() &gt; otherRect.getArea())</p>
+<p style="margin:0px;">            return 1;</p>
+<p style="margin:0px;">        else</p>
+<p style="margin:0px;">            return 0;               </p>
+<p style="margin:0px;">    }</p>
+<p style="margin:0px;">}</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">因为RectanglePlus实现了Relatable，所以可以比较任意两个Rectangle Plus对象的大小</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">isLargerThan方法，如在Relatable接口中定义的，需要一个Relatable类型的对象</p>
+<p style="margin:0px;">这行代码，在前面的例子中以粗体显示，将other对象强制到一个RectanglePlus实例。类型转换告诉编译器对象到底是什么。直接对other实例调用other.getArea()将无法编译，因为编译器不知道other实际上是RectanglePlus的实例。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

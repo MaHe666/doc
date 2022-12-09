@@ -1,0 +1,36 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">接口声明由修饰符、关键字interface、接口名称、以逗号分隔的父接口列表（如果有）和接口主体组成。例如</p>
+<p style="margin:0px;">public interface GroupedInterface extends Interface1, Interface2, Interface3 {</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">    // constant declarations</p>
+<p style="margin:0px;">    </p>
+<p style="margin:0px;">    // base of natural logarithms</p>
+<p style="margin:0px;">    double E = 2.718282;</p>
+<p style="margin:0px;"> </p>
+<p style="margin:0px;">    // method signatures</p>
+<p style="margin:0px;">    void doSomething (int i, double x);</p>
+<p style="margin:0px;">    int doSomethingElse(String s);</p>
+<p style="margin:0px;">}</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">public访问说明符表示接口可以由任何包中的任何类使用。如果未指定接口是公共的，则只有在与接口相同的包中定义的类才能访问接口</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">一个接口可以扩展其他接口，就像一个类子类或继承另一个类一样。然而，虽然一个类只能继承另一个类，但是一个接口可以继承任意数量的接口。接口声明包括一个逗号分隔的列表，其中列出了它所继承的所有接口</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style=" font-weight:600;">接口体</span></p>
+<p style="margin:0px;">接口主体可以包含抽象方法、默认方法和静态方法。接口中的抽象方法后面是分号，但没有大括号（抽象方法不包含实现）。默认方法使用默认修饰符定义，静态方法使用static关键字定义。接口中的所有抽象、默认和静态方法都是隐式公共的，因此可以省略公共修饰符。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">此外，接口可以包含常量声明。接口中定义的所有常量值都是隐式的公共、静态和最终值。同样，可以省略这些修改器。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

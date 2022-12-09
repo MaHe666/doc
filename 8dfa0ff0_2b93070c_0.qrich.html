@@ -1,0 +1,35 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">除了defalult方法之外，还可以在接口中定义静态方法。（静态方法是一种与定义它的类关联的方法，而不是与任何对象关联的方法。该类的每个实例都共享其静态方法。）这使您更容易在库中组织助手方法；您可以在同一个接口中而不是在单独的类中保持特定于接口的静态方法。以下示例定义了一个静态方法，该方法检索与时区标识符相对应的ZoneId对象；如果没有对应于给定标识符的ZoneId对象，则使用系统默认时区。（因此，您可以简化getZonedDateTime方法）</p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">interface</span><span style="font-family:'Courier';"> TimeClient {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">// ...</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">static</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> ZoneId getZoneId (String zoneString) {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">try</span><span style="font-family:'Courier';"> {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">return</span><span style="font-family:'Courier';"> ZoneId</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">of(zoneString);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        } </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">catch</span><span style="font-family:'Courier';"> (DateTimeException e) {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            System</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">err</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">println(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;Invalid time zone: &quot;</span><span style="font-family:'Courier';"> + zoneString +</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;; using default time zone instead.&quot;</span><span style="font-family:'Courier';">);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">return</span><span style="font-family:'Courier';"> ZoneId</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">systemDefault();</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">default</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> ZonedDateTime getZonedDateTime(String zoneString) {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">return</span><span style="font-family:'Courier';"> ZonedDateTime</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">of(getLocalDateTime(), getZoneId(zoneString));</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }    </span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">}</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">与类中的静态方法一样，您指定接口中的方法定义是静态方法，方法签名开头带有static关键字。接口中的所有方法声明（包括静态方法）都是隐式公共的，因此可以省略公共修饰符。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

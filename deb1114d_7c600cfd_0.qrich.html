@@ -11,17 +11,17 @@ p, li { white-space: pre-wrap; }
 <p style="margin:0px;">如前所述，匿名类是一个表达式。匿名类表达式的语法类似于构造函数的调用，只是代码块中包含一个类定义。</p>
 <p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
 <p style="margin:0px;">考虑frenchGreeting对象的实例化</p>
-<p style="margin:0px;">        HelloWorld frenchGreeting = new HelloWorld() {</p>
-<p style="margin:0px;">            String name = &quot;tout le monde&quot;;</p>
-<p style="margin:0px;">            public void greet() {</p>
-<p style="margin:0px;">                greetSomeone(&quot;tout le monde&quot;);</p>
-<p style="margin:0px;">            }</p>
-<p style="margin:0px;">            public void greetSomeone(String someone) {</p>
-<p style="margin:0px;">                name = someone;</p>
-<p style="margin:0px;">                System.out.println(&quot;Salut &quot; + name);</p>
-<p style="margin:0px;">            }</p>
-<p style="margin:0px;">        };</p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        HelloWorld frenchGreeting = </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">new</span><span style="font-family:'Courier';"> HelloWorld() {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            String name = </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;tout le monde&quot;</span><span style="font-family:'Courier';">;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">void</span><span style="font-family:'Courier';"> greet() {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                greetSomeone(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;tout le monde&quot;</span><span style="font-family:'Courier';">);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">void</span><span style="font-family:'Courier';"> greetSomeone(String someone) {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                name = someone;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                System</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">out</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">println(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;Salut &quot;</span><span style="font-family:'Courier';"> + name);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        };</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier'; font-size:9pt;"><br /></p>
 <p style="margin:0px;">匿名类表达式由以下内容组成</p>
 <ul style="margin: 0px; -qt-list-indent: 1;">
 <li style="margin:0px;">new关键字</li>

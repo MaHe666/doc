@@ -15,15 +15,15 @@ p, li { white-space: pre-wrap; }
 <p style="margin:0px;">Java编译器将初始化器块复制到每个构造函数中。因此，此方法可用于在多个构造函数之间共享代码块。</p>
 <p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
 <p style="margin:0px;">final方法不能在子类中重写。这将在接口和继承课程中讨论。以下是使用final方法初始化实例变量的示例：</p>
-<p style="margin:0px;">	class Whatever {</p>
-<p style="margin:0px;">   	 	private varType myVar = initializeInstanceVariable();</p>
-<p style="margin:0px;">        </p>
-<p style="margin:0px;">   		 protected final varType initializeInstanceVariable() {</p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="margin:0px;">       		 	// initialization code goes here</p>
-<p style="margin:0px;">    		}</p>
-<p style="margin:0px;">	}</p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">	</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">class</span><span style="font-family:'Courier';"> Whatever {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">   	 	</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">private</span><span style="font-family:'Courier';"> varType myVar = initializeInstanceVariable();</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">   		 </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">protected</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">final</span><span style="font-family:'Courier';"> varType initializeInstanceVariable() {</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">       		 	</span><span style="font-family:'Courier'; font-style:italic; color:#778899;">// initialization code goes here</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    		}</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">	}</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier'; font-size:9pt;"><br /></p>
 <p style="margin:0px;">如果子类可能希望重用初始化方法，这尤其有用。该方法是final的，因为在实例初始化期间调用非final方法可能会导致问题。</p>
 
 <script type="text/javascript" language="javascript" src="jquery.js"></script>

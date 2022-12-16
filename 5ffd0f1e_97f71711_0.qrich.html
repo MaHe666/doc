@@ -9,22 +9,22 @@ p, li { white-space: pre-wrap; }
 </head>
 <body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
 <p style="margin:0px;">静态初始化块是一个普通的代码块，用大括号｛｝括起来，前面是static关键字。下面是一个示例：</p>
-<p style="margin:0px;">	static {</p>
-<p style="margin:0px;">    		// whatever code is needed for initialization goes here</p>
-<p style="margin:0px;">	}</p>
+<p style="margin:0px;"><span style="font-family:'Courier';">	</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">static</span><span style="font-family:'Courier';"> {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    		</span><span style="font-family:'Courier'; font-style:italic; color:#778899;">// whatever code is needed for initialization goes here</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">	}</span></p>
 <p style="margin:0px;">一个类可以有任意数量的静态初始化块，它们可以出现在类体中的任何位置。运行时系统保证按照静态初始化块在源代码中出现的顺序调用它们。</p>
 <p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
 <p style="margin:0px;">---------------------------------------------------------</p>
 <p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
 <p style="margin:0px;">有一种替代静态代码块的方法 —— 您可以编写一个私有静态方法：</p>
-<p style="margin:0px;">	class Whatever {</p>
-<p style="margin:0px;">    		public static varType myVar = initializeClassVariable();</p>
-<p style="margin:0px;">        </p>
-<p style="margin:0px;">    		private static varType initializeClassVariable() {</p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="margin:0px;">        		// initialization code goes here</p>
-<p style="margin:0px;">    		}</p>
-<p style="margin:0px;">	}</p>
+<p style="margin:0px;"><span style="font-family:'Courier';">	</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">class</span><span style="font-family:'Courier';"> Whatever {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    		</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">static</span><span style="font-family:'Courier';"> varType myVar = initializeClassVariable();</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    		</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">private</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">static</span><span style="font-family:'Courier';"> varType initializeClassVariable() {</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        		</span><span style="font-family:'Courier'; font-style:italic; color:#778899;">// initialization code goes here</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    		}</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">	}</span></p>
 <p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
 <p style="margin:0px;">私有静态方法的优点是，如果需要重新初始化类变量，则可以稍后重用它们。</p>
 <p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>

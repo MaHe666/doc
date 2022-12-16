@@ -16,12 +16,12 @@ p, li { white-space: pre-wrap; }
 </ul>
 <p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
 <p style="margin:0px;">假设您按如下方式扩展接口TimeClient</p>
-<p style="margin:0px;">	public interface AnotherTimeClient extends TimeClient { }</p>
+<p style="margin:0px;"><span style="font-family:'Courier';">	</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">interface</span><span style="font-family:'Courier';"> AnotherTimeClient </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">extends</span><span style="font-family:'Courier';"> TimeClient { }</span></p>
 <p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
 <p style="margin:0px;">假设您按如下方式扩展接口TimeClient</p>
-<p style="margin:0px;">	public interface AbstractZoneTimeClient extends TimeClient {</p>
-<p style="margin:0px;">    		public ZonedDateTime getZonedDateTime(String zoneString);</p>
-<p style="margin:0px;">	}</p>
+<p style="margin:0px;"><span style="font-family:'Courier';">	</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">interface</span><span style="font-family:'Courier';"> AbstractZoneTimeClient </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">extends</span><span style="font-family:'Courier';"> TimeClient {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    		</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> ZonedDateTime getZonedDateTime(String zoneString);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">	}</span></p>
 <p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
 <p style="margin:0px;">任何实现接口AbstractZoneTimeClient的类都必须实现方法getZonedDateTime；与接口中的所有其他非默认（和非静态）方法一样，该方法是一种抽象方法。</p>
 <p style="margin:0px;">假设您按如下方式扩展接口TimeClient：</p>

@@ -19,46 +19,46 @@ p, li { white-space: pre-wrap; }
 <p style="margin:0px;">在Java编程语言中，接口是一种引用类型，类似于类，只能包含常量、方法签名、默认方法、静态方法和嵌套类型。方法体仅存在于默认方法和静态方法。接口不能实例化，它们只能由类实现或由其他接口扩展。本课稍后将讨论扩展。</p>
 <p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
 <p style="margin:0px;">定义接口类似于创建新类</p>
-<p style="margin:0px;">public interface OperateCar {</p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="margin:0px;">   // constant declarations, if any</p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="margin:0px;">   // method signatures</p>
-<p style="margin:0px;">   </p>
-<p style="margin:0px;">   // An enum with values RIGHT, LEFT</p>
-<p style="margin:0px;">   int turn(Direction direction,</p>
-<p style="margin:0px;">            double radius,</p>
-<p style="margin:0px;">            double startSpeed,</p>
-<p style="margin:0px;">            double endSpeed);</p>
-<p style="margin:0px;">   int changeLanes(Direction direction,</p>
-<p style="margin:0px;">                   double startSpeed,</p>
-<p style="margin:0px;">                   double endSpeed);</p>
-<p style="margin:0px;">   int signalTurn(Direction direction,</p>
-<p style="margin:0px;">                  boolean signalOn);</p>
-<p style="margin:0px;">   int getRadarFront(double distanceToCar,</p>
-<p style="margin:0px;">                     double speedOfCar);</p>
-<p style="margin:0px;">   int getRadarRear(double distanceToCar,</p>
-<p style="margin:0px;">                    double speedOfCar);</p>
-<p style="margin:0px;">         ......</p>
-<p style="margin:0px;">   // more method signatures</p>
-<p style="margin:0px;">}</p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">interface</span><span style="font-family:'Courier';"> OperateCar {</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">   </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">// constant declarations, if any</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">   </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">// method signatures</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">   </span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">   </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">// An enum with values RIGHT, LEFT</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">   </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">int</span><span style="font-family:'Courier';"> turn(Direction direction,</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">double</span><span style="font-family:'Courier';"> radius,</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">double</span><span style="font-family:'Courier';"> startSpeed,</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">double</span><span style="font-family:'Courier';"> endSpeed);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">   </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">int</span><span style="font-family:'Courier';"> changeLanes(Direction direction,</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                   </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">double</span><span style="font-family:'Courier';"> startSpeed,</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                   </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">double</span><span style="font-family:'Courier';"> endSpeed);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">   </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">int</span><span style="font-family:'Courier';"> signalTurn(Direction direction,</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                  </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">boolean</span><span style="font-family:'Courier';"> signalOn);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">   </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">int</span><span style="font-family:'Courier';"> getRadarFront(</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">double</span><span style="font-family:'Courier';"> distanceToCar,</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                     </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">double</span><span style="font-family:'Courier';"> speedOfCar);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">   </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">int</span><span style="font-family:'Courier';"> getRadarRear(</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">double</span><span style="font-family:'Courier';"> distanceToCar,</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">double</span><span style="font-family:'Courier';"> speedOfCar);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">         ......</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">   </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">// more method signatures</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">}</span></p>
 <p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
 <p style="margin:0px;">请注意，方法签名没有大括号，并以分号结尾</p>
 <p style="margin:0px;">要使用接口，需要编写一个实现接口的类。当可实例化类实现接口时，它为接口中声明的每个方法提供方法体。例如</p>
-<p style="margin:0px;">public class OperateBMW760i implements OperateCar {</p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="margin:0px;">    // the OperateCar method signatures, with implementation --</p>
-<p style="margin:0px;">    // for example:</p>
-<p style="margin:0px;">    public int signalTurn(Direction direction, boolean signalOn) {</p>
-<p style="margin:0px;">       // code to turn BMW's LEFT turn indicator lights on</p>
-<p style="margin:0px;">       // code to turn BMW's LEFT turn indicator lights off</p>
-<p style="margin:0px;">       // code to turn BMW's RIGHT turn indicator lights on</p>
-<p style="margin:0px;">       // code to turn BMW's RIGHT turn indicator lights off</p>
-<p style="margin:0px;">    }</p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="margin:0px;">    // other members, as needed -- for example, helper classes not </p>
-<p style="margin:0px;">    // visible to clients of the interface</p>
-<p style="margin:0px;">}</p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">class</span><span style="font-family:'Courier';"> OperateBMW760i </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">implements</span><span style="font-family:'Courier';"> OperateCar {</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">// the OperateCar method signatures, with implementation --</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">// for example:</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">int</span><span style="font-family:'Courier';"> signalTurn(Direction direction, </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">boolean</span><span style="font-family:'Courier';"> signalOn) {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">       </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">// code to turn BMW's LEFT turn indicator lights on</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">       </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">// code to turn BMW's LEFT turn indicator lights off</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">       </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">// code to turn BMW's RIGHT turn indicator lights on</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">       </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">// code to turn BMW's RIGHT turn indicator lights off</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">// other members, as needed -- for example, helper classes not </span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">// visible to clients of the interface</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">}</span></p>
 <p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
 <p style="margin:0px;">在上面的机器人汽车示例中，将由汽车制造商来实现接口。当然，雪佛兰的实施方式将与丰田的实施方式大不相同，但两家制造商都将遵循相同的界面。作为该接口的客户，导航制造商将构建使用汽车位置GPS数据、数字街道地图和交通数据驾驶汽车的系统。这样，制导系统将调用接口方法：转弯、变道、刹车、加速等。</p>
 <p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>

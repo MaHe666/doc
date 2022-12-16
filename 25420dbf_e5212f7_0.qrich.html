@@ -9,14 +9,14 @@ p, li { white-space: pre-wrap; }
 </head>
 <body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
 <p style="margin:0px;">您通常可以在其声明中为字段提供初始值：</p>
-<p style="margin:0px;">	public class BedAndBreakfast {</p>
-<p style="margin:0px;">		</p>
-<p style="margin:0px;">    		// initialize to 10</p>
-<p style="margin:0px;">    		public static int capacity = 10;</p>
-<p style="margin:0px;">		</p>
-<p style="margin:0px;">   		// initialize to false</p>
-<p style="margin:0px;">    		private boolean full = false;</p>
-<p style="margin:0px;">	}</p>
+<p style="margin:0px;"><span style="font-family:'Courier';">	</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">class</span><span style="font-family:'Courier';"> BedAndBreakfast {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">		</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    		</span><span style="font-family:'Courier'; font-style:italic; color:#778899;">// initialize to 10</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    		</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">static</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">int</span><span style="font-family:'Courier';"> capacity = </span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">10</span><span style="font-family:'Courier';">;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">		</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">   		</span><span style="font-family:'Courier'; font-style:italic; color:#778899;">// initialize to false</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    		</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">private</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">boolean</span><span style="font-family:'Courier';"> full = </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">false</span><span style="font-family:'Courier';">;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">	}</span></p>
 <p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
 <p style="margin:0px;">当初始化值可用并且可以将初始化放在一行时，这很有效。然而，这种形式的初始化由于其简单性而具有局限性。如果初始化需要一些逻辑（例如，错误处理或for循环来填充复杂数组），那么简单的赋值是不够的。实例变量可以在构造函数中初始化，其中可以使用错误处理或其他逻辑。为了为类变量提供相同的功能，Java编程语言包括静态初始化块。</p>
 <p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>

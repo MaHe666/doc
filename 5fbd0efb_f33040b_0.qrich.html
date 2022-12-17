@@ -1,0 +1,85 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">官方文档</p>
+<p style="margin:0px;"><a href="https://docs.oracle.com/javase/tutorial/java/IandI/polymorphism.html"><span style=" text-decoration: underline; color:#0000ff;">https://docs.oracle.com/javase/tutorial/java/IandI/polymorphism.html</span></a></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">多态的字典定义是指生物学中的一个原则，其中一个生物体或物种可以有许多不同的形式或阶段。这一原则也适用于面向对象编程和Java等语言。类的子类可以定义自己独特的行为，但也可以共享父类的一些相同功能。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">多态性可以通过对超类的轻微修改来证明。例如，可以将超类的方法添加到显示实例中当前存储的所有数据的类中。</p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">class</span><span style="font-family:'Courier';"> TestSuperClass {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">void</span><span style="font-family:'Courier';"> sayHelloWorld(){</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        System</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">out</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">println(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;HelloWorld&quot;</span><span style="font-family:'Courier';">);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">}</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">要演示Java语言中的多态特性，这里使用两个子类扩展了TestSuperClass类，使其有不同的实现</p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">class</span><span style="font-family:'Courier';"> TestSubClass1 </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">extends</span><span style="font-family:'Courier';"> TestSuperClass{</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">private</span><span style="font-family:'Courier';"> String name;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> TestSubClass1(String name) {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">this</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">name = name;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    @Override</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">void</span><span style="font-family:'Courier';"> sayHelloWorld(){</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        System</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">out</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">println(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;HelloWorld:&quot;</span><span style="font-family:'Courier';"> + name);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">}</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">class</span><span style="font-family:'Courier';"> TestSubClass2 </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">extends</span><span style="font-family:'Courier';"> TestSuperClass{</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">private</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">int</span><span style="font-family:'Courier';"> number;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> TestSubClass2(</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">int</span><span style="font-family:'Courier';"> number) {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">this</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">number = number;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    @Override</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">void</span><span style="font-family:'Courier';"> sayHelloWorld(){</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        System</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">out</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">println(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;HelloWorld:&quot;</span><span style="font-family:'Courier';"> + number);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">}</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">总的来说，有三个类别：TestSuperClass、TestSubClass1、TestSubClass2</p>
+<p style="margin:0px;">其中的两个子类重写父类的方法，并按照自己的“方式”去打印信息</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">下面是测试程序</p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">class</span><span style="font-family:'Courier';"> Main </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">extends</span><span style="font-family:'Courier';"> TestSuperClass{</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">static</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">void</span><span style="font-family:'Courier';"> main(String[] args) {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        TestSuperClass t1, t2, t3;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        t1 = </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">new</span><span style="font-family:'Courier';"> TestSuperClass();</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        t2 = </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">new</span><span style="font-family:'Courier';"> TestSubClass1(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;mahe666&quot;</span><span style="font-family:'Courier';">);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        t3 = </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">new</span><span style="font-family:'Courier';"> TestSubClass2(</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">666</span><span style="font-family:'Courier';">);</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        t1</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">sayHelloWorld();</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        t2</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">sayHelloWorld();</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        t3</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">sayHelloWorld();</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">}</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier'; font-size:9pt;"><br /></p>
+<p style="margin:0px;">控制台打印如下信息：</p>
+<p style="margin:0px;">HelloWorld</p>
+<p style="margin:0px;">HelloWorld:mahe666</p>
+<p style="margin:0px;">HelloWorld:666</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">Java虚拟机（JVM）为每个变量中引用的对象调用适当的方法。它不会调用由变量类型定义的方法。这种行为被称为虚拟方法调用，它展示了Java语言中重要多态特性的一个方面。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

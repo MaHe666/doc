@@ -1,0 +1,43 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">如果您的方法重写了其超类的方法之一，则可以通过使用关键字super来调用重写的方法。您也可以使用super来引用隐藏字段（尽管不鼓励隐藏字段）。</p>
+<p style="margin:0px;">下面是父类</p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">class</span><span style="font-family:'Courier';"> Superclass {</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">void</span><span style="font-family:'Courier';"> printMethod() {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        System</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">out</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">println(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;Printed in Superclass.&quot;</span><span style="font-family:'Courier';">);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">}</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">下面是子类</p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">class</span><span style="font-family:'Courier';"> Subclass </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">extends</span><span style="font-family:'Courier';"> Superclass {</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">// overrides printMethod in Superclass</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">void</span><span style="font-family:'Courier';"> printMethod() {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">super</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">printMethod();</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        System</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">out</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">println(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;Printed in Subclass&quot;</span><span style="font-family:'Courier';">);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">static</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">void</span><span style="font-family:'Courier';"> main(String[] args) {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        Subclass s = </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">new</span><span style="font-family:'Courier';"> Subclass();</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        s</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">printMethod();    </span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">}</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">在Subclass中，printMethod()方法重写了父类Superclass中的同名方法，而且子类方法中通过super关键字调用了父类的方法，又打印了一个字符串</p>
+<p style="margin:0px;">所以运行上面的程序的结果是：</p>
+<p style="margin:0px;">Printed in Superclass.</p>
+<p style="margin:0px;">Printed in Subclass</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

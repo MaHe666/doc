@@ -1,0 +1,48 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">equals() 方法比较两个对象是否相等，如果相等则返回True。Object类中提供的 equals() 方法使用标识操作符(==)来确定两个对象是否相等。对于原始数据类型，这会给出正确的结果。然而，对于对象来说，情况并非如此。Object提供的 equals() 方法测试对象引用是否相等--也就是说，比较的对象是否完全相同。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">要测试两个对象在等价意义上是否相等(包含相同的信息)，必须重写equals()方法。下面是覆盖equals()的Book类的示例</p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">class</span><span style="font-family:'Courier';"> Book {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    String ISBN;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> String getISBN() { </span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">return</span><span style="font-family:'Courier';"> ISBN;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">boolean</span><span style="font-family:'Courier';"> equals(Object obj) {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">if</span><span style="font-family:'Courier';"> (obj </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">instanceof</span><span style="font-family:'Courier';"> Book)</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">return</span><span style="font-family:'Courier';"> ISBN</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">equals((Book)obj</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">getISBN()); </span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">else</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">return</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">false</span><span style="font-family:'Courier';">;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">}</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">请考虑此代码，该代码测试 Book 类的两个实例是否相等</p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">// Swing Tutorial, 2nd edition</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">Book firstBook  = </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">new</span><span style="font-family:'Courier';"> Book(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;0201914670&quot;</span><span style="font-family:'Courier';">);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">Book secondBook = </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">new</span><span style="font-family:'Courier';"> Book(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;0201914670&quot;</span><span style="font-family:'Courier';">);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">if</span><span style="font-family:'Courier';"> (firstBook</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">equals(secondBook)) {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    System</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">out</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">println(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;objects are equal&quot;</span><span style="font-family:'Courier';">);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">} </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">else</span><span style="font-family:'Courier';"> {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    System</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">out</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">println(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;objects are not equal&quot;</span><span style="font-family:'Courier';">);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">}</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">即使firstBook和secondBook引用了两个不同的对象，该程序仍显示对象相等。它们被认为是相等的，因为所比较的对象包含相同的ISBN编号。</p>
+<p style="margin:0px;">如果标识运算符不适合您的类，则应始终重写equals()方法。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style=" font-weight:600;">如果重写equals()，则也必须重写hashCode()。</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

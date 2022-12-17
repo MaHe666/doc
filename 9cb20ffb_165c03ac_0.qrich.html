@@ -1,0 +1,24 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">你应该始终考虑在你的类中重写toString()方法。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">Object的 toString()方法返回对象的String表示，这对调试非常有用。一个对象的字符串表示完全取决于该对象，这就是为什么你需要在你的类中覆盖toString()。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">你可以使用toString()和System.out.println()来显示一个对象的文本表示，比如Book的一个实例。</p>
+<p style="margin:0px;">（在实际开发环境中，不要使用System.out.println()，要按照规范使用log和debug）</p>
+<p style="margin:0px;">	System.out.println(firstBook.toString());</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">对于正确重写的 toString() 方法，它会打印一些有用的内容，如下所示:</p>
+<p style="margin:0px;">	ISBN: 0201914670; The Swing Tutorial; A Guide to Constructing GUIs, 2nd Edition</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

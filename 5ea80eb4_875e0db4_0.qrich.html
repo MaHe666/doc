@@ -1,0 +1,44 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">java.lang 包中的 Object 类位于类层次结构树的顶部。 每个类都是 Object 类的直接或间接后代。 您使用或编写的每个类都继承了 Object 的实例方法。 您不需要使用这些方法中的任何一个，但是，如果您选择这样做，您可能需要用特定于您的类的代码覆盖它们。 本节讨论的从 Object 继承的方法是：</p>
+<ul style="margin: 0px; -qt-list-indent: 1;">
+<li style="margin:0px;">protected Object clone() throws CloneNotSupportedException</li>
+<p style="margin:0px;">		创建并返回此对象的副本。</p>
+<li style="margin:0px;">public boolean equals(Object obj)</li>
+<p style="margin:0px;">		指示其他对象是否“等于”此对象。</p>
+<li style="margin:0px;">protected void finalize() throws Throwable</li>
+<p style="margin:0px;">		当垃圾回收确定不再有对对象的引用时，由对象上的垃圾回收器调用</p>
+<li style="margin:0px;">public final Class getClass()</li>
+<p style="margin:0px;">		返回对象的运行时类。</p>
+<li style="margin:0px;">public int hashCode()</li>
+<p style="margin:0px;">		返回对象的哈希值</p>
+<li style="margin:0px;">public String toString()</li>
+</ul>
+<p style="margin:0px;">		返回对象的字符串表示形式。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">Object的notify、notifyAll和wait方法都在同步程序中独立运行的线程的活动方面发挥了作用，这将在后面的课程中讨论，这里不做介绍。这些方法有五种。</p>
+<ul style="margin: 0px; -qt-list-indent: 1;">
+<li style="margin:0px;">public final void notify()</li>
+<li style="margin:0px;">public final void notifyAll()</li>
+<li style="margin:0px;">public final void wait()</li>
+<li style="margin:0px;">public final void wait(long timeout)</li>
+<li style="margin:0px;">public final void wait(long timeout, int nanos)</li>
+</ul>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">这些方法中的许多都有一些微妙的方面，特别是克隆方法。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

@@ -8,26 +8,30 @@ p, li { white-space: pre-wrap; }
 </style>
 </head>
 <body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
-<p style="margin:0px;"><span style="font-family:'Courier';">&lt;el-input </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">class</span><span style="font-family:'Courier';">=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;input&quot;</span><span style="font-family:'Courier';"> v-model=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;params.fillCommission&quot;</span><span style="font-family:'Courier';"> clearable @input=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;judgeVal($event)&quot;</span><span style="font-family:'Courier';">&gt;&lt;/el-input&gt;</span></p>
-<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
-<p style="margin:0px;"><span style="font-family:'Courier';">judgeVal(value) {</span></p>
-<p style="margin:0px;"><span style="font-family:'Courier';">      console</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">log(value,</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'judgeVal'</span><span style="font-family:'Courier';">); </span></p>
-<p style="margin:0px;"><span style="font-family:'Courier';">        let val = (value &amp;&amp; value</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">split(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;&quot;</span><span style="font-family:'Courier';">)) || [];</span></p>
-<p style="margin:0px;"><span style="font-family:'Courier';">        let sNum = val</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">toString(); </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">//先转换成字符串类型</span></p>
-<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">if</span><span style="font-family:'Courier';"> (sNum</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">indexOf(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'.'</span><span style="font-family:'Courier';">) === </span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">0</span><span style="font-family:'Courier';">) {</span><span style="font-family:'Courier'; font-style:italic; color:#778899;">//第一位就是 . </span></p>
-<p style="margin:0px;"><span style="font-family:'Courier';">          sNum = </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'0'</span><span style="font-family:'Courier';"> + sNum</span></p>
-<p style="margin:0px;"><span style="font-family:'Courier';">        }</span></p>
-<p style="margin:0px;"><span style="font-family:'Courier';">        sNum = sNum</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">replace(/[^\d.]/g,</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;&quot;</span><span style="font-family:'Courier';">);  </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">//清除“数字”和“.”以外的字符</span></p>
-<p style="margin:0px;"><span style="font-family:'Courier';">        sNum = sNum</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">replace(/\.{</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">2</span><span style="font-family:'Courier';">,}/g,</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;.&quot;</span><span style="font-family:'Courier';">); </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">//只保留第一个. 清除多余的</span></p>
-<p style="margin:0px;"><span style="font-family:'Courier';">        sNum = sNum</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">replace(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;.&quot;</span><span style="font-family:'Courier';">,</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;$#$&quot;</span><span style="font-family:'Courier';">).replace(/\./g,</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;&quot;</span><span style="font-family:'Courier';">).replace(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;$#$&quot;</span><span style="font-family:'Courier';">,</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;.&quot;</span><span style="font-family:'Courier';">);</span></p>
-<p style="margin:0px;"><span style="font-family:'Courier';">        sNum = sNum</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">replace(/^(\-)*(\d+)\.(\d\d).*$/,</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'$1$2.$3'</span><span style="font-family:'Courier';">);</span><span style="font-family:'Courier'; font-style:italic; color:#778899;">//只能输入两个小数</span></p>
-<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">//以上已经过滤，此处控制的是如果没有小数点，首位不能为类似于 01、02的金额</span></p>
-<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">if</span><span style="font-family:'Courier';">(sNum</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">indexOf(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;.&quot;</span><span style="font-family:'Courier';">)&lt; </span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">0</span><span style="font-family:'Courier';"> &amp;&amp; sNum !==</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;&quot;</span><span style="font-family:'Courier';">){</span></p>
-<p style="margin:0px;"><span style="font-family:'Courier';">          sNum = parseFloat(sNum);</span></p>
-<p style="margin:0px;"><span style="font-family:'Courier';">        }</span></p>
-<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">this</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">params</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">fillCommission = sNum; </span></p>
-<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
-<p style="margin:0px;"><span style="font-family:'Courier';">···</span></p>
+<p style="margin:0px;">&lt;el-input class=&quot;input&quot; v-model=&quot;params.fillCommission&quot; clearable @input=&quot;judgeVal($event)&quot;&gt;&lt;/el-input&gt;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">judgeVal(value) {</p>
+<p style="margin:0px;">      console.log(value,'judgeVal'); </p>
+<p style="margin:0px;">        let val = (value &amp;&amp; value.split(&quot;&quot;)) || [];</p>
+<p style="margin:0px;">        let sNum = val.toString(); //先转换成字符串类型</p>
+<p style="margin:0px;">        if (sNum.indexOf('.') === 0) {//第一位就是 . </p>
+<p style="margin:0px;">          sNum = '0' + sNum</p>
+<p style="margin:0px;">        }</p>
+<p style="margin:0px;">        sNum = sNum.replace(/[^\d.]/g,&quot;&quot;);  //清除“数字”和“.”以外的字符</p>
+<p style="margin:0px;">        sNum = sNum.replace(/\.{2,}/g,&quot;.&quot;); //只保留第一个. 清除多余的</p>
+<p style="margin:0px;">        sNum = sNum.replace(&quot;.&quot;,&quot;$#$&quot;).replace(/\./g,&quot;&quot;).replace(&quot;$#$&quot;,&quot;.&quot;);</p>
+<p style="margin:0px;">        sNum = sNum.replace(/^(\-)*(\d+)\.(\d\d).*$/,'$1$2.$3');//只能输入两个小数</p>
+<p style="margin:0px;">        //以上已经过滤，此处控制的是如果没有小数点，首位不能为类似于 01、02的金额</p>
+<p style="margin:0px;">        if(sNum.indexOf(&quot;.&quot;)&lt; 0 &amp;&amp; sNum !==&quot;&quot;){</p>
+<p style="margin:0px;">          sNum = parseFloat(sNum);</p>
+<p style="margin:0px;">        }</p>
+<p style="margin:0px;">        this.params.fillCommission = sNum; </p>
+<p style="margin:0px;">    }</p>
+<p style="margin:0px;">···</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">如果想添加可以输入负号“-” 的功能，则在校验方法的返回值之前加上如下代码</p>
+<p style="margin:0px;">if (value.charAt(0) === '-') sNum = &quot;-&quot; + sNum</p>
 
 <script type="text/javascript" language="javascript" src="jquery.js"></script>
 <script type="text/javascript" language="javascript" src="itemlink.js"></script></body>

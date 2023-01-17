@@ -1,0 +1,52 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">interface</span><span style="font-family:'Courier';"> RunOptions { </span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    program:string; </span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    commandline:string[]|string|(()=&gt;string); </span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">} </span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';"> </span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">// commandline 是字符串</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">var</span><span style="font-family:'Courier';"> options:RunOptions = {program:</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;test1&quot;</span><span style="font-family:'Courier';">,commandline:</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;Hello&quot;</span><span style="font-family:'Courier';">}; </span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">console</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">log(options</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">commandline)  </span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';"> </span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">// commandline 是字符串数组</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">options = {program:</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;test1&quot;</span><span style="font-family:'Courier';">,commandline:[</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;Hello&quot;</span><span style="font-family:'Courier';">,</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;World&quot;</span><span style="font-family:'Courier';">]}; </span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">console</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">log(options</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">commandline[</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">0</span><span style="font-family:'Courier';">]); </span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">console</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">log(options</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">commandline[</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">1</span><span style="font-family:'Courier';">]);  </span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';"> </span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">// commandline 是一个函数表达式</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">options = {program:</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;test1&quot;</span><span style="font-family:'Courier';">,commandline:()=&gt;{</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">return</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;**Hello World**&quot;</span><span style="font-family:'Courier';">;}}; </span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';"> </span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">var</span><span style="font-family:'Courier';"> fn:any = options</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">commandline; </span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">console</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">log(fn());</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">编译以上代码，得到以下 JavaScript 代码：</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">// commandline 是字符串</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">var</span><span style="font-family:'Courier';"> options = { program: </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;test1&quot;</span><span style="font-family:'Courier';">, commandline: </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;Hello&quot;</span><span style="font-family:'Courier';"> };</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">console</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">log(options</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">commandline);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">// commandline 是字符串数组</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">options = { program: </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;test1&quot;</span><span style="font-family:'Courier';">, commandline: [</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;Hello&quot;</span><span style="font-family:'Courier';">, </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;World&quot;</span><span style="font-family:'Courier';">] };</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">console</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">log(options</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">commandline[</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">0</span><span style="font-family:'Courier';">]);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">console</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">log(options</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">commandline[</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">1</span><span style="font-family:'Courier';">]);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">// commandline 是一个函数表达式</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">options = { program: </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;test1&quot;</span><span style="font-family:'Courier';">, commandline: </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">function</span><span style="font-family:'Courier';"> () { </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">return</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;**Hello World**&quot;</span><span style="font-family:'Courier';">; } };</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">var</span><span style="font-family:'Courier';"> fn = options</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">commandline;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">console</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">log(fn());</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

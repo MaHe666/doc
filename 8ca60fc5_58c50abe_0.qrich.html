@@ -8,26 +8,29 @@ p, li { white-space: pre-wrap; }
 </style>
 </head>
 <body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
-<p style="margin:0px;">class Demo {</p>
-<p style="margin:0px;">    constructor(a, b) {</p>
-<p style="margin:0px;">        this.a = a;</p>
-<p style="margin:0px;">        this.b = b;</p>
-<p style="margin:0px;">        console.log('Demo');</p>
-<p style="margin:0px;">    }</p>
-<p style="margin:0px;">    sum() {</p>
-<p style="margin:0px;">        return this.a + this.b;</p>
-<p style="margin:0px;">    }</p>
-<p style="margin:0px;">}</p>
-<p style="margin:0px;">let demo1 = new Demo(2, 1);</p>
-<p style="margin:0px;">let demo2 = new Demo(3, 1);</p>
-<p style="margin:0px;">// 两者原型链是相等的</p>
-<p style="margin:0px;">console.log(demo1._proto_ == demo2._proto_); // true</p>
-<p style="margin:0px;"> </p>
-<p style="margin:0px;">demo1._proto_.sub = function() {</p>
-<p style="margin:0px;">    return this.a - this.b;</p>
-<p style="margin:0px;">}</p>
-<p style="margin:0px;">console.log(demo1.sub()); // 1</p>
-<p style="margin:0px;">console.log(demo2.sub()); // 2</p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">class</span><span style="font-family:'Courier';"> Demo {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    constructor(a, b) {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">this</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">a = a;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">this</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">b = b;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        console</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">log(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'Demo'</span><span style="font-family:'Courier';">);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    sum() {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">return</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">this</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">a + </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">this</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">b;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">}</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">let demo1 = </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">new</span><span style="font-family:'Courier';"> Demo(</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">2</span><span style="font-family:'Courier';">, </span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">1</span><span style="font-family:'Courier';">);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">let demo2 = </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">new</span><span style="font-family:'Courier';"> Demo(</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">3</span><span style="font-family:'Courier';">, </span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">1</span><span style="font-family:'Courier';">);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">// 两者原型链是相等的</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">console</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">log(demo1</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">_proto_ == demo2</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">_proto_); </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">// true</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';"> </span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">demo1</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">_proto_</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">sub = </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">function</span><span style="font-family:'Courier';">() {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">return</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">this</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">a - </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">this</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">b;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">}</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">console</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">log(demo1</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">sub()); </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">// 1</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">console</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">log(demo2</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">sub()); </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">// 2</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
 <p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
 
 <script type="text/javascript" language="javascript" src="jquery.js"></script>

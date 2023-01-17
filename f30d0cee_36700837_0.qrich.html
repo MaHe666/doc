@@ -1,0 +1,43 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">在 TypeScript 函数里，如果我们定义了参数，则我们必须传入这些参数，除非将这些参数设置为可选，可选参数使用问号标识 ？</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">function</span><span style="font-family:'Courier';"> buildName(firstName: string, lastName: string) {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">return</span><span style="font-family:'Courier';"> firstName + </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot; &quot;</span><span style="font-family:'Courier';"> + lastName;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">}</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';"> </span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">let result1 = buildName(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;Bob&quot;</span><span style="font-family:'Courier';">);                  </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">// 错误，缺少参数</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">let result2 = buildName(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;Bob&quot;</span><span style="font-family:'Courier';">, </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;Adams&quot;</span><span style="font-family:'Courier';">, </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;Sr.&quot;</span><span style="font-family:'Courier';">);  </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">// 错误，参数太多了</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">let result3 = buildName(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;Bob&quot;</span><span style="font-family:'Courier';">, </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;Adams&quot;</span><span style="font-family:'Courier';">);         </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">// 正确</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">以下实例，我们将 lastName 设置为可选参数：</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">function</span><span style="font-family:'Courier';"> buildName(firstName: string, lastName?: string) {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">if</span><span style="font-family:'Courier';"> (lastName)</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">return</span><span style="font-family:'Courier';"> firstName + </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot; &quot;</span><span style="font-family:'Courier';"> + lastName;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">else</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">return</span><span style="font-family:'Courier';"> firstName;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">}</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';"> </span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">let result1 = buildName(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;Bob&quot;</span><span style="font-family:'Courier';">);  </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">// 正确</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">let result2 = buildName(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;Bob&quot;</span><span style="font-family:'Courier';">, </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;Adams&quot;</span><span style="font-family:'Courier';">, </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;Sr.&quot;</span><span style="font-family:'Courier';">);  </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">// 错误，参数太多了</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">let result3 = buildName(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;Bob&quot;</span><span style="font-family:'Courier';">, </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;Adams&quot;</span><span style="font-family:'Courier';">);  </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">// 正确</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">可选参数必须跟在必需参数后面。 如果上例我们想让 firstName 是可选的，lastName 必选，那么就要调整它们的位置，把 firstName 放在后面。</p>
+<p style="margin:0px;">如果都是可选参数就没关系。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

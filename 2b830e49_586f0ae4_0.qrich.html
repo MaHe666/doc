@@ -1,0 +1,30 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;"><span style=" font-weight:600;">工作流（workflow）</span>就是通过计算机对业务流程自动化执行管理。它主要解决的是“使在多个参与者之间按照某种预定义的规则自动进行传递文档、信息或任务的过程，从而实现某个预期的业务目标，或者促使此目标的实现”</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">一个业务流程如果由自己来实现的话，大多都会采取标志位保存不同的状态：比如，1是申请、2是组长审批、3是部长审批、4是结束</p>
+<p style="margin:0px;">以上方式看起来没什么问题，但是流程本身如果发生变动，我们就需要改代码或者状态了（比如判断流程是否结束、某个流程节点进行特殊处理）</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">这个时候就要考虑有没有能够统一管理的、更专业的解决方案来解决这个问题：业务流程发生改变，程序不发生变化</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">流程变动，不用修改业务代码：</p>
+<p style="margin:0px;">其实是这样的，我们的工作流引擎都实现了一个 规范，这个规范要求我们的流程管理与转态字段无关，始终都是读取业务流程图的下一个节点。当业务更新的时候我们只需要更新业务流程图就行了。这就实现了业务流程改变，不用修改代码。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">流程自动推进：这个原理就更简单了，工作流引擎会用一张表来记录当前处在的节点。当填写完清单后肯定是要轮到部门经理来审批了，所以我们一旦我们完成了请假单填写那么这条记录将会被从这张表删除掉，并且会把下一个节点部门经理的信息插入到这张表中，当我们用部门经理的信息去这张表中查询的时候就能查出部门经理相关的审批的信息了，以此类推，这样层层递进，就实现了流程的自动递交了。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

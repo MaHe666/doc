@@ -1,0 +1,38 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">函数调用要求独立的位置参数，但实参在列表或元组里时，要执行相反的操作。例如，内置的 range() 函数要求独立的 start 和 stop 实参。如果这些参数不是独立的，则要在调用函数时，用 * 操作符把实参从列表或元组解包出来</p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#204a87;">list</span><span style="font-family:'Courier';">(</span><span style="font-family:'Courier'; font-weight:600; color:#204a87;">range</span><span style="font-family:'Courier';">(</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">3</span><span style="font-family:'Courier';">, </span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">6</span><span style="font-family:'Courier';">))</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">args = [</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">3</span><span style="font-family:'Courier';">, </span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">6</span><span style="font-family:'Courier';">]</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#204a87;">print</span><span style="font-family:'Courier';">(</span><span style="font-family:'Courier'; font-weight:600; color:#204a87;">list</span><span style="font-family:'Courier';">(</span><span style="font-family:'Courier'; font-weight:600; color:#204a87;">range</span><span style="font-family:'Courier';">(*args)))</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">-----------------------------------------------------------------------</p>
+<p style="margin:0px;">同样，字典可以用 ** 操作符传递关键字参数，字典的键就是参数的形参名：</p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">def</span><span style="font-family:'Courier';"> parrot(voltage, state=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'a stiff'</span><span style="font-family:'Courier';">, action=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'voom'</span><span style="font-family:'Courier';">):</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#204a87;">print</span><span style="font-family:'Courier';">(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;-- This parrot wouldn't&quot;</span><span style="font-family:'Courier';">, action, end=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">' '</span><span style="font-family:'Courier';">)</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#204a87;">print</span><span style="font-family:'Courier';">(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;if you put&quot;</span><span style="font-family:'Courier';">, voltage, </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;volts through it.&quot;</span><span style="font-family:'Courier';">, end=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">' '</span><span style="font-family:'Courier';">)</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#204a87;">print</span><span style="font-family:'Courier';">(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;E's&quot;</span><span style="font-family:'Courier';">, state, </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;!&quot;</span><span style="font-family:'Courier';">)</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">d = {</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;voltage&quot;</span><span style="font-family:'Courier';">: </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;four million&quot;</span><span style="font-family:'Courier';">, </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;state&quot;</span><span style="font-family:'Courier';">: </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;bleedin' demised&quot;</span><span style="font-family:'Courier';">, </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;action&quot;</span><span style="font-family:'Courier';">: </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;VOOM&quot;</span><span style="font-family:'Courier';">}</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">parrot(**d)</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

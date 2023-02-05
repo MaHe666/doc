@@ -1,0 +1,41 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">lambda 关键字用于创建小巧的匿名函数。lambda a, b: a+b 函数返回两个参数的和。Lambda 函数可用于任何需要函数对象的地方。在语法上，匿名函数只能是单个表达式。在语义上，它只是常规函数定义的语法糖。与嵌套函数定义一样，lambda 函数可以引用包含作用域中的变量</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">def</span><span style="font-family:'Courier';"> make_incrementor(n):</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">return</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">lambda</span><span style="font-family:'Courier';"> x: x + n</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">f = make_incrementor(</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">42</span><span style="font-family:'Courier';">)</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">f(</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">0</span><span style="font-family:'Courier';">)</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">f(</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">1</span><span style="font-family:'Courier';">)</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">上例用 lambda 表达式返回函数。还可以把匿名函数用作传递的实参：</p>
+<p style="margin:0px;"><span style="font-family:'Courier';">pairs = [(</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">1</span><span style="font-family:'Courier';">, </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'one'</span><span style="font-family:'Courier';">), (</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">2</span><span style="font-family:'Courier';">, </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'two'</span><span style="font-family:'Courier';">), (</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">3</span><span style="font-family:'Courier';">, </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'three'</span><span style="font-family:'Courier';">), (</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">4</span><span style="font-family:'Courier';">, </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'four'</span><span style="font-family:'Courier';">)]</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">pairs</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">sort(key=</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">lambda</span><span style="font-family:'Courier';"> pair: pair[</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">1</span><span style="font-family:'Courier';">])</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">pairs</span></p>
+<p style="margin:0px;">以上代码使用每个元组的第二个元素进行排序，也就是使用字符串排序</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

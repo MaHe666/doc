@@ -9,17 +9,20 @@ p, li { white-space: pre-wrap; }
 </head>
 <body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
 <p style="margin:0px;">元组与列表类似，不同之处在于元组的元素不能修改。</p>
+<p style="margin:0px;">元组由多个用逗号隔开的值组成</p>
 <p style="margin:0px;">元组使用小括号 ()，列表使用方括号 []。</p>
 <p style="margin:0px;">元组创建很简单，只需要在括号()中添加元素，并使用逗号隔开即可</p>
 <p style="margin:0px;">空元组 tuple=()</p>
 <p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="margin:0px;">tuple = (&quot;HelloWorld&quot;,666)</p>
+<p style="margin:0px;">tuple = (&quot;HelloWorld&quot;, 666)</p>
+<p style="margin:0px;">以上表达式也可写为 tuple = &quot;HelloWorld&quot;, 666</p>
 <p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
 <p style="margin:0px;">元组中只包含一个元素时，需要在元素后面添加逗号，否则括号会被当作运算符使用</p>
-<p style="margin:0px;">tuple1 = (666)		整型</p>
-<p style="margin:0px;">tuple2 = (666,)	元组</p>
+<p style="margin:0px;">tuple1 = (666)	整型</p>
+<p style="margin:0px;">tuple2 = (666,) 或 tuple2 = 666,	元组</p>
+<p style="margin:0px;"><span style=" font-weight:600;">元组通常情况下都必须写上括号</span></p>
 <p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="margin:0px;">元组不允许修改，但是可以连接组合为一个新的元组</p>
+<p style="margin:0px;">元组不允许修改，但是可以连接组合为一个新的元组，或者创建由列表组成的元组</p>
 <p style="margin:0px;">tuple = tuple1 + tuple2</p>
 <p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
 <p style="margin:0px;">删除元组</p>

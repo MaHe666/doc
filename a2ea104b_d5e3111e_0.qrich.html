@@ -1,0 +1,49 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">列表推导式中的初始表达式可以是任何表达式，甚至可以是另一个列表推导式。</p>
+<p style="margin:0px;">下面这个 3x4 矩阵，由 3 个长度为 4 的列表组成：</p>
+<p style="margin:0px;">matrix = [</p>
+<p style="margin:0px;">    [1, 2, 3, 4],</p>
+<p style="margin:0px;">    [5, 6, 7, 8],</p>
+<p style="margin:0px;">    [9, 10, 11, 12],</p>
+<p style="margin:0px;">]</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">下面的列表推导式可以转置行列</p>
+<p style="margin:0px;">通过下标去获取每个列表里的单个元素</p>
+<p style="margin:0px;">[[row[i] for row in matrix] for i in range(4)]</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">正如我们在上一节中看到的，内部列表理解是在其后面的for上下文中进行评估的，因此本示例等效于：</p>
+<p style="margin:0px;">transposed = []</p>
+<p style="margin:0px;">for i in range(4):</p>
+<p style="margin:0px;">    transposed.append([row[i] for row in matrix])</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">print(transposed)</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">也等价于：</p>
+<p style="margin:0px;">transposed = []</p>
+<p style="margin:0px;">for i in range(4):</p>
+<p style="margin:0px;">    # the following 3 lines implement the nested listcomp</p>
+<p style="margin:0px;">    transposed_row = []</p>
+<p style="margin:0px;">    for row in matrix:</p>
+<p style="margin:0px;">        transposed_row.append(row[i])</p>
+<p style="margin:0px;">    transposed.append(transposed_row)</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">print(transposed)</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">实际应用中，最好用内置函数替代复杂的流程语句。此时，zip() 函数更好用：</p>
+<p style="margin:0px;">list(zip(*matrix))</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

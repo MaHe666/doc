@@ -1,0 +1,87 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;template&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    &lt;div id=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;dynamic-component-demo&quot;</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">class</span><span style="font-family:'Courier';">=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;demo&quot;</span><span style="font-family:'Courier';">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        &lt;button</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                v-</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">for</span><span style="font-family:'Courier';">=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;tab in tabs&quot;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                :key=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;tab.name&quot;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                :</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">class</span><span style="font-family:'Courier';">=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;['tab-button', { active: currentTab.name === tab.name }]&quot;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                v-on:click=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;currentTab = tab&quot;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        &gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            {{ tab</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">name }}</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        &lt;/button&gt;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        &lt;component v-bind:is=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;currentTab.component&quot;</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">class</span><span style="font-family:'Courier';">=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;tab&quot;</span><span style="font-family:'Courier';">&gt;&lt;/component&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    &lt;/div&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;/template&gt;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;script&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">let tabs = [</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        name: </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;Home&quot;</span><span style="font-family:'Courier';">,</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        component: {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            template: </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;&lt;div&gt;Home component&lt;/div&gt;&quot;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    },</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        name: </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;Posts&quot;</span><span style="font-family:'Courier';">,</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        component: {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            template: </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;&lt;div&gt;Posts component&lt;/div&gt;&quot;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    },</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        name: </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;Archive&quot;</span><span style="font-family:'Courier';">,</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        component: {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            template: </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;&lt;div&gt;Archive component&lt;/div&gt;&quot;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">]</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">export</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">default</span><span style="font-family:'Courier';"> {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    name: </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;tabs&quot;</span><span style="font-family:'Courier';">,</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    data() {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">return</span><span style="font-family:'Courier';"> {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            tabs: tabs,</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            currentTab: tabs[</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">0</span><span style="font-family:'Courier';">]</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">}</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;/script&gt;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;style scoped&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">.tab-button {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    padding: 6px 10px;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    border-top-left-radius: 3px;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    border-top-right-radius: 3px;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    border: 1px solid #ccc;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    cursor: pointer;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    background: #f0f0f0;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    margin-bottom: -1px;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    margin-right: -1px;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">}</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">.tab-button:hover {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    background: #e0e0e0;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">}</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">.tab-button</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">active {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    background: #e0e0e0;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">}</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">.tab {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    border: 1px solid #ccc;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    padding: 10px;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">}</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;/style&gt;</span></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

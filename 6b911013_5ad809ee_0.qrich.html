@@ -1,0 +1,38 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">StopIteration 异常用于标识迭代的完成，防止出现无限循环的情况，在 __next__() 方法中我们可以设置在完成指定循环次数后触发 StopIteration 异常来结束迭代。</p>
+<p style="margin:0px;">例：</p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">class</span><span style="font-family:'Courier';"> MyNumbers:</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">  </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">def</span><span style="font-family:'Courier';"> __iter__(</span><span style="font-family:'Courier'; font-weight:600; color:#204a87;">self</span><span style="font-family:'Courier';">):</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#204a87;">self</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">a = </span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">1</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">return</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#204a87;">self</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';"> </span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">  </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">def</span><span style="font-family:'Courier';"> __next__(</span><span style="font-family:'Courier'; font-weight:600; color:#204a87;">self</span><span style="font-family:'Courier';">):</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">if</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#204a87;">self</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">a &lt;= </span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">20</span><span style="font-family:'Courier';">:</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">      x = </span><span style="font-family:'Courier'; font-weight:600; color:#204a87;">self</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">a</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">      </span><span style="font-family:'Courier'; font-weight:600; color:#204a87;">self</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">a += </span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">1</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">      </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">return</span><span style="font-family:'Courier';"> x</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">else</span><span style="font-family:'Courier';">:</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">      </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">raise</span><span style="font-family:'Courier';"> StopIteration</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';"> </span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">myclass = MyNumbers()</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">myiter = </span><span style="font-family:'Courier'; font-weight:600; color:#204a87;">iter</span><span style="font-family:'Courier';">(myclass)</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';"> </span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">for</span><span style="font-family:'Courier';"> x </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">in</span><span style="font-family:'Courier';"> myiter:</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">  </span><span style="font-family:'Courier'; font-weight:600; color:#204a87;">print</span><span style="font-family:'Courier';">(x)</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

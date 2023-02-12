@@ -1,0 +1,57 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">在某些情况下，需要报告已发生的几个异常。这在并发框架中通常是这样的，当多个任务并行失败时，但也有其他用例需要继续执行并收集多个错误，而不是引发第一个异常。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">内置ExceptionGroup包装了一个异常实例列表，以便可以一起引发它们。它本身是一个异常，因此它可以像其他任何异常一样被捕获。</p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">def</span><span style="font-family:'Courier';"> f():</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    excs = [OSError(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'error 1'</span><span style="font-family:'Courier';">), SystemError(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'error 2'</span><span style="font-family:'Courier';">)]</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">raise</span><span style="font-family:'Courier';"> ExceptionGroup(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'there were problems'</span><span style="font-family:'Courier';">, excs)</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">f()</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">try</span><span style="font-family:'Courier';">:</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    f()</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">except</span><span style="font-family:'Courier';"> Exception </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">as</span><span style="font-family:'Courier';"> e:</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#204a87;">print</span><span style="font-family:'Courier';">(f</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'caught {type(e)}: e'</span><span style="font-family:'Courier';">)</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">通过使用except*而不是except，我们可以选择性地仅处理组中与特定类型匹配的异常。在下面的示例中，它显示了一个嵌套的异常组，每个except*子句从组中提取特定类型的异常，同时让所有其他异常传播到其他子句，并最终重新排序。</p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">def</span><span style="font-family:'Courier';"> f():</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">raise</span><span style="font-family:'Courier';"> ExceptionGroup(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;group1&quot;</span><span style="font-family:'Courier';">,</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                         [OSError(</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">1</span><span style="font-family:'Courier';">),</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                          SystemError(</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">2</span><span style="font-family:'Courier';">),</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                          ExceptionGroup(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;group2&quot;</span><span style="font-family:'Courier';">,</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                                         [OSError(</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">3</span><span style="font-family:'Courier';">), RecursionError(</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">4</span><span style="font-family:'Courier';">)])])</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">try</span><span style="font-family:'Courier';">:</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    f()</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">except</span><span style="font-family:'Courier';">* OSError </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">as</span><span style="font-family:'Courier';"> e:</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#204a87;">print</span><span style="font-family:'Courier';">(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;There were OSErrors&quot;</span><span style="font-family:'Courier';">)</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">except</span><span style="font-family:'Courier';">* SystemError </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">as</span><span style="font-family:'Courier';"> e:</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#204a87;">print</span><span style="font-family:'Courier';">(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;There were SystemErrors&quot;</span><span style="font-family:'Courier';">)</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">请注意，嵌套在异常组中的异常必须是实例，而不是类型。这是因为在实践中，异常通常是程序已经引发并捕获的异常，其模式如下：</p>
+<p style="margin:0px;"><span style="font-family:'Courier';">excs = []</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">for</span><span style="font-family:'Courier';"> test </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">in</span><span style="font-family:'Courier';"> tests:</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">try</span><span style="font-family:'Courier';">:</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        test</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">run()</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">except</span><span style="font-family:'Courier';"> Exception </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">as</span><span style="font-family:'Courier';"> e:</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        excs</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">append(e)</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">if</span><span style="font-family:'Courier';"> excs:</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">   </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">raise</span><span style="font-family:'Courier';"> ExceptionGroup(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;Test Failures&quot;</span><span style="font-family:'Courier';">, excs)</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

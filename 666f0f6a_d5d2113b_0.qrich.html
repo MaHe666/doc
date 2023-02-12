@@ -1,0 +1,33 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">下面是使用手动格式化方式实现的同一个平方和立方的表：</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">for</span><span style="font-family:'Courier';"> x </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">in</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#204a87;">range</span><span style="font-family:'Courier';">(</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">1</span><span style="font-family:'Courier';">, </span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">11</span><span style="font-family:'Courier';">):</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#204a87;">print</span><span style="font-family:'Courier';">(</span><span style="font-family:'Courier'; font-weight:600; color:#204a87;">repr</span><span style="font-family:'Courier';">(x).rjust(</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">2</span><span style="font-family:'Courier';">), </span><span style="font-family:'Courier'; font-weight:600; color:#204a87;">repr</span><span style="font-family:'Courier';">(x*x).rjust(</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">3</span><span style="font-family:'Courier';">), end=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">' '</span><span style="font-family:'Courier';">)</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-style:italic; color:#778899;"># Note use of 'end' on previous line</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#204a87;">print</span><span style="font-family:'Courier';">(</span><span style="font-family:'Courier'; font-weight:600; color:#204a87;">repr</span><span style="font-family:'Courier';">(x*x*x).rjust(</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">4</span><span style="font-family:'Courier';">))</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">（注意，每列之间的空格是通过使用 print() 添加的：它总在其参数间添加空格。）</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">字符串对象的 str.rjust() 方法通过在左侧填充空格，对给定宽度字段中的字符串进行右对齐。同类方法还有 str.ljust() 和 str.center() 。这些方法不写入任何内容，只返回一个新字符串，如果输入的字符串太长，它们不会截断字符串，而是原样返回；虽然这种方式会弄乱列布局，但也比另一种方法好，后者在显示值时可能不准确（如果真的想截断字符串，可以使用 x.ljust(n)[:n] 这样的切片操作 。）</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">另一种方法是 str.zfill() ，该方法在数字字符串左边填充零，且能识别正负号：</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">'12'.zfill(5)</p>
+<p style="margin:0px;">'-3.14'.zfill(7)</p>
+<p style="margin:0px;">'3.14159265359'.zfill(5)</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

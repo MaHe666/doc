@@ -1,0 +1,70 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">namespace （命名空间）是映射到对象的名称。现在，大多数命名空间都使用 Python 字典实现，但除非涉及到优化性能，我们一般不会关注这方面的事情，而且将来也可能会改变这种方式。命名空间的几个常见示例： abs() 函数、内置异常等的内置函数集合；模块中的全局名称；函数调用中的局部名称。对象的属性集合也算是一种命名空间。关于命名空间的一个重要知识点是，不同命名空间中的名称之间绝对没有关系；例如，两个不同的模块都可以定义 maximize 函数，且不会造成混淆。用户使用函数时必须要在函数名前面附加上模块名。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">点号之后的名称是 属性。例如，表达式 z.real 中，real 是对象 z 的属性。严格来说，对模块中名称的引用是属性引用：表达式 modname.funcname 中，modname 是模块对象，funcname 是模块的属性。模块属性和模块中定义的全局名称之间存在直接的映射：它们共享相同的命名空间！</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">属性可以是只读或者可写的。如果可写，则可对属性赋值。模块属性是可写时，可以使用 modname.the_answer = 42 。del 语句可以删除可写属性。例如， del modname.the_answer 会删除 modname 对象中的 the_answer 属性。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">命名空间是在不同时刻创建的，且拥有不同的生命周期。内置名称的命名空间是在 Python 解释器启动时创建的，永远不会被删除。模块的全局命名空间在读取模块定义时创建；通常，模块的命名空间也会持续到解释器退出。从脚本文件读取或交互式读取的，由解释器顶层调用执行的语句是 __main__ 模块调用的一部分，也拥有自己的全局命名空间。内置名称实际上也在模块里，即 builtins 。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">函数的本地命名空间在调用该函数时创建，并在函数返回或抛出不在函数内部处理的错误时被删除。 （实际上，用“遗忘”来描述实际发生的情况会更好一些。） 当然，每次递归调用都会有自己的本地命名空间。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">作用域 是命名空间可直接访问的 Python 程序的文本区域。 “可直接访问” 的意思是，对名称的非限定引用会在命名空间中查找名称。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">作用域虽然是静态确定的，但会被动态使用。执行期间的任何时刻，都会有 3 或 4 个命名空间可被直接访问的嵌套作用域：</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<ul style="margin: 0px; -qt-list-indent: 1;">
+<li style="margin:0px;">最内层作用域，包含局部名称，并首先在其中进行搜索</li>
+<li style="margin:0px;">从最近的封闭作用域开始搜索的任何封闭函数的作用域都包含非本地名称，但也包含非全局名称</li>
+<li style="margin:0px;">倒数第二个作用域，包含当前模块的全局名称</li>
+<li style="margin:0px;">最外层的作用域，包含内置名称的命名空间，最后搜索</li>
+</ul>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">如果一个名称被声明为全局，那么所有引用和赋值都将直接转到包含模块全局名称的倒数第二个作用域。要重新绑定在最内部范围之外的变量，可以使用非局部语句；如果未声明为非局部变量，则这些变量是只读的（尝试写入这样的变量只会在最内部的范围内创建一个新的局部变量，而同名的外部变量保持不变）。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">通常，当前局部作用域将（按字面文本）引用当前函数的局部名称。在函数之外，局部作用域引用与全局作用域一致的命名空间：模块的命名空间。 类定义在局部命名空间内再放置另一个命名空间。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">划重点，作用域是按字面文本确定的：模块内定义的函数的全局作用域就是该模块的命名空间，无论该函数从什么地方或以什么别名被调用。另一方面，实际的名称搜索是在运行时动态完成的。但是，Python 正在朝着“编译时静态名称解析”的方向发展，因此不要过于依赖动态名称解析！（局部变量已经是被静态确定了。）</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">Python 有一个特殊规定。如果不存在生效的 global 或 nonlocal 语句，则对名称的赋值总是会进入最内层作用域。赋值不会复制数据，只是将名称绑定到对象。删除也是如此：语句 del x 从局部作用域引用的命名空间中移除对 x 的绑定。所有引入新名称的操作都是使用局部作用域：尤其是 import 语句和函数定义会在局部作用域中绑定模块或函数名称。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">global 语句用于表明特定变量在全局作用域里，并应在全局作用域中重新绑定；nonlocal 语句表明特定变量在外层作用域中，并应在外层作用域中重新绑定。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style=" font-weight:600;">三种命名空间</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<ul style="margin: 0px; -qt-list-indent: 1;">
+<li style="margin:0px;">内置名称（built-in names）， Python 语言内置的名称，比如函数名 abs、char 和异常名称 BaseException、Exception 等等。</li>
+<li style="margin:0px;">全局名称（global names），模块中定义的名称，记录了模块的变量，包括函数、类、其它导入的模块、模块级的变量和常量。</li>
+<li style="margin:0px;">局部名称（local names），函数中定义的名称，记录了函数的变量，包括函数的参数和局部定义的变量。（类中定义的也是）</li>
+</ul>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style=" font-weight:600;">四种作用域</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<ul style="margin: 0px; -qt-list-indent: 1;">
+<li style="margin:0px;">L（Local）：最内层，包含局部变量，比如一个函数/方法内部。</li>
+<li style="margin:0px;">E（Enclosing）：包含了非局部(non-local)也非全局(non-global)的变量。比如两个嵌套函数，一个函数（或类） A 里面又包含了一个函数 B ，</li>
+<p style="margin:0px; -qt-block-indent:1;">		那么对于 B 中的名称来说 A 中的作用域就为 nonlocal。</p>
+<li style="margin:0px;">G（Global）：当前脚本的最外层，比如当前模块的全局变量。</li>
+<li style="margin:0px;">B（Built-in）： 包含了内建的变量/关键字等，最后被搜索。</li>
+</ul>
+<p style="-qt-paragraph-type:empty; margin:0px; -qt-block-indent:1;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px; -qt-block-indent:1;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

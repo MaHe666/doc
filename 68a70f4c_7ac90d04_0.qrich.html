@@ -1,0 +1,33 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">某些简单的生成器可以写成简洁的表达式代码，所用语法类似列表推导式，但外层为圆括号而非方括号。 这种表达式被设计用于生成器将立即被外层函数所使用的情况。 生成器表达式相比完整的生成器更紧凑但较不灵活，相比等效的列表推导式则更为节省内存。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">print(sum(i*i for i in range(10)))</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">xvec = [10, 20, 30]</p>
+<p style="margin:0px;">yvec = [7, 5, 3]</p>
+<p style="margin:0px;">print(sum(x*y for x,y in zip(xvec, yvec)))</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">unique_words = set(word for line in page  for word in line.split())</p>
+<p style="margin:0px;">valedictorian = max((student.gpa, student.name) for student in graduates)</p>
+<p style="margin:0px;">data = 'golf'</p>
+<p style="margin:0px;">print(list(data[i] for i in range(len(data)-1, -1, -1)))</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

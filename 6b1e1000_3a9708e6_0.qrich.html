@@ -1,0 +1,57 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">现在我们能用实例对象做什么？ 实例对象所能理解的唯一操作是属性引用。 有两种有效的属性名称：数据属性和方法。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">数据属性不需要声明；像局部变量一样，它们将在第一次被赋值时产生。 例如，如果 x 是之前创建的 MyClass 的实例，则以下代码段将打印数值 16，且不保留任何追踪信息:</p>
+<p style="margin:0px;"><span style="font-family:'Courier';">x</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">counter = </span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">1</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">while</span><span style="font-family:'Courier';"> x</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">counter &lt; </span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">10</span><span style="font-family:'Courier';">:</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    x</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">counter = x</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">counter * </span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">2</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#204a87;">print</span><span style="font-family:'Courier';">(x</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">counter)</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">del</span><span style="font-family:'Courier';"> x</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">counter</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">另一类实例属性引用称为 方法。 方法是“从属于”对象的函数。 （在 Python 中，方法这个术语并不是类实例所特有的：其他对象也可以有方法。 例如，列表对象具有 append, insert, remove, sort 等方法。 然而，在以下讨论中，我们使用方法一词将专指类实例对象的方法，除非另外显式地说明。）</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">实例对象的有效方法名称依赖于其所属的类。 根据定义，一个类中所有是函数对象的属性都是定义了其实例的相应方法。 因此在我们的示例中，x.f 是有效的方法引用，因为 MyClass.f 是一个函数，而 x.i 不是方法，因为 MyClass.i 不是函数。 但是 x.f 与 MyClass.f 并不是一回事 --- 它是一个 方法对象，不是函数对象。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">-------------------------------------------------------</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">self代表类的实例，而不是类</p>
+<p style="margin:0px;">类的方法与普通的函数只有一个特别的区别，它们必须有一个额外的第一个参数名称, 按照惯例它的名称是 self</p>
+<p style="margin:0px;">self不是关键字，换成别的单词也可以正常执行，但是这是惯例</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style=" font-style:italic; color:#778899;">#类定义</span></p>
+<p style="margin:0px;">class people:</p>
+<p style="margin:0px;">    <span style=" font-style:italic; color:#778899;">#定义基本属性</span></p>
+<p style="margin:0px;">    name = <span style=" font-weight:600; color:#2e8b57;">''</span></p>
+<p style="margin:0px;">    age = <span style=" font-weight:600; color:#4682b4;">0</span></p>
+<p style="margin:0px;">    <span style=" font-style:italic; color:#778899;">#定义私有属性,私有属性在类外部无法直接进行访问</span></p>
+<p style="margin:0px;">    __weight = <span style=" font-weight:600; color:#4682b4;">0</span></p>
+<p style="margin:0px;">    <span style=" font-style:italic; color:#778899;">#定义构造方法</span></p>
+<p style="margin:0px;">    def __init__(self,n,a,w):</p>
+<p style="margin:0px;">        <span style=" font-weight:600; color:#204a87;">self</span><span style=" font-weight:600; color:#4682b4;">.</span>name = n</p>
+<p style="margin:0px;">        <span style=" font-weight:600; color:#204a87;">self</span><span style=" font-weight:600; color:#4682b4;">.</span>age = a</p>
+<p style="margin:0px;">        <span style=" font-weight:600; color:#204a87;">self</span><span style=" font-weight:600; color:#4682b4;">.</span>__weight = w</p>
+<p style="margin:0px;">    def speak(self):</p>
+<p style="margin:0px;">        <span style=" font-weight:600; color:#204a87;">print</span>(<span style=" font-weight:600; color:#2e8b57;">&quot;%s 说: 我 %d 岁。&quot;</span> %(<span style=" font-weight:600; color:#204a87;">self</span><span style=" font-weight:600; color:#4682b4;">.</span>name,<span style=" font-weight:600; color:#204a87;">self</span><span style=" font-weight:600; color:#4682b4;">.</span>age))</p>
+<p style="margin:0px;"> </p>
+<p style="margin:0px;"><span style=" font-style:italic; color:#778899;"># 实例化类</span></p>
+<p style="margin:0px;">p = people(<span style=" font-weight:600; color:#2e8b57;">'runoob'</span>,<span style=" font-weight:600; color:#4682b4;">10</span>,<span style=" font-weight:600; color:#4682b4;">30</span>)</p>
+<p style="margin:0px;">p<span style=" font-weight:600; color:#4682b4;">.</span>speak()</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

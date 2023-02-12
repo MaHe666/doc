@@ -1,0 +1,28 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">某些对象定义了不需要该对象时要执行的标准清理操作。无论使用该对象的操作是否成功，都会执行清理操作。比如，下例要打开一个文件，并输出文件内容：</p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">for</span><span style="font-family:'Courier';"> line </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">in</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#204a87;">open</span><span style="font-family:'Courier';">(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;myfile.txt&quot;</span><span style="font-family:'Courier';">):</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#204a87;">print</span><span style="font-family:'Courier';">(line, end=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;&quot;</span><span style="font-family:'Courier';">)</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">这个代码的问题在于，执行完代码后，文件在一段不确定的时间内处于打开状态。在简单脚本中这没有问题，但对于较大的应用程序来说可能会出问题。with 语句支持以及时、正确的清理的方式使用文件对象：</p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">with</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#204a87;">open</span><span style="font-family:'Courier';">(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;myfile.txt&quot;</span><span style="font-family:'Courier';">) </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">as</span><span style="font-family:'Courier';"> f:</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">for</span><span style="font-family:'Courier';"> line </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">in</span><span style="font-family:'Courier';"> f:</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#204a87;">print</span><span style="font-family:'Courier';">(line, end=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;&quot;</span><span style="font-family:'Courier';">)</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">语句执行完毕后，即使在处理行时遇到问题，都会关闭文件 f。和文件一样，支持预定义清理操作的对象会在文档中指出这一点。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

@@ -1,0 +1,38 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">从文件写入或读取字符串很简单，数字则稍显麻烦，因为 read() 方法只返回字符串，这些字符串必须传递给 int() 这样的函数，接受 '123' 这样的字符串，并返回数字值 123。保存嵌套列表、字典等复杂数据类型时，手动解析和序列化的操作非常复杂。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">Python允许您使用称为JSON（JavaScript对象表示法）的流行数据交换格式，而不是让用户不断编写和调试代码以将复杂的数据类型保存到文件中。</p>
+<p style="margin:0px;">名为json的标准模块可以采用Python数据层次结构，并将它们转换为字符串表示;此过程称为序列化。</p>
+<p style="margin:0px;">从字符串表示形式重建数据称为反序列化。在序列化和反序列化之间，表示对象的字符串可能已存储在文件或数据中，或通过网络连接发送到某个远程计算机。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">备注：JSON 格式通常用于现代应用程序的数据交换。程序员早已对它耳熟能详，可谓是交互操作的不二之选。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">只需一行简单的代码即可查看某个对象的 JSON 字符串表现形式</p>
+<p style="margin:0px;">import json</p>
+<p style="margin:0px;">x = [1, 'simple', 'list']</p>
+<p style="margin:0px;">json.dumps(x)</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">dumps() 函数还有一个变体， dump() ，它只将对象序列化为 text file 。因此，如果 f 是 text file 对象，可以这样做：</p>
+<p style="margin:0px;">json.dump(x, f)</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">要再次解码对象，如果 f 是已打开、供读取的 binary file 或 text file 对象：</p>
+<p style="margin:0px;">x = json.load(f)</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">备注 JSON文件必须以UTF-8编码。当打开JSON文件作为一个 text file 用于读写时，使用 encoding=&quot;utf-8&quot; 。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">这种简单的序列化技术可以处理列表和字典，但在 JSON 中序列化任意类的实例，则需要付出额外努力。json 模块的参考包含对此的解释。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

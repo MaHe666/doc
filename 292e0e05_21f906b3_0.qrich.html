@@ -1,0 +1,45 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">如果在exception节中发生未处理的异常，则会将正在处理的异常附加到该异常并包含在错误消息中：</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">try</span><span style="font-family:'Courier';">:</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#204a87;">open</span><span style="font-family:'Courier';">(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;database.sqlite&quot;</span><span style="font-family:'Courier';">)</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">except</span><span style="font-family:'Courier';"> OSError:</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">raise</span><span style="font-family:'Courier';"> RuntimeError(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;unable to handle error&quot;</span><span style="font-family:'Courier';">)</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">为了表示一个异常是另一个异常的直接结果，raise语句允许使用可选的from子句：</p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;"># exc must be exception instance or None.</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">raise</span><span style="font-family:'Courier';"> RuntimeError </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">from</span><span style="font-family:'Courier';"> exc</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">转换异常时，这种方式很有用。例如：</p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">def</span><span style="font-family:'Courier';"> func():</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">raise</span><span style="font-family:'Courier';"> ConnectionError</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">try</span><span style="font-family:'Courier';">:</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    func()</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">except</span><span style="font-family:'Courier';"> ConnectionError </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">as</span><span style="font-family:'Courier';"> exc:</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">raise</span><span style="font-family:'Courier';"> RuntimeError(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'Failed to open database'</span><span style="font-family:'Courier';">) </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">from</span><span style="font-family:'Courier';"> exc</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">它还允许使用from None习惯用法禁用自动异常链接：</p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">try</span><span style="font-family:'Courier';">:</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#204a87;">open</span><span style="font-family:'Courier';">(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'database.sqlite'</span><span style="font-family:'Courier';">)</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">except</span><span style="font-family:'Courier';"> OSError:</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">raise</span><span style="font-family:'Courier';"> RuntimeError </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">from</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">None</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

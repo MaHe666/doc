@@ -8,120 +8,120 @@ p, li { white-space: pre-wrap; }
 </style>
 </head>
 <body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
-<p style="margin:0px;">import com.panda.common.annotation.NoLoginVerify;</p>
-<p style="margin:0px;">import org.slf4j.Logger;</p>
-<p style="margin:0px;">import org.slf4j.LoggerFactory;</p>
-<p style="margin:0px;">import org.springframework.context.ApplicationContext;</p>
-<p style="margin:0px;">import org.springframework.stereotype.Component;</p>
-<p style="margin:0px;">import org.springframework.web.method.HandlerMethod;</p>
-<p style="margin:0px;">import org.springframework.web.servlet.mvc.method.RequestMappingInfo;</p>
-<p style="margin:0px;">import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;</p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="margin:0px;">import javax.annotation.PostConstruct;</p>
-<p style="margin:0px;">import javax.annotation.Resource;</p>
-<p style="margin:0px;">import java.util.*;</p>
-<p style="margin:0px;">import java.util.stream.Collectors;</p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="margin:0px;">/**</p>
-<p style="margin:0px;"> * @author mahe666</p>
-<p style="margin:0px;"> * @date 2022/12/1</p>
-<p style="margin:0px;"> */</p>
-<p style="margin:0px;">@Component</p>
-<p style="margin:0px;">public class NoLoginVerifyHandler {</p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="margin:0px;">    protected final Logger logger = LoggerFactory.getLogger(NoLoginVerifyHandler.class);</p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="margin:0px;">    @Resource</p>
-<p style="margin:0px;">    private ApplicationContext applicationContext;</p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="margin:0px;">    /**</p>
-<p style="margin:0px;">     * 所有带有RequestMapping的方法</p>
-<p style="margin:0px;">     */</p>
-<p style="margin:0px;">    private static Map&lt;RequestMappingInfo, HandlerMethod&gt; handlerMethodMap;</p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="margin:0px;">    /**</p>
-<p style="margin:0px;">     * 待返回的anonymousUrls</p>
-<p style="margin:0px;">     */</p>
-<p style="margin:0px;">    private static final Set&lt;String&gt; ANONYMOUS_URLS_SET = new HashSet&lt;&gt;();</p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="margin:0px;">    /**</p>
-<p style="margin:0px;">     * 初始化当前处理器</p>
-<p style="margin:0px;">     */</p>
-<p style="margin:0px;">    @PostConstruct</p>
-<p style="margin:0px;">    public void init() {</p>
-<p style="margin:0px;">        NoLoginVerifyHandler noLoginVerifyHandler = this;</p>
-<p style="margin:0px;">        // 获取所有带有RequestMapping注解的方法</p>
-<p style="margin:0px;">        handlerMethodMap = noLoginVerifyHandler.applicationContext.getBean(RequestMappingHandlerMapping.class).getHandlerMethods();</p>
-<p style="margin:0px;">    }</p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="margin:0px;">    /**</p>
-<p style="margin:0px;">     * 根据方法上的注解，添加匿名访问路径</p>
-<p style="margin:0px;">     */</p>
-<p style="margin:0px;">    private void getAnonymousUrlsByMethodAnnotation() {</p>
-<p style="margin:0px;">        handlerMethodMap.entrySet().stream()</p>
-<p style="margin:0px;">                // 过滤出包含匿名访问注解的handlerMethodEntry</p>
-<p style="margin:0px;">                .filter(handlerMethodEntry -&gt; handlerMethodEntry.getValue().getMethodAnnotation(NoLoginVerify.class) != null)</p>
-<p style="margin:0px;">                .forEach(this::addToAnonymousUrls);</p>
-<p style="margin:0px;">    }</p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="margin:0px;">    /**</p>
-<p style="margin:0px;">     * 根据类上的注解，添加匿名访问路径</p>
-<p style="margin:0px;">     */</p>
-<p style="margin:0px;">    private void getAnonymousUrlsByBeanAnnotation() {</p>
-<p style="margin:0px;">        // 获取所有带有匿名访问注解的bean</p>
-<p style="margin:0px;">        Map&lt;String, Object&gt; beansWithAnnotation = applicationContext.getBeansWithAnnotation(NoLoginVerify.class);</p>
-<p style="margin:0px;">        // 获取所有bean中的所有Method的toString</p>
-<p style="margin:0px;">        Set&lt;String&gt; methodNameSet = getMethodNameSet(beansWithAnnotation);</p>
-<p style="margin:0px;">        handlerMethodMap.entrySet().stream()</p>
-<p style="margin:0px;">                .filter(handlerMethodEntry -&gt; methodNameSet.contains(getMethodNameSet(handlerMethodEntry)))</p>
-<p style="margin:0px;">                .forEach(this::addToAnonymousUrls);</p>
-<p style="margin:0px;">    }</p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="margin:0px;">    /**</p>
-<p style="margin:0px;">     * 添加到匿名访问set中的具体实现</p>
-<p style="margin:0px;">     * @param handlerMethodEntry</p>
-<p style="margin:0px;">     * @return</p>
-<p style="margin:0px;">     */</p>
-<p style="margin:0px;">    private boolean addToAnonymousUrls(Map.Entry&lt;RequestMappingInfo, HandlerMethod&gt; handlerMethodEntry) {</p>
-<p style="margin:0px;">        return ANONYMOUS_URLS_SET.addAll(handlerMethodEntry.getKey().getPatternsCondition().getPatterns());</p>
-<p style="margin:0px;">    }</p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="margin:0px;">    /**</p>
-<p style="margin:0px;">     * 获取匿名访问路径的数组</p>
-<p style="margin:0px;">     * @return</p>
-<p style="margin:0px;">     */</p>
-<p style="margin:0px;">    public String[] getAnonymousUrl() {</p>
-<p style="margin:0px;">        getAnonymousUrlsByBeanAnnotation();</p>
-<p style="margin:0px;">        getAnonymousUrlsByMethodAnnotation();</p>
-<p style="margin:0px;">        logger.info(&quot;可以匿名访问的路径为:&quot; + String.join(&quot;, &quot;, ANONYMOUS_URLS_SET));</p>
-<p style="margin:0px;">        return ANONYMOUS_URLS_SET.toArray(new String[0]);</p>
-<p style="margin:0px;">    }</p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="margin:0px;">    /**</p>
-<p style="margin:0px;">     * 获取方法名</p>
-<p style="margin:0px;">     * @param mapEntry</p>
-<p style="margin:0px;">     * @return String</p>
-<p style="margin:0px;">     */</p>
-<p style="margin:0px;">    private String getMethodNameSet(Map.Entry&lt;RequestMappingInfo, HandlerMethod&gt; mapEntry){</p>
-<p style="margin:0px;">        return mapEntry.getValue().getMethod().toString();</p>
-<p style="margin:0px;">    }</p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="margin:0px;">    /**</p>
-<p style="margin:0px;">     * 获取方法名的Set集合</p>
-<p style="margin:0px;">     * @param map</p>
-<p style="margin:0px;">     * @return Set&lt;String&gt;</p>
-<p style="margin:0px;">     */</p>
-<p style="margin:0px;">    private Set&lt;String&gt; getMethodNameSet(Map&lt;String, Object&gt; map){</p>
-<p style="margin:0px;">        return map.values().stream()</p>
-<p style="margin:0px;">                .map(bean -&gt; bean.getClass().getMethods())</p>
-<p style="margin:0px;">                .flatMap(Arrays::stream)</p>
-<p style="margin:0px;">                .map(Objects::toString)</p>
-<p style="margin:0px;">                .collect(Collectors.toSet());</p>
-<p style="margin:0px;">    }</p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="margin:0px;">}</p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">import</span><span style="font-family:'Courier';"> com</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">panda</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">common</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">annotation</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">NoLoginVerify;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">import</span><span style="font-family:'Courier';"> org</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">slf4j</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">Logger;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">import</span><span style="font-family:'Courier';"> org</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">slf4j</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">LoggerFactory;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">import</span><span style="font-family:'Courier';"> org</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">springframework</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">context</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">ApplicationContext;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">import</span><span style="font-family:'Courier';"> org</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">springframework</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">stereotype</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">Component;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">import</span><span style="font-family:'Courier';"> org</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">springframework</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">web</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">method</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">HandlerMethod;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">import</span><span style="font-family:'Courier';"> org</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">springframework</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">web</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">servlet</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">mvc</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">method</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">RequestMappingInfo;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">import</span><span style="font-family:'Courier';"> org</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">springframework</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">web</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">servlet</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">mvc</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">method</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">annotation</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">RequestMappingHandlerMapping;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">import</span><span style="font-family:'Courier';"> javax</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">annotation</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">PostConstruct;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">import</span><span style="font-family:'Courier';"> javax</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">annotation</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">Resource;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">import</span><span style="font-family:'Courier';"> java</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">util.*;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">import</span><span style="font-family:'Courier';"> java</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">util</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">stream</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">Collectors;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">/**</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;"> * @author mahe666</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;"> * @date 2022/12/1</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;"> */</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">@Component</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">class</span><span style="font-family:'Courier';"> NoLoginVerifyHandler {</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">protected</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">final</span><span style="font-family:'Courier';"> Logger logger = LoggerFactory</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">getLogger(NoLoginVerifyHandler</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">class</span><span style="font-family:'Courier';">);</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    @Resource</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">private</span><span style="font-family:'Courier';"> ApplicationContext applicationContext;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">/**</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">     * 所有带有RequestMapping的方法</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">     */</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">private</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">static</span><span style="font-family:'Courier';"> Map&lt;RequestMappingInfo, HandlerMethod&gt; handlerMethodMap;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">/**</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">     * 待返回的anonymousUrls</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">     */</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">private</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">static</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">final</span><span style="font-family:'Courier';"> Set&lt;String&gt; ANONYMOUS_URLS_SET = </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">new</span><span style="font-family:'Courier';"> HashSet&lt;&gt;();</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">/**</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">     * 初始化当前处理器</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">     */</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    @PostConstruct</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">void</span><span style="font-family:'Courier';"> init() {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        NoLoginVerifyHandler noLoginVerifyHandler = </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">this</span><span style="font-family:'Courier';">;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">// 获取所有带有RequestMapping注解的方法</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        handlerMethodMap = noLoginVerifyHandler</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">applicationContext</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">getBean(RequestMappingHandlerMapping</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">class</span><span style="font-family:'Courier';">).getHandlerMethods();</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">/**</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">     * 根据方法上的注解，添加匿名访问路径</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">     */</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">private</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">void</span><span style="font-family:'Courier';"> getAnonymousUrlsByMethodAnnotation() {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        handlerMethodMap</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">entrySet().stream()</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">// 过滤出包含匿名访问注解的handlerMethodEntry</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                .filter(handlerMethodEntry -&gt; handlerMethodEntry</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">getValue().getMethodAnnotation(NoLoginVerify</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">class</span><span style="font-family:'Courier';">) != </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">null</span><span style="font-family:'Courier';">)</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                .forEach(</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">this</span><span style="font-family:'Courier';">::addToAnonymousUrls);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">/**</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">     * 根据类上的注解，添加匿名访问路径</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">     */</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">private</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">void</span><span style="font-family:'Courier';"> getAnonymousUrlsByBeanAnnotation() {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">// 获取所有带有匿名访问注解的bean</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        Map&lt;String, Object&gt; beansWithAnnotation = applicationContext</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">getBeansWithAnnotation(NoLoginVerify</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">class</span><span style="font-family:'Courier';">);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">// 获取所有bean中的所有Method的toString</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        Set&lt;String&gt; methodNameSet = getMethodNameSet(beansWithAnnotation);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        handlerMethodMap</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">entrySet().stream()</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                .filter(handlerMethodEntry -&gt; methodNameSet</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">contains(getMethodNameSet(handlerMethodEntry)))</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                .forEach(</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">this</span><span style="font-family:'Courier';">::addToAnonymousUrls);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">/**</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">     * 添加到匿名访问set中的具体实现</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">     * @param handlerMethodEntry</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">     * @return</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">     */</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">private</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">boolean</span><span style="font-family:'Courier';"> addToAnonymousUrls(Map</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">Entry&lt;RequestMappingInfo, HandlerMethod&gt; handlerMethodEntry) {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">return</span><span style="font-family:'Courier';"> ANONYMOUS_URLS_SET</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">addAll(handlerMethodEntry</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">getKey().getPatternsCondition().getPatterns());</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">/**</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">     * 获取匿名访问路径的数组</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">     * @return</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">     */</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">public</span><span style="font-family:'Courier';"> String[] getAnonymousUrl() {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        getAnonymousUrlsByBeanAnnotation();</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        getAnonymousUrlsByMethodAnnotation();</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        logger</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">info(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;可以匿名访问的路径为:&quot;</span><span style="font-family:'Courier';"> + String</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">join(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;, &quot;</span><span style="font-family:'Courier';">, ANONYMOUS_URLS_SET));</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">return</span><span style="font-family:'Courier';"> ANONYMOUS_URLS_SET</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">toArray(</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">new</span><span style="font-family:'Courier';"> String[</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">0</span><span style="font-family:'Courier';">]);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">/**</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">     * 获取方法名</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">     * @param mapEntry</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">     * @return String</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">     */</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">private</span><span style="font-family:'Courier';"> String getMethodNameSet(Map</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">Entry&lt;RequestMappingInfo, HandlerMethod&gt; mapEntry){</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">return</span><span style="font-family:'Courier';"> mapEntry</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">getValue().getMethod().toString();</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">/**</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">     * 获取方法名的Set集合</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">     * @param map</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">     * @return Set&lt;String&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">     */</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">private</span><span style="font-family:'Courier';"> Set&lt;String&gt; getMethodNameSet(Map&lt;String, Object&gt; map){</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">return</span><span style="font-family:'Courier';"> map</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">values().stream()</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                .map(bean -&gt; bean</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">getClass().getMethods())</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                .flatMap(Arrays::stream)</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                .map(Objects::toString)</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                .collect(Collectors</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">toSet());</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">}</span></p>
 
 <script type="text/javascript" language="javascript" src="jquery.js"></script>
 <script type="text/javascript" language="javascript" src="itemlink.js"></script></body>

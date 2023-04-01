@@ -1,0 +1,31 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">如嵌套类一节所述，嵌套类使您能够对仅在一个地方使用的类进行逻辑分组，增加封装的使用，并创建更可读和可维护的代码。本地类、匿名类和lambda表达式也具有这些优点；然而，它们旨在用于更具体的情况</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">局部类：如果需要创建一个类的多个实例、访问其构造函数或引入新的命名类型（例如，因为以后需要调用其他方法），请使用它。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">匿名类：如果需要声明字段或其他方法，请使用它。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">Lambda表达式：</p>
+<ul style="margin: 0px; -qt-list-indent: 1;">
+<li style="margin:0px;">如果要封装要传递给其他代码的单个行为单元，请使用它。例如，如果希望在集合的每个元素上执行某个操作，当进程完成时，或当进程遇到错误时，可以使用lambda表达式。</li>
+<li style="margin:0px;">如果您需要一个函数接口的简单实例，并且前面的条件都不适用（例如，您不需要构造函数、命名类型、字段或其他方法），请使用它。</li>
+</ul>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">嵌套类：</p>
+<ul style="margin: 0px; -qt-list-indent: 1;">
+<li style="margin:0px;">如果您的需求与本地类的需求类似，希望使类型更广泛可用，并且不需要访问本地变量或方法参数，请使用它。</li>
+<li style="margin:0px;">如果需要访问封闭实例的非公共字段和方法，请使用非静态嵌套类（或内部类）。如果不需要此访问权限，请使用静态嵌套类。</li>
+</ul>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

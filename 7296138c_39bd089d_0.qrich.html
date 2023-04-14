@@ -8,56 +8,56 @@ p, li { white-space: pre-wrap; }
 </style>
 </head>
 <body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
-<p style="margin:0px;">package com.mahe666;</p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="margin:0px;">import org.junit.jupiter.api.Test;</p>
-<p style="margin:0px;">import org.springframework.boot.test.context.SpringBootTest;</p>
-<p style="margin:0px;">import org.springframework.mail.SimpleMailMessage;</p>
-<p style="margin:0px;">import org.springframework.mail.javamail.JavaMailSenderImpl;</p>
-<p style="margin:0px;">import org.springframework.mail.javamail.MimeMessageHelper;</p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="margin:0px;">import javax.annotation.Resource;</p>
-<p style="margin:0px;">import javax.mail.MessagingException;</p>
-<p style="margin:0px;">import javax.mail.internet.MimeMessage;</p>
-<p style="margin:0px;">import java.io.File;</p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="margin:0px;">@SpringBootTest</p>
-<p style="margin:0px;">class TesttasksApplicationTests {</p>
-<p style="margin:0px;">    @Resource</p>
-<p style="margin:0px;">    private JavaMailSenderImpl mailSender;</p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="margin:0px;">    @Test</p>
-<p style="margin:0px;">    void easyMail(){</p>
-<p style="margin:0px;">        SimpleMailMessage simpleMailMessage = new SimpleMailMessage();</p>
-<p style="margin:0px;">        //主题</p>
-<p style="margin:0px;">        simpleMailMessage.setSubject(&quot;mahe666&quot;);</p>
-<p style="margin:0px;">        //文本</p>
-<p style="margin:0px;">        simpleMailMessage.setText(&quot;马赫好帅啊&quot;);</p>
-<p style="margin:0px;">        //目标邮箱</p>
-<p style="margin:0px;">        simpleMailMessage.setTo(&quot;&quot;);</p>
-<p style="margin:0px;">        //发送的邮箱</p>
-<p style="margin:0px;">        simpleMailMessage.setFrom(&quot;&quot;);</p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="margin:0px;">        mailSender.send(simpleMailMessage);</p>
-<p style="margin:0px;">    }</p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="margin:0px;">    @Test</p>
-<p style="margin:0px;">    void complexMail() throws MessagingException {</p>
-<p style="margin:0px;">        MimeMessage mimeMessage = mailSender.createMimeMessage();</p>
-<p style="margin:0px;">        //组装</p>
-<p style="margin:0px;">        MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage,true,&quot;utf-8&quot;);</p>
-<p style="margin:0px;">        mimeMessageHelper.setSubject(&quot;mahe666&quot;);</p>
-<p style="margin:0px;">        //正文，true为支持解析html标签</p>
-<p style="margin:0px;">        mimeMessageHelper.setText(&quot;&lt;h1&gt;马赫好帅啊&lt;/h1&gt;&quot;,true);</p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="margin:0px;">        //附件</p>
-<p style="margin:0px;">        mimeMessageHelper.addAttachment(&quot;文件名.后缀&quot;,new File(&quot;路径&quot;));</p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="margin:0px;">        mailSender.send(mimeMessage);</p>
-<p style="margin:0px;">    }</p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
-<p style="margin:0px;">}</p>
-<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">package</span><span style="font-family:'Courier';"> com</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">mahe666;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">import</span><span style="font-family:'Courier';"> org</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">junit</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">jupiter</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">api</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">Test;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">import</span><span style="font-family:'Courier';"> org</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">springframework</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">boot</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">test</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">context</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">SpringBootTest;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">import</span><span style="font-family:'Courier';"> org</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">springframework</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">mail</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">SimpleMailMessage;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">import</span><span style="font-family:'Courier';"> org</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">springframework</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">mail</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">javamail</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">JavaMailSenderImpl;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">import</span><span style="font-family:'Courier';"> org</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">springframework</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">mail</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">javamail</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">MimeMessageHelper;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">import</span><span style="font-family:'Courier';"> javax</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">annotation</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">Resource;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">import</span><span style="font-family:'Courier';"> javax</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">mail</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">MessagingException;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">import</span><span style="font-family:'Courier';"> javax</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">mail</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">internet</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">MimeMessage;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">import</span><span style="font-family:'Courier';"> java</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">io</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">File;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">@SpringBootTest</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">class</span><span style="font-family:'Courier';"> TesttasksApplicationTests {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    @Resource</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">private</span><span style="font-family:'Courier';"> JavaMailSenderImpl mailSender;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    @Test</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">void</span><span style="font-family:'Courier';"> easyMail(){</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        SimpleMailMessage simpleMailMessage = </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">new</span><span style="font-family:'Courier';"> SimpleMailMessage();</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">//主题</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        simpleMailMessage</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">setSubject(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;mahe666&quot;</span><span style="font-family:'Courier';">);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">//文本</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        simpleMailMessage</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">setText(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;马赫好帅啊&quot;</span><span style="font-family:'Courier';">);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">//目标邮箱</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        simpleMailMessage</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">setTo(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;&quot;</span><span style="font-family:'Courier';">);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">//发送的邮箱</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        simpleMailMessage</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">setFrom(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;&quot;</span><span style="font-family:'Courier';">);</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        mailSender</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">send(simpleMailMessage);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    @Test</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">void</span><span style="font-family:'Courier';"> complexMail() </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">throws</span><span style="font-family:'Courier';"> MessagingException {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        MimeMessage mimeMessage = mailSender</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">createMimeMessage();</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">//组装</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        MimeMessageHelper mimeMessageHelper = </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">new</span><span style="font-family:'Courier';"> MimeMessageHelper(mimeMessage,</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">true</span><span style="font-family:'Courier';">,</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;utf-8&quot;</span><span style="font-family:'Courier';">);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        mimeMessageHelper</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">setSubject(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;mahe666&quot;</span><span style="font-family:'Courier';">);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">//正文，true为支持解析html标签</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        mimeMessageHelper</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">setText(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;&lt;h1&gt;马赫好帅啊&lt;/h1&gt;&quot;</span><span style="font-family:'Courier';">,</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">true</span><span style="font-family:'Courier';">);</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">//附件</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        mimeMessageHelper</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">addAttachment(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;文件名.后缀&quot;</span><span style="font-family:'Courier';">,</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">new</span><span style="font-family:'Courier';"> File(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;路径&quot;</span><span style="font-family:'Courier';">));</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        mailSender</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">send(mimeMessage);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">}</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
 
 <script type="text/javascript" language="javascript" src="jquery.js"></script>
 <script type="text/javascript" language="javascript" src="itemlink.js"></script></body>

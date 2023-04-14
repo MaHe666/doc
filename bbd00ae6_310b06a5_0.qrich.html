@@ -8,10 +8,19 @@ p, li { white-space: pre-wrap; }
 </style>
 </head>
 <body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
-<p style="margin:0px;"><a href="https://ikuuu.eu/auth/login"><span style=" text-decoration: underline; color:#0000ff;">https://ikuuu.eu/auth/login</span></a></p>
+<p style="margin:0px;">CentOS7 安装 docker</p>
 <p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
 <p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</p>
 <p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">sudo yum install docker-ce</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">不要忘记启动docker服务</p>
+<p style="margin:0px;">systemctl enable docker</p>
+<p style="margin:0px;">systemctl start docker</p>
+<p style="margin:0px;">systemctl restart docker</p>
 <p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
 <p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
 

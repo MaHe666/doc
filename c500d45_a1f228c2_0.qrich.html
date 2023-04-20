@@ -1,0 +1,21 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">虽然使用computed和methods方法来实现反转，两种方法得到的结果是相同的，但本质是不一样的。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">计算属性是基于它们的依赖进行缓存的。计算属性只有在它的相关依赖发生改变的时候才会重新求值，这就意味着只要message还没有发生改变，多次访问reversedMessage计算属性立即返回的是之前计算的结果，而不会再次执行计算函数。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">而对于methods方法，只要发生重新渲染，methods调用总会执行该函数。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">如果某个computed需要的遍历一个极大的数组和做大量的计算，可以减小性能开销，如果不希望有缓存，则用methods。</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

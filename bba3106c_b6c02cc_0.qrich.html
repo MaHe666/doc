@@ -1,0 +1,59 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">// 导入封装好的axios实例</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">import</span><span style="font-family:'Courier';"> request from </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'./request'</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">const</span><span style="font-family:'Courier';"> http = {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">  </span><span style="font-family:'Courier'; font-style:italic; color:#778899;">/**</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">   * methods: 请求</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">   * @param url 请求地址</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">   * @param params 请求参数</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">   */</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">  get(url,params){</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">const</span><span style="font-family:'Courier';"> config = {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">      method: </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'get'</span><span style="font-family:'Courier';">,</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">      url:url</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">if</span><span style="font-family:'Courier';">(params) config</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">params = params</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">return</span><span style="font-family:'Courier';"> request(config)</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">  },</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">  post(url,params){</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">const</span><span style="font-family:'Courier';"> config = {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">      method: </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'post'</span><span style="font-family:'Courier';">,</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">      url:url</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">if</span><span style="font-family:'Courier';">(params) config</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">data = params</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">return</span><span style="font-family:'Courier';"> request(config)</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">  },</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">  put(url,params){</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">const</span><span style="font-family:'Courier';"> config = {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">      method: </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'put'</span><span style="font-family:'Courier';">,</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">      url:url</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">if</span><span style="font-family:'Courier';">(params) config</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">params = params</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">return</span><span style="font-family:'Courier';"> request(config)</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">  },</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">  </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">delete</span><span style="font-family:'Courier';">(url,params){</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">const</span><span style="font-family:'Courier';"> config = {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">      method: </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'delete'</span><span style="font-family:'Courier';">,</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">      url:url</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">if</span><span style="font-family:'Courier';">(params) config</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">params = params</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">return</span><span style="font-family:'Courier';"> request(config)</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">  }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">}</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">// 导出</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">export</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">default</span><span style="font-family:'Courier';"> http</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

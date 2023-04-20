@@ -1,0 +1,29 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">//input事件解决限制长度的问题，onKeypress解决可以输入字母e的问题</p>
+<p style="margin:0px;">&lt;el-input</p>
+<p style="margin:0px;">        type=&quot;number&quot;</p>
+<p style="margin:0px;">        v-model=&quot;form.number&quot;</p>
+<p style="margin:0px;">        @input.native=&quot;changeNum&quot;</p>
+<p style="margin:0px;">        onKeypress=&quot;return(/[\d]/.test(String.fromCharCode(event.keyCode)))&quot; </p>
+<p style="margin:0px;">        &gt;</p>
+<p style="margin:0px;">&lt;/el-input&gt;</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">changeNum() {</p>
+<p style="margin:0px;">	//6是限制的长度</p>
+<p style="margin:0px;">      if (this.form.number.length &gt; 6) {</p>
+<p style="margin:0px;">        this.form.number = this.form.number.slice(0, 6);</p>
+<p style="margin:0px;">      }</p>
+<p style="margin:0px;">},</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

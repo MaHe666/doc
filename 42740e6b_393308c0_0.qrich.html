@@ -1,0 +1,34 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">import Vuex from 'vuex'</p>
+<p style="margin:0px;">Vue.use(Vuex)</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">const store = new Vuex.Store({</p>
+<p style="margin:0px;">	//state中存放的就是全局共享的数据</p>
+<p style="margin:0px;">	state：{ name:mahe666 }</p>
+<p style="margin:0px;">})</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">export default store</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">导出配置的store，然后在main.js的vue示例中导入并注册</p>
+<p style="margin:0px;">import store from '@/store'</p>
+<p style="margin:0px;">new Vue({</p>
+<p style="margin:0px;">  store,</p>
+<p style="margin:0px;">  render: h =&gt; h(App),</p>
+<p style="margin:0px;">}).$mount('#app')</p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

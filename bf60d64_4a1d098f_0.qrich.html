@@ -1,0 +1,33 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">（1）MVVM模式的实现者</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">Model：模型层， 在这里表示JavaScript对象</p>
+<p style="margin:0px;">View：视图层， 在这里表示DOM(HTML操作的元素)</p>
+<p style="margin:0px;">ViewModel：连接视图和数据的中间件， Vue.js就是MVVM中的View Model层的实现者</p>
+<p style="margin:0px;">在MVVM架构中， 是不允许数据和视图直接通信的， 只能通过ViewModel来通信， 而View Model就是定义了一个Observer观察者</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">ViewModel能够观察到数据的变化， 并对视图对应的内容进行更新</p>
+<p style="margin:0px;">ViewModel能够监听到视图的变化， 并能够通知数据发生改变</p>
+<p style="margin:0px;">至此， 我们就明白了， Vue.js就是一个MV VM的实现者， 他的核心就是实现了DOM监听与数据绑定</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">（2）为什么要使用Vue.js</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">轻量级， 体积小是一个重要指标。Vue.js压缩后有只有20多kb(Angular压缩后56kb+，React压缩后44kb+)</p>
+<p style="margin:0px;">移动优先。更适合移动端， 比如移动端的Touch事件</p>
+<p style="margin:0px;">易上手，学习曲线平稳，文档齐全</p>
+<p style="margin:0px;">吸取了Angular(模块化) 和React(虚拟DOＭ) 的长处， 并拥有自己独特的功能，如：计算属性</p>
+<p style="margin:0px;">开源，社区活跃度高</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

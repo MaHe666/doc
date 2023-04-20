@@ -1,0 +1,36 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;div</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; color:#00008b;">id=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;app&quot;</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    { { msg1 | toDou (1,2) } }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    { { msg2 | toDou (10,20) } }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;/div&gt;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;script</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; color:#00008b;">src=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;&lt;/script&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;script&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    Vue.filter(</span><span style="font-family:'Courier'; color:#2e8b57;">'toDou'</span><span style="font-family:'Courier';">, function(value, param1, param2) {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        if (param2 &lt; 10) {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            return value + param1;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        } else {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            return value + param2;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    });</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    new Vue({</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        el: </span><span style="font-family:'Courier'; color:#2e8b57;">'#app'</span><span style="font-family:'Courier';">,</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        data: {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            msg1: 9,</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            msg2: 12,</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    });</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;/script&gt;</span></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

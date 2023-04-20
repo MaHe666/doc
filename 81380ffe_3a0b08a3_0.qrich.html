@@ -1,0 +1,42 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">路由跳转前做一些验证，比如登录验证，是网站中的普遍需求。 对此，vue-route 提供了实现导航守卫（navigation-guards）的功能。</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">你可以使用 router.beforeEach 注册一个全局前置守卫：</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">const router = new VueRouter({ ... })</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">router.beforeEach((to, from, next) =&gt; {</p>
+<p style="margin:0px;">    // ...</p>
+<p style="margin:0px;">})</p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">每个守卫方法接收三个参数：</p>
+<ol style="margin: 0px; -qt-list-indent: 1;">
+<li style="margin:0px;">to：即将要进入的目标路由对象（去哪里），可以使用 to.path 获取即将要进入路由地址。</li>
+<li style="margin:0px;">from：当前导航正要离开的路由对象（从哪来），可以使用 from.path 获取正要离开的路由地址。</li>
+<li style="margin:0px;">next：一个函数，表示继续执行下一个路由。（如果没有next，将不会进入到下一个路由）</li>
+</ol>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="margin:0px;">下面例子中实现了如下功能：</p>
+<ol style="margin: 0px; -qt-list-indent: 1;">
+<li style="margin:0px;">列举需要判断登录状态的 “路由集合”，当跳转至集合中的路由时，如果“未登录状态”，则跳转到登录页面</li>
+<li style="margin:0px;">当直接进入登录页面LoginPage时，如果“已登录状态”，则跳转到首页HomePage；</li>
+</ol>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

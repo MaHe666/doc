@@ -1,0 +1,42 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;template&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    &lt;div id=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;demo&quot;</span><span style="font-family:'Courier';">&gt;{{ fullName }}&lt;/div&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;/template&gt;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;script&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">export</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">default</span><span style="font-family:'Courier';"> {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    name: </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;testExample&quot;</span><span style="font-family:'Courier';">,</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    data(){</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">return</span><span style="font-family:'Courier';">{</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            firstName: </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'Foo'</span><span style="font-family:'Courier';">,</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            lastName: </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'Bar'</span><span style="font-family:'Courier';">,</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            fullName: </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'Foo Bar'</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    },</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    watch:{</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        firstName: </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">function</span><span style="font-family:'Courier';"> (val) {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">this</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">fullName = val + </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">' '</span><span style="font-family:'Courier';"> + </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">this</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">lastName</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        },</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        lastName: </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">function</span><span style="font-family:'Courier';"> (val) {</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">this</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">fullName = </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">this</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">firstName + </span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">' '</span><span style="font-family:'Courier';"> + val</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">}</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;/script&gt;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;style scoped&gt;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">&lt;/style&gt;</span></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

@@ -1,0 +1,43 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;!DOCTYPE</span><span style="font-family:'Courier';"> html</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;html</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; color:#00008b;">lang=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;en&quot;</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;head&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;meta</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; color:#00008b;">charset=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;UTF-8&quot;</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;title&gt;</span><span style="font-family:'Courier';">v-model表单应用radio</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;/title&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        &lt;!-- 开发环境版本，包含了有帮助的命令行警告 --</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;script</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; color:#00008b;">src=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js&quot;</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;&lt;/script&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;/head&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;body&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">	&lt;!--注意: v-model 会忽略所有表单元素的value、checked、selected 特性的初始值而总是将Vue实例的数据作为数据来源。你应该通过JavaScript在组件的	data选项中声明初始值!--</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;div</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; color:#00008b;">id=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;app&quot;</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;input</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; color:#00008b;">type=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;radio&quot;</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; color:#00008b;">name=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;sex&quot;</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; color:#00008b;">value=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;男&quot;</span><span style="font-family:'Courier';"> v-</span><span style="font-family:'Courier'; color:#00008b;">model=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;message&quot;</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span><span style="font-family:'Courier';">男</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;input</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; color:#00008b;">type=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;radio&quot;</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; color:#00008b;">name=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;sex&quot;</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; color:#00008b;">value=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;女&quot;</span><span style="font-family:'Courier';"> v-</span><span style="font-family:'Courier'; color:#00008b;">model=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;message&quot;</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span><span style="font-family:'Courier';">女</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;br&gt;</span><span style="font-family:'Courier';">选中了：{{message}}</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;/div&gt;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;script&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        var app = new Vue({</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            el:</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;#app&quot;</span><span style="font-family:'Courier';">,</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            data:{</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                message:</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;&quot;</span><span style="font-family:'Courier';">,		//checked</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            },</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        })</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;/script&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;/body&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;/html&gt;</span></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

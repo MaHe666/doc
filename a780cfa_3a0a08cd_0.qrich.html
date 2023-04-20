@@ -1,0 +1,36 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">Vuex的主要核心功能如下</p>
+<ul style="margin: 0px; -qt-list-indent: 1;">
+<li style="margin:0px;">State</li>
+<p style="margin:0px; -qt-block-indent:1;">	提供唯一公共数据源，所有共享的数据都要放到Store的State中进行存储</p>
+<li style="margin:0px;">Mutation</li>
+<p style="margin:0px; -qt-block-indent:1;">	用于变更Store中的数据</p>
+<ol style="margin: 0px; -qt-list-indent: 1;">
+<li style="margin:0px; -qt-block-indent:2;">Vue中，只能通过 Mutation 变更Store数据，不可以直接操作Store中的数据</li>
+<li style="margin:0px; -qt-block-indent:2;">通过这种方式虽然操作起来稍微繁琐一些，但是可以集中监控所有数据的变化</li>
+</ol>
+<li style="margin:0px;">Action</li>
+<p style="margin:0px; -qt-block-indent:1;">	用于异步地调用Mutation方法</p>
+<li style="margin:0px;">Getter</li>
+</ul>
+<p style="margin:0px;">		Getter 用于对 Store 中的数据进行加工处理形成新的数据（Getter不会修改原有的数据）</p>
+<ol style="margin: 0px; -qt-list-indent: 1;">
+<li style="margin:0px; -qt-block-indent:2;">Getter对Store中原有的数据进行加工处理后形成的新数据，类似于Vue的计算属性</li>
+<li style="margin:0px; -qt-block-indent:2;">Store 中数据发生变化，Getter的数据也会跟着变化</li>
+</ol>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px;"><br /></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

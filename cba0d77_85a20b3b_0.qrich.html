@@ -1,0 +1,55 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;">v-bind实现了数据的单向绑定，将vue实例中的数据同元素属性值进行绑定，接下来看一下vue中的数据双向绑定v-model。</p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier'; font-weight:600; color:#8b008b;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier'; font-weight:600; color:#8b008b;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier'; font-weight:600; color:#8b008b;"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;!DOCTYPE</span><span style="font-family:'Courier';"> html</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;html</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; color:#00008b;">lang=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;en&quot;</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;head&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;meta</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; color:#00008b;">charset=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;UTF-8&quot;</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;title&gt;</span><span style="font-family:'Courier';">v-model双向绑定</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;/title&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        &lt;!-- 开发环境版本，包含了有帮助的命令行警告 --</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;script</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; color:#00008b;">src=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js&quot;</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;&lt;/script&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;/head&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;body&gt;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;div</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; color:#00008b;">id=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;app&quot;</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        &lt;!-- v-model的作用是：便捷的获取和设置表单元素的值（双向数据绑定，数据和表单的值） --</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;input</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; color:#00008b;">type=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;button&quot;</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; color:#00008b;">value=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;修改Message&quot;</span><span style="font-family:'Courier';"> @</span><span style="font-family:'Courier'; color:#00008b;">click=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;setMessage&quot;</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;input</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; color:#00008b;">type=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;text&quot;</span><span style="font-family:'Courier';"> v-</span><span style="font-family:'Courier'; color:#00008b;">model=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;message&quot;</span><span style="font-family:'Courier';"> @keyup.</span><span style="font-family:'Courier'; color:#00008b;">enter=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;getMessage&quot;</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;p</span><span style="font-family:'Courier';"> v-</span><span style="font-family:'Courier'; color:#00008b;">text=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;message&quot;</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;&lt;/p&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;/div&gt;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;script&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        var app = new Vue({</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            el:</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;#app&quot;</span><span style="font-family:'Courier';">,</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            data:{</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                message:</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;马赫真帅&quot;</span><span style="font-family:'Courier';">,</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                msg:</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;123&quot;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            },</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            methods:{</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                setMessage:function(){</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                    this.</span><span style="font-family:'Courier'; color:#00008b;">message=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;马赫太帅了&quot;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                },</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                getMessage:function(){  </span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                    alert(this.message);</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                },</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        })</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;/script&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;/body&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;/html&gt;</span></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

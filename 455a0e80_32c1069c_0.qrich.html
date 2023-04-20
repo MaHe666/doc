@@ -1,0 +1,68 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;!DOCTYPE</span><span style="font-family:'Courier';"> html</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;html</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; color:#00008b;">lang=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;en&quot;</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;head&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;meta</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; color:#00008b;">charset=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;UTF-8&quot;</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;title&gt;</span><span style="font-family:'Courier';">v-text和{{}}</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;/title&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        &lt;!-- 开发环境版本，包含了有帮助的命令行警告 --</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;script</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; color:#00008b;">src=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js&quot;</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;&lt;/script&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;/head&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;body&gt;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;div</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; color:#00008b;">id=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;app&quot;</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">	&lt;!-- vue的挂载点不能放在body标签和html标签上面 --</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">	&lt;!-- 建议使用id选择器 --</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">	</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;p&gt;</span><span style="font-family:'Courier';">{{message}}</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;/p&gt;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">	 &lt;!-- 下面三个效果一样 --</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">	</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;p</span><span style="font-family:'Courier';"> v-</span><span style="font-family:'Courier'; color:#00008b;">text=</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;message + '!!!'&quot;</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&gt;&lt;/p&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">	</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;p&gt;</span><span style="font-family:'Courier';">{{message}}!!!</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;/p&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">	</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;p&gt;</span><span style="font-family:'Courier';">{{message+</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;!!!&quot;</span><span style="font-family:'Courier';">}}</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;/p&gt;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;p&gt;</span><span style="font-family:'Courier';">{{author.name}} {{author.sex}} {{author.tel}}</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;/p&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">	 </span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;ul&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;li&gt;</span><span style="font-family:'Courier';">{{hobby[0]}}</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;/li&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;li&gt;</span><span style="font-family:'Courier';">{{hobby[1]}}</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;/li&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;li&gt;</span><span style="font-family:'Courier';">{{hobby[2]}}</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;/li&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;li&gt;</span><span style="font-family:'Courier';">{{hobby[3]}}</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;/li&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;/ul&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;/div&gt;</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;script&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        var app = new Vue({</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            el:</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;#app&quot;</span><span style="font-family:'Courier';">,</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            data:{</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                message:</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;马赫真帅&quot;</span><span style="font-family:'Courier';">,</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                author:{</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                    name:</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;马赫&quot;</span><span style="font-family:'Courier';">,</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                    tel:</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;13234666930&quot;</span><span style="font-family:'Courier';">,</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                    sex:</span><span style="font-family:'Courier'; color:#2e8b57;">&quot;男&quot;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                },</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                hobby:[</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                    </span><span style="font-family:'Courier'; color:#2e8b57;">&quot;java&quot;</span><span style="font-family:'Courier';">,</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                    </span><span style="font-family:'Courier'; color:#2e8b57;">&quot;python&quot;</span><span style="font-family:'Courier';">,</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                    </span><span style="font-family:'Courier'; color:#2e8b57;">&quot;js&quot;</span><span style="font-family:'Courier';">,</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                    </span><span style="font-family:'Courier'; color:#2e8b57;">&quot;game&quot;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">                ]</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">            }</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">        })</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;/script&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;/body&gt;</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">&lt;/html&gt;</span></p>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

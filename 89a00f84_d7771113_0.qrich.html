@@ -1,0 +1,37 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">import</span><span style="font-family:'Courier';"> pandas </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">as</span><span style="font-family:'Courier';"> pd</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">books = pd</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">read_excel(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;./excel/Books2.xlsx&quot;</span><span style="font-family:'Courier';">)</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;"># pandas操作的是列，而不是单元格</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;"># 也可以使用for循环迭代对单元格进行操作</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">books[</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'finalPrice'</span><span style="font-family:'Courier';">] = books[</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'price'</span><span style="font-family:'Courier';">] * books[</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'discount'</span><span style="font-family:'Courier';">]</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">def</span><span style="font-family:'Courier';"> add_2(x):</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">return</span><span style="font-family:'Courier';"> x + </span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">2</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;"># 让原有的价格都上涨2元</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">books[</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'price'</span><span style="font-family:'Courier';">] = books[</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'price'</span><span style="font-family:'Courier';">].</span><span style="font-family:'Courier'; font-weight:600; color:#204a87;">apply</span><span style="font-family:'Courier';">(add_2)</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#204a87;">print</span><span style="font-family:'Courier';">(books)</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+
+<footer style="">
+<hr noshade>
+<a href="89a00f84_182f042e_0.xlsx" title="89a00f84_182f042e_0.xlsx" target=_blank style="padding-left: 1em; background: URL(icon_attachment.gif) no-repeat center left; padding: 0 0 0 16px;">Books2.xlsx</a>
+<hr noshade>
+</footer>
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

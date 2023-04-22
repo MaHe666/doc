@@ -1,0 +1,41 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">import</span><span style="font-family:'Courier';"> pandas </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">as</span><span style="font-family:'Courier';"> pd</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">import</span><span style="font-family:'Courier';"> matplotlib</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">pyplot </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">as</span><span style="font-family:'Courier';"> plt</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">pd</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">options</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">display</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">max_columns = </span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">999</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">data = pd</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">read_excel(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;./excel/Histogram.xlsx&quot;</span><span style="font-family:'Courier';">)</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#204a87;">print</span><span style="font-family:'Courier';">(data)</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;"># 直方图</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;"># 分布区间也称为桶,这里我们设为100，就是往100个桶里装</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">data[</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'num'</span><span style="font-family:'Courier';">].plot</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">hist(bins=</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">100</span><span style="font-family:'Courier';">)</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;"># 密度图</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">data[</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'num'</span><span style="font-family:'Courier';">].plot</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">kde()</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">plt</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">xticks(</span><span style="font-family:'Courier'; font-weight:600; color:#204a87;">range</span><span style="font-family:'Courier';">(</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">0</span><span style="font-family:'Courier';">, </span><span style="font-family:'Courier'; font-weight:600; color:#204a87;">max</span><span style="font-family:'Courier';">(data[</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'num'</span><span style="font-family:'Courier';">]), </span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">2</span><span style="font-family:'Courier';">), fontsize=</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">8</span><span style="font-family:'Courier';">, rotation=</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">90</span><span style="font-family:'Courier';">)</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">plt</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">show()</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;"># data.corr() 方法用于查看列与列之间的相关性</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;"># 1代表是同一列，除此之外，越接近1，相关性就越多</span></p>
+
+<footer style="">
+<hr noshade>
+<a href="9a8c0fdf_29d505ac_0.xlsx" title="9a8c0fdf_29d505ac_0.xlsx" target=_blank style="padding-left: 1em; background: URL(icon_attachment.gif) no-repeat center left; padding: 0 0 0 16px;">Histogram.xlsx</a>
+<hr noshade>
+</footer>
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

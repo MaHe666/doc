@@ -1,0 +1,42 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">import</span><span style="font-family:'Courier';"> pandas </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">as</span><span style="font-family:'Courier';"> pd</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">data = pd</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">read_excel(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;./excel/RemoveDuplicatedData.xlsx&quot;</span><span style="font-family:'Courier';">,index_col=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'id'</span><span style="font-family:'Courier';">)</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;"># subset参数为以哪一列为基准去除重复数据</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;"># keep参数为当有重复数据时，保留第几个，默认为first，我们可以改成last，使其去掉前面的重复数据</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;"># data.drop_duplicates(subset='name',inplace=True)</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;"># print(data)</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;"># 使用pandas找出重复数据</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">dup = data</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">duplicated(subset=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'name'</span><span style="font-family:'Courier';">)</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;"># 其中为True的就是重复数据</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;"># print(dup)</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;"># 为True则该表包含重复数据，false为不包含</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;"># print(dup.any())</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">#做个简单的定位，锁定为True的数据</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">dup = dup[dup == </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">True</span><span style="font-family:'Courier';">]</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;">#获取重复数据索引</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;"># print(dup.index)</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#204a87;">print</span><span style="font-family:'Courier';">(data</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">loc[dup</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">index])</span></p>
+
+<footer style="">
+<hr noshade>
+<a href="5d4b0ebb_806309e5_0.xlsx" title="5d4b0ebb_806309e5_0.xlsx" target=_blank style="padding-left: 1em; background: URL(icon_attachment.gif) no-repeat center left; padding: 0 0 0 16px;">RemoveDuplicatedData.xlsx</a>
+<hr noshade>
+</footer>
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

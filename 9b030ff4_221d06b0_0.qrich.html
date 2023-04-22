@@ -1,0 +1,35 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">import</span><span style="font-family:'Courier';"> pandas </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">as</span><span style="font-family:'Courier';"> pd</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">import</span><span style="font-family:'Courier';"> matplotlib</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">pyplot </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">as</span><span style="font-family:'Courier';"> plt</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">data = pd</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">read_excel(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;./excel/PieChart.xlsx&quot;</span><span style="font-family:'Courier';">, index_col=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'name'</span><span style="font-family:'Courier';">)</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#204a87;">print</span><span style="font-family:'Courier';">(data)</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;"># python的旋转为逆时针，excel中为顺时针，这里的排序是为了和excel的旋转顺序一致</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;"># data['num'].sort_values(ascending=True).plot.pie(fontsize=8,startangle=-270)</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;"># 还有一种方式</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">data[</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'num'</span><span style="font-family:'Courier';">].plot</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">pie(fontsize=</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">8</span><span style="font-family:'Courier';">, counterclock=</span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">False</span><span style="font-family:'Courier';">, startangle=-</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">270</span><span style="font-family:'Courier';">)</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">plt</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">title(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'testTitle'</span><span style="font-family:'Courier';">, fontsize=</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">16</span><span style="font-family:'Courier';">, fontweight=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'bold'</span><span style="font-family:'Courier';">)</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">plt</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">show()</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+
+<footer style="">
+<hr noshade>
+<a href="9b030ff4_21ec050e_0.xlsx" title="9b030ff4_21ec050e_0.xlsx" target=_blank style="padding-left: 1em; background: URL(icon_attachment.gif) no-repeat center left; padding: 0 0 0 16px;">PieChart.xlsx</a>
+<hr noshade>
+</footer>
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

@@ -1,0 +1,36 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p, li { white-space: pre-wrap; }
+</style>
+</head>
+<body style="font-family:'微软雅黑'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">import</span><span style="font-family:'Courier';"> pandas </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">as</span><span style="font-family:'Courier';"> pd</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">def</span><span style="font-family:'Courier';"> age_18_to_30(a):</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">return</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">18</span><span style="font-family:'Courier';"> &lt;= a &lt; </span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">30</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">def</span><span style="font-family:'Courier';"> score_85_to_100(s):</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">    </span><span style="font-family:'Courier'; font-weight:600; color:#8b008b;">return</span><span style="font-family:'Courier';"> </span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">85</span><span style="font-family:'Courier';"> &lt;= s &lt;= </span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">100</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">scores = pd</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">read_excel(</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">&quot;./excel/Score.xlsx&quot;</span><span style="font-family:'Courier';">, index_col=</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'id'</span><span style="font-family:'Courier';">)</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;"># loc是locate的缩写，是定位的意思</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-style:italic; color:#778899;"># 筛选年龄在18-30，分数在85-100之间的数据</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier';">scores = scores</span><span style="font-family:'Courier'; font-weight:600; color:#4682b4;">.</span><span style="font-family:'Courier';">loc[scores[</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'age'</span><span style="font-family:'Courier';">].</span><span style="font-family:'Courier'; font-weight:600; color:#204a87;">apply</span><span style="font-family:'Courier';">(age_18_to_30)].loc[scores[</span><span style="font-family:'Courier'; font-weight:600; color:#2e8b57;">'score'</span><span style="font-family:'Courier';">].</span><span style="font-family:'Courier'; font-weight:600; color:#204a87;">apply</span><span style="font-family:'Courier';">(score_85_to_100)]</span></p>
+<p style="margin:0px;"><span style="font-family:'Courier'; font-weight:600; color:#204a87;">print</span><span style="font-family:'Courier';">(scores)</span></p>
+<p style="-qt-paragraph-type:empty; margin:0px; font-family:'Courier';"><br /></p>
+
+<footer style="">
+<hr noshade>
+<a href="5dba0eee_151f03fa_0.xlsx" title="5dba0eee_151f03fa_0.xlsx" target=_blank style="padding-left: 1em; background: URL(icon_attachment.gif) no-repeat center left; padding: 0 0 0 16px;">Score.xlsx</a>
+<hr noshade>
+</footer>
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

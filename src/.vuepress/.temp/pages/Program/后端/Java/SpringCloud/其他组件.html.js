@@ -1,0 +1,14 @@
+export const data = JSON.parse("{\"key\":\"v-0f87ba26\",\"path\":\"/Program/%E5%90%8E%E7%AB%AF/Java/SpringCloud/%E5%85%B6%E4%BB%96%E7%BB%84%E4%BB%B6.html\",\"title\":\"其他SpringCloud组件\",\"lang\":\"zh-CN\",\"frontmatter\":{\"title\":\"其他SpringCloud组件\",\"order\":30,\"description\":\"注册中心 Consul 文档地址： 下载地址： 中文文档： Zookeeper Zookeeper也可以做注册中心 如下组件Maven依赖需要有 spring-cloud-dependencies 父依赖 LoadBalancer SpringCloud LoadBalancer 是Spring官方自己提供的客户端负载均衡器，用来代替Ribbon ``...\",\"head\":[[\"meta\",{\"property\":\"og:url\",\"content\":\"https://mahe666.github.io/doc/Program/%E5%90%8E%E7%AB%AF/Java/SpringCloud/%E5%85%B6%E4%BB%96%E7%BB%84%E4%BB%B6.html\"}],[\"meta\",{\"property\":\"og:site_name\",\"content\":\"Mahe666\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"其他SpringCloud组件\"}],[\"meta\",{\"property\":\"og:description\",\"content\":\"注册中心 Consul 文档地址： 下载地址： 中文文档： Zookeeper Zookeeper也可以做注册中心 如下组件Maven依赖需要有 spring-cloud-dependencies 父依赖 LoadBalancer SpringCloud LoadBalancer 是Spring官方自己提供的客户端负载均衡器，用来代替Ribbon ``...\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"zh-CN\"}],[\"meta\",{\"property\":\"article:author\",\"content\":\"Mahe666\"}],[\"script\",{\"type\":\"application/ld+json\"},\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"Article\\\",\\\"headline\\\":\\\"其他SpringCloud组件\\\",\\\"image\\\":[\\\"\\\"],\\\"dateModified\\\":null,\\\"author\\\":[{\\\"@type\\\":\\\"Person\\\",\\\"name\\\":\\\"Mahe666\\\"}]}\"]]},\"headers\":[{\"level\":2,\"title\":\"注册中心\",\"slug\":\"注册中心\",\"link\":\"#注册中心\",\"children\":[{\"level\":3,\"title\":\"Consul\",\"slug\":\"consul\",\"link\":\"#consul\",\"children\":[]},{\"level\":3,\"title\":\"Zookeeper\",\"slug\":\"zookeeper\",\"link\":\"#zookeeper\",\"children\":[]}]},{\"level\":2,\"title\":\"LoadBalancer\",\"slug\":\"loadbalancer\",\"link\":\"#loadbalancer\",\"children\":[]},{\"level\":2,\"title\":\"OpenFeign\",\"slug\":\"openfeign\",\"link\":\"#openfeign\",\"children\":[]},{\"level\":2,\"title\":\"Gateway\",\"slug\":\"gateway\",\"link\":\"#gateway\",\"children\":[]},{\"level\":2,\"title\":\"Bus\",\"slug\":\"bus\",\"link\":\"#bus\",\"children\":[]},{\"level\":2,\"title\":\"Stream\",\"slug\":\"stream\",\"link\":\"#stream\",\"children\":[]},{\"level\":2,\"title\":\"Sleuth\",\"slug\":\"sleuth\",\"link\":\"#sleuth\",\"children\":[]}],\"filePathRelative\":\"Program/后端/Java/SpringCloud/其他组件.md\",\"autoDesc\":true}")
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
+}

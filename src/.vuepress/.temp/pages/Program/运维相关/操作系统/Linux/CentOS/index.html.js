@@ -1,0 +1,14 @@
+export const data = JSON.parse("{\"key\":\"v-e10861da\",\"path\":\"/Program/%E8%BF%90%E7%BB%B4%E7%9B%B8%E5%85%B3/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Linux/CentOS/\",\"title\":\"CentOS\",\"lang\":\"zh-CN\",\"frontmatter\":{\"title\":\"CentOS\",\"dir\":{\"order\":10,\"link\":true,\"icon\":\"CentOS\"},\"description\":\"安装 下载地址：\\r; \\r; 安装教程： VMware虚拟机安装教程 网络连接选NAT 虚拟机联网 首先确保虚拟机可以联网（装个windows虚拟机试试看能不能联网） 修改 /etc/sysconfig/network-scripts/ 下的 ifcfg-ensXXX 文件 注意：每个人的这个文件名可能都不同 进到该路径后使用命令修改文件 ```bash...\",\"head\":[[\"meta\",{\"property\":\"og:url\",\"content\":\"https://mahe666.github.io/doc/Program/%E8%BF%90%E7%BB%B4%E7%9B%B8%E5%85%B3/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Linux/CentOS/\"}],[\"meta\",{\"property\":\"og:site_name\",\"content\":\"Mahe666\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"CentOS\"}],[\"meta\",{\"property\":\"og:description\",\"content\":\"安装 下载地址：\\r; \\r; 安装教程： VMware虚拟机安装教程 网络连接选NAT 虚拟机联网 首先确保虚拟机可以联网（装个windows虚拟机试试看能不能联网） 修改 /etc/sysconfig/network-scripts/ 下的 ifcfg-ensXXX 文件 注意：每个人的这个文件名可能都不同 进到该路径后使用命令修改文件 ```bash...\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"zh-CN\"}],[\"meta\",{\"property\":\"article:author\",\"content\":\"Mahe666\"}],[\"script\",{\"type\":\"application/ld+json\"},\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"Article\\\",\\\"headline\\\":\\\"CentOS\\\",\\\"image\\\":[\\\"\\\"],\\\"dateModified\\\":null,\\\"author\\\":[{\\\"@type\\\":\\\"Person\\\",\\\"name\\\":\\\"Mahe666\\\"}]}\"]]},\"headers\":[{\"level\":2,\"title\":\"安装\",\"slug\":\"安装\",\"link\":\"#安装\",\"children\":[]},{\"level\":2,\"title\":\"虚拟机联网\",\"slug\":\"虚拟机联网\",\"link\":\"#虚拟机联网\",\"children\":[]},{\"level\":2,\"title\":\"安装可视化界面\",\"slug\":\"安装可视化界面\",\"link\":\"#安装可视化界面\",\"children\":[]},{\"level\":2,\"title\":\"远程连接工具连接\",\"slug\":\"远程连接工具连接\",\"link\":\"#远程连接工具连接\",\"children\":[]}],\"filePathRelative\":\"Program/运维相关/操作系统/Linux/CentOS/README.md\",\"autoDesc\":true}")
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
+}

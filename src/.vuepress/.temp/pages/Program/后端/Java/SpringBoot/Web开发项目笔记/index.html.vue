@@ -1,0 +1,10 @@
+<template><div><h2 id="注入内置对象" tabindex="-1"><a class="header-anchor" href="#注入内置对象" aria-hidden="true">#</a> 注入内置对象</h2>
+<p>不需要在方法上加 <code v-pre>HttpServletRequest httpServletRequest</code></p>
+<p>可以提取出来成为一个属性</p>
+<div class="language-text line-numbers-mode" data-ext="text"><pre v-pre class="language-text"><code>private final HttpServletRequest httpServletRequest;
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="前后端交互-日期格式问题" tabindex="-1"><a class="header-anchor" href="#前后端交互-日期格式问题" aria-hidden="true">#</a> 前后端交互，日期格式问题</h2>
+<p>在实体类对应属性上加</p>
+<div class="language-java line-numbers-mode" data-ext="java"><pre v-pre class="language-java"><code><span class="token annotation punctuation">@DateTimeFormat</span><span class="token punctuation">(</span>pattern <span class="token operator">=</span> <span class="token string">"yyyy-MM-dd"</span><span class="token punctuation">)</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></div></template>
+
+

@@ -1,0 +1,14 @@
+export const data = JSON.parse("{\"key\":\"v-395d3c60\",\"path\":\"/Program/%E5%90%8E%E7%AB%AF/Java/MyBatis/%E4%B8%80%E5%AF%B9%E4%B8%80%E5%92%8C%E4%B8%80%E5%AF%B9%E5%A4%9A.html\",\"title\":\"一对一和一对多\",\"lang\":\"zh-CN\",\"frontmatter\":{\"title\":\"一对一和一对多\",\"order\":10,\"description\":\"一对一 ```xml select * from student select * from teacher where id = #{tid} ``` 一对多 ```xml select * from teacher select * from student where tid =#{id} ``` 多参数传递 ``` column=\\\"{参数名1 ...\",\"head\":[[\"meta\",{\"property\":\"og:url\",\"content\":\"https://mahe666.github.io/doc/Program/%E5%90%8E%E7%AB%AF/Java/MyBatis/%E4%B8%80%E5%AF%B9%E4%B8%80%E5%92%8C%E4%B8%80%E5%AF%B9%E5%A4%9A.html\"}],[\"meta\",{\"property\":\"og:site_name\",\"content\":\"Mahe666\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"一对一和一对多\"}],[\"meta\",{\"property\":\"og:description\",\"content\":\"一对一 ```xml select * from student select * from teacher where id = #{tid} ``` 一对多 ```xml select * from teacher select * from student where tid =#{id} ``` 多参数传递 ``` column=\\\"{参数名1 ...\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"zh-CN\"}],[\"meta\",{\"property\":\"article:author\",\"content\":\"Mahe666\"}],[\"script\",{\"type\":\"application/ld+json\"},\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"Article\\\",\\\"headline\\\":\\\"一对一和一对多\\\",\\\"image\\\":[\\\"\\\"],\\\"dateModified\\\":null,\\\"author\\\":[{\\\"@type\\\":\\\"Person\\\",\\\"name\\\":\\\"Mahe666\\\"}]}\"]]},\"headers\":[{\"level\":2,\"title\":\"一对一\",\"slug\":\"一对一\",\"link\":\"#一对一\",\"children\":[]},{\"level\":2,\"title\":\"一对多\",\"slug\":\"一对多\",\"link\":\"#一对多\",\"children\":[]},{\"level\":2,\"title\":\"多参数传递\",\"slug\":\"多参数传递\",\"link\":\"#多参数传递\",\"children\":[]}],\"filePathRelative\":\"Program/后端/Java/MyBatis/一对一和一对多.md\",\"autoDesc\":true}")
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
+}

@@ -1,0 +1,14 @@
+export const data = JSON.parse("{\"key\":\"v-030eb83c\",\"path\":\"/Program/%E5%89%8D%E7%AB%AF/Node.js/build%E7%BB%84%E4%BB%B6/webpack.html\",\"title\":\"webpack\",\"lang\":\"zh-CN\",\"frontmatter\":{\"title\":\"webpack\",\"order\":10,\"icon\":\"webpack\",\"description\":\"webpack官网： 一个打包工具，主要作用就是打包、压缩、合并及按序加载 可以把webpack的作用理解为把JavaScript代码都打包成ES5的规范，以达到所有浏览器都能使用的效果 安装 ```bash npm install webpack -g npm install webpack-cli -g ``` 测试安装是否成功 ```bash w...\",\"head\":[[\"meta\",{\"property\":\"og:url\",\"content\":\"https://mahe666.github.io/doc/Program/%E5%89%8D%E7%AB%AF/Node.js/build%E7%BB%84%E4%BB%B6/webpack.html\"}],[\"meta\",{\"property\":\"og:site_name\",\"content\":\"Mahe666\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"webpack\"}],[\"meta\",{\"property\":\"og:description\",\"content\":\"webpack官网： 一个打包工具，主要作用就是打包、压缩、合并及按序加载 可以把webpack的作用理解为把JavaScript代码都打包成ES5的规范，以达到所有浏览器都能使用的效果 安装 ```bash npm install webpack -g npm install webpack-cli -g ``` 测试安装是否成功 ```bash w...\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"zh-CN\"}],[\"meta\",{\"property\":\"article:author\",\"content\":\"Mahe666\"}],[\"script\",{\"type\":\"application/ld+json\"},\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"Article\\\",\\\"headline\\\":\\\"webpack\\\",\\\"image\\\":[\\\"\\\"],\\\"dateModified\\\":null,\\\"author\\\":[{\\\"@type\\\":\\\"Person\\\",\\\"name\\\":\\\"Mahe666\\\"}]}\"]]},\"headers\":[{\"level\":2,\"title\":\"配置\",\"slug\":\"配置\",\"link\":\"#配置\",\"children\":[]}],\"filePathRelative\":\"Program/前端/Node.js/build组件/webpack.md\",\"autoDesc\":true}")
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
+}

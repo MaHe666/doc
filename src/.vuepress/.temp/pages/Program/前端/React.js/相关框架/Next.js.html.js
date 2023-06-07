@@ -1,0 +1,14 @@
+export const data = JSON.parse("{\"key\":\"v-48b0c21e\",\"path\":\"/Program/%E5%89%8D%E7%AB%AF/React.js/%E7%9B%B8%E5%85%B3%E6%A1%86%E6%9E%B6/Next.js.html\",\"title\":\"Next.js\",\"lang\":\"zh-CN\",\"frontmatter\":{\"title\":\"Next.js\",\"order\":10,\"icon\":\"Next-js\",\"description\":\"官方网站： Next.js 是一个流行的、基于 React 构建的轻量级框架，用于构建静态和服务器端渲染的应用程序。 该框架自带了路由（routing）、样式表（ styling）和服务器端渲染（server-side rendering）等功能，可以让你的项目快速开始并运行起来。\",\"head\":[[\"meta\",{\"property\":\"og:url\",\"content\":\"https://mahe666.github.io/doc/Program/%E5%89%8D%E7%AB%AF/React.js/%E7%9B%B8%E5%85%B3%E6%A1%86%E6%9E%B6/Next.js.html\"}],[\"meta\",{\"property\":\"og:site_name\",\"content\":\"Mahe666\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"Next.js\"}],[\"meta\",{\"property\":\"og:description\",\"content\":\"官方网站： Next.js 是一个流行的、基于 React 构建的轻量级框架，用于构建静态和服务器端渲染的应用程序。 该框架自带了路由（routing）、样式表（ styling）和服务器端渲染（server-side rendering）等功能，可以让你的项目快速开始并运行起来。\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"zh-CN\"}],[\"meta\",{\"property\":\"article:author\",\"content\":\"Mahe666\"}],[\"script\",{\"type\":\"application/ld+json\"},\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"Article\\\",\\\"headline\\\":\\\"Next.js\\\",\\\"image\\\":[\\\"\\\"],\\\"dateModified\\\":null,\\\"author\\\":[{\\\"@type\\\":\\\"Person\\\",\\\"name\\\":\\\"Mahe666\\\"}]}\"]]},\"headers\":[],\"filePathRelative\":\"Program/前端/React.js/相关框架/Next.js.md\",\"autoDesc\":true}")
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
+}

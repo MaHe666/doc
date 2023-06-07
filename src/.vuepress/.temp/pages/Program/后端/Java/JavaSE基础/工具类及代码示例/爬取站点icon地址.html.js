@@ -1,0 +1,14 @@
+export const data = JSON.parse("{\"key\":\"v-17d99a84\",\"path\":\"/Program/%E5%90%8E%E7%AB%AF/Java/JavaSE%E5%9F%BA%E7%A1%80/%E5%B7%A5%E5%85%B7%E7%B1%BB%E5%8F%8A%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B/%E7%88%AC%E5%8F%96%E7%AB%99%E7%82%B9icon%E5%9C%B0%E5%9D%80.html\",\"title\":\"爬取站点icon地址\",\"lang\":\"zh-CN\",\"frontmatter\":{\"title\":\"爬取站点icon地址\",\"order\":40,\"description\":\"```java import java.io.BufferedReader; import java.io.IOException; import java.io.InputStreamReader; import java.net.HttpURLConnection; import java.net.MalformedURLException; im...\",\"head\":[[\"meta\",{\"property\":\"og:url\",\"content\":\"https://mahe666.github.io/doc/Program/%E5%90%8E%E7%AB%AF/Java/JavaSE%E5%9F%BA%E7%A1%80/%E5%B7%A5%E5%85%B7%E7%B1%BB%E5%8F%8A%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B/%E7%88%AC%E5%8F%96%E7%AB%99%E7%82%B9icon%E5%9C%B0%E5%9D%80.html\"}],[\"meta\",{\"property\":\"og:site_name\",\"content\":\"Mahe666\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"爬取站点icon地址\"}],[\"meta\",{\"property\":\"og:description\",\"content\":\"```java import java.io.BufferedReader; import java.io.IOException; import java.io.InputStreamReader; import java.net.HttpURLConnection; import java.net.MalformedURLException; im...\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"zh-CN\"}],[\"meta\",{\"property\":\"article:author\",\"content\":\"Mahe666\"}],[\"script\",{\"type\":\"application/ld+json\"},\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"Article\\\",\\\"headline\\\":\\\"爬取站点icon地址\\\",\\\"image\\\":[\\\"\\\"],\\\"dateModified\\\":null,\\\"author\\\":[{\\\"@type\\\":\\\"Person\\\",\\\"name\\\":\\\"Mahe666\\\"}]}\"]]},\"headers\":[],\"filePathRelative\":\"Program/后端/Java/JavaSE基础/工具类及代码示例/爬取站点icon地址.md\",\"autoDesc\":true}")
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
+}

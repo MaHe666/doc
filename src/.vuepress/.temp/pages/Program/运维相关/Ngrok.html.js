@@ -1,0 +1,14 @@
+export const data = JSON.parse("{\"key\":\"v-24cd02e8\",\"path\":\"/Program/%E8%BF%90%E7%BB%B4%E7%9B%B8%E5%85%B3/Ngrok.html\",\"title\":\"Ngrok\",\"lang\":\"zh-CN\",\"frontmatter\":{\"title\":\"Ngrok\",\"description\":\"内网穿透，可以让别人远程访问你的本地项目 相关博客： 国际版官网： 文档： 国内版官网： 哔哩哔哩教程： 用法 cmd运行 ```bash ngrok authtoken 官网的授权码 ``` 如果没有配置环境变量，需要进到文件夹内才能运行 查看帮助 ```bash ngrok help ``` 开启8080端口 ```bash ngrok http ...\",\"head\":[[\"meta\",{\"property\":\"og:url\",\"content\":\"https://mahe666.github.io/doc/Program/%E8%BF%90%E7%BB%B4%E7%9B%B8%E5%85%B3/Ngrok.html\"}],[\"meta\",{\"property\":\"og:site_name\",\"content\":\"Mahe666\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"Ngrok\"}],[\"meta\",{\"property\":\"og:description\",\"content\":\"内网穿透，可以让别人远程访问你的本地项目 相关博客： 国际版官网： 文档： 国内版官网： 哔哩哔哩教程： 用法 cmd运行 ```bash ngrok authtoken 官网的授权码 ``` 如果没有配置环境变量，需要进到文件夹内才能运行 查看帮助 ```bash ngrok help ``` 开启8080端口 ```bash ngrok http ...\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"zh-CN\"}],[\"meta\",{\"property\":\"article:author\",\"content\":\"Mahe666\"}],[\"script\",{\"type\":\"application/ld+json\"},\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"Article\\\",\\\"headline\\\":\\\"Ngrok\\\",\\\"image\\\":[\\\"\\\"],\\\"dateModified\\\":null,\\\"author\\\":[{\\\"@type\\\":\\\"Person\\\",\\\"name\\\":\\\"Mahe666\\\"}]}\"]]},\"headers\":[{\"level\":2,\"title\":\"用法\",\"slug\":\"用法\",\"link\":\"#用法\",\"children\":[]}],\"filePathRelative\":\"Program/运维相关/Ngrok.md\",\"autoDesc\":true}")
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
+}

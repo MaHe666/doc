@@ -1,0 +1,44 @@
+<template><div><h2 id="基础语法" tabindex="-1"><a class="header-anchor" href="#基础语法" aria-hidden="true">#</a> 基础语法</h2>
+<h3 id="小数类型" tabindex="-1"><a class="header-anchor" href="#小数类型" aria-hidden="true">#</a> 小数类型</h3>
+<p>小数，使用number类型</p>
+<h3 id="insert" tabindex="-1"><a class="header-anchor" href="#insert" aria-hidden="true">#</a> insert</h3>
+<p>相关博客：</p>
+<ul>
+<li><a href="https://blog.csdn.net/weixin_36204061/article/details/116325689" target="_blank" rel="noopener noreferrer">https://blog.csdn.net/weixin_36204061/article/details/116325689<ExternalLinkIcon/></a></li>
+</ul>
+<h3 id="限制查询条数" tabindex="-1"><a class="header-anchor" href="#限制查询条数" aria-hidden="true">#</a> 限制查询条数</h3>
+<p>相关博客：</p>
+<ul>
+<li><a href="https://wenku.baidu.com/view/1dc843b068ec0975f46527d3240c844769eaa0e1.html" target="_blank" rel="noopener noreferrer">https://wenku.baidu.com/view/1dc843b068ec0975f46527d3240c844769eaa0e1.html<ExternalLinkIcon/></a></li>
+</ul>
+<p><strong>注意</strong>：这个用法在和order by排序搭配使用时需要留意是先排序还是先限制</p>
+<h2 id="内置函数" tabindex="-1"><a class="header-anchor" href="#内置函数" aria-hidden="true">#</a> 内置函数</h2>
+<h3 id="截取字符串" tabindex="-1"><a class="header-anchor" href="#截取字符串" aria-hidden="true">#</a> 截取字符串</h3>
+<div class="language-sql line-numbers-mode" data-ext="sql"><pre v-pre class="language-sql"><code>substr<span class="token punctuation">(</span>字段名<span class="token punctuation">,</span><span class="token keyword">start</span><span class="token punctuation">,</span><span class="token keyword">end</span><span class="token punctuation">)</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>字符起始从1开始；</p>
+<p>闭区间，两边都包含，例如substr(字段名,1,4)，字符串长度就是4</p>
+<h3 id="强制转换" tabindex="-1"><a class="header-anchor" href="#强制转换" aria-hidden="true">#</a> 强制转换</h3>
+<div class="language-sql line-numbers-mode" data-ext="sql"><pre v-pre class="language-sql"><code>cast<span class="token punctuation">(</span>字段名 <span class="token keyword">as</span> <span class="token keyword">integer</span><span class="token punctuation">)</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>以上是将字段强制转换为integer类型</p>
+<p>在处理流水号的时候可以将固定的字符前缀去掉后使用如上方式排序</p>
+<h2 id="存储过程" tabindex="-1"><a class="header-anchor" href="#存储过程" aria-hidden="true">#</a> 存储过程</h2>
+<p>存储函数相当于自定义函数，例如 <code v-pre>count()</code></p>
+<p>使用之前需要先执行存储函数，然后查看存储函数的状态（是否有错误）</p>
+<p>没错误的话就可以使用了</p>
+<h3 id="blob类型转base64格式clob类型" tabindex="-1"><a class="header-anchor" href="#blob类型转base64格式clob类型" aria-hidden="true">#</a> blob类型转base64格式clob类型</h3>
+<div class="language-sql line-numbers-mode" data-ext="sql"><pre v-pre class="language-sql"><code><span class="token keyword">CREATE</span> <span class="token operator">OR</span> <span class="token keyword">REPLACE</span> <span class="token keyword">FUNCTION</span> base64encode<span class="token punctuation">(</span>p_blob <span class="token operator">IN</span> <span class="token keyword">BLOB</span><span class="token punctuation">)</span>
+   <span class="token keyword">RETURN</span>  CLOB
+<span class="token operator">IS</span>
+   l_clob CLOB<span class="token punctuation">;</span>
+   l_step PLS_INTEGER :<span class="token operator">=</span> <span class="token number">12000</span><span class="token punctuation">;</span> 
+<span class="token keyword">BEGIN</span>
+   <span class="token keyword">FOR</span>  i  <span class="token operator">IN</span>  <span class="token number">0</span> <span class="token punctuation">.</span><span class="token punctuation">.</span> TRUNC<span class="token punctuation">(</span><span class="token punctuation">(</span>DBMS_LOB<span class="token punctuation">.</span>getlength<span class="token punctuation">(</span>p_blob<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span> <span class="token punctuation">)</span><span class="token operator">/</span>l_step<span class="token punctuation">)</span> <span class="token keyword">LOOP</span>
+	   l_clob :<span class="token operator">=</span> l_clob <span class="token operator">||</span> UTL_RAW<span class="token punctuation">.</span>cast_to_varchar2<span class="token punctuation">(</span>UTL_ENCODE<span class="token punctuation">.</span>base64_encode<span class="token punctuation">(</span>DBMS_LOB<span class="token punctuation">.</span>substr<span class="token punctuation">(</span>p_blob<span class="token punctuation">,</span> l_step<span class="token punctuation">,</span> i <span class="token operator">*</span> l_step <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token keyword">END</span>  <span class="token keyword">LOOP</span><span class="token punctuation">;</span>
+   <span class="token keyword">RETURN</span>  l_clob<span class="token punctuation">;</span>
+<span class="token keyword">END</span> base64encode<span class="token punctuation">;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>这个存储函数返回的就是base64格式的clob类型</p>
+<p>使用的时候不要忘记判断一下blob是否为空</p>
+</div></template>
+
+

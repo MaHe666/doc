@@ -1,0 +1,14 @@
+export const data = JSON.parse("{\"key\":\"v-70eb1332\",\"path\":\"/Program/%E5%89%8D%E7%AB%AF/Vue.js/%E7%9F%A5%E8%AF%86%E7%82%B9/vue-router/%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0.html\",\"title\":\"项目笔记\",\"lang\":\"zh-CN\",\"frontmatter\":{\"title\":\"项目笔记\",\"order\":30,\"description\":\"项目错误笔记 \\\"export 'default' (imported as 'VueRouter') was not found in 'vue-router' 以下解决方案只针对 Vue 2.x 进入到 package.json 中，将vue-router的版本降低到 3.1.3\",\"head\":[[\"meta\",{\"property\":\"og:url\",\"content\":\"https://mahe666.github.io/doc/Program/%E5%89%8D%E7%AB%AF/Vue.js/%E7%9F%A5%E8%AF%86%E7%82%B9/vue-router/%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0.html\"}],[\"meta\",{\"property\":\"og:site_name\",\"content\":\"Mahe666\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"项目笔记\"}],[\"meta\",{\"property\":\"og:description\",\"content\":\"项目错误笔记 \\\"export 'default' (imported as 'VueRouter') was not found in 'vue-router' 以下解决方案只针对 Vue 2.x 进入到 package.json 中，将vue-router的版本降低到 3.1.3\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"zh-CN\"}],[\"meta\",{\"property\":\"article:author\",\"content\":\"Mahe666\"}],[\"script\",{\"type\":\"application/ld+json\"},\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"Article\\\",\\\"headline\\\":\\\"项目笔记\\\",\\\"image\\\":[\\\"\\\"],\\\"dateModified\\\":null,\\\"author\\\":[{\\\"@type\\\":\\\"Person\\\",\\\"name\\\":\\\"Mahe666\\\"}]}\"]]},\"headers\":[{\"level\":2,\"title\":\"项目错误笔记\",\"slug\":\"项目错误笔记\",\"link\":\"#项目错误笔记\",\"children\":[{\"level\":3,\"title\":\"\\\"export 'default' (imported as 'VueRouter') was not found in 'vue-router'\",\"slug\":\"export-default-imported-as-vuerouter-was-not-found-in-vue-router\",\"link\":\"#export-default-imported-as-vuerouter-was-not-found-in-vue-router\",\"children\":[]}]}],\"filePathRelative\":\"Program/前端/Vue.js/知识点/vue-router/项目笔记.md\",\"autoDesc\":true}")
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
+}

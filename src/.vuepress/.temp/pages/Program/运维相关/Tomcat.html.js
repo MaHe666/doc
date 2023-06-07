@@ -1,0 +1,14 @@
+export const data = JSON.parse("{\"key\":\"v-f6cff5e6\",\"path\":\"/Program/%E8%BF%90%E7%BB%B4%E7%9B%B8%E5%85%B3/Tomcat.html\",\"title\":\"Tomcat\",\"lang\":\"zh-CN\",\"frontmatter\":{\"title\":\"Tomcat\",\"icon\":\"Tomcat\",\"description\":\"官网： 文件夹用处\\rbin：启动关闭服务器的脚本文件; \\rconf：配置; \\rlib：依赖的jar包; \\rlogs：日志; \\rwebapps：存放的网站; \\rwork：保存jsp编译后的代码; 发布项目 不会就先模仿！ 复制webapps文件夹下的ROOT文件夹 重命名粘贴的文件夹，删除文件夹下的多余文件，只留下WEB-INF文件夹，WEB-INF文件...\",\"head\":[[\"meta\",{\"property\":\"og:url\",\"content\":\"https://mahe666.github.io/doc/Program/%E8%BF%90%E7%BB%B4%E7%9B%B8%E5%85%B3/Tomcat.html\"}],[\"meta\",{\"property\":\"og:site_name\",\"content\":\"Mahe666\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"Tomcat\"}],[\"meta\",{\"property\":\"og:description\",\"content\":\"官网： 文件夹用处\\rbin：启动关闭服务器的脚本文件; \\rconf：配置; \\rlib：依赖的jar包; \\rlogs：日志; \\rwebapps：存放的网站; \\rwork：保存jsp编译后的代码; 发布项目 不会就先模仿！ 复制webapps文件夹下的ROOT文件夹 重命名粘贴的文件夹，删除文件夹下的多余文件，只留下WEB-INF文件夹，WEB-INF文件...\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"zh-CN\"}],[\"meta\",{\"property\":\"article:author\",\"content\":\"Mahe666\"}],[\"script\",{\"type\":\"application/ld+json\"},\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"Article\\\",\\\"headline\\\":\\\"Tomcat\\\",\\\"image\\\":[\\\"\\\"],\\\"dateModified\\\":null,\\\"author\\\":[{\\\"@type\\\":\\\"Person\\\",\\\"name\\\":\\\"Mahe666\\\"}]}\"]]},\"headers\":[{\"level\":2,\"title\":\"文件夹用处\",\"slug\":\"文件夹用处\",\"link\":\"#文件夹用处\",\"children\":[]},{\"level\":2,\"title\":\"发布项目\",\"slug\":\"发布项目\",\"link\":\"#发布项目\",\"children\":[]},{\"level\":2,\"title\":\"启动Tomcat\",\"slug\":\"启动tomcat\",\"link\":\"#启动tomcat\",\"children\":[]},{\"level\":2,\"title\":\"配置Tomcat\",\"slug\":\"配置tomcat\",\"link\":\"#配置tomcat\",\"children\":[]},{\"level\":2,\"title\":\"浏览器默认访问页配置\",\"slug\":\"浏览器默认访问页配置\",\"link\":\"#浏览器默认访问页配置\",\"children\":[]},{\"level\":2,\"title\":\"web.xml配置模板\",\"slug\":\"web-xml配置模板\",\"link\":\"#web-xml配置模板\",\"children\":[]}],\"filePathRelative\":\"Program/运维相关/Tomcat.md\",\"autoDesc\":true}")
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
+}

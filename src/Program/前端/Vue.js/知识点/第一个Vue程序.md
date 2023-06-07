@@ -1,0 +1,36 @@
+---
+title: 第一个Vue程序
+order: 20
+---
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+<!--view层，模板-->
+<div id="app">
+    {{message}}
+</div>
+
+<!--1.导入Vue.js-->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.min.js"></script>
+<script type="text/javascript">
+    var vm = new Vue({
+        el:"#app",
+        /*Model：数据*/
+        data:{
+            message:"hello,vue!"
+        }
+    });
+</script>
+</body>
+</html>
+```
+
+

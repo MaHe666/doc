@@ -1,0 +1,14 @@
+export const data = JSON.parse("{\"key\":\"v-a7396150\",\"path\":\"/Program/%E5%90%8E%E7%AB%AF/Java/JavaSE%E5%9F%BA%E7%A1%80/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%A6%82%E5%BF%B5/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90.html\",\"title\":\"面向对象的内存分析\",\"lang\":\"zh-CN\",\"frontmatter\":{\"title\":\"面向对象的内存分析\",\"order\":30,\"description\":\"这里首先说明一下，天下文章一大抄，你只看到了作业相互抄，没有看到编程语言之间互相抄。 所以只要明白了一个语言的底层原理，其他语言的底层也都差不多可以理解了 Java虚拟机的内存可以分为三个区域：栈（stack），堆（heap），方法区（method area） 方法区其实也在堆里面，或者说方法区是一个特殊的堆。所以本质上只有栈和堆这两个东西，只不过方法...\",\"head\":[[\"meta\",{\"property\":\"og:url\",\"content\":\"https://mahe666.github.io/doc/Program/%E5%90%8E%E7%AB%AF/Java/JavaSE%E5%9F%BA%E7%A1%80/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%A6%82%E5%BF%B5/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90.html\"}],[\"meta\",{\"property\":\"og:site_name\",\"content\":\"Mahe666\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"面向对象的内存分析\"}],[\"meta\",{\"property\":\"og:description\",\"content\":\"这里首先说明一下，天下文章一大抄，你只看到了作业相互抄，没有看到编程语言之间互相抄。 所以只要明白了一个语言的底层原理，其他语言的底层也都差不多可以理解了 Java虚拟机的内存可以分为三个区域：栈（stack），堆（heap），方法区（method area） 方法区其实也在堆里面，或者说方法区是一个特殊的堆。所以本质上只有栈和堆这两个东西，只不过方法...\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"zh-CN\"}],[\"meta\",{\"property\":\"article:author\",\"content\":\"Mahe666\"}],[\"script\",{\"type\":\"application/ld+json\"},\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"Article\\\",\\\"headline\\\":\\\"面向对象的内存分析\\\",\\\"image\\\":[\\\"\\\"],\\\"dateModified\\\":null,\\\"author\\\":[{\\\"@type\\\":\\\"Person\\\",\\\"name\\\":\\\"Mahe666\\\"}]}\"]]},\"headers\":[{\"level\":2,\"title\":\"栈\",\"slug\":\"栈\",\"link\":\"#栈\",\"children\":[]},{\"level\":2,\"title\":\"堆\",\"slug\":\"堆\",\"link\":\"#堆\",\"children\":[]},{\"level\":2,\"title\":\"方法区\",\"slug\":\"方法区\",\"link\":\"#方法区\",\"children\":[]},{\"level\":2,\"title\":\"程序执行的内存变化过程\",\"slug\":\"程序执行的内存变化过程\",\"link\":\"#程序执行的内存变化过程\",\"children\":[{\"level\":3,\"title\":\"具体过程\",\"slug\":\"具体过程\",\"link\":\"#具体过程\",\"children\":[]}]},{\"level\":2,\"title\":\"对象存储到什么地方\",\"slug\":\"对象存储到什么地方\",\"link\":\"#对象存储到什么地方\",\"children\":[]}],\"filePathRelative\":\"Program/后端/Java/JavaSE基础/面向对象概念/面向对象的内存分析.md\",\"autoDesc\":true}")
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
+}

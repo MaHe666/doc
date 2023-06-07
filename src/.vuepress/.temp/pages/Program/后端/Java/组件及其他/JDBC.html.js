@@ -1,0 +1,14 @@
+export const data = JSON.parse("{\"key\":\"v-0962eabd\",\"path\":\"/Program/%E5%90%8E%E7%AB%AF/Java/%E7%BB%84%E4%BB%B6%E5%8F%8A%E5%85%B6%E4%BB%96/JDBC.html\",\"title\":\"JDBC\",\"lang\":\"zh-CN\",\"frontmatter\":{\"title\":\"JDBC\",\"order\":10,\"description\":\"```xml mysql mysql-connector-java 5.1.49 ``` 用法 ```java import java.sql.*; public class Main { public static void main(String[] args) throws ClassNotFoundException, SQLException...\",\"head\":[[\"meta\",{\"property\":\"og:url\",\"content\":\"https://mahe666.github.io/doc/Program/%E5%90%8E%E7%AB%AF/Java/%E7%BB%84%E4%BB%B6%E5%8F%8A%E5%85%B6%E4%BB%96/JDBC.html\"}],[\"meta\",{\"property\":\"og:site_name\",\"content\":\"Mahe666\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"JDBC\"}],[\"meta\",{\"property\":\"og:description\",\"content\":\"```xml mysql mysql-connector-java 5.1.49 ``` 用法 ```java import java.sql.*; public class Main { public static void main(String[] args) throws ClassNotFoundException, SQLException...\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"zh-CN\"}],[\"meta\",{\"property\":\"article:author\",\"content\":\"Mahe666\"}],[\"script\",{\"type\":\"application/ld+json\"},\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"Article\\\",\\\"headline\\\":\\\"JDBC\\\",\\\"image\\\":[\\\"\\\"],\\\"dateModified\\\":null,\\\"author\\\":[{\\\"@type\\\":\\\"Person\\\",\\\"name\\\":\\\"Mahe666\\\"}]}\"]]},\"headers\":[{\"level\":2,\"title\":\"用法\",\"slug\":\"用法\",\"link\":\"#用法\",\"children\":[]},{\"level\":2,\"title\":\"封装配置文件并读取\",\"slug\":\"封装配置文件并读取\",\"link\":\"#封装配置文件并读取\",\"children\":[]},{\"level\":2,\"title\":\"操作事务\",\"slug\":\"操作事务\",\"link\":\"#操作事务\",\"children\":[]}],\"filePathRelative\":\"Program/后端/Java/组件及其他/JDBC.md\",\"autoDesc\":true}")
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
+}

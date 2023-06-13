@@ -1,4 +1,0 @@
----
-title: MacOS
-icon: Apple
----

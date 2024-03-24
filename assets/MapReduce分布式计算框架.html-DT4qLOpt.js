@@ -1,0 +1,1 @@
+import{_ as e}from"./plugin-vue_export-helper-DlAUqK2U.js";import{o as _,c,d as t}from"./app-JDLc82w2.js";const o={},s=t("p",null,"MapReduce 的核心思想是将大数据分而治之，即将数据通过一定的数据划分方法，分成多个较小的具有同样计算过程的数据块，数据块之间不存在依赖关系，将每一个数据块分给不同的节点去处理，最后将处理的结果汇总。",-1),a=[s];function n(r,d){return _(),c("div",null,a)}const u=e(o,[["render",n],["__file","MapReduce分布式计算框架.html.vue"]]);export{u as default};

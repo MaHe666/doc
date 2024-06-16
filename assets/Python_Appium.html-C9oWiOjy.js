@@ -1,1 +1,0 @@
-import{_ as e}from"./plugin-vue_export-helper-DlAUqK2U.js";import{o as t,c as o,d as _}from"./app-l36uSDQG.js";const c={},n=_("p",null,"TODO",-1),s=[n];function r(a,l){return t(),o("div",null,s)}const p=e(c,[["render",r],["__file","Python_Appium.html.vue"]]);export{p as default};
